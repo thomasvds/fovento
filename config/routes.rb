@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+
+  get 'volunteers/profile', as: 'profile'
+  get 'volunteers/dashboard', as: 'dashboard'
+
+  devise_for :volunteers, controllers: { omniauth_callbacks: 'volunteers/omniauth_callbacks' }
+  resources :missions
+
+  get 'pages/how_it_works', as: 'how_it_works'
+  get 'pages/community_and_impact', as: 'community_and_impact'
+  get 'pages/home_volunteers', as: 'home_volunteers'
+  get 'pages/home_nonprofits', as: 'home_nonprofits'
+  get 'pages/missions_toolkit', as: 'missions_toolkit'
+  get 'pages/terms_and_conditions', as: 'terms_and_conditions'
+
+  root to: 'pages#home_volunteers'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

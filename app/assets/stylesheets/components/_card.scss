@@ -1,0 +1,134 @@
+.card {
+  height: 380px;
+  border-radius: 5px;
+  padding: 0px;
+  background-color: white;
+  box-shadow: 2px 4px 2px rgba(0,0,0,0.1);
+  position: relative;
+  margin-bottom: 20px;
+
+  .title_box {
+    font-size: 16px;
+    color: $primary;
+    padding: 1px 10px 1px 10px;
+    margin-bottom: 5px;
+  }
+
+  .skills_box {
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+
+  .avatar-card{
+    position: absolute;
+    top: 225px;
+    right: 8px;
+  }
+
+  .status{
+    position: absolute;
+    top: 250px;
+    right: 50px;
+  }
+
+  .image_box {
+    height: 170px;
+    background-size: cover !important;
+  }
+
+  .bottom_container {
+    height: 140px;
+
+    .association_box {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .logo_box {
+        height: 70px;
+        flex: 0 0 20%;
+      }
+      .name_and_sector_box {
+        flex: 0 0 70%;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        .name {
+          color: $primary;
+        }
+        .sector {
+          color: $gray-light;
+        }
+      }
+    }
+
+    .card_impact_box {
+      font-style: italic;
+      height: 30px;
+      font-size: 12px;
+      color: $gray-light;
+      margin-bottom: 8px;
+    }
+
+    .apply_box {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-transform: uppercase;
+      .knowmore {
+        padding: 0 10px;
+        border-radius: 3px;
+        line-height: 20px;
+        color: $gray-light;
+        font-size: 14px;
+        border: 1px solid $gray-light;
+        &:hover {
+          color: white;
+          background: $gray-lighter;
+          border-color: $gray-lighter;
+        }
+      }
+      .apply {
+        padding: 0 10px;
+        border-radius: 3px;
+        line-height: 20px;
+        color: white;
+        background: $primary;
+        font-size: 14px;
+        border: 1px solid $primary;
+        &:hover {
+          background: $primary-dark;
+        }
+      }
+    }
+  }
+}
+
+.card:hover {
+  box-shadow: 0px 3px 5px 2px $primary-light;
+}
+
+.card:before {
+  background-color: $primary;
+  border-radius: 5px 5px 0 0;
+  content: "";
+  float: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.custom-tooltip + .tooltip > .tooltip-inner {
+  background-color: $gray-lighter;
+  font-size: 10px;
+  font-style: italic;
+  color: $gray;
+}
+.custom-tooltip + .tooltip > .tooltip-arrow {
+  border-top-color: $gray-lighter;
+}

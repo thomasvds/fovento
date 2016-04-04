@@ -1,0 +1,162 @@
+<div class="wrapper-gray">
+  <div class="container">
+
+    <!-- TOP BOX FOR STAFFED MISSIONS -->
+    <% if @mission.status != 'open' %>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="roadbook_volunteer_box">
+          <%= image_tag 'thomas.png', class: 'avatar-roadbook' %>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-tag"></i><b>Statut de la mission:</b> <span style="font-size: 12px;" class="label label-info gray">
+              Accomplie
+            </span></li>
+            <li><i class="fa-li fa fa-user"></i><b>Bénévole:</b>Thomas</li>
+            <li><i class="fa-li fa fa-clock-o"></i><b>Temps donné:</b> - </li>
+            <li><i class="fa-li fa fa-comment"></i><b>Témoignage: </b> - </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <!-- end of top box row -->
+
+    <!-- ROADBOOK HEADER -->
+    <div class="page-header">
+      <h3 style="color: #3E92CC"><%= @mission.title %></h3>
+      <% @skills.each do |skill| %>
+      <span style="font-size: 16px;" class="label label-info gray"><i class="fa fa-lightbulb-o"></i>
+        <%= skill %>
+      </span>
+      &nbsp
+      <% end %>
+    </div>
+    <!-- end of header row (header is bootstrap responsive) -->
+
+    <!-- IMPACT BOX AND APPLY BUTTON -->
+    <div class"row">
+      <div class="col-xs-12">
+        <div class="impact_box">
+          <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
+          <% if @mission.status == 'open' %>
+          <div class="btn btn-primary btn-xs hidden-xs">Je me lance!</div>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
+      <% if @mission.status == 'open' %>
+      <div class="row">
+        <div class="col-xs-12 visible-xs-block">
+          <div class="roadbook_mobile_apply_box">
+            <div class="btn btn-primary btn-md">Je me lance!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <!-- end of impact and apply row -->
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+
+        <!-- NONPROFIT DESCRIPTION -->
+        <div class="roadbook_box">
+          <h4>L'association</h4>
+          <hr>
+          <div class ="association_box">
+            <%= image_tag @mission.nonprofit_profile.logo, class: 'logo_box', style: 'height: 100px'%>
+            <div class="name_and_sector_box">
+              <div class="name"><%= @mission.nonprofit_profile.name %></div>
+              <div class="sector"><%= @mission.nonprofit_profile.sector %></div>
+            </div>
+          </div>
+          <%= raw(@mission.nonprofit_profile.description) %>
+          <p>Voir le <a href="<%= @mission.nonprofit_profile.website %>" target="_blank">site web</a> de l'association.</p>
+          <div class="contact_box">
+            <%= raw(@mission.nonprofit_profile.map_frame) %>
+            <div>
+            <!-- filler div -->
+            </div>
+          </div>
+        </div>
+        <!-- end of nonprofit box -->
+
+        <!-- PRACTICALITIES -->
+        <% if @mission.status == 'open' %>
+        <div class="roadbook_box">
+          <h4>En pratique</h4>
+          <hr>
+          <ul class="fa-ul">
+            <li><i class="fa fa-li fa-calendar"></i><strong>Date de début: </strong><%= @mission.suggested_start_date %></li>
+            <li><i class="fa fa-li fa-calendar"></i><strong>Date de fin maximale: </strong><%= @mission.suggested_end_date %></li>
+            <li><i class="fa fa-li fa-clock-o"></i><strong>Durée estimée: </strong><%= @mission.suggested_duration %></li>
+            <li><i class="fa fa-li fa-arrows"></i><strong>Format suggéré: </strong><%= @mission.suggested_format %></li>
+          </ul>
+        </div>
+        <!-- end of practicalities box -->
+        <% end %>
+      </div>
+      <!-- end of first responsive grid column -->
+
+      <!-- MISSION DESCRIPTION -->
+      <div class="col-xs-12 col-md-6">
+        <div class="roadbook_box">
+         <h4>La mission</h4>
+         <hr>
+         <p><strong>Titre complet</strong></p>
+         <p><%= @mission.full_title %></p>
+         <p><strong>Contexte & objectifs</strong></p>
+         <%= raw(@mission.objectives) %>
+         <p><strong>Résultats attendus</strong></p>
+         <ul class="fa-ul">
+          <%= raw(@mission.outcomes.gsub('<li>','<li><i class="fa-li fa fa-check-square"></i>')) %>
+          </ul>
+        </div>
+      </div>
+      <!-- end of second responsive grid column -->
+    </div>
+    <!-- end of nonprofit and mission row -->
+
+    <!-- IMPACT BOX AND APPLY BUTTON -->
+    <% if @mission.status == 'open' %>
+    <div class"row">
+      <div class="col-xs-12">
+        <div class="impact_box">
+          <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
+          <% if @mission.status == 'open' %>
+          <div class="btn btn-primary btn-xs hidden-xs">Je me lance!</div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
+    <div class="row">
+      <div class="col-xs-12 visible-xs-block">
+        <div class="roadbook_mobile_apply_box">
+          <div class="btn btn-primary btn-md">Je me lance!</div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <!-- end of the 2 final rows -->
+  </div>
+  <!-- end of container -->
+
+  <!-- SUPPORT PIN CALL-OUT, anchored in wrapper -->
+  <% if @mission.status == 'open' %>
+  <div class="support pinned text-center" style="z-index: 2 font-style: italic;">
+    <%= image_tag "thomas.png", class: "avatar-support" %>
+    <p>Hey!</p><p> Je suis Thomas, le parrain de cette mission. Tu peux me <a href="">contacter</a> si tu as des questions.</p>
+  </div>
+  <% end %>
+</div>
+<!-- end of wrapper -->
+
+
+
+
+
+
+
+
