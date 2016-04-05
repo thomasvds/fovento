@@ -1,24 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'candidacies/index'
-
-  get 'candidacies/show'
-
-  get 'candidacies/new'
-
-  get 'candidacies/create'
-
-  get 'candidacies/edit'
-
-  get 'candidacies/update'
-
-  get 'candidacies/destroy'
 
   get 'volunteers/profile', as: 'profile'
   get 'volunteers/dashboard', as: 'dashboard'
 
   devise_for :volunteers, controllers: { omniauth_callbacks: 'volunteers/omniauth_callbacks' }
-  resources :missions
+  resources :missions do
+    resources :candidacies
+  end
 
   get 'pages/how_it_works', as: 'how_it_works'
   get 'pages/community_and_impact', as: 'community_and_impact'

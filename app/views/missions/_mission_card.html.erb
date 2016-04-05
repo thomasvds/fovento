@@ -43,7 +43,7 @@
       <div class="apply_box">
         <%= link_to "Plus d'infos", mission_path(mission), class: 'knowmore btn' %>
         <% if mission.status == 'open' %>
-          <%= link_to "Je me lance!", mission_path(mission), class: 'apply btn' %>
+          <%= link_to "Je me lance!", new_mission_candidacy_path(mission), class: 'apply btn' %>
         <% end %>
       </div>
     </div>
