@@ -1,7 +1,7 @@
 #=======DUO FOR A JOB============================
 title = 'Rédaction d\'une convention de partenariat avec les entreprises'
 skills = 'Droit, Stratégie'
-status = 'accomplished'
+status = 'staffed'
 author = 'Thomas'
 full_title = 'Rédaction d’une convention de partenariat standard avec les entreprises, concernant l’affectation partielle d’employés à un rôle de mentor Duo for a Job'
 impact = 'Contribue à créer de nouveaux duos, menant à plus de cohésion sociale'
@@ -23,6 +23,7 @@ published_at = Time.now
 staffed_at = Time.now
 started_at = Time.now
 closed_at = Time.now
+volunteer = Volunteer.first
 
 mission = Mission.create(title: title,
   skills: skills,
@@ -41,7 +42,8 @@ mission = Mission.create(title: title,
   picture: picture,
   impact: impact,
   suggested_duration: suggested_duration,
-  suggested_format: suggested_format
+  suggested_format: suggested_format,
+  volunteer: volunteer
   )
 
 # CREATE MISSIONS

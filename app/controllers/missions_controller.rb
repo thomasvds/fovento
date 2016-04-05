@@ -2,7 +2,7 @@ class MissionsController < ApplicationController
   before_action :set_mission, only: [:show, :edit, :update, :destroy]
 
   def index
-    @missions = Mission.all
+    @missions = Mission.where.not(status: 'draft')
   end
 
   def show

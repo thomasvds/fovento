@@ -6,12 +6,19 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="roadbook_volunteer_box">
-          <%= image_tag 'thomas.png', class: 'avatar-roadbook' %>
+          <%= image_tag @mission.volunteer.picture, class: 'avatar-roadbook' %>
           <ul class="fa-ul">
             <li><i class="fa-li fa fa-tag"></i><b>Statut de la mission:</b> <span style="font-size: 12px;" class="label label-info gray">
-              Accomplie
+              <% case @mission.status %>
+              <% when 'staffed', 'started'%>
+                En cours
+              <% when 'accomplished' %>
+                Accomplie
+              <% when 'cancelled' %>
+                Annulée
+              <% end %>
             </span></li>
-            <li><i class="fa-li fa fa-user"></i><b>Bénévole:</b>Thomas</li>
+            <li><i class="fa-li fa fa-user"></i><b>Bénévole:</b> &nbsp; <%= @mission.volunteer.first_name %></li>
             <li><i class="fa-li fa fa-clock-o"></i><b>Temps donné:</b> - </li>
             <li><i class="fa-li fa fa-comment"></i><b>Témoignage: </b> - </li>
           </ul>

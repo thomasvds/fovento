@@ -24,13 +24,13 @@
     <% case mission.status %>
     <% when 'accomplished' %>
       <span style="font-size: 12px;" class="label label-info status gray">Accomplie &nbsp;&nbsp;</span>
-      <% tooltip_message = 'Thomas a accompli cette mission!'%>
-      <%= image_tag 'thomas.png', class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
+      <% tooltip_message = mission.volunteer.first_name + " a accompli cette mission"%>
+      <%= image_tag mission.volunteer.picture, class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
     <!-- If the mission is ongoing... -->
-    <% when 'staffed' || 'started' %>
+    <% when 'started', 'staffed' %>
       <span style="font-size: 12px;" class="label label-info status gray">En cours  &nbsp;</span>
-      <% tooltip_message = 'Adrien est en train d\'accomplir cette mission'%>
-      <%= image_tag 'adrien.png', class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
+      <% tooltip_message = mission.volunteer.first_name + " est en train d'accomplir cette mission"%>
+      <%= image_tag mission.volunteer.picture, class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
     <% end %>
 
     <!-- LARGE CARD PICTURE -->
