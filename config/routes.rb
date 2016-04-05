@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'candidacies/index'
+
+  get 'candidacies/show'
+
+  get 'candidacies/new'
+
+  get 'candidacies/create'
+
+  get 'candidacies/edit'
+
+  get 'candidacies/update'
+
+  get 'candidacies/destroy'
+
   get 'volunteers/profile', as: 'profile'
   get 'volunteers/dashboard', as: 'dashboard'
 

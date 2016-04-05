@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404133613) do
+ActiveRecord::Schema.define(version: 20160405071205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "candidacies", force: :cascade do |t|
+    t.string   "motivation_for_mission"
+    t.string   "motivation_for_skills"
+    t.string   "engagement_practicalities"
+    t.datetime "consulted_at"
+    t.string   "status"
+    t.integer  "mission_id"
+    t.integer  "volunteer_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "candidacies", ["mission_id"], name: "index_candidacies_on_mission_id", using: :btree
+  add_index "candidacies", ["volunteer_id"], name: "index_candidacies_on_volunteer_id", using: :btree
 
   create_table "missions", force: :cascade do |t|
     t.string   "title"
@@ -89,5 +104,7 @@ ActiveRecord::Schema.define(version: 20160404133613) do
   add_index "volunteers", ["email"], name: "index_volunteers_on_email", unique: true, using: :btree
   add_index "volunteers", ["reset_password_token"], name: "index_volunteers_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "candidacies", "missions"
+  add_foreign_key "candidacies", "volunteers"
   add_foreign_key "missions", "nonprofit_profiles"
 end
