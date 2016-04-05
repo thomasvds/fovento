@@ -1,7 +1,9 @@
 <div class="col-xs-12 col-sm-6 col-md-4 mix <%= mission.status %>">
   <div class="card">
+
   <!-- FILLER FOR COLORED LINE ON TOP -->
     <div style="height: 8px;"><div style="height: 100%;"></div></div>
+
     <!-- SKILLS BOX -->
     <div class="skills_box">
       <% mission.skills.split(',').each do |skill| %>
@@ -11,26 +13,33 @@
       &nbsp
       <% end %>
     </div>
+
     <!-- TITLE -->
     <div class="title_box">
       <%= mission.title %>
     </div>
+
     <!-- STATUS & VOLUNTEER INFORMATION -->
+    <!-- If the mission is accomplished... -->
     <% case mission.status %>
     <% when 'accomplished' %>
       <span style="font-size: 12px;" class="label label-info status gray">Accomplie &nbsp;&nbsp;</span>
       <% tooltip_message = 'Thomas a accompli cette mission!'%>
       <%= image_tag 'thomas.png', class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
+    <!-- If the mission is ongoing... -->
     <% when 'staffed' || 'started' %>
       <span style="font-size: 12px;" class="label label-info status gray">En cours  &nbsp;</span>
       <% tooltip_message = 'Adrien est en train d\'accomplir cette mission'%>
       <%= image_tag 'adrien.png', class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
     <% end %>
+
     <!-- LARGE CARD PICTURE -->
     <div class="image_box" style="background-image: linear-gradient(-225deg, rgba(1,1,1,0.05) 0%, rgba(62,146,204,0.1) 80%), url(<%=image_path(mission.picture)%>);"><div style="height: 100%;"></div>
     </div>
+
     <!-- BOTTOM CONTAINER -->
     <div class ="bottom_container">
+
       <!-- ASSOCIATION BOX -->
       <div class ="association_box">
         <%= image_tag mission.nonprofit_profile.logo, class: 'logo_box' %>
@@ -39,17 +48,19 @@
           <div class="sector"><%= mission.nonprofit_profile.sector %></div>
         </div>
       </div>
+
       <!-- APPLY BOX -->
       <div class="apply_box">
-        <%= link_to "Plus d'infos", mission_path(mission), class: 'knowmore btn' %>
+        <%= link_to "Plus d'infos", mission_path(mission), class: 'knowmore btn'%>
         <% if mission.status == 'open' %>
-          <%= link_to "Je me lance!", new_mission_candidacy_path(mission), class: 'apply btn' %>
+          <%= link_to "Je me lance!", mission_path(mission), class: 'apply btn'%>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Getting the volunteer name tooltip ready -->
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();

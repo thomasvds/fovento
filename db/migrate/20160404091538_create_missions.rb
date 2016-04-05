@@ -15,8 +15,8 @@ class CreateMissions < ActiveRecord::Migration
       t.text :objectives
       t.text :outcomes
       t.string :suggested_duration
-      t.string :suggested_start_date
-      t.string :suggested_end_date
+      t.string :suggested_start_date, default: 'n.a.'
+      t.string :suggested_end_date, default: 'n.a.'
       t.string :suggested_format
       t.string :impact
 

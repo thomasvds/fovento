@@ -1,2 +1,7 @@
 <h1>Candidacies#index</h1>
 <p>Find me in app/views/candidacies/index.html.erb</p>
+<% @candidacies.each do |candidacy| %>
+  <li><%= candidacy.motivation_for_mission %></li>
+  <li><%= candidacy.motivation_for_skills %></li>
+  <li><%= candidacy.engagement_practicalities %></li>
+<% end %>
