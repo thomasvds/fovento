@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
 
+  get 'logbooks/create'
+
+  get 'logbooks/update'
+
   get 'volunteers/profile', as: 'profile'
   get 'volunteers/dashboard', as: 'dashboard'
 
   devise_for :volunteers, controllers: { omniauth_callbacks: 'volunteers/omniauth_callbacks' }
   resources :missions do
     resources :candidacies
+    resource :logbook, only: [:create, :update]
   end
 
   get 'pages/how_it_works', as: 'how_it_works'

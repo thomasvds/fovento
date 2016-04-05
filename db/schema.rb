@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405071205) do
+ActiveRecord::Schema.define(version: 20160405192817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(version: 20160405071205) do
 
   add_index "candidacies", ["mission_id"], name: "index_candidacies_on_mission_id", using: :btree
   add_index "candidacies", ["volunteer_id"], name: "index_candidacies_on_volunteer_id", using: :btree
+
+  create_table "logbooks", force: :cascade do |t|
+    t.integer  "mission_id"
+    t.string   "volunteer_testimonial"
+    t.boolean  "testimonial_publishable"
+    t.integer  "nps"
+    t.string   "nonprofit_testimonial"
+    t.integer  "hours_worked"
+    t.datetime "planned_end_date"
+    t.boolean  "objectives_understood"
+    t.boolean  "ways_of_working_defined"
+    t.text     "starting_comments"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "logbooks", ["mission_id"], name: "index_logbooks_on_mission_id", using: :btree
 
   create_table "missions", force: :cascade do |t|
     t.string   "title"
@@ -109,6 +126,7 @@ ActiveRecord::Schema.define(version: 20160405071205) do
 
   add_foreign_key "candidacies", "missions"
   add_foreign_key "candidacies", "volunteers"
+  add_foreign_key "logbooks", "missions"
   add_foreign_key "missions", "nonprofit_profiles"
   add_foreign_key "missions", "volunteers"
 end

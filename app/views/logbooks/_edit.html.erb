@@ -1,0 +1,27 @@
+<div class="modal fade" id="<%= mission.id.to_s%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Bravo pour ton engagement!</h4>
+      </div>
+      <div class="modal-body candidacy-box">
+
+        <%= simple_form_for logbook, :url => mission_logbook_path(mission, logbook), html: { class: 'form-box' } do |f| %>
+
+        <%= f.input :hours_worked, label: "Combien d'heures environ as-tu consacrées pour accomplir cette mission?" %>
+
+        <%= f.input :nps, label: "Sur une échelle de 1 à 10, à quel point recommanderais-tu Fovento à une connaissance?", collection: 1..10 %>
+
+        <%= f.input :volunteer_testimonial, label: "N'hésites pas à laisser un témoignage sur la mission:" %>
+
+        <%= f.input :objectives_understood, inline_label: "Je suis d'accord que mon témoignage soit publié sur la plate-forme" %>
+
+        <div style="display: flex; justify-content: space-around;">
+          <%= f.button :submit, value: "Clôturer la mission", onclick: 'return confirm("Confirmer la clôture?")', class: 'btn-primary btn-xs' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

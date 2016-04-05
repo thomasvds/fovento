@@ -6,39 +6,23 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Text link -->
-    <%= link_to "COMMUNAUTÉ & IMPACT", community_and_impact_path, class: "navbar-wagon-item navbar-wagon-link"%>
+    <%= link_to "LES MISSIONS", missions_path, class: "navbar-wagon-item navbar-wagon-link"%>
 
     <!-- Text link -->
     <%= link_to "COMMENT ÇA MARCHE", how_it_works_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Text link -->
-    <%= link_to "RESSOURCES", missions_toolkit_path, class: "navbar-wagon-item navbar-wagon-link"%>
-
-
-    <!-- SHOW ONLY IF VOLUNTEER SIGNED IN -->
-    <% if volunteer_signed_in? %>
-      <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src=<%=current_volunteer.picture%> class="avatar-large dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Dashboard", dashboard_path %></li>
-          <li><%= link_to "Profil", profile_path %></li>
-          <li><%= link_to "Log out", destroy_volunteer_session_path , method: :delete %></li>
-        </ul>
-      </div>
-    </div>
-    <!-- SHOW ONLY IF VOLUNTEER NOT SIGNED IN -->
-    <% else %>
-      <div style="width: 120px;">
-        <%= link_to new_volunteer_session_path, class: "btn btn-xs btn-social btn-linkedin" do %>
-        <span class="fa fa-linkedin"></span>
-          Connect &nbsp;
-        <% end %>
-      </div>
-    <% end %>
+    <%= link_to "COMMUNAUTÉ & IMPACT", community_and_impact_path, class: "navbar-wagon-item navbar-wagon-link"%>
 
     <!-- Call-to-actions -->
-    <%= link_to 'MISSIONS', missions_path, class: 'navbar-wagon-item navbar-wagon-button btn' %>
+    <% if volunteer_signed_in? %>
+      <%= link_to destroy_volunteer_session_path, :method => :delete do %>
+        <span class="fa fa-lock" style="color: gray"></span>
+      <% end %>
+      <%= link_to 'DASHBOARD', dashboard_path, class: 'navbar-wagon-item navbar-wagon-button btn' %>
+    <% else %>
+      <%= link_to 'CONNECT', new_volunteer_session_path, class: 'navbar-wagon-item navbar-wagon-button btn' %>
+    <% end %>
   </div>
   <!-- end of right navigation -->
 
