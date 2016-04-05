@@ -39,7 +39,9 @@
         <div class="impact_box">
           <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
           <% if @mission.status == 'open' %>
-          <%= link_to "Je me lance!", new_mission_candidacy_path(@mission), class: 'btn btn-primary btn-xs hidden-xs' %>
+            <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
+              Je me lance!
+            </button>
           <% end %>
         </div>
       </div>
@@ -49,7 +51,9 @@
       <div class="row">
         <div class="col-xs-12 visible-xs-block">
           <div class="roadbook_mobile_apply_box">
-            <%= link_to "Je me lance!", new_mission_candidacy_path(@mission), class: 'btn btn-primary btn-md' %>
+            <button type="button" class="btn btn-primary btn-md" data-  toggle="modal" data-target="#applyModal">
+              Je me lance!
+            </button>
           </div>
         </div>
       </div>
@@ -125,7 +129,9 @@
         <div class="impact_box">
           <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
           <% if @mission.status == 'open' %>
-          <%= link_to "Je me lance!", new_mission_candidacy_path(@mission), class: 'btn btn-primary btn-xs hidden-xs' %>
+          <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
+            Je me lance!
+          </button>
           <% end %>
         </div>
       </div>
@@ -134,7 +140,9 @@
     <div class="row">
       <div class="col-xs-12 visible-xs-block">
         <div class="roadbook_mobile_apply_box">
-          <%= link_to "Je me lance!", new_mission_candidacy_path(@mission), class: 'btn btn-primary btn-md' %>
+          <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
+            Je me lance!
+          </button>
         </div>
       </div>
     </div>
@@ -152,6 +160,24 @@
   <% end %>
 </div>
 <!-- end of wrapper -->
+
+<!-- Modal -->
+<div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Partage tes motivations, et c'est parti!</h4>
+      </div>
+      <div class="modal-body candidacy-box">
+        <%= render 'candidacies/form', mission: @mission, candidacy: @candidacy%>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+  </div>
+</div>
 
 <!-- ADDTHIS SOCIAL SHARE BUTTONS -->
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

@@ -7,6 +7,7 @@ class MissionsController < ApplicationController
 
   def show
     @skills = @mission.skills.split(',')
+    @candidacy = Candidacy.new
   end
 
   def new
