@@ -7,6 +7,18 @@ class Volunteer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: [:linkedin]
 
+  def candidate?(mission)
+    return candidacies.any? { |candidacy| candidacy.mission == mission }
+  end
+
+  def candidacy_for_mission(mission)
+    if candidate?(mission)
+      return candidacies.find { |candidacy| candidacy.mission == mission }
+    else
+      return false
+    end
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |volunteer|
       volunteer.email = auth.info.email
@@ -15,7 +27,7 @@ class Volunteer < ActiveRecord::Base
       volunteer.last_name = auth.info.last_name
       volunteer.headline = auth.info.headline
       volunteer.picture = auth.info.image
-      volunteer.linkedin_public_profile = auth.public_profile_url
+      volunteer.linkedin_public_profile = auth.info.public_profile_url
     end
   end
 

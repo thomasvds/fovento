@@ -4,9 +4,12 @@
   <div class="candidacy-card-header">
   <img src=<%= candidacy.volunteer.picture %> class="avatar-candidacy">
 
-  <h2><%= candidacy.volunteer.first_name %> <%= candidacy.volunteer.last_name %> <a class="btn btn-social-icon btn-linkedin btn-xs" href=<%= candidacy.volunteer.public_profile_url %>
-    <span class="fa fa-linkedin"></span>
-  </a></h2>
+  <h2>
+    <%= candidacy.volunteer.first_name %> <%= candidacy.volunteer.last_name %>
+    <%= link_to candidacy.volunteer.linkedin_public_profile, class: 'btn btn-social-icon btn-linkedin btn-xs'  do %>
+      <span class="fa fa-linkedin"></span>
+    <% end %>
+  </h2>
 
   <p>Candidature déposée le <%= candidacy.created_at.strftime("%d/%m/%Y")%> à  <%= candidacy.created_at.strftime("%H:%M")%></p>
   </div>

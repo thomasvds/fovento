@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(version: 20160405071205) do
     t.string   "motivation_for_skills"
     t.string   "engagement_practicalities"
     t.datetime "consulted_at"
-    t.string   "status"
+    t.datetime "decided_at"
+    t.string   "status",                    default: "pending validation"
     t.integer  "mission_id"
     t.integer  "volunteer_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
   end
 
   add_index "candidacies", ["mission_id"], name: "index_candidacies_on_mission_id", using: :btree
@@ -46,12 +47,12 @@ ActiveRecord::Schema.define(version: 20160405071205) do
     t.text     "objectives"
     t.text     "outcomes"
     t.string   "suggested_duration"
-    t.string   "suggested_start_date"
-    t.string   "suggested_end_date"
+    t.string   "suggested_start_date", default: "n.a."
+    t.string   "suggested_end_date",   default: "n.a."
     t.string   "suggested_format"
     t.string   "impact"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "missions", ["nonprofit_profile_id"], name: "index_missions_on_nonprofit_profile_id", using: :btree

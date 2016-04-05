@@ -8,7 +8,11 @@ class VolunteersController < ApplicationController
     @candidacies = Candidacy.where("volunteer_id = ?", @volunteer.id)
   end
 
+  private
+
   def set_volunteer
     @volunteer = current_volunteer
   end
+
+
 end

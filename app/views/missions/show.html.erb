@@ -39,9 +39,13 @@
         <div class="impact_box">
           <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
           <% if @mission.status == 'open' %>
-            <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
-              Je me lance!
-            </button>
+            <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
+              <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
+                Je me lance!
+              </button>
+            <% elsif current_volunteer.candidate?(@mission) %>
+              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)),  class: 'btn btn-default btn-xs hidden-xs' %>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -51,14 +55,17 @@
       <div class="row">
         <div class="col-xs-12 visible-xs-block">
           <div class="roadbook_mobile_apply_box">
+            <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
             <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
-            Je me lance!
-          </button>
+              Je me lance!
+            </button>
+            <% elsif current_volunteer.candidate?(@mission) %>
+            <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)),  class: 'btn btn-default btn-xs' %>
+            <% end %>
           </div>
         </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
     <!-- end of impact and apply row -->
 
     <div class="row">
@@ -121,32 +128,41 @@
       <!-- end of second responsive grid column -->
     </div>
     <!-- end of nonprofit and mission row -->
-
     <!-- IMPACT BOX AND APPLY BUTTON -->
-    <% if @mission.status == 'open' %>
     <div class"row">
       <div class="col-xs-12">
         <div class="impact_box">
           <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
           <% if @mission.status == 'open' %>
-          <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
-            Je me lance!
-          </button>
+            <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
+              <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
+                Je me lance!
+              </button>
+            <% elsif current_volunteer.candidate?(@mission) %>
+              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)),  class: 'btn btn-default btn-xs hidden-xs' %>
+            <% end %>
           <% end %>
         </div>
       </div>
-    </div>
-    <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
-    <div class="row">
-      <div class="col-xs-12 visible-xs-block">
-        <div class="roadbook_mobile_apply_box">
-          <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
-            Je me lance!
-          </button>
+
+      <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
+      <% if @mission.status == 'open' %>
+      <div class="row">
+        <div class="col-xs-12 visible-xs-block">
+          <div class="roadbook_mobile_apply_box">
+            <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
+            <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
+              Je me lance!
+            </button>
+            <% elsif current_volunteer.candidate?(@mission) %>
+            <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)),  class: 'btn btn-default btn-xs' %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
+
+
     <!-- end of the 2 final rows -->
   </div>
   <!-- end of container -->
