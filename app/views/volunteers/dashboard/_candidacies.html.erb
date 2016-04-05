@@ -1,23 +1,39 @@
 <thead>
   <th>Titre de la mission</th>
-  <th>Association</th>
-  <th>Candidature</th>
-  <th>Date candidature</th>
+  <th>Statut</th>
+  <th>Date création</th>
+  <th>Actions</th>
 </thead>
 <tbody>
   <% candidacies.each do |candidacy| %>
   <tr>
     <td><%= candidacy.mission.title %> &nbsp;
       <%= link_to mission_path(candidacy.mission) do %>
-        <i class="fa fa-external-link"></i>
+        <i class="fa fa-external-link" style="color: gray; font-size: 20px;"></i>
       <% end %>
     </td>
-    <td><%= candidacy.nonprofit_profile.name %></td>
     <td>
-      <%= link_to "Voir", mission_candidacy_path(candidacy.mission, candidacy),  class: 'btn btn-default btn-xs' %>
-      <%= link_to "Retirer", mission_candidacy_path(candidacy.mission, candidacy), method: :delete, class: 'btn btn-danger btn-xs', onclick: 'return confirm("Confirmer le retrait de la candidature?")' %>
+      <% case candidacy.status %>
+      <% when 'pending validation' || 'pending confirmation' %>
+        <span class="label label-info gray">Envoyée</span>
+      <% when 'rejected' %>
+        <span class="label label-warning">Non retenue</span>
+      <% end %>
     </td>
-    <td><%= candidacy.created_at.strftime("%d/%m/%Y, %H:%M") %></td>
+    <td><%= candidacy.created_at.strftime("%d/%m/%Y") %></td>
+    <td>
+      <%= link_to mission_candidacy_path(candidacy.mission, candidacy) do%>
+        <i class="fa fa-eye" style="color: gray; font-size: 20px;"></i>
+      <% end %>
+      &nbsp;
+      &nbsp;
+
+      <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :delete, onclick: 'return confirm("Confirmer le retrait de la candidature?")' do %>
+        <i class="fa fa-trash" style="color: gray; font-size: 20px;"></i>
+      <% end %>
+
+    </td>
+
   </tr>
   <% end %>
 </tbody>

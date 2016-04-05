@@ -4,9 +4,13 @@
 
 <div class="wrapper-gray">
   <div class="container padded">
-  <h2>Candidatures déposées</h2>
+  <h2>Mes candidatures</h2>
     <table class='table table-condensed table-hover dashboard-table'>
       <%= render 'volunteers/dashboard/candidacies', candidacies: @candidacies %>
+    </table>
+    <h2>Mes missions</h2>
+    <table class='table table-condensed table-hover dashboard-table'>
+      <%= render 'volunteers/dashboard/missions', missions: @missions %>
     </table>
   </div>
 </div>

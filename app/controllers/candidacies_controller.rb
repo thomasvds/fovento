@@ -22,7 +22,7 @@ class CandidaciesController < ApplicationController
 
     respond_to do |format|
       if @candidacy.save
-        format.html { redirect_to mission_path(@mission), notice: 'Merci pour ta candidature! Elle va être partagée avec l\'association.' }
+        format.html { redirect_to dashboard_path, notice: "Merci pour ta candidature! Elle va être partagée avec l'association." }
         format.json { render :show, status: :created }
       else
         format.html { redirect_to mission_path(@mission), alert: 'Erreur: la candidature n\'a pas été enregistrée.'}

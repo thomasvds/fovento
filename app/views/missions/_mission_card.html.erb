@@ -51,9 +51,10 @@
 
       <!-- APPLY BOX -->
       <div class="apply_box">
-        <%= link_to "Plus d'infos", mission_path(mission), class: 'knowmore btn'%>
         <% if mission.status == 'open' %>
-          <%= link_to "Je me lance!", mission_path(mission), class: 'apply btn'%>
+          <%= link_to "Mission disponible - voir les infos", mission_path(mission), class: 'apply btn'%>
+        <% else %>
+          <%= link_to "Plus d'infos", mission_path(mission), class: 'knowmore btn'%>
         <% end %>
       </div>
     </div>

@@ -1,0 +1,44 @@
+<thead>
+  <th>Titre de la mission</th>
+  <th>Statut</th>
+  <th>Date modif.</th>
+  <th>Actions</th>
+</thead>
+<tbody>
+  <% missions.each do |mission| %>
+  <tr>
+    <td><%= mission.title %> &nbsp;
+      <%= link_to mission_path(mission) do %>
+        <i class="fa fa-external-link" style="color: gray; font-size: 20px;"></i>
+      <% end %>
+    </td>
+    <td>
+      <% case mission.status %>
+      <% when 'staffed'%>
+        <span class="label label-warning">En attente de démarrage</span>
+      <% when 'started' %>
+        <span class="label label-default">En cours</span>
+      <% when 'accomplished' %>
+        <span class="label label-success">Accomplie</span>
+      <% when 'cancelled' %>
+        <span class="label label-info gray">Annulée</span>
+      <% end %>
+    </td>
+    <td><%= mission.started_at.strftime("%d/%m/%Y") %></td>
+    <td>
+      <% case mission.status %>
+      <% when 'staffed'%>
+        <i class="fa fa-play-circle" style="color: gray; font-size: 20px;"></i>
+      <% when 'started' %>
+        <i class="fa fa-check-square" style="color: gray; font-size: 20px;"></i>
+        &nbsp;
+        &nbsp;
+        <i class="fa fa-ban" style="color: gray; font-size: 20px;"></i>
+      <% when 'accomplished' %>
+        <i class="fa fa-comment" style="color: gray; font-size: 20px;"></i>
+      <% end %>
+    </td>
+
+  </tr>
+  <% end %>
+</tbody>

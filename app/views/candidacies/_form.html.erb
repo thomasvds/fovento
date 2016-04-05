@@ -1,15 +1,10 @@
 <%= simple_form_for [@mission, @candidacy], html: { class: 'form-box' } do |f| %>
-  <%= f.input :motivation_for_mission, as: :text, label: "Qu'est-ce qui te motive à soutenir cette association / ce secteur?", :input_html => { :rows => 3 , :style => 'width: 100%'} %>
+  <%= f.input :motivation_for_mission, as: :text, label: "Qu'est-ce qui te motive à soutenir cette association / ce secteur?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: 'Exemple: je suis convaincu que l\'accès pour tous à une éducation de qualité contribue à une meilleure société. De plus, cette asbl est active dans mon quartier, et je suis intéressé de découvrir ses activités.' %>
 
-  <div class="candidacy-example"> <strong>Exemple:</strong> Je suis convaincu que l'accès pour tous à une éducation de qualité contribue à une meilleure société. De plus, cette asbl est active dans mon quartier, et je suis intéressé de découvrir ses activités.</div>
+  <%= f.input :motivation_for_skills, as: :text, label: "As-tu des expériences de projet similaires?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "Exemple: mon travail comporte beaucoup d'aspects analytiques, pour lesquels j'utilise régulièrement Excel. Je pense que ceci me permettra de rapidement pouvoir supporter l'association sur cette mission d'analyse de données." %>
 
-  <%= f.input :motivation_for_skills, as: :text, label: "As-tu des expériences de projet similaires?" %>
-
-  <div class="candidacy-example"> <strong>Exemple:</strong> Mon travail comporte beaucoup d'aspects analytiques, pour lesquels j'utilise régulièrement Excel. Je pense que ceci me permettra de rapidement pouvoir supporter l'association sur cette mission d'analyse de données.</div>
-
-  <%= f.input :engagement_practicalities, as: :text, label: "En pratique, quelles sont tes disponibilités? (sois spécifique)" %>
-
-  <div class="candidacy-example"> <strong>Exemple:</strong> Je suis généralement disponible en semaine à partir de 18h30, sauf le jeudi. Je peux aussi facilement me rendre disponible pour une conversation téléphonique sur le temps de midi. Je suis assez libre les week-ends. Je suis prêt à commencer la mission dès que possible.</div>
-
-  <%= f.button :submit, value: "Envoyer mes motivations à l'association", onclick: 'return confirm("Confirmer l\'envoi de tes motivations à l\'association?")', class: 'btn-primary btn-xs' %>
+  <%= f.input :engagement_practicalities, as: :text, label: "En pratique, quelles sont tes disponibilités? (sois spécifique)", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: 'Exemple: je suis généralement disponible en semaine à partir de 18h30, sauf le jeudi. Je peux aussi facilement me rendre disponible pour une conversation téléphonique sur le temps de midi. Je suis assez libre les week-ends. Je suis prêt à commencer la mission dès que possible.'%>
+  <div style="display: flex; justify-content: space-around;">
+  <%= f.button :submit, value: "Envoyer ma candidature à l'association", onclick: 'return confirm("Confirmer l\'envoi de tes motivations à l\'association?")', class: 'btn-primary btn-xs' %>
+  </div>
 <% end %>

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160405071205) do
 
   create_table "missions", force: :cascade do |t|
     t.string   "title"
-    t.string   "status"
+    t.string   "status",               default: "draft"
     t.string   "author"
     t.integer  "nonprofit_profile_id"
     t.datetime "published_at"
@@ -51,11 +51,13 @@ ActiveRecord::Schema.define(version: 20160405071205) do
     t.string   "suggested_end_date",   default: "n.a."
     t.string   "suggested_format"
     t.string   "impact"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.integer  "volunteer_id"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
   end
 
   add_index "missions", ["nonprofit_profile_id"], name: "index_missions_on_nonprofit_profile_id", using: :btree
+  add_index "missions", ["volunteer_id"], name: "index_missions_on_volunteer_id", using: :btree
 
   create_table "nonprofit_profiles", force: :cascade do |t|
     t.string   "name"
@@ -108,4 +110,5 @@ ActiveRecord::Schema.define(version: 20160405071205) do
   add_foreign_key "candidacies", "missions"
   add_foreign_key "candidacies", "volunteers"
   add_foreign_key "missions", "nonprofit_profiles"
+  add_foreign_key "missions", "volunteers"
 end
