@@ -1,1 +1,12 @@
-Mon dashboard: <%= @volunteer.first_name %>
+<h2>Mon dashboard</h2>
+
+
+
+<div class="wrapper">
+  <div class="container padded">
+  <h2>Candidatures déposées</h2>
+    <table class='table table-condensed table-hover dashboard-table'>
+      <%= render 'volunteers/dashboard/candidacies', candidacies: @candidacies %>
+    </table>
+  </div>
+</div>

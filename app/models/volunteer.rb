@@ -15,6 +15,7 @@ class Volunteer < ActiveRecord::Base
       volunteer.last_name = auth.info.last_name
       volunteer.headline = auth.info.headline
       volunteer.picture = auth.info.image
+      volunteer.linkedin_public_profile = auth.public_profile_url
     end
   end
 

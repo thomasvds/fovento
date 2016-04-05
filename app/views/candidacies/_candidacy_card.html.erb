@@ -1,0 +1,29 @@
+<div class="candidacy-card">
+
+  <div style="height: 8px;"><div style="height: 100%;"></div></div>
+  <div class="candidacy-card-header">
+  <img src=<%= candidacy.volunteer.picture %> class="avatar-candidacy">
+
+  <h2><%= candidacy.volunteer.first_name %> <%= candidacy.volunteer.last_name %> <a class="btn btn-social-icon btn-linkedin btn-xs" href=<%= candidacy.volunteer.public_profile_url %>
+    <span class="fa fa-linkedin"></span>
+  </a></h2>
+
+  <p>Candidature déposée le <%= candidacy.created_at.strftime("%d/%m/%Y")%> à  <%= candidacy.created_at.strftime("%H:%M")%></p>
+  </div>
+
+  <div class="candidacy-card-content">
+  <p><strong>Motivations pour l'association / le secteur:</strong></p>
+  <p><emph><%= candidacy.motivation_for_mission %></emph></p>
+
+  <p><strong>Expériences sur des projets similaires:</strong></p>
+  <p><emph><%= candidacy.motivation_for_skills %></emph></p>
+
+  <p><strong>En pratique:</strong></p>
+  <p><emph><%= candidacy.engagement_practicalities %></emph></p>
+  </div>
+
+  <div class="buttons_box">
+    <%= link_to "Retour au dashboard", dashboard_path, class: "btn btn-default btn-xs" %>
+    <%= link_to "Retirer cette candidature", mission_candidacy_path(candidacy.mission, candidacy), method: :delete, class: 'btn btn-danger btn-xs', onclick: 'return confirm("Confirmer le retrait de la candidature?")' %>
+  </div>
+</div>

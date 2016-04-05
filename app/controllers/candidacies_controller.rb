@@ -1,8 +1,8 @@
 class CandidaciesController < ApplicationController
 
-  before_action :set_candidacy, only: [:show, :edit, :update]
-  before_action :find_mission, only: [:new, :create, :index, :show]
-  before_action :find_volunteer, only: [:new, :create, :index, :show]
+  before_action :set_candidacy, only: [:show, :udpate, :edit, :destroy]
+  before_action :find_mission, only: [:create, :index, :show]
+  before_action :find_volunteer, only: [:create, :index, :show]
 
   def index
     @candidacies = Candidacy.where("mission_id = ?", params[:mission_id])
@@ -38,10 +38,14 @@ class CandidaciesController < ApplicationController
   end
 
   def destroy
+    @candidacy.destroy
+    redirect_to dashboard_path
   end
 
+  private
+
   def set_candidacy
-    @candidacy = Candidacy.find(candidacy_params)
+    @candidacy = Candidacy.find(params[:id])
   end
 
   def find_mission

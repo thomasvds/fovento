@@ -1,0 +1,23 @@
+<thead>
+  <th>Titre de la mission</th>
+  <th>Association</th>
+  <th>Candidature</th>
+  <th>Date candidature</th>
+</thead>
+<tbody>
+  <% candidacies.each do |candidacy| %>
+  <tr>
+    <td><%= candidacy.mission.title %> &nbsp;
+      <%= link_to mission_path(candidacy.mission) do %>
+        <i class="fa fa-external-link"></i>
+      <% end %>
+    </td>
+    <td><%= candidacy.nonprofit_profile.name %></td>
+    <td>
+      <%= link_to "Voir", mission_candidacy_path(candidacy.mission, candidacy),  class: 'btn btn-default btn-xs' %>
+      <%= link_to "Retirer", mission_candidacy_path(candidacy.mission, candidacy), method: :delete, class: 'btn btn-danger btn-xs', onclick: 'return confirm("Confirmer le retrait de la candidature?")' %>
+    </td>
+    <td><%= candidacy.created_at.strftime("%d/%m/%Y, %H:%M") %></td>
+  </tr>
+  <% end %>
+</tbody>

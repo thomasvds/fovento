@@ -1,9 +1,14 @@
 class VolunteersController < ApplicationController
+  before_action :set_volunteer
+
   def profile
-    @volunteer = current_volunteer
   end
 
   def dashboard
+    @candidacies = Candidacy.where("volunteer_id = ?", @volunteer.id)
+  end
+
+  def set_volunteer
     @volunteer = current_volunteer
   end
 end

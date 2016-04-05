@@ -13,3 +13,54 @@
     color: $primary;
   }
 }
+
+.candidacy-card {
+  border-radius: 5px;
+  padding: 0px;
+  background-color: white;
+  box-shadow: 2px 4px 2px rgba(0,0,0,0.1);
+  position: relative;
+  margin-bottom: 20px;
+
+  .candidacy-card-header {
+    background-color: $primary-light;
+    color: white;
+    padding: 10px 10px 5px 20px;
+  }
+
+  .avatar-candidacy{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .candidacy-card-content {
+    padding: 10px 10px 5px 20px;
+  }
+
+  .status{
+    position: absolute;
+    top: 250px;
+    right: 50px;
+  }
+
+  .buttons_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0px 10px 10px;
+  }
+}
+
+.candidacy-card:before {
+  background-color: $primary-light;
+  border-radius: 5px 5px 0 0;
+  content: "";
+  float: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
