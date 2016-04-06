@@ -31,31 +31,6 @@ class CandidaciesController < ApplicationController
     end
   end
 
-  def confirm
-    #Only allow confirmation if not rejected or confirmed
-    if @candidacy.status == "rejected" || @candidacy.status == "confirmed"
-      return false
-    else
-      #Set all candidacies of the mission to rejected by default
-      @candidacy.mission.candidacies.each do |candidacy|
-        candidacy.udpate(status: "rejected")
-      end
-      #Retrieve the current candidacy and confirm it
-      @candidacy.update(status: "confirmed")
-      #Update the mission with chosen volunteer and staffed status
-      @mission.update(status: "staffed", volunteer: @candidacy.volunteer)
-      #Mail all volunteers that had a candidacy on the mssion
-      @candidacy.mission.candidacies.each do |candidacy|
-        case candidacy.status
-        when "rejected"
-          VolunteerMailer.rejected(candidacy.volunteer).deliver_now
-        when "confirmed"
-          VolunteerMailer.accepted(candidacy.volunteer).deliver_now
-        end
-      end
-    end
-  end
-
   def edit
   end
 
