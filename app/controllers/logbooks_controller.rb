@@ -20,7 +20,6 @@ class LogbooksController < ApplicationController
   def update
     @mission.logbook.update(logbook_params)
     @mission.update(status: "accomplished")
-    VolunteerMailer.accepted(@mission.volunteer).deliver_now
     redirect_to dashboard_path, notice: "Encore merci pour ton engagement!"
   end
 
