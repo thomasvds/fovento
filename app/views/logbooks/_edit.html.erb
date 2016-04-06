@@ -11,11 +11,13 @@
 
         <%= f.input :hours_worked, label: "Combien d'heures environ as-tu consacrées pour accomplir cette mission?" %>
 
-        <%= f.input :nps, label: "Sur une échelle de 1 à 10, à quel point recommanderais-tu Fovento à une connaissance?", collection: 1..10 %>
+        <%= f.input :nps, label: "Sur une échelle de 1 à 10, à quel point recommanderais-tu Fovento à une connaissance (10: très probable, 1: très improbable)?", collection: 1..10 %>
 
-        <%= f.input :volunteer_testimonial, label: "N'hésites pas à laisser un témoignage sur la mission:" %>
+        <%= f.input :volunteer_testimonial, as: :text, label: "Inspire d'autres bénévoles à agir comme toi! Tu peux laisser ici un court témoignage:", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
 
-        <%= f.input :objectives_understood, inline_label: "Je suis d'accord que mon témoignage soit publié sur la plate-forme" %>
+        <%= f.input :testimonial_publishable, label: "J'autorise la publication de mon témoignage sur la plate-forme", :default => true %>
+
+        <%= f.input :volunteer_feedback, as: :text, label: "L'équipe Fovento te remercie d'avoir utilisé la plate-forme. As-tu du feedback pour l'améliorer?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
 
         <div style="display: flex; justify-content: space-around;">
           <%= f.button :submit, value: "Clôturer la mission", onclick: 'return confirm("Confirmer la clôture?")', class: 'btn-primary btn-xs' %>
@@ -25,3 +27,20 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    jQuery.validator.messages.required = {};
+    $("#edit_logbook_<%= logbook.id %>").validate({
+      errorElement: 'span',
+      rules: {
+        'logbook[number_hours_worked]': {
+          required: true
+        },
+        'logbook[nps]': {
+          required: true
+        }
+      }
+    });
+  });
+</script>

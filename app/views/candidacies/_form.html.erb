@@ -1,4 +1,4 @@
-<%= simple_form_for [@mission, @candidacy], html: { class: 'form-box' } do |f| %>
+<%= simple_form_for [@mission, @candidacy], html: { class: 'form-box' }, validates: true do |f| %>
   <%= f.input :motivation_for_mission, as: :text, label: "Qu'est-ce qui te motive à soutenir cette association / ce secteur?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: 'Exemple: je suis convaincu que l\'accès pour tous à une éducation de qualité contribue à une meilleure société. De plus, cette asbl est active dans mon quartier, et je suis intéressé de découvrir ses activités.' %>
 
   <%= f.input :motivation_for_skills, as: :text, label: "As-tu des expériences de projet similaires?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "Exemple: mon travail comporte beaucoup d'aspects analytiques, pour lesquels j'utilise régulièrement Excel. Je pense que ceci me permettra de rapidement pouvoir supporter l'association sur cette mission d'analyse de données." %>
@@ -8,3 +8,23 @@
   <%= f.button :submit, value: "Envoyer ma candidature à l'association", onclick: 'return confirm("Confirmer l\'envoi de tes motivations à l\'association?")', class: 'btn-primary btn-xs' %>
   </div>
 <% end %>
+
+<script>
+  $(document).ready(function () {
+    jQuery.validator.messages.required = {};
+    $("#new_candidacy").validate({
+      errorElement: 'span',
+      rules: {
+        'candidacy[motivation_for_skills]': {
+          required: true
+        },
+        'candidacy[motivation_for_mission]': {
+          required: true
+        },
+        'candidacy[engagement_practicalities]': {
+          required: true
+        }
+      }
+    });
+  });
+</script>

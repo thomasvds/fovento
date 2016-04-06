@@ -18,9 +18,13 @@
                 Annulée
               <% end %>
             </span></li>
-            <li><i class="fa-li fa fa-user"></i><b>Bénévole:</b> &nbsp; <%= @mission.volunteer.first_name %></li>
-            <li><i class="fa-li fa fa-clock-o"></i><b>Temps donné:</b> - </li>
-            <li><i class="fa-li fa fa-comment"></i><b>Témoignage: </b> - </li>
+            <li><i class="fa-li fa fa-user"></i><b>Bénévole:</b> <%= @mission.volunteer.first_name %></li>
+            <% if @mission.status == 'accomplished' %>
+              <li><i class="fa-li fa fa-clock-o"></i><b>Temps donné:</b> <%= @mission.logbook.hours_worked %> heures</li>
+              <% if @mission.logbook.testimonial_publishable %>
+                <li><i class="fa-li fa fa-comment"></i><b>Témoignage: </b> <%= @mission.logbook.volunteer_testimonial %> </li>
+              <% end %>
+            <% end %>
           </ul>
         </div>
       </div>

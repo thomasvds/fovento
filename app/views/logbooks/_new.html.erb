@@ -9,11 +9,19 @@
 
         <%= simple_form_for logbook, :url => mission_logbook_path(mission, logbook), html: { class: 'form-box' } do |f| %>
 
-        <%= f.input :objectives_understood, inline_label: "Les objectifs et résultats attendus de la mission ont été bien discutés et clarifiés avec l'association." %>
+        <%= f.error_notification %>
 
-        <%= f.input :ways_of_working_defined, inline_label: "Le format de la mission a été décidé avec l'association (nombre de réunions, points de contact...)." %>
+        <%= f.input :objectives_understood, as: :boolean,  inline_label: "Les objectifs et résultats attendus de la mission ont été bien discutés et clarifiés avec l'association" %>
+
+        <%= f.input :ways_of_working_defined, as: :boolean, inline_label: "Le format de la mission a été décidé avec l'association (nombre de réunions, points de contact...)" %>
 
         <%= f.input :planned_end_date, as: :date, start_year: Date.today.year,end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Quelle est la date de fin approximative de la mission?" %>
+
+        <%= content_for(:links) do %>
+          Je m'engage à réaliser la mission de manière professionnelle, en accord avec les <%= link_to "valeurs de la communauté Fovento", community_and_impact_path, :target => "_blank" %> et les <%=link_to "conditions d'utilisation", terms_and_conditions_path, :target => "_blank" %> plate-forme
+        <% end %>
+
+        <%= f.input :values_and_terms_accepted, as: :boolean, inline_label: content_for(:links) %>
 
         <div style="display: flex; justify-content: space-around;">
           <%= f.button :submit, value: "Confirmer le démarrage", onclick: 'return confirm("Confirmer le démarrage?")', class: 'btn-primary btn-xs' %>
@@ -23,3 +31,24 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    jQuery.validator.messages.required = {};
+    $("#new_logbook").validate({
+      errorElement: 'span',
+      rules: {
+        'logbook[values_and_terms_accepted]': {
+          required: true
+        },
+        'logbook[objectives_understood]': {
+          required: true
+        },
+        'logbook[ways_of_working_defined]': {
+          required: true
+        }
+      }
+
+    });
+  });
+</script>
