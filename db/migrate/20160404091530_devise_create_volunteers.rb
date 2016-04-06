@@ -31,6 +31,9 @@ class DeviseCreateVolunteers < ActiveRecord::Migration
       t.string :token
       t.datetime :token_expiry
 
+      ## Administration
+      t.boolean :admin, default: false
+
       ## Functional data
       t.string :first_name
       t.string :last_name

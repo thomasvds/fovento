@@ -19,6 +19,8 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-linkedin'
 
+gem 'rails_admin'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
