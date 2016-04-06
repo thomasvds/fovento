@@ -30,6 +30,17 @@ class LogbooksController < ApplicationController
   end
 
   def logbook_params
-    params.require(:logbook).permit(:all)
+    params.require(:logbook).permit(:objectives_understood,
+     :ways_of_working_defined,
+     :starting_comments,
+     :planned_end_date,
+     :volunteer_testimonial,
+     :nonprofit_testimonial,
+     :testimonial_publishable,
+     :nps,
+     :hours_worked,
+     :values_and_terms_accepted,
+     :volunteer_feedback
+     )
   end
 end

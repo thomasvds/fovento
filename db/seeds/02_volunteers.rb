@@ -17,7 +17,7 @@ volunteer.save!
 
 
 volunteer = Volunteer.new(
-  email: "contact@fovento.be",
+ email: "contact@fovento.be",
  password: "testtest",
  sign_in_count: 1,
  confirmation_token: "7MWbRbaU4DQvQQNjHyrb",
