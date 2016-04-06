@@ -17,4 +17,11 @@
   <%= render 'shared/footer' %>
   <%= javascript_include_tag 'application' %>
 </body>
+
+<script>
+$(document).ready(function() {
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+});
+</script>
+
 </html>

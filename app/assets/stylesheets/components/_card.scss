@@ -122,13 +122,3 @@
   width: 100%;
   height: 4px;
 }
-
-.custom-tooltip + .tooltip > .tooltip-inner {
-  background-color: $gray-lighter;
-  font-size: 10px;
-  font-style: italic;
-  color: $gray;
-}
-.custom-tooltip + .tooltip > .tooltip-arrow {
-  border-top-color: $gray-lighter;
-}

@@ -9,19 +9,23 @@
   <tr>
     <td><%= mission.title %> &nbsp;
       <%= link_to mission_path(mission) do %>
-      <i class="fa fa-external-link" style="color: gray; font-size: 20px;"></i>
+      <i class="fa fa-external-link" style="color: gray; font-size: 15px;"></i>
       <% end %>
     </td>
     <td>
       <% case mission.status %>
       <% when 'staffed'%>
       <span class="label label-warning">En attente de démarrage</span>
+      <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Lors de ta première rencontre avec l'association, tu pourras confirmer le démarrage de la mission dans les actions à droite"></i>
       <% when 'started' %>
       <span class="label label-primary">En cours</span>
+      <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Lorsque tu auras accompli la mission ou si tu souhaites l'interrompre, signale-le dans les actions à droite"></i>
       <% when 'accomplished' %>
       <span class="label label-success">Accomplie</span>
+      <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title=" Mission accomplie, well done. N'hésite pas à te lancer sur d'autres missions!"></i>
       <% when 'cancelled' %>
       <span class="label label-info gray">Annulée</span>
+      <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Mission annulée ou interrompue. N'hésite pas à te lancer sur d'autres missions!"></i>
       <% end %>
     </td>
     <td><%= mission.started_at.strftime("%d/%m/%Y") %></td>
