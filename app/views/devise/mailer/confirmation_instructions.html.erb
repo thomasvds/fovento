@@ -1,5 +1,15 @@
-<p>Welcome <%= @email %>!</p>
+<p>Bienvenue sur Fovento.be!</p>
+<br>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Pour finaliser ton inscription à la plate-forme, merci de cliquer sur le lien ci-dessous:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Confirmer mon inscription', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Si tu t'es connecté(e) à la plate-forme via ton compte LinkedIn, cette confirmation est optionnelle.</p>
+
+<p>Au plaisir de te voir sur la plate-forme!</p>
+<br>
+
+<p><strong>La Team Fovento</strong></p>
+
+

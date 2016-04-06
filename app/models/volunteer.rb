@@ -1,6 +1,6 @@
 class Volunteer < ActiveRecord::Base
 
-  has_many :candidacies
+  has_many :candidacies, dependent: :destroy
   has_many :missions
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
