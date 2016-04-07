@@ -6,7 +6,7 @@ class CreateCandidacies < ActiveRecord::Migration
       t.string :engagement_practicalities
       t.timestamp :consulted_at
       t.timestamp :decided_at
-      t.string :status, default: 'pending validation'
+      t.string :status, default: 'pending moderation'
       t.references :mission, index: true, foreign_key: true
       t.references :volunteer, index: true, foreign_key: true
 

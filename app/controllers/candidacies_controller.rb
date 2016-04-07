@@ -2,7 +2,7 @@ class CandidaciesController < ApplicationController
 
   before_action :set_candidacy, only: [:confirm, :show, :udpate, :edit, :destroy]
   before_action :find_mission, only: [:confirm, :create, :index, :show]
-  before_action :find_volunteer, only: [:confirm, :create, :index, :show]
+  before_action :find_volunteer, only: [:create, :index, :show]
 
   def index
     @candidacies = Candidacy.where("mission_id = ?", params[:mission_id])
@@ -31,19 +31,20 @@ class CandidaciesController < ApplicationController
     end
   end
 
+  # NOTE: HIGHLY DEPENDENT ON ACTIVERECORD LINKS TO DB, DO NOT CHANGE REFERENCES!!!
   def confirm
     #Only allow confirmation if not rejected or confirmed
     if @candidacy.status == "rejected" || @candidacy.status == "confirmed"
       return false
     else
       #Set all candidacies of the mission to rejected by default
-      @mission.candidacies.each do |candidacy|
-        candidacy.udpate(status: "rejected")
+      @candidacy.mission.candidacies.each do |candidacy|
+        candidacy.update(status: "rejected")
       end
       #Retrieve the current candidacy and confirm it, undoing rejection
-      @candidacy.udpate(status: "confirmed")
+      @candidacy.update(status: "confirmed")
       #Update the mission with chosen volunteer and staffed status
-      @mission.update(status: "staffed", volunteer: @volunteer)
+      @candidacy.mission.update(status: "20_staffed", volunteer: @candidacy.volunteer)
       #Mail all volunteers that had a candidacy on the mission
       @mission.candidacies.each do |candidacy|
         case candidacy.status
@@ -52,14 +53,9 @@ class CandidaciesController < ApplicationController
         when "confirmed"
           VolunteerMailer.accepted(candidacy.volunteer).deliver_now
         end
+      end
     end
-  end
-
-
-  def edit
-  end
-
-  def update
+    redirect_to dashboard_path
   end
 
   def destroy

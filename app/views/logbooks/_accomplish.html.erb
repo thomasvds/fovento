@@ -1,0 +1,48 @@
+<div class="modal fade" id="<%= mission.id.to_s%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Well done! Terminons en beauté.</h4>
+      </div>
+      <div class="modal-body candidacy-box">
+        <!-- FORM FOR THE MISSION -->
+        <%= simple_form_for mission, :url => mission_accomplish_path(mission), method: 'put', html: { class: 'form-box' } do |f| %>
+          <!-- NESTED FORM FOR THE LOGBOOK -->
+          <%= f.simple_fields_for :logbook do |l| %>
+            <%= l.input :hours_worked, label: "Combien d'heures environ as-tu consacrées pour accomplir cette mission?" %>
+
+            <%= l.input :nps, label: "Sur une échelle de 1 à 10, à quel point recommanderais-tu Fovento à une connaissance (10: très probable, 1: très improbable)?", collection: 1..10 %>
+
+            <%= l.input :volunteer_testimonial, as: :text, label: "Inspire d'autres bénévoles à agir comme toi! Tu peux laisser ici un court témoignage:", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
+
+            <%= l.input :testimonial_publishable, label: "J'autorise la publication de mon témoignage sur la plate-forme", :default => true %>
+
+            <%= l.input :volunteer_feedback, as: :text, label: "L'équipe Fovento te remercie d'avoir utilisé la plate-forme. As-tu du feedback pour l'améliorer?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
+          <% end %>
+
+        <div style="display: flex; justify-content: space-around;">
+          <%= f.button :submit, value: "Clôturer la mission", onclick: 'return confirm("Confirmer la clôture?")', class: 'btn-primary btn-xs' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    jQuery.validator.messages.required = {};
+    $("#edit_mission_<%= mission.id %>").validate({
+      errorElement: 'span',
+      rules: {
+        'mission[logbook_attributes][number_hours_worked]': {
+          required: true
+        },
+        'mission[logbook_attributes][nps]': {
+          required: true
+        }
+      }
+    });
+  });
+</script>

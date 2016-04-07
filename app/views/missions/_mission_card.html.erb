@@ -22,12 +22,12 @@
     <!-- STATUS & VOLUNTEER INFORMATION -->
     <!-- If the mission is accomplished... -->
     <% case mission.status %>
-    <% when 'accomplished' %>
+    <% when '40_accomplished' %>
       <span style="font-size: 12px;" class="label label-info status gray">Accomplie &nbsp;&nbsp;</span>
       <% tooltip_message = mission.volunteer.first_name + " a accompli cette mission"%>
       <%= image_tag mission.volunteer.picture, class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
     <!-- If the mission is ongoing... -->
-    <% when 'started', 'staffed' %>
+    <% when '30_started', '20_staffed' %>
       <span style="font-size: 12px;" class="label label-info status gray">En cours  &nbsp;</span>
       <% tooltip_message = mission.volunteer.first_name + " est en train d'accomplir cette mission"%>
       <%= image_tag mission.volunteer.picture, class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
@@ -51,7 +51,7 @@
 
       <!-- APPLY BOX -->
       <div class="apply_box">
-        <% if mission.status == 'open' %>
+        <% if mission.status == '10_open' %>
           <%= link_to "Mission disponible - voir les infos", mission_path(mission), class: 'apply btn'%>
         <% else %>
           <%= link_to "Plus d'infos", mission_path(mission), class: 'knowmore btn'%>

@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
 
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'logbooks/create'
-
-  get 'logbooks/update'
-
-  get 'volunteers/profile', as: 'profile'
-  get 'volunteers/dashboard', as: 'dashboard'
 
   devise_for :volunteers, controllers: { omniauth_callbacks: 'volunteers/omniauth_callbacks' }
+
   resources :missions do
-    resources :candidacies
-    resource :logbook, only: [:create, :update]
+    resources :candidacies, except: [:update]
+    put 'candidacies/:id', to: 'candidacies#confirm'
   end
 
+  put 'mission/:id/start', to: 'missions#start', as: 'mission_start'
+  put 'mission/:id/accomplish', to: 'missions#accomplish', as: 'mission_accomplish'
+
+  get 'pages/dashboard', as: 'dashboard'
   get 'pages/how_it_works', as: 'how_it_works'
+  get 'pages/contact', as: 'contact'
   get 'pages/community_and_impact', as: 'community_and_impact'
   get 'pages/home_volunteers', as: 'home_volunteers'
   get 'pages/home_nonprofits', as: 'home_nonprofits'

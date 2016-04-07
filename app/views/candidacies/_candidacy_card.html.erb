@@ -27,6 +27,7 @@
 
   <div class="buttons_box">
     <%= link_to "Retour au dashboard", dashboard_path, class: "btn btn-default btn-xs" %>
+    <%= link_to "Valider", mission_candidacy_path(candidacy.mission, candidacy), class: "btn btn-default btn-xs", method: :put %>
     <%= link_to "Retirer cette candidature", mission_candidacy_path(candidacy.mission, candidacy), method: :delete, class: 'btn btn-danger btn-xs', onclick: 'return confirm("Confirmer le retrait de la candidature?")' %>
   </div>
 </div>

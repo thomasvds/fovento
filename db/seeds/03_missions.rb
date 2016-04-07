@@ -1,7 +1,9 @@
+# NOTE: MISSION CANNOT BE MARKED AS STARTED W/O LOGBOOK AVAILABLE!!!
+
 #=======DUO FOR A JOB============================
 title = 'Rédaction d\'une convention de partenariat avec les entreprises'
 skills = 'Droit, Stratégie'
-status = 'staffed'
+status = '20_staffed'
 author = 'Thomas'
 full_title = 'Rédaction d’une convention de partenariat standard avec les entreprises, concernant l’affectation partielle d’employés à un rôle de mentor Duo for a Job'
 impact = 'Contribue à créer de nouveaux duos, menant à plus de cohésion sociale'
@@ -60,7 +62,7 @@ suggested_start_date = 'Mission récurrente, ayant lieu le samedi matin'
 suggested_end_date = 'n.a.'
 suggested_duration = '3 heures par session'
 suggested_format = 'Discussion au téléphone, présence à une ou plusieurs séances d\'inscription'
-status = 'open'
+status = '10_open'
 author = 'Thomas'
 published_at = Time.now
 staffed_at = Time.now
@@ -84,5 +86,5 @@ mission = Mission.create(title: title,
   picture: picture,
   impact: impact,
   suggested_duration: suggested_duration,
-  suggested_format: suggested_format
+  suggested_format: suggested_format,
   )

@@ -6,6 +6,7 @@ class VolunteerMailer < ApplicationMailer
   #   en.volunteer_mailer.accepted.subject
   #
   def accepted(volunteer)
+    p "******GOOD MAILER*********"
     @greeting = "Hi"
 
     mail(to: volunteer.email, subject: 'Bravo!')

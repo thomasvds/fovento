@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160405192817) do
     t.string   "engagement_practicalities"
     t.datetime "consulted_at"
     t.datetime "decided_at"
-    t.string   "status",                    default: "pending validation"
+    t.string   "status",                    default: "pending moderation"
     t.integer  "mission_id"
     t.integer  "volunteer_id"
     t.datetime "created_at",                                               null: false

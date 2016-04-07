@@ -2,7 +2,7 @@
   <div class="container">
 
     <!-- TOP BOX FOR STAFFED MISSIONS, WITH TESTIMONIAL -->
-    <% if @mission.status != 'open' %>
+    <% if @mission.status != '10_open' %>
     <div class="row">
       <div class="col-xs-12">
         <div class="roadbook_volunteer_box">
@@ -10,11 +10,11 @@
           <ul class="fa-ul">
             <li><i class="fa-li fa fa-tag"></i><b>Statut de la mission:</b> <span style="font-size: 12px;" class="label label-info gray">
               <% case @mission.status %>
-              <% when 'staffed', 'started'%>
+              <% when '20_staffed', '30_started'%>
                 En cours
-              <% when 'accomplished' %>
+              <% when '40_accomplished' %>
                 Accomplie
-              <% when 'cancelled' %>
+              <% when '99_cancelled' %>
                 Annulée
               <% end %>
             </span></li>
@@ -49,7 +49,7 @@
       <div class="col-xs-12">
         <div class="impact_box">
           <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
-          <% if @mission.status == 'open' %>
+          <% if @mission.status == '10_open' %>
             <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
               <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
                 Je me lance!
@@ -62,7 +62,7 @@
       </div>
 
       <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
-      <% if @mission.status == 'open' %>
+      <% if @mission.status == '10_open' %>
       <div class="row">
         <div class="col-xs-12 visible-xs-block">
           <div class="roadbook_mobile_apply_box">
@@ -144,7 +144,7 @@
       <div class="col-xs-12">
         <div class="impact_box">
           <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
-          <% if @mission.status == 'open' %>
+          <% if @mission.status == '10_open' %>
             <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
               <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
                 Je me lance!
@@ -158,7 +158,7 @@
     </div>
 
       <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
-      <% if @mission.status == 'open' %>
+      <% if @mission.status == '10_open' %>
       <div class="row">
         <div class="col-xs-12 visible-xs-block">
           <div class="roadbook_mobile_apply_box">
@@ -178,7 +178,7 @@
   <!-- end of container -->
 
   <!-- SUPPORT PIN CALL-OUT, anchored in wrapper -->
-  <% if @mission.status == 'open' %>
+  <% if @mission.status == '10_open' %>
   <div class="support pinned text-center" style="z-index: 2 font-style: italic;">
     <%= image_tag "thomas.png", class: "avatar-support" %>
     <p>Hey!</p><p> Je suis Thomas, le parrain de cette mission. Tu peux me <a href="">contacter</a> si tu as des questions.</p>

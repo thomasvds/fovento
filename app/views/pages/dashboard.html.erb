@@ -1,0 +1,15 @@
+<div class="wrapper-gray">
+  <div class="container padded">
+
+    <h2>Bienvenue, <%= current_volunteer.first_name %>!</h2>
+
+    <div class="dashboard-card">
+      <%= render 'pages/dashboard/candidacies', candidacies: @candidacies %>
+    </div>
+
+    <div class="dashboard-card">
+      <%= render 'pages/dashboard/missions', missions: @missions %>
+    </div>
+
+  </div>
+</div>
