@@ -1,0 +1,56 @@
+<h2>Création de missions</h2>
+<p> Crée et édite ici les missions à publier sur la plate-forme.</p>
+<table class='table table-condensed table-hover dashboard-table'>
+
+<%= link_to "Créer une nouvelle mission", new_mission_path, class: 'btn btn-default btn-xs' %>
+<br>
+<br>
+  <thead>
+    <th>Titre de la mission</th>
+    <th>Auteur</th>
+    <th>Dernière modification</th>
+    <th>Actions</th>
+  </thead>
+
+  <tbody>
+    <% missions.each do |mission| %>
+    <tr>
+      <!-- MISSION TITLE -->
+      <td><%= mission.title %></td>
+      <!-- STATUS AND CONTEXTUAL HELP -->
+      <td><%= mission.author %></td>
+      <!-- MISSION STAFFING DATE -->
+      <td><%= mission.updated_at.strftime("%d/%m/%Y") %></td>
+      <!-- MISSION ACTIONS, INCLUDING LOGBOOK EDITING -->
+      <td>
+        <%= link_to edit_mission_path(mission) do%>
+        <i class="fa fa-pencil" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+        <%= link_to mission_path(mission) do%>
+        <i class="fa fa-eye" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+        <%= link_to mission_publish_path(mission), method: :put do%>
+        <i class="fa fa-check-square" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+        <%= link_to mission_path(mission), method: :delete do%>
+        <i class="fa fa-trash" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- ACTION ICONS LEGEND -->
+<i class="fa fa-pencil" style="color: gray; font-size: 15px;"></i><small>   Editer</small> &nbsp;
+<i class="fa fa-eye" style="color: gray; font-size: 15px;"></i><small>   Preview</small> &nbsp;
+<i class="fa fa-check-square" style="color: gray; font-size: 15px;"></i><small>   Publier</small> &nbsp;
+<i class="fa fa-trash" style="color: gray; font-size: 15px;"></i><small>   Supprimer le draft</small>

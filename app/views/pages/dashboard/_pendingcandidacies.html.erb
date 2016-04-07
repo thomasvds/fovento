@@ -1,0 +1,53 @@
+<h2>Gestion des candidatures</h2>
+<p> Gère ici les candidatures des bénévoles sur les missions.</p>
+<table class='table table-condensed table-hover dashboard-table'>
+
+  <thead>
+    <th>Titre de la mission</th>
+    <th>Bénévole</th>
+    <th>Statut</th>
+    <th>Actions</th>
+  </thead>
+
+  <tbody>
+    <% candidacies.each do |candidacy| %>
+    <tr>
+      <td><%= candidacy.mission.title %></td>
+      <td><%= candidacy.volunteer.first_name + " " + candidacy.volunteer.last_name%></td>
+      <td>
+        <% case candidacy.status %>
+        <% when 'pending moderation' %>
+        <span class="label label-warning">A modérer</span>
+        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu ta candidature et celles d'autres bénévoles potentiels. Tu sauras bientôt si ta candidature est retenue. Nous demandons aux associations de se décider endéans 7 jours au plus tard, mais en général tu auras des informations endéans 48 heures."></i>
+        <% when 'pending confirmation' %>
+        <span class="label label-info gray">A revoir par l'assoc</span>
+        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu ta candidature et celles d'autres bénévoles potentiels. Tu sauras bientôt si ta candidature est retenue. Nous demandons aux associations de se décider endéans 7 jours au plus tard, mais en général tu auras des informations endéans 48 heures."></i>
+        <% end %>
+      </td>
+      <!-- ACTIONS -->
+      <td>
+        <%= link_to mission_candidacy_path(candidacy.mission, candidacy) do%>
+        <i class="fa fa-eye" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+        <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :put do%>
+        <i class="fa fa-check-square" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+        <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :delete do%>
+        <i class="fa fa-trash" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- ACTION ICONS LEGEND -->
+<i class="fa fa-eye" style="color: gray; font-size: 15px;"></i><small>   Preview</small> &nbsp;
+<i class="fa fa-check-square" style="color: gray; font-size: 15px;"></i><small>   Valider</small> &nbsp;
+<i class="fa fa-trash" style="color: gray; font-size: 15px;"></i><small>   Supprimer </small>

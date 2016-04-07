@@ -1,7 +1,8 @@
 class MissionsController < ApplicationController
   before_action :authenticate_volunteer!, except: [:index, :show]
-  before_action :set_mission, except: [:index, :new]
+  before_action :set_mission, except: [:index, :new, :create]
 
+  #====== READ METHODS ======
   def index
     q = Quote.count
     @quote = Quote.offset(rand(q)).first
@@ -11,6 +12,47 @@ class MissionsController < ApplicationController
   def show
     @skills = @mission.skills.split(',')
     @candidacy = Candidacy.new
+  end
+
+  #====== PRE-PUBLICATION METHODS ======
+  def new
+    @mission = Mission.new
+  end
+
+  def create
+    @mission = Mission.new(mission_params)
+    @mission.status = "0_draft"
+    @mission.author = current_volunteer.first_name
+
+    respond_to do |format|
+      if @mission.save
+        format.html { redirect_to dashboard_path, notice: "Draft de mission enregistré." }
+      else
+        format.html { redirect_to dashboard_path, alert: "Draft non enregistré."}
+      end
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @mission.update(mission_params)
+        format.html { redirect_to dashboard_path, notice: "Le draft de mission a été mis à jour." }
+      else
+        format.html { redirect_to dashboard_path, alert: 'Erreur: le draft n\'a pas été mis à jour.'}
+      end
+    end
+  end
+
+  #====== LIFECYCLE METHODS ======
+  def publish
+    @mission.update(status: "10_open")
+
+    respond_to do |format|
+      format.html { redirect_to mission_path, notice: "Mission publiée!" }
+    end
   end
 
   def start
@@ -40,19 +82,14 @@ class MissionsController < ApplicationController
     end
   end
 
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
+    respond_to do |format|
+      if @mission.destroy
+        format.html { redirect_to dashboard_path, notice: "Le draft de mission a été supprimé." }
+      else
+        format.html { redirect_to dashboard_path, alert: 'Erreur: le draft n\'a pas été supprimé.'}
+      end
+    end
   end
 
   private
@@ -63,6 +100,18 @@ class MissionsController < ApplicationController
 
   def mission_params
     params.require(:mission).permit(
+      :nonprofit_profile_id,
+      :title,
+      :full_title,
+      :skills,
+      :objectives,
+      :outcomes,
+      :impact,
+      :suggested_duration,
+      :suggested_start_date,
+      :suggested_end_date,
+      :suggested_format,
+      :picture,
       logbook_attributes: [
         :id,
         :objectives_understood,

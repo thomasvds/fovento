@@ -45,7 +45,7 @@ class CandidaciesController < ApplicationController
       #Retrieve the current candidacy and confirm it, undoing rejection
       @candidacy.update(status: "confirmed")
       #Update the mission with chosen volunteer and staffed status
-      @candidacy.mission.update(status: "20_staffed", volunteer: @candidacy.volunteer)
+      @candidacy.mission.update(status: "20_staffed", volunteer: @candidacy.volunteer, staffed_at: Time.now)
       #Mail all volunteers that had a candidacy on the mission
       @mission.candidacies.each do |candidacy|
         case candidacy.status
@@ -60,8 +60,13 @@ class CandidaciesController < ApplicationController
   end
 
   def destroy
-    @candidacy.destroy
-    redirect_to dashboard_path
+    respond_to do |format|
+      if @candidacy.destroy
+        format.html { redirect_to dashboard_path, notice: "La candidature a été supprimée." }
+      else
+        format.html { redirect_to dashboard_path, alert: 'Erreur: la candidature n\'a pas été supprimée.'}
+      end
+    end
   end
 
   private

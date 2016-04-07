@@ -10,7 +10,8 @@ volunteer = Volunteer.new(
   picture:
   "https://media.licdn.com/mpr/mprx/0_yHCbiqUZ_0N_5xrZYehqinHNiVT85VhZYun4in4dpyvKsYc4ratwS9uFDc3x6j3NgI8M2AQk2_uE",
   headline: "Consultant at Bain & Company",
-  admin: true
+  admin: true,
+  ambassador: true
   )
 volunteer.skip_confirmation!
 volunteer.save!
@@ -47,7 +48,8 @@ volunteer = Volunteer.new(
   picture: "https://media.licdn.com/mpr/mprx/0_mscXpf2VE8gsCwMyTIf54IDVWt3sb4UgksfEss_RaL8RGHejTIDkNumVSk1sFs5j3I_XAdDsQLCUXpJu3d-4qR2niLCVXp2p3d-F0VJUHXBnaoc8SZkWxmcE_KZoSpUDeEnHZHX8RU8",
   headline: "Interco trading & Licenses Specialist at GSK Vaccines",
   created_at: "2016-04-07 07:11:39",
-  updated_at: "2016-04-07 07:11:39"
+  updated_at: "2016-04-07 07:11:39",
+  ambassador: true
   )
 volunteer.skip_confirmation!
 volunteer.save!

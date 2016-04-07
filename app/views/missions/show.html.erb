@@ -2,7 +2,7 @@
   <div class="container">
 
     <!-- TOP BOX FOR STAFFED MISSIONS, WITH TESTIMONIAL -->
-    <% if @mission.status != '10_open' %>
+    <% if @mission.status != '10_open' && @mission.status != '0_draft' %>
     <div class="row">
       <div class="col-xs-12">
         <div class="roadbook_volunteer_box">
@@ -115,7 +115,7 @@
         <!-- end of nonprofit box -->
 
         <!-- PRACTICALITIES -->
-        <% if @mission.status == '10_open' %>
+        <% if @mission.status == '10_open' || @mission.status == '0_draft' %>
         <div class="roadbook_box">
           <h4>En pratique</h4>
           <hr>

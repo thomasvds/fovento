@@ -31,8 +31,9 @@ class DeviseCreateVolunteers < ActiveRecord::Migration
       t.string :token
       t.datetime :token_expiry
 
-      ## Administration
+      ## Admin & Ambassador status
       t.boolean :admin, default: false
+      t.boolean :ambassador, default: false
 
       ## Functional data
       t.string :first_name

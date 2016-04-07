@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     put 'candidacies/:id', to: 'candidacies#confirm'
   end
 
+  put 'mission/:id/publish', to: 'missions#publish', as: 'mission_publish'
   put 'mission/:id/start', to: 'missions#start', as: 'mission_start'
   put 'mission/:id/accomplish', to: 'missions#accomplish', as: 'mission_accomplish'
   put 'mission/:id/interrupt', to: 'missions#interrupt', as: 'mission_interrupt'

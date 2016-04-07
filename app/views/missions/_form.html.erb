@@ -1,0 +1,23 @@
+<%= simple_form_for mission do |f|%>
+
+
+    <%= f.button :submit, value: "Sauver le draft", class: 'btn btn-primary btn-xs' %>
+
+    <%= link_to "Retour au dashboard", dashboard_path, class: 'btn btn-default btn-xs' %>
+
+    <br>
+    <br>
+
+    <%= f.association :nonprofit_profile, label: "Association" %>
+    <%= f.input :title, label: "Titre"%>
+    <%= f.input :full_title, label: "Titre complet"%>
+    <%= f.input :skills, label: "Compétences requises"%>
+    <%= f.input :objectives, label: "Objectifs"%>
+    <%= f.input :outcomes, label: "Résultats attendus"%>
+    <%= f.input :impact, label: "Impact"%>
+    <%= f.input :suggested_duration, label: "Durée estimée" %>
+    <%= f.input :suggested_start_date, label: "Date de début"%>
+    <%= f.input :suggested_end_date, label: "Date de fin maximale"%>
+    <%= f.input :suggested_format, label: "Format suggéré"%>
+    <%= f.input :picture, label: "Lien vers l'image"%>
+<% end %>

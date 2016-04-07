@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20160407123259) do
     t.string   "token"
     t.datetime "token_expiry"
     t.boolean  "admin",                   default: false
+    t.boolean  "ambassador",              default: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "picture",                 default: "https://addons.cdn.mozilla.net/static//img/zamboni/anon_user.png"
