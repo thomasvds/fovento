@@ -21,7 +21,7 @@
               <% end %>
             </span></li>
             <li><i class="fa-li fa fa-user"></i><b>Bénévole:</b> <%= @mission.volunteer.first_name %></li>
-            <% if @mission.status == 'accomplished' %>
+            <% if @mission.status == '40_accomplished' %>
               <li><i class="fa-li fa fa-clock-o"></i><b>Temps donné:</b> <%= @mission.logbook.hours_worked %> heures</li>
               <% if @mission.logbook.testimonial_publishable %>
                 <li><i class="fa-li fa fa-comment"></i><b>Témoignage: </b> <%= @mission.logbook.volunteer_testimonial %> </li>
@@ -52,12 +52,20 @@
         <div class="impact_box">
           <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
           <% if @mission.status == '10_open' %>
-            <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
-              <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
-                Je me lance!
+            <% if !volunteer_signed_in? %>
+              <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target=".mustconnectmodal">
+                  Je me lance!
               </button>
+              <!-- Must connect modal -->
+              <%= render 'shared/mustconnect' %>
             <% elsif current_volunteer.candidate?(@mission) %>
-              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)),  class: 'btn btn-default btn-xs hidden-xs' %>
+              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)), class: 'btn btn-default btn-xs hidden-xs' %>
+            <% else %>
+              <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
+                  Je me lance!
+              </button>
+              <!-- Candidacy modal -->
+              <%= render 'candidacies/new', mission: @mission, candidacy: @candidacy %>
             <% end %>
           <% end %>
         </div>
@@ -107,7 +115,7 @@
         <!-- end of nonprofit box -->
 
         <!-- PRACTICALITIES -->
-        <% if @mission.status == 'open' %>
+        <% if @mission.status == '10_open' %>
         <div class="roadbook_box">
           <h4>En pratique</h4>
           <hr>
@@ -141,25 +149,8 @@
       <!-- end of second responsive grid column -->
     </div>
     <!-- end of nonprofit and mission row -->
-    <!-- IMPACT BOX AND APPLY BUTTON -->
-    <div class"row">
-      <div class="col-xs-12">
-        <div class="impact_box">
-          <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
-          <% if @mission.status == '10_open' %>
-            <% if !volunteer_signed_in? || !current_volunteer.candidate?(@mission) %>
-              <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
-                Je me lance!
-              </button>
-            <% elsif current_volunteer.candidate?(@mission) %>
-              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)),  class: 'btn btn-default btn-xs hidden-xs' %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
 
-      <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
+    <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
       <% if @mission.status == '10_open' %>
       <div class="row">
         <div class="col-xs-12 visible-xs-block">
@@ -181,22 +172,8 @@
 </div>
 <!-- end of wrapper -->
 
+<!-- support pin -->
 <%= render 'shared/support' %>
-
-<!-- Candidacy modal -->
-<div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Partage tes motivations, et c'est parti!</h4>
-      </div>
-      <div class="modal-body candidacy-box">
-        <%= render 'candidacies/form', mission: @mission, candidacy: @candidacy%>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ADDTHIS SOCIAL SHARE BUTTONS -->
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

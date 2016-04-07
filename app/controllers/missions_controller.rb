@@ -1,7 +1,5 @@
 class MissionsController < ApplicationController
-
   before_action :authenticate_volunteer!, except: [:index, :show]
-
   before_action :set_mission, except: [:index, :new]
 
   def index
