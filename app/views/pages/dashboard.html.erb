@@ -13,6 +13,8 @@
       <%= render 'pages/dashboard/missions', missions: @missions %>
     </div>
 
+    <%= if current_volunteer.ambassador %>
+
     <div class="page-header">
     <h2><i class="fa fa-hand-peace-o"></i> Espace Ambassadeur</h2>
     </div>
@@ -23,6 +25,8 @@
 
     <div class="dashboard-card ambassador-card">
       <%= render 'pages/dashboard/pendingcandidacies', candidacies: @pending_candidacies %>
+
+    <% end %>
     </div>
   </div>
 </div>
