@@ -37,7 +37,7 @@ class DeviseCreateVolunteers < ActiveRecord::Migration
       ## Functional data
       t.string :first_name
       t.string :last_name
-      t.string :picture
+      t.string :picture, default: 'https://addons.cdn.mozilla.net/static//img/zamboni/anon_user.png'
       t.string :headline
       t.string :linkedin_public_profile
       t.string :phone_number

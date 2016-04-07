@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  devise_for :volunteers, controllers: { omniauth_callbacks: 'volunteers/omniauth_callbacks' }
+  devise_for :volunteers, controllers: { registrations: 'volunteers/registrations', omniauth_callbacks: 'volunteers/omniauth_callbacks' }
 
   resources :missions do
     resources :candidacies, except: [:update]

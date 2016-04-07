@@ -98,12 +98,12 @@ ActiveRecord::Schema.define(version: 20160407123259) do
   end
 
   create_table "volunteers", force: :cascade do |t|
-    t.string   "email",                   default: "",    null: false
-    t.string   "encrypted_password",      default: "",    null: false
+    t.string   "email",                   default: "",                                                                 null: false
+    t.string   "encrypted_password",      default: "",                                                                 null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",           default: 0,     null: false
+    t.integer  "sign_in_count",           default: 0,                                                                  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -119,13 +119,13 @@ ActiveRecord::Schema.define(version: 20160407123259) do
     t.boolean  "admin",                   default: false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "picture"
+    t.string   "picture",                 default: "https://addons.cdn.mozilla.net/static//img/zamboni/anon_user.png"
     t.string   "headline"
     t.string   "linkedin_public_profile"
     t.string   "phone_number"
     t.string   "skills"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                                                                           null: false
+    t.datetime "updated_at",                                                                                           null: false
   end
 
   add_index "volunteers", ["email"], name: "index_volunteers_on_email", unique: true, using: :btree
