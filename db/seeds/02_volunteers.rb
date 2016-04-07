@@ -94,4 +94,66 @@ volunteer = Volunteer.new(
 volunteer.skip_confirmation!
 volunteer.save!
 
+volunteer = Volunteer.new(
+  email: "xavier.frisque@gmail.com",
+  password: "testtest",
+  sign_in_count: 1,
+  current_sign_in_at: "2016-04-07 11:31:36",
+  last_sign_in_at: "2016-04-07 11:31:36",
+  confirmation_token: "9_5SGH_eQc8M_bXsboxy",
+  confirmed_at: "2016-04-07 11:31:36",
+  confirmation_sent_at: "2016-04-07 11:31:36",
+  provider: "linkedin",
+  uid: "15AJPb4JqI",
+  first_name: "Xavier",
+  last_name: "Frisque",
+  picture: "https://media.licdn.com/mpr/mprx/0_7JVFN75soqnMbUL72fmFx2cUoBk4GoHi8eGFlUUsalnMbs5CDRGdKSusWqnLTVef2judsOfVCBFJXmwG_E0RyUa9FBFZXm3ahE0XBsRR2n-qaZVtuRWEcazobGjeSmn0WdUIreQvpUS",
+  headline: "--",
+  created_at: "2016-04-07 11:31:36",
+  updated_at: "2016-04-07 11:31:36"
+  )
+volunteer.skip_confirmation!
+volunteer.save!
+
+volunteer = Volunteer.new(
+  email: "kevin.puylaert@gmail.com",
+  password: "testtest",
+  sign_in_count: 1,
+  current_sign_in_at: "2016-04-07 07:56:54",
+  last_sign_in_at: "2016-04-07 07:56:54",
+  confirmation_token: "vii-28xEQzxsC2E43FsX",
+  confirmed_at: "2016-04-07 07:56:54",
+  confirmation_sent_at: "2016-04-07 07:56:54",
+  provider: "linkedin",
+  uid: "V02uAbepyL",
+  first_name: "Kevin",
+  last_name: "Puylaert",
+  picture: "https://media.licdn.com/mpr/mprx/0_7gGnK20XTAWzu7SD8gnnYo6L8nkNu00u5g4n94KLXKozdfugoMVncxgXG3VzuYY3L24ccaOkHQQvER7ghaFEZ40eSQQqERHDhaFvPJo5QbPZ8D1luxlR1SXND1yXiRxpWS_sqFGJbdY",
+  headline: "Sales and Business Development Manager at Sophia Genetics",
+  created_at: "2016-04-07 07:56:54",
+  updated_at: "2016-04-07 07:56:54"
+  )
+volunteer.skip_confirmation!
+volunteer.save!
+
+volunteer = Volunteer.new(
+  email: "laugaritte@hotmail.com",
+  password: "testtest",
+  sign_in_count: 1,
+  current_sign_in_at: "2016-04-07 08:29:59",
+  last_sign_in_at: "2016-04-07 08:29:59",
+  confirmation_token: "MqcES8SryrxRESKDYB-g",
+  confirmed_at: "2016-04-07 08:29:59",
+  confirmation_sent_at: "2016-04-07 08:29:59",
+  provider: "linkedin",
+  uid: "0JYLNnH1iq",
+  first_name: "Lauranne",
+  last_name: "Garitte",
+  picture: "https://media.licdn.com/mpr/mprx/0_JcF2q31iPhRDyrarRzT1qC-SPL0hY9xrBP1PqCvju6IrTteKvAchsG31gSx0jAYp4qL-RLIGJT1f",
+  headline: "Journaliste médicale et chef de projet chez ViVio. Journaliste freelance pour La Libre Belgique et le Trends Tendances",
+  created_at: "2016-04-07 08:29:59",
+  updated_at: "2016-04-07 08:29:59"
+  )
+volunteer.skip_confirmation!
+volunteer.save!
 
