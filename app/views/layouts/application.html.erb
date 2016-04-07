@@ -20,6 +20,11 @@
 <script>
 $(document).ready(function() {
     $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    $(".pinned").pin({
+      containerSelector: ".wrapper-gray",
+      minWidth: 940,
+      padding: {top: 170}
+      });
 });
 </script>
 

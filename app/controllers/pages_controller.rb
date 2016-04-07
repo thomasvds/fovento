@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :authenticate_volunteer!, only: [:dashboard]
+
   before_action :set_volunteer, only: [:dashboard]
 
   def home_volunteers

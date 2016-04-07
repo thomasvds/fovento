@@ -31,6 +31,12 @@
       <span style="font-size: 12px;" class="label label-info status gray">En cours  &nbsp;</span>
       <% tooltip_message = mission.volunteer.first_name + " est en train d'accomplir cette mission"%>
       <%= image_tag mission.volunteer.picture, class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
+    <% when '50_interrupted' %>
+      <span style="font-size: 12px;" class="label label-info status gray">Interrompue  &nbsp;</span>
+      <% tooltip_message = "Cette mission a été interrompue"%>
+      <%= image_tag mission.volunteer.picture, class: 'avatar-card custom-tooltip', 'data-toggle' => 'tooltip', title: tooltip_message  %>
+    <% when '99_cancelled' %>
+      <span style="font-size: 12px;" class="label label-info status gray">Annulée  &nbsp;</span>
     <% end %>
 
     <!-- LARGE CARD PICTURE -->

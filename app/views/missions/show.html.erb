@@ -14,6 +14,8 @@
                 En cours
               <% when '40_accomplished' %>
                 Accomplie
+              <% when '50_interrupted' %>
+                Interrompue
               <% when '99_cancelled' %>
                 Annulée
               <% end %>
@@ -176,18 +178,12 @@
     <!-- end of the 2 final rows -->
   </div>
   <!-- end of container -->
-
-  <!-- SUPPORT PIN CALL-OUT, anchored in wrapper -->
-  <% if @mission.status == '10_open' %>
-  <div class="support pinned text-center" style="z-index: 2 font-style: italic;">
-    <%= image_tag "thomas.png", class: "avatar-support" %>
-    <p>Hey!</p><p> Je suis Thomas, le parrain de cette mission. Tu peux me <a href="">contacter</a> si tu as des questions.</p>
-  </div>
-  <% end %>
 </div>
 <!-- end of wrapper -->
 
-<!-- Modal -->
+<%= render 'shared/support' %>
+
+<!-- Candidacy modal -->
 <div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -205,6 +201,8 @@
 <!-- ADDTHIS SOCIAL SHARE BUTTONS -->
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56fd932ee415261b"></script>
+
+
 
 
 

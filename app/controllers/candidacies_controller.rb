@@ -1,4 +1,5 @@
 class CandidaciesController < ApplicationController
+  before_action :authenticate_volunteer!
 
   before_action :set_candidacy, only: [:confirm, :show, :udpate, :edit, :destroy]
   before_action :find_mission, only: [:confirm, :create, :index, :show]

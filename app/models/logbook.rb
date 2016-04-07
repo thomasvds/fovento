@@ -4,4 +4,5 @@ class Logbook < ActiveRecord::Base
   validates :values_and_terms_accepted, acceptance: true
   validates :objectives_understood, acceptance: true
   validates :ways_of_working_defined, acceptance: true
+  validates :interrupt_agreed_with_nonprofit, acceptance: true
 end

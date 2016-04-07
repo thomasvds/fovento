@@ -30,6 +30,9 @@
         <% when '40_accomplished' %>
         <span class="label label-success">Accomplie</span>
         <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title=" Mission accomplie, well done. N'hésite pas à te lancer sur d'autres missions!"></i>
+        <% when '50_interrupted' %>
+        <span class="label label-danger">Interrompue</span>
+        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title=" Mission interrompue. Contacte l'équipe Fovento si tu souhaites réactiver cette mission."></i>
         <% when '99_cancelled' %>
         <span class="label label-info gray">Annulée</span>
         <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Mission annulée ou interrompue. N'hésite pas à te lancer sur d'autres missions!"></i>
@@ -48,7 +51,8 @@
         <%= render 'logbooks/accomplish', mission: mission %>
         &nbsp;
         &nbsp;
-        <i class="fa fa-times-circle" style="color: gray; font-size: 20px;"></i>
+        <i class="fa fa-times-circle" style="color: gray; font-size: 20px;" data-toggle="modal" data-target="#<%= mission.id.to_s + '_interrupt'%>"></i>
+        <%= render 'logbooks/interrupt', mission: mission %>
         <% end %>
       </td>
     </tr>

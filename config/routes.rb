@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   put 'mission/:id/start', to: 'missions#start', as: 'mission_start'
   put 'mission/:id/accomplish', to: 'missions#accomplish', as: 'mission_accomplish'
+  put 'mission/:id/interrupt', to: 'missions#interrupt', as: 'mission_interrupt'
 
   get 'pages/dashboard', as: 'dashboard'
   get 'pages/how_it_works', as: 'how_it_works'

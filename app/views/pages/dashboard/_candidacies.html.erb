@@ -40,7 +40,7 @@
         &nbsp;
         &nbsp;
 
-        <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :delete, onclick: 'return confirm("Confirmer le retrait de la candidature?")' do %>
+        <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :delete, :confirm=>'Confirmer?' do %>
         <i class="fa fa-trash" style="color: gray; font-size: 20px;"></i>
         <% end %>
 
