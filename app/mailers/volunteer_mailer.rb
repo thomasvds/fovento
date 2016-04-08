@@ -6,10 +6,9 @@ class VolunteerMailer < ApplicationMailer
   #   en.volunteer_mailer.accepted.subject
   #
   def accepted(volunteer)
-    p "******GOOD MAILER*********"
-    @greeting = "Hi"
+    @volunteer = volunteer
 
-    mail(to: volunteer.email, subject: 'Bravo!')
+    mail(to: @volunteer.email, subject: 'Bravo!')
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -18,8 +17,8 @@ class VolunteerMailer < ApplicationMailer
   #   en.volunteer_mailer.rejected.subject
   #
   def rejected(volunteer)
-    @greeting = "Hi"
+    @volunteer = volunteer
 
-    mail(to: volunteer.email, subject: 'Too bad!')
+    mail(to: @volunteer.email, subject: 'Too bad!')
   end
 end
