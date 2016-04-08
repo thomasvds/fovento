@@ -24,10 +24,6 @@ volunteer = Volunteer.new(
  first_name: "Test",
  last_name: "Van der Test",
  picture: "https://media.licdn.com/mpr/mprx/0_yHCbiqUZ_0N_5xrZYehqinHNiVT85VhZYun4in4dpyvKsYc4ratwS9uFDc3x6j3NgI8M2AQk2_uE",
- headline: nil,
- linkedin_public_profile: nil,
- phone_number: nil,
- skills: nil
  )
 volunteer.skip_confirmation!
 volunteer.save!
@@ -201,3 +197,23 @@ volunteer = Volunteer.new(
 volunteer.skip_confirmation!
 volunteer.save!
 
+volunteer = Volunteer.new(
+  email: "edouard.jacquin@gmail.com",
+  password: "testtest",
+  sign_in_count: 4,
+  current_sign_in_at: "2016-04-08 09:34:34",
+  last_sign_in_at: "2016-04-08 09:34:34",
+  confirmation_token: "DHocqjzeqm2yzfDRz5Px",
+  confirmed_at: "2016-04-08 09:34:34",
+  provider: "linkedin",
+  uid: "Dm84tHnZDx",
+  ambassador: true,
+  first_name: "Edouard",
+  last_name: "Jacquin",
+  picture: "https://media.licdn.com/mpr/mprx/0_GoniwOy5-S_9H1mQCS6ywyYq-INzE1mQ8eCywgyqDa8XvBM6m2QfLjHVp5qIdq7EidNjkVGusEe_",
+  headline: "Junior Consultant at nGage Consulting",
+  created_at: "2016-04-08 09:17:49",
+  updated_at: "2016-04-08 09:34:34"
+  )
+volunteer.skip_confirmation!
+volunteer.save!

@@ -30,3 +30,13 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function number_boxes_checked(id){
+    var sum = 0;
+    $(".startcheckbox_" + id).each(function(){
+      console.log(parseInt($(this).val()));
+      sum += parseInt($(this).val());
+    });
+  }
+</script>
