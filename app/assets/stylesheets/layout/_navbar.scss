@@ -7,7 +7,28 @@
   height: 70px;
   padding: 0px 30px;
   align-items: center;
+  position: relative;
   justify-content: space-between;
+
+  &:after {
+    transform: translateY(-100%);
+    transition: transform .3s ease;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    bottom: 0;
+    content: '';
+    background: white;
+    position: absolute;
+    top: 0;
+  }
+
+  &.is-scrolling {
+    &:after {
+      transform: translateY(0);
+
+    }
+  }
 }
 
 /* Optional class to fix the navbar on top */
@@ -126,4 +147,11 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.pages-home-volunteers {
+  .navbar-wagon {
+    background: transparent;
+    box-shadow: none;
+  }
 }

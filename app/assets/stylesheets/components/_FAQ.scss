@@ -1,0 +1,57 @@
+.FAQ_section_title {
+  border-radius: 5px;
+  background-color: white;
+  padding: 3px 5px 3px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid $primary;
+  font-size: 16px;
+  color: $primary;
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: $primary;
+    color: white;
+  }
+}
+
+.FAQ_section_title_active {
+  border-radius: 5px;
+  background-color: $primary;
+  padding: 3px 5px 3px 15px;
+  border: 1px solid $primary;
+  font-size: 16px;
+  color: white;
+}
+
+.FAQ_question {
+  border-radius: 10px;
+  //background-color: $gray-lightest;
+  font-weight: 300;
+  padding: 5px 10px 5px 10px;
+  //border: 2px solid white;
+  font-size: 16px;
+  color: $gray-light;
+
+  &:hover {
+    color: $gray-dark;
+  }
+}
+
+.FAQ_question_active {
+  border-radius: 10px;
+  //background-color: $gray-lightest;
+  font-weight: 300;
+  padding: 5px 10px 5px 10px;
+  //border: 2px solid white;
+  font-size: 16px;
+  color: $gray-dark;
+}
+
+.FAQ_answer {
+  font-size: 14px;
+  padding: 10px 15px 10px 15px;
+  font-weight: light;
+  font-style: italic;
+  color: $gray;
+}

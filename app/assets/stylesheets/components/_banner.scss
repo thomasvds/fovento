@@ -1,0 +1,71 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 50px);
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-top: 70px;
+}
+
+.banner-top {
+  flex: 0 0 10%;
+}
+
+.banner-title {
+  flex: 0 0 30%;
+}
+
+.banner-title h1 {
+  font-size: 70px;
+  padding-right: 75px;
+  padding-left: 75px;
+  font-weight: bold;
+}
+
+.banner-title p {
+  font-size: 23px;
+  padding-left: 52px;
+  font-style: italic;
+  margin-top: -35px;
+  font-weight: bold;
+}
+
+.banner-description {
+  flex: 1 0 auto;
+  padding: 50px 50px 10px 50px;
+}
+
+.banner-description p {
+  font-weight: lighter;
+  font-size: 22px;
+  flex: 1 0 auto;
+}
+
+.banner-bottom {
+  flex: 0 0 10%;
+}
+
+.banner-bottom .btn-light {
+ border: 2px solid white;
+ padding: 5px 15px 5px 15px;
+ border-radius: 5px;
+ text-decoration: none;
+ color: white;
+ letter-spacing: 2px;
+}
+
+.banner-bottom .btn-light:hover {
+ background: white;
+ color: rgba(22, 45, 74, 1);
+}
+
+.banner-bottom .angle-down{
+  font-size: 45px;
+  transition: 0.3s ease;
+  width: 100%;
+  top: 30%;
+}
