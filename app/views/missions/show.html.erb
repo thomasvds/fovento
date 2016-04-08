@@ -80,16 +80,12 @@
               <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".mustconnectmodal">
                   Je me lance!
               </button>
-              <!-- Must connect modal -->
-              <%= render 'shared/mustconnect' %>
             <% elsif current_volunteer.candidate?(@mission) %>
               <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)), class: 'btn btn-default btn-md' %>
             <% else %>
               <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
                   Je me lance!
               </button>
-              <!-- Candidacy modal -->
-              <%= render 'candidacies/new', mission: @mission, candidacy: @candidacy %>
             <% end %>
           </div>
         </div>
@@ -167,16 +163,12 @@
               <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".mustconnectmodal">
                   Je me lance!
               </button>
-              <!-- Must connect modal -->
-              <%= render 'shared/mustconnect' %>
             <% elsif current_volunteer.candidate?(@mission) %>
               <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)), class: 'btn btn-default btn-md' %>
             <% else %>
               <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
                   Je me lance!
               </button>
-              <!-- Candidacy modal -->
-              <%= render 'candidacies/new', mission: @mission, candidacy: @candidacy %>
             <% end %>
           </div>
         </div>
