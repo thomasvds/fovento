@@ -13,7 +13,7 @@
           <%= f.simple_fields_for :logbook do |l| %>
             <%= l.input :objectives_understood, as: :boolean,  inline_label: "Les objectifs et résultats attendus de la mission ont été bien discutés et clarifiés avec l'association" %>
             <%= l.input :ways_of_working_defined, as: :boolean, inline_label: "Le format de la mission a été décidé avec l'association (nombre de réunions, points de contact...)" %>
-            <%= l.input :planned_end_date, as: :date, start_year: Date.today.year,end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Quelle est la date de fin approximative de la mission?" %>
+            <%= l.input :planned_end_date, as: :date, start_year: Date.today.year,end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Quelle est la date de fin approximative de la mission?", :input_html => {class: 'date'} %>
             <%= l.input :values_and_terms_accepted, as: :boolean, inline_label: content_for(:links) %>
           <% end %>
 
@@ -33,6 +33,7 @@
     jQuery.validator.messages.required = {};
     $("#edit_mission_<%= mission.id %>").validate({
       errorElement: 'span',
+      ignore: '.date',
       rules: {
         'mission[logbook_attributes][values_and_terms_accepted]': {
           required: true
@@ -44,7 +45,6 @@
           required: true
         }
       }
-
     });
   });
 </script>

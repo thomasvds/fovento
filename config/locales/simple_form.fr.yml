@@ -1,0 +1,18 @@
+fr:
+  simple_form:
+    "yes": 'Oui'
+    "no": 'Non'
+    dates:
+      months:
+        january: "Jan"
+        feburary: "Jan"
+        march: "Jan"
+        april: "Jan"
+        may: "Jan"
+        june: "Jan"
+        july: "Jan"
+        august: "Jan"
+        september: "Jan"
+        october: "Jan"
+        november: "Jan"
+        december: "Jan"

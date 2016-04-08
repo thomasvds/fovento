@@ -159,3 +159,45 @@ volunteer = Volunteer.new(
 volunteer.skip_confirmation!
 volunteer.save!
 
+volunteer = Volunteer.new(
+  email: "william.donck@gmail.com",
+  password: "testtest",
+  sign_in_count: 1,
+  current_sign_in_at: "2016-04-08 07:15:38",
+  last_sign_in_at: "2016-04-08 07:15:38",
+  confirmation_token: "5vDCvhmz-RBvdXGzz7iV",
+  confirmed_at: "2016-04-08 07:15:38",
+  confirmation_sent_at: "2016-04-08 07:15:38",
+  provider: "linkedin",
+  uid: "_SGGHijm_X",
+  first_name: "William",
+  last_name: "Donck",
+  picture: "https://media.licdn.com/mpr/mprx/0_Lw2Nlo7qIqeBdIcpw2EbleOeIcfcLeFpFf4IlexHq-R6V2ryWSpZ0HI6LM7dQ76rXeaEYfDFQ3_H",
+  headline: "Technical Management Trainee at Cargill",
+  created_at: "2016-04-08 07:15:37",
+  updated_at: "2016-04-08 07:15:38"
+  )
+volunteer.skip_confirmation!
+volunteer.save!
+
+volunteer = Volunteer.new(
+  email: "avdbranden@gmail.com",
+  password: "testtest",
+  sign_in_count: 1,
+  current_sign_in_at: "2016-04-08 08:42:00",
+  last_sign_in_at: "2016-04-08 08:42:00",
+  confirmation_token: "FnCaA5W9HSyhJhh1wvCE",
+  confirmed_at: "2016-04-08 08:42:00",
+  confirmation_sent_at: "2016-04-08 08:41:59",
+  provider: "linkedin",
+  uid: "3Son9JBkJ0",
+  first_name: "Adrien",
+  last_name: "van den Branden de Reeth",
+  picture: "https://media.licdn.com/mpr/mprx/0_GoniwOy5-S_9H1mQCS6ywyYq-INzE1mQ8eCywgyqDa8XvBM6m2QfLjHVp5qIdq7EidNjkVGusEe_",
+  headline: "Associate at Linklaters",
+  created_at: "2016-04-08 08:41:59",
+  updated_at: "2016-04-08 08:42:00"
+  )
+volunteer.skip_confirmation!
+volunteer.save!
+
