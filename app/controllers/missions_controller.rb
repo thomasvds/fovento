@@ -10,6 +10,9 @@ class MissionsController < ApplicationController
   end
 
   def show
+    if @mission.status == "0_draft"
+      redirect_to missions_path unless volunteer_signed_in? && current_volunteer.ambassador
+    end
     @skills = @mission.skills.split(',')
     @candidacy = Candidacy.new
   end
@@ -23,7 +26,10 @@ class MissionsController < ApplicationController
     @mission = Mission.new(mission_params)
     @mission.status = "0_draft"
     @mission.author = current_volunteer.first_name
-
+    if @mission.picture.include?("dropbox")
+      # Direct public dropbox link is actually just a preview, and needs to be modified to actual content
+      @mission.picture.gsub!('www.dropbox.com','dl.dropboxusercontent.com')
+    end
     respond_to do |format|
       if @mission.save
         format.html { redirect_to dashboard_path, notice: "Draft de mission enregistré." }
