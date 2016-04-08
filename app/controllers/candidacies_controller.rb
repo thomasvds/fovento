@@ -19,6 +19,7 @@ class CandidaciesController < ApplicationController
   def update
     respond_to do |format|
       if @candidacy.update(candidacy_params)
+        @candidacy.update(status: "pending moderation")
         format.html { redirect_to dashboard_path, notice: "Merci pour ta candidature! Elle va être partagée avec l'association." }
         format.json { render :show, status: :created }
       else
