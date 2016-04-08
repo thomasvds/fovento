@@ -25,9 +25,12 @@
 
     <div class="dashboard-card ambassador-card">
       <%= render 'pages/dashboard/pendingcandidacies', candidacies: @pending_candidacies %>
-
-    <% end %>
     </div>
+
+    <div class="dashboard-card ambassador-card">
+      <%= render 'pages/dashboard/remarketing', candidacies: @browses %>
+    </div>
+    <% end %>
   </div>
 </div>
 

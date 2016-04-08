@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   devise_for :volunteers, controllers: { registrations: 'volunteers/registrations', omniauth_callbacks: 'volunteers/omniauth_callbacks' }
 
   resources :missions do
-    resources :candidacies, except: [:update]
-    put 'candidacies/:id', to: 'candidacies#confirm'
+    resources :candidacies, except: [:create]
+    put 'candidacies/:id/confirm', to: 'candidacies#confirm', as: 'candidacy_confirm'
   end
 
   put 'mission/:id/publish', to: 'missions#publish', as: 'mission_publish'

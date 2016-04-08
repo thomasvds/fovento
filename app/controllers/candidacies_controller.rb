@@ -1,9 +1,9 @@
 class CandidaciesController < ApplicationController
   before_action :authenticate_volunteer!
 
-  before_action :set_candidacy, only: [:confirm, :show, :udpate, :edit, :destroy]
-  before_action :find_mission, only: [:confirm, :create, :index, :show]
-  before_action :find_volunteer, only: [:create, :index, :show]
+  before_action :set_candidacy, only: [:confirm, :show, :update, :edit, :destroy]
+  before_action :find_mission, only: [:confirm, :index, :show]
+  before_action :find_volunteer, only: [:index, :show]
 
   def index
     @candidacies = Candidacy.where("mission_id = ?", params[:mission_id])
@@ -12,17 +12,13 @@ class CandidaciesController < ApplicationController
   def show
   end
 
-  def new
-    @candidacy = Candidacy.new
-  end
-
-  def create
-    @candidacy = Candidacy.new(candidacy_params)
-    @candidacy.mission = @mission
-    @candidacy.volunteer = @volunteer
-
+  # This method is used when the volunteer actually applies for a
+  # mission. The candidacy is indeed first created when the volunteer
+  # browses for the first time on the show page of the mission,
+  # so when he applies it's actually an update of an existing candidacy
+  def update
     respond_to do |format|
-      if @candidacy.save
+      if @candidacy.update(candidacy_params)
         format.html { redirect_to dashboard_path, notice: "Merci pour ta candidature! Elle va être partagée avec l'association." }
         format.json { render :show, status: :created }
       else
@@ -84,6 +80,14 @@ class CandidaciesController < ApplicationController
   end
 
   def candidacy_params
-    params.require(:candidacy).permit(:motivation_for_skills, :motivation_for_mission, :engagement_practicalities)
+    params.require(:candidacy).permit(
+      :motivation_for_skills,
+      :motivation_for_mission,
+      :engagement_practicalities,
+      volunteer_attributes: [
+        :id,
+        :phone_number
+      ]
+    )
   end
 end

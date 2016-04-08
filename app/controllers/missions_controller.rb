@@ -13,8 +13,17 @@ class MissionsController < ApplicationController
     if @mission.status == "0_draft"
       redirect_to missions_path unless volunteer_signed_in? && current_volunteer.ambassador
     end
+
     @skills = @mission.skills.split(',')
-    @candidacy = Candidacy.new
+
+    if volunteer_signed_in?
+      @candidacy = current_volunteer.candidacies.where(mission_id: @mission.id).first
+      if !@candidacy.nil?
+        @candidacy.plus_browse_count!
+      else
+        @candidacy = Candidacy.create(volunteer: current_volunteer, mission: @mission)
+      end
+    end
   end
 
   #====== PRE-PUBLICATION METHODS ======

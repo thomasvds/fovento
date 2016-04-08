@@ -1,0 +1,30 @@
+<h2>Remarketing</h2>
+<p> Améliore ici le conversion rate de la plate-forme!</p>
+<table class='table table-condensed table-hover table-striped dashboard-table'>
+
+  <thead>
+    <th>Titre de la mission</th>
+    <th>Bénévole</th>
+    <th>Visites</th>
+    <th>Actions</th>
+  </thead>
+
+  <tbody>
+    <% candidacies.each do |candidacy| %>
+    <tr>
+      <td><%= candidacy.mission.title %></td>
+      <td><%= candidacy.volunteer.first_name + " " + candidacy.volunteer.last_name%></td>
+      <td><%= candidacy.browse_count %></td>
+      <!-- ACTIONS -->
+      <td>
+        <%= link_to dashboard_path do%>
+        <i class="fa fa-envelope" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- ACTION ICONS LEGEND -->
+<i class="fa fa-mail" style="color: gray; font-size: 15px;"></i><small>   Contacter le volontaire</small> &nbsp;

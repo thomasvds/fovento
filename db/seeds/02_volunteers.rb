@@ -217,3 +217,7 @@ volunteer = Volunteer.new(
   )
 volunteer.skip_confirmation!
 volunteer.save!
+
+# ERIC, TODO
+
+#<Volunteer id: 12, email: "epr@urbanlaw.be", encrypted_password: "$2a$10$o89h92GAeC/AE.PhJSc2.OCUpshAqhPmoJknGeHwb4H...", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2016-04-08 10:04:53", last_sign_in_at: "2016-04-08 10:01:58", current_sign_in_ip: #<IPAddr: IPv4:46.253.174.67/255.255.255.255>, last_sign_in_ip: #<IPAddr: IPv4:46.253.174.67/255.255.255.255>, confirmation_token: "TR3sd6rv7Lzas-pirKZz", confirmed_at: "2016-04-08 08:57:05", confirmation_sent_at: "2016-04-08 08:56:41", unconfirmed_email: nil, provider: nil, uid: nil, token: nil, token_expiry: nil, admin: false, ambassador: false, first_name: "Eric Pascal", last_name: "Rwamucyo", picture: "https://addons.cdn.mozilla.net/static//img/zamboni...", headline: nil, linkedin_public_profile: nil, phone_number: nil, skills: nil, created_at: "2016-04-08 08:56:41", updated_at: "2016-04-08 10:04:53">

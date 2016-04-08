@@ -9,7 +9,7 @@ class Volunteer < ActiveRecord::Base
          :confirmable, :omniauthable, omniauth_providers: [:linkedin]
 
   def candidate?(mission)
-    return candidacies.any? { |candidacy| candidacy.mission == mission }
+    return candidacies.any? { |candidacy| candidacy.mission == mission && candidacy.status != "browsing" }
   end
 
   def candidacy_for_mission(mission)

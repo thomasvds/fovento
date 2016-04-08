@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 20160407123259) do
     t.string   "engagement_practicalities"
     t.datetime "consulted_at"
     t.datetime "decided_at"
-    t.string   "status",                    default: "pending moderation"
+    t.integer  "browse_count",              default: 1
+    t.string   "status",                    default: "browsing"
     t.integer  "mission_id"
     t.integer  "volunteer_id"
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   add_index "candidacies", ["mission_id"], name: "index_candidacies_on_mission_id", using: :btree
