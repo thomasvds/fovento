@@ -8,6 +8,12 @@
   justify-content: space-around;
   flex-direction: column;
   margin-top: -70px;
+  position: relative;
+  // USED FOR SCROLL TO BOTTOM
+  .scrollanchor {
+  position: absolute;
+  bottom: 70px; //HEIGHT OF THE NAVBAR
+  }
 }
 
 .banner-top {
@@ -19,9 +25,6 @@
   width: 80%;
 
   h1 {
-    // font-size: 70px;
-    // padding-right: 75px;
-    // padding-left: 75px;
     font-weight: 700;
   }
   p {
@@ -55,3 +58,5 @@
     }
   }
 }
+
+
