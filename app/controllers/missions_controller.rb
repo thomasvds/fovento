@@ -75,7 +75,7 @@ class MissionsController < ApplicationController
     @mission.update(mission_params)
 
     respond_to do |format|
-      format.html { redirect_to dashboard_path, notice: "Démarrage confirmé! Merci pour ton engagement. Toute l'équipe Fovento te souhaite une excellente mission!" }
+      format.html { redirect_to dashboard_path, notice: "Démarrage confirmé! Merci pour ton engagement. La Team Fovento te souhaite une excellente mission!" }
     end
   end
 

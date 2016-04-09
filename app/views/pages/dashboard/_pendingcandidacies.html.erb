@@ -18,10 +18,10 @@
         <% case candidacy.status %>
         <% when 'pending moderation' %>
         <span class="label label-warning">A modérer</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu ta candidature et celles d'autres bénévoles potentiels. Tu sauras bientôt si ta candidature est retenue. Nous demandons aux associations de se décider endéans 7 jours au plus tard, mais en général tu auras des informations endéans 48 heures."></i>
+        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Si la candidature est recevable, transfère-là à l'association pour qu'elle puisse sélectionner le bénévole si il lui convient."></i>
         <% when 'pending confirmation' %>
         <span class="label label-info gray">A revoir par l'assoc</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu ta candidature et celles d'autres bénévoles potentiels. Tu sauras bientôt si ta candidature est retenue. Nous demandons aux associations de se décider endéans 7 jours au plus tard, mais en général tu auras des informations endéans 48 heures."></i>
+        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu la candidature, et doit maintenant la sélectionner ou la refuser. Tu peux aussi forcer la validation si nécessaire, en accord avec l'association."></i>
         <% end %>
       </td>
       <!-- ACTIONS -->
@@ -31,6 +31,13 @@
         <% end %>
         &nbsp;
         &nbsp;
+        <% if candidacy.status == "pending moderation" %>
+        <%= link_to mission_candidacy_transfer_path(candidacy.mission, candidacy), method: :put do%>
+        <i class="fa fa-envelope" style="color: gray; font-size: 20px;"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+        <% end %>
         <%= link_to mission_candidacy_confirm_path(candidacy.mission, candidacy), method: :put do%>
         <i class="fa fa-check-square" style="color: gray; font-size: 20px;"></i>
         <% end %>
@@ -49,5 +56,6 @@
 
 <!-- ACTION ICONS LEGEND -->
 <i class="fa fa-eye" style="color: gray; font-size: 15px;"></i><small>   Preview</small> &nbsp;
+<i class="fa fa-envelope" style="color: gray; font-size: 15px;"></i><small>   Transférer à l'association</small> &nbsp;
 <i class="fa fa-check-square" style="color: gray; font-size: 15px;"></i><small>   Valider</small> &nbsp;
 <i class="fa fa-trash" style="color: gray; font-size: 15px;"></i><small>   Supprimer </small>

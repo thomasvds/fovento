@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :missions do
     resources :candidacies, except: [:create]
+    put 'candidacies/:id/transfer', to: 'candidacies#transfer', as: 'candidacy_transfer'
     put 'candidacies/:id/confirm', to: 'candidacies#confirm', as: 'candidacy_confirm'
   end
 

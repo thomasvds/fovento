@@ -1,0 +1,18 @@
+<h1>Proposition de bénévole</h1>
+
+<p>Bonjour,</p>
+
+<p>Bonne nouvelle! <%= @volunteer.first_name + " " + @volunteer.last_name %> se propose comme bénévole pour la mission suivante: <%= @mission.title %>.<p>
+
+<%= link_to "Voir toutes les propositions", mission_candidacies_url(@mission) %>
+
+<p>L'équipe Fovento vous recommande de contacter directement ce bénévole afin de décider s'il convient bien à la mission. Merci de faire cela dans les 5 jours maximum, afin de garantir une notification rapide des bénévoles.</p>
+
+<p>Pour toutes questions la Team Fovento est disponible ici: <%= link_to "Contact", contact_url %></p>
+
+<p>Amicalement,<p>
+
+<p>La Team Fovento</p>
+
+
+<p>Note: candidature déposée le <%= @candidacy.created_at.strftime("%d/%m/%Y")%> à  <%= @candidacy.created_at.strftime("%H:%M")%>. Merci de donner suite rapidement aux candidatures des bénévoles :) !</p>

@@ -1,12 +1,15 @@
 class CandidaciesController < ApplicationController
-  before_action :authenticate_volunteer!
+  before_action :authenticate_volunteer!, except: [:index, :confirm]
 
-  before_action :set_candidacy, only: [:confirm, :show, :update, :edit, :destroy]
-  before_action :find_mission, only: [:confirm, :index, :show]
-  before_action :find_volunteer, only: [:index, :show]
+  before_action :set_candidacy, only: [:transfer, :confirm, :show, :update, :edit, :destroy]
+  before_action :find_mission, only: [:confirm, :show]
+  before_action :find_volunteer, only: [:show]
 
   def index
-    @candidacies = Candidacy.where("mission_id = ?", params[:mission_id])
+    if volunteer_signed_in? && !current_volunteer.ambassador
+      redirect_to root_path
+    end
+    @candidacies = Candidacy.where(mission_id: params[:mission_id], status: "pending confirmation")
   end
 
   def show
@@ -29,11 +32,20 @@ class CandidaciesController < ApplicationController
     end
   end
 
+  def transfer
+    VolunteerMailer.transfer(@candidacy).deliver_now
+    @candidacy.update(status: "pending confirmation")
+    respond_to do |format|
+        format.html { redirect_to dashboard_path, notice: "La candidature a été envoyée à l'association." }
+    end
+  end
+
+
   # NOTE: HIGHLY DEPENDENT ON ACTIVERECORD LINKS TO DB, DO NOT CHANGE REFERENCES!!!
   def confirm
     #Only allow confirmation if not rejected or confirmed
     if @candidacy.status == "rejected" || @candidacy.status == "confirmed"
-      return false
+      redirect_to dashboard_path
     else
       #Set all candidacies of the mission to rejected by default
       @candidacy.mission.candidacies.each do |candidacy|
@@ -53,7 +65,14 @@ class CandidaciesController < ApplicationController
         end
       end
     end
-    redirect_to dashboard_path
+    respond_to do |format|
+      if volunteer_signed_in?
+        format.html { redirect_to dashboard_path, notice: "La candidature a été acceptée." }
+      else
+        # FOR NONPROFITS DIRECTED ON THE CONFIRM PAGE VIA MAIL
+        format.html { redirect_to root_path, notice: "Candidature acceptée, merci! Les bénévoles ont été informés par mail."}
+      end
+    end
   end
 
   def destroy

@@ -48,6 +48,7 @@
   .angle-down{
     font-size: 45px;
     transition: 0.5s ease;
+    cursor: pointer;
     &:hover {
       font-size: 60px;
       transition: 0.5s ease;

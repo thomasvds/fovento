@@ -1,24 +1,23 @@
 class VolunteerMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.volunteer_mailer.accepted.subject
-  #
-  def accepted(volunteer)
-    @volunteer = volunteer
+  def transfer(candidacy)
+    @candidacy = candidacy
+    @mission = candidacy.mission
+    @volunteer = candidacy.volunteer
+    @nonprofit_profile = @mission.nonprofit_profile
 
-    mail(to: @volunteer.email, subject: 'Bravo!')
+    mail(to: @nonprofit_profile.email , subject: 'Fovento: proposition de bénévole')
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.volunteer_mailer.rejected.subject
-  #
   def rejected(volunteer)
     @volunteer = volunteer
 
     mail(to: @volunteer.email, subject: 'Too bad!')
+  end
+
+  def accepted(volunteer)
+    @volunteer = volunteer
+
+    mail(to: @volunteer.email, subject: 'Congrats!')
   end
 end

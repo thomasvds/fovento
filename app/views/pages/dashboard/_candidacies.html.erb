@@ -21,13 +21,13 @@
       </td>
       <td>
         <% case candidacy.status %>
-        <% when 'pending moderation' || 'pending confirmation' %>
+        <% when "pending moderation", "pending confirmation" %>
         <span class="label label-info gray">Envoyée</span>
         <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu ta candidature et celles d'autres bénévoles potentiels. Tu sauras bientôt si ta candidature est retenue. Nous demandons aux associations de se décider endéans 7 jours au plus tard, mais en général tu auras des informations endéans 48 heures."></i>
-        <% when 'rejected' %>
-        <span class="label label-warning">Non retenue</span>
+        <% when "rejected" %>
+        <span class="label label-danger">Non retenue</span>
         <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Relax...les candidatures ne sont pas un entretien d'embauche :) L'association a choisi un autre bénévole, sans doute pour des raisons purement pratiques (e.g., disponibilité). N'hésite pas à postuler pour d'autres missions! "></i>
-        <% when 'confirmed' %>
+        <% when "confirmed" %>
         <span class="label label-success">Acceptée</span>
         <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Congrats! Tu peux maintenant suivre la mission dans 'Mes Missions'. Ta candidature reste enregistrée ici si tu veux y accéder plus tard."></i>
         <% end %>
