@@ -1,11 +1,27 @@
 .card {
-  height: 380px;
+  height: 350px;
   border-radius: 5px;
   padding: 0px;
   background-color: white;
   box-shadow: 2px 4px 2px rgba(0,0,0,0.1);
   position: relative;
   margin-bottom: 20px;
+
+  .card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    background: black;
+    opacity: 0;
+  }
+  // .card-link:hover{
+  //   opacity: 0.1;
+  // }
+  .play-icon {
+    font-size: 20px;
+  }
 
   .title_box {
     font-size: 16px;
@@ -23,17 +39,41 @@
     position: absolute;
     top: 225px;
     right: 8px;
+    z-index: 1;
   }
 
   .status{
     position: absolute;
     top: 250px;
     right: 50px;
+    z-index: 1;
+  }
+
+  .dispo {
+    position: absolute;
+    top: 223px;
+    right: 7px;
+    z-index: 1;
   }
 
   .image_box {
     height: 170px;
     background-size: cover !important;
+    .hoverinfo {
+      opacity: 0;
+      background-image: linear-gradient(-225deg, $primary-light 10%, rgba(0,0,0,0.2) 80%);
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      transition: 0.4s ease;
+      .info {
+        color: white;
+        font-size: 16px;
+        width: 60%;
+      }
+    }
   }
 
   .bottom_container {
@@ -45,6 +85,7 @@
       justify-content: space-around;
       margin-top: 10px;
       margin-bottom: 10px;
+      margin-left: 10px;
       .logo_box {
         height: 70px;
         flex: 0 0 20%;
@@ -72,42 +113,50 @@
       margin-bottom: 8px;
     }
 
-    .apply_box {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      text-transform: uppercase;
-      .knowmore {
-        padding: 0 10px;
-        border-radius: 3px;
-        line-height: 20px;
-        color: $gray-light;
-        font-size: 14px;
-        border: 1px solid $gray-light;
-        &:hover {
-          color: white;
-          background: $gray-lighter;
-          border-color: $gray-lighter;
-        }
-      }
-      .apply {
-        padding: 0 10px;
-        border-radius: 3px;
-        line-height: 20px;
-        color: white;
-        background: $primary;
-        font-size: 14px;
-        border: 1px solid $primary;
-        &:hover {
-          background: $primary-dark;
-        }
-      }
-    }
+    // .apply_box {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: space-around;
+    //   text-transform: uppercase;
+    //   .knowmore {
+    //     padding: 0 10px;
+    //     border-radius: 3px;
+    //     line-height: 20px;
+    //     color: $gray-light;
+    //     font-size: 14px;
+    //     border: 1px solid $gray-light;
+    //     &:hover {
+    //       color: white;
+    //       background: $gray-lighter;
+    //       border-color: $gray-lighter;
+    //     }
+    //   }
+    //   .apply {
+    //     padding: 0 10px;
+    //     border-radius: 3px;
+    //     line-height: 20px;
+    //     color: white;
+    //     background: $primary;
+    //     font-size: 14px;
+    //     border: 1px solid $primary;
+    //     &:hover {
+    //       background: $primary-dark;
+    //     }
+    //   }
+    // }
   }
 }
 
-.card:hover {
-  box-shadow: 0px 3px 5px 2px $primary-light;
+.card {
+  &:hover {
+    box-shadow: 0px 1px 8px 1px $gray-light;
+    .image_box {
+      .hoverinfo{
+        opacity: 1;
+        transition: 0.4s ease;
+      }
+    }
+  }
 }
 
 .card:before {
