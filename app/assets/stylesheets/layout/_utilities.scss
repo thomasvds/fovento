@@ -32,7 +32,8 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
-  background-color: $gray-lightest
+  background-color: $gray-lightest;
+  padding-top: 70px;
 }
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
