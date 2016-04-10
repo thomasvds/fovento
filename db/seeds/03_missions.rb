@@ -639,7 +639,7 @@ skills = 'Communication, Journalisme'
 status = '10_open'
 author = 'Thomas'
 full_title = 'Mise à jour du listing de contacts presse dans le cadre de la communication des activités de l\'association'
-impact = 'Soutient le développement du tutorat dans les écoles bruxelloises'
+impact = 'Soutiens le développement du tutorat dans les écoles bruxelloises'
 objectives = '<p>Pour communiquer au sujet des différentes activités organisées par l’association, Schola ULB est régulièrement en contact avec une série d’acteurs du monde de la presse (offline et online).</p>
 <p>Les coordonnées de ces acteurs sont répertoriées dans un fichier mis sur pied il y a déjà quelques années. Ce fichier compte une petite centaine de contacts, répartis à travers la presse généraliste, spécialisée, locale…Les secteurs couverts en particulier sont ceux de l’éducation, de l’enfance, et du social.</p>
 <p>L’objectif de cette mission est de remettre le fichier de contact à jour, pour s’assurer de couvrir tous les acteurs pertinents, et disposer des bonnes coordonnées pour les acteurs déjà listés. Pour ce faire, une connaissance du milieu de la presse belge sera un très bon atout (ex : qui contacter au sujet de l’éducation dans quelle rédaction ?). </p>
@@ -650,7 +650,7 @@ suggested_start_date = 'Pas de préférence'
 suggested_end_date = 'n.a.'
 picture = 'https://dl.dropboxusercontent.com/s/gq080oqvuke5roq/ScholaULB_TutoratPrimaire-21.jpg?dl=0'
 suggested_duration = 'Un demi-jour équivalent temps-plein'
-suggested_format = 'Duscussion d\'introduction et présentation du document actuel, Travail de recherche du bénévole, partage des résultats'
+suggested_format = 'Discussion d\'introduction et présentation du document actuel, Travail de recherche du bénévole, partage des résultats'
 published_at = Time.now
 staffed_at = Time.now
 started_at = Time.now

@@ -23,6 +23,8 @@ gem 'rails_admin'
 
 gem 'jquery-validation-rails'
 
+gem 'mail_form'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

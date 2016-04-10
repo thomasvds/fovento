@@ -73,31 +73,57 @@
 <div class="wrapper">
   <div class="applybox padded">
     <div class="tagline question"><h1>QUEL SERA TON IMPACT?</h1></div>
+    <div class="btn-box">
+      <%= link_to 'VOIR TOUTES LES MISSIONS', missions_path, class: 'apply-btn btn' %>
+    </div>
   </div>
 </div>
 
-<script>
-  $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
-  $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '21px' });
-  $("#scrollarrow").click(function() {
-    $('html, body').animate({
-      scrollTop: $("#scrollanchor").offset().top
-    }, 1500);
-  });
-  function pulse(){
-    if($(window).scrollTop() < 100) {
-      $("#scrollarrow").animate({fontSize: "+=15"}, 700);
-      $("#scrollarrow").animate({fontSize: "-=15"}, 700).delay(3000);
-    }
-  }
-  setInterval(pulse, 3000);
+<div class="wrapper">
+  <div class="volunteercarousel padded text-center">
+    <h3>Ils ont décidé de s'engager citoyennement. Tu les rejoins?</h3>
+    <div class= "row">
+      <% @volunteers.each do |v| %>
+      <div class="col-xs-4 col-sm-3 col-md-2 col-lg-1 volunteer text-center">
+        <div><%= image_tag v.picture, class: 'avatar-home' %></div>
+        <div><p><%= v.first_name %></p></div>
+      </div>
+      <% end %>
+    </div>
 
-  $(window).on('scroll', function(e){
-    if ($(this).scrollTop() > 1600) {
-      $('.question').animate({opacity: 1}, 10000);
+    <h3>Elles font confiance aux bénévoles Fovento:</h3>
+    <div class= "row">
+      <% @nonprofits.each do |n| %>
+      <div class="col-xs-4">
+        <div class="nonprofit"><%= image_tag n.logo, class: 'avatar-nonprofit-home' %></div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <script>
+    $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
+    $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '21px' });
+    $("#scrollarrow").click(function() {
+      $('html, body').animate({
+        scrollTop: $("#scrollanchor").offset().top
+      }, 1500);
+    });
+    function pulse(){
+      if($(window).scrollTop() < 100) {
+        $("#scrollarrow").animate({fontSize: "+=15"}, 700);
+        $("#scrollarrow").animate({fontSize: "-=15"}, 700).delay(3000);
+      }
     }
-  });
-</script>
+    setInterval(pulse, 3000);
+
+    $(window).on('scroll', function(e){
+      if ($(this).scrollTop() > 1600) {
+        $('.question').animate({opacity: 1}, 10000);
+      }
+    });
+  </script>
 
 
 

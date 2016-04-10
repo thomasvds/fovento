@@ -4,6 +4,8 @@ class PagesController < ApplicationController
   before_action :set_volunteer, only: [:dashboard]
 
   def home_volunteers
+    @volunteers = Volunteer.order("RANDOM()").first(12)
+    @nonprofits = NonprofitProfile.order("RANDOM()")
   end
 
   def home_nonprofits
@@ -21,9 +23,6 @@ class PagesController < ApplicationController
   def terms_and_conditions
   end
 
-  def contact
-  end
-
   def dashboard
     @candidacies = Candidacy.where(volunteer: @volunteer, :status => ["pending moderation", "pending confirmation", "rejected", "confirmed"])
     @missions = Mission.where("volunteer_id = ?", @volunteer.id)
@@ -32,6 +31,20 @@ class PagesController < ApplicationController
       @draft_missions = Mission.where("status = ?", "0_draft")
       @pending_candidacies = Candidacy.where(:status => ["pending moderation", "pending confirmation"])
       @browses = Candidacy.where(:status => ["browsing"])
+    end
+  end
+
+  def contact
+    @contact = Contact.new
+  end
+
+  def sendcontact
+    @contact = Contact.new(params[:contact])
+    @contact.request = request
+    if @contact.deliver
+      redirect_to contact_path, notice: 'Merci pour le message. La Team Fovento y répondra rapidement.'
+    else
+      redirect_to contact_path, alert: 'Echec d\'envoi du message.'
     end
   end
 

@@ -6,13 +6,16 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Text link -->
+    <%= link_to "ACCUEIL", root_path, class: "navbar-wagon-item navbar-wagon-link"%>
+
+    <!-- Text link -->
     <%= link_to "LES MISSIONS", missions_path, class: "navbar-wagon-item navbar-wagon-link"%>
 
     <!-- Text link -->
-    <%= link_to "COMMENT ÇA MARCHE", how_it_works_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "FAQ", how_it_works_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Text link -->
-    <%= link_to "COMMUNAUTÉ & IMPACT", community_and_impact_path, class: "navbar-wagon-item navbar-wagon-link"%>
+    <%= link_to "CONTACT", contact_path, class: "navbar-wagon-item navbar-wagon-link"%>
 
     <!-- Call-to-actions -->
     <% if volunteer_signed_in? %>

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'pages/dashboard', as: 'dashboard'
   get 'pages/how_it_works', as: 'how_it_works'
   get 'pages/contact', as: 'contact'
+  put 'pages/sendcontact', to: 'pages#sendcontact'
   get 'pages/community_and_impact', as: 'community_and_impact'
   get 'pages/home_volunteers', as: 'home_volunteers'
   get 'pages/home_nonprofits', as: 'home_nonprofits'
