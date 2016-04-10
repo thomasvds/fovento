@@ -189,7 +189,7 @@ volunteer = Volunteer.new(
   uid: "3Son9JBkJ0",
   first_name: "Adrien",
   last_name: "van den Branden de Reeth",
-  picture: "https://media.licdn.com/mpr/mprx/0_GoniwOy5-S_9H1mQCS6ywyYq-INzE1mQ8eCywgyqDa8XvBM6m2QfLjHVp5qIdq7EidNjkVGusEe_",
+  picture: "https://dl.dropboxusercontent.com/s/s2cev31dqdci4d2/14b9f44.jpg?dl=0",
   headline: "Associate at Linklaters",
   created_at: "2016-04-08 08:41:59",
   updated_at: "2016-04-08 08:42:00"

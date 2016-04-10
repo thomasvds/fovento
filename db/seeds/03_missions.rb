@@ -3,7 +3,7 @@
 #=======DUO FOR A JOB============================
 title = 'Rédaction d\'une convention de partenariat avec les entreprises'
 skills = 'Droit, Stratégie'
-status = '20_staffed'
+status = '40_accomplished'
 author = 'Thomas'
 full_title = 'Rédaction d’une convention de partenariat standard avec les entreprises, concernant l’affectation partielle d’employés à un rôle de mentor Duo for a Job'
 impact = 'Contribue à créer de nouveaux duos, menant à plus de cohésion sociale'
@@ -25,7 +25,6 @@ published_at = Time.now
 staffed_at = Time.now
 started_at = Time.now
 closed_at = Time.now
-volunteer = Volunteer.first
 
 mission = Mission.create(title: title,
   skills: skills,
@@ -45,7 +44,7 @@ mission = Mission.create(title: title,
   impact: impact,
   suggested_duration: suggested_duration,
   suggested_format: suggested_format,
-  volunteer: volunteer
+  volunteer: Volunteer.where(first_name: "Adrien").first
   )
 
 # CREATE MISSIONS
@@ -73,6 +72,770 @@ mission = Mission.create(title: title,
   skills: skills,
   status: status,
   nonprofit_profile: NonprofitProfile.find_by_name('Le Maître Mot'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+
+# CREATE MISSION
+title = 'Automatisation d\'un dashboard opérationnel et financier'
+impact = 'Améliore les process de l\'association pour qu\'elle consacre plus de temps aux duos'
+skills = 'Excel'
+picture = 'picture-duo-for-a-job-2.png'
+full_title = 'Automatisation de la création d’un dashboard d’indicateurs opérationnels et financiers'
+objectives = '<p>Duo for a Job maintient une vue intégrée des métriques concernant ses
+opérations et finances dans un dashboard Excel. Ce dashboard est
+notamment utilisé pour communiquer les résultats de l’ASBL à ses
+mécènes. Le dashboard contient entre autres les métriques suivantes :
+</p>
+<ul>
+<li>Nombre de duos créés</li>
+<li>Nombre de duos suivis par coordinateur de l’ASBL</li>
+<li>Métrique de mise à l’emploi des mentees</li>
+<li>Dépenses, recettes, et cash flows</li>
+<li>Coût marginal par duo crée</li>
+<li>Coût marginal par emploi trouvé</li>
+</ul>
+<p>Actuellement, le processus mensuel de mise à jour de ce dashboard est
+fastidieux et nécessite d’agréger une multitude de sources de données
+sous différents formats (tables Excel).
+</p>
+<p>Ce travail répétitif draine du temps de l’équipe de management de
+l’ASBL, qui pourrait se consacrer à d’autres activités à plus haute valeur
+ajoutée si ce travail était automatisé ou rendu plus aisé pour que
+d’autres membres de l’ASBL puissent le réaliser facilement.
+</p>
+<p>L’objectif de cette mission est donc d’analyser le processus de création
+du dashboard, pour rendre celui-ci plus automatisé, et plus facile à
+effectuer par d’autre membres de l’ASBL que son management.
+</p>'
+outcomes = '<li>Le processus de création du dashboard a été automatisé au
+maximum, de manière robuste et répétable</li>
+<li>Les étapes nécessaires à la création du dashboard ont été détaillées
+et documentées à un niveau suffisamment explicite pour que tout
+membre de l’équipe Duo for a Job soit capable d’effectuer une mise
+à jour (en particulier, plusieurs essais fructueux de mise à jour ont
+été réalisés par la personne qui sera vraisemblablement responsable
+de la mise à jour)
+</li>
+<li>Eventuellement, des améliorations de contenu et / ou de format ont
+été apportées au dashboard</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = 'Un (demi-)jour équivalent temps-plein'
+suggested_format = 'Réunion de briefing, travail individuel du bénévole,
+échanges par mail et téléphone, réunion de clôture avec formation au nouveau dashboard.'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: '20_staffed',
+  nonprofit_profile: NonprofitProfile.find_by_name('Duo for a Job'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: Volunteer.where(first_name: "Thomas").last
+  )
+
+
+# CREATE MISSION
+title = 'Analyse et segmentation des questions des adolescents'
+impact = 'Equiper l\'association pour répondre au mieux aux détresses des ados'
+skills = 'Excel, Analyse de données'
+picture = 'picture-paroles-d-ados-1.jpg'
+full_title = 'Analyse et segmentation des données liées aux questions posées par les adolescents sur le site de l’association'
+objectives = '<p>Actuellement, les questions posées par les adolescents sur le site sont
+catégorisées selon une dizaine de catégories (Adolescence, Sexualité,
+Relations, Santé, Mal-être, Accro, Maltraitance, Droits / Lois, Aide sur
+le site). L’association pourrait bénéficier d’une segmentation plus fine
+au sein de ces catégories, pour plusieurs raisons :</p>
+<ul>
+<li>Compréhension des tendances et thèmes les plus récurrents
+au sein des questions pour mieux aider les adolescents, avec
+analyses et statistiques démographiques</li>
+<li>Quantification du soutien apporté par thème (e.g., « Combien
+de jeunes avons-nous aidés sur la thématique du suicide ? »)
+pour démarcher des donateurs potentiels intéressés par l’un
+ou l’autre sujet en particulier</li>
+<li>Potentiellement, implémentation dans le futur d’une fonction
+de catégorisation directement sur la plate-forme</li>
+</ul>
+<p>L’analyse prendrait la forme d’un fichier Excel et d’une proposition de
+catégorisation, avec en sortie plusieurs graphiques et conclusions-clés
+sur le contenu des questions. Idéalement, le modèle devrait être
+réutilisable pour permettre des analyses futures.</p>'
+outcomes = '<li>Une proposition de segmentation plus fine a été réalisée</li>
+  <li>Le contenu des questions a été analysé à la lumière de cette segmentation</li>
+  <li>Les résultats-clés et graphiques ont été documentés</li>
+  <li>Idéalement, un modèle répétable d’analyse a été mis en place</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '1-2 équivalents jours pleins'
+suggested_format = 'Réunion de briefing, travail individuel du bénévole, réunion de présentation des résultats.'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: '40_accomplished',
+  nonprofit_profile: NonprofitProfile.find_by_name('Paroles d\'Ados'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: Volunteer.where(first_name: "Laurent").first
+  )
+
+
+# CREATE MISSION
+title = 'Réalisation d\'une présentation de pitch aux donateurs'
+impact = 'Assurer la pérennité financière de l\'association, pour continuer à répondre aux détresses des ados'
+skills = 'PowerPoint'
+picture = 'picture-paroles-d-ados-2.jpg'
+full_title = 'Réalisation d’une présentation PowerPoint pour supporter les rencontres avec de potentiels donateurs financiers'
+objectives = '<p>L’association est actuellement en train d’accomplir des démarches
+avec divers organismes publics et privés pour collecter des fonds
+destinés à soutenir ses opérations.</p>
+<p>Le matériel de communication utilisé aujourd’hui consiste en un
+PowerPoint focalisé surtout sur le rapport d’activités de l’association.
+Il est vraisemblable qu’une présentation plus « marketing »
+permettrait de supporter plus efficacement les messages à faire passer
+lors des discussions avec les donateurs.</p>
+<p>Les éléments à inclure dans la présentation seraient par exemple (liste
+non exhaustive) :</p>
+<ul>
+<li>Mise en évidence du problème / besoin adressé par
+l’association, montrant l’impératif pour l’association de
+pouvoir continuer à exercer ses activités</li>
+<li>Présentation visuelle/schématique des activités de
+l’association, mettant notamment en évidence les flux
+financiers et les efforts / personnes engagés dans les activités</li>
+<li>Résultats des analyses sur les thèmes traités sur le site, pour cibler les donateurs intéressés
+spécifiquement par l’un ou l’autre thème</li>
+<li>Explication concrète de la manière dont chaque don compte :
+« Avec €20, vous permettez que la question d’un adolescent
+soit prise en charge »…</li>
+<li>Tout autre message destiné à supporter la discussion avec les
+donateurs (la présentation ne devrait pas faire plus de ~10-15
+slides)</li>
+</ul>'
+outcomes = '<li>Une présentation PowerPoint de support aux discussions de collecte
+de fonds a été réalisée, en collaboration avec l’association</li>
+<li>L’association se sent à l’aise d’utiliser ce matériel pour les prochaines
+discussions, et constate que les messages sont passés plus aisément</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '1 équivalent jour plein'
+suggested_format = 'Réunion de briefing, travail individuel du bénévole, réunion de présentation des résultats.'
+
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: '40_accomplished',
+  nonprofit_profile: NonprofitProfile.find_by_name('Paroles d\'Ados'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: Volunteer.where(first_name: "Thomas").first
+  )
+
+# CREATE MISSION
+title = 'Recherche d’un local avec appartement à Bruxelles'
+impact = 'Supporter l\'association dans la croissance de ses activités'
+skills = 'Immobilier'
+picture = 'picture-operation-thermos-1.png'
+full_title = 'Recherche d’un local avec appartement à Bruxelles'
+objectives = '<p>L\'association occupe actuellement un local en location, ce qui n’est pas
+optimal. Elle  pourrait envisager de consacrer les fonds mis de côté au
+cours des dernières années en vue d’un projet social à l’achat d’un
+local aux critères bien particuliers.</p>
+<p>La mission consiste à faire une recherche immobilière et une
+éventuelle proposition de lieux, selon les critères suivants identifiés
+par l\'association:</p>
+<ul>
+<li>En Région Bruxelloise, avec une préférence pour les alentours
+de la Station de métro Botanique</li>
+<li>Local pouvant contenir une cuisine, de nombreux rangements
+et frigos et permettant l’entrée d’une remorque</li>
+<li>Le fait de cuisiner doit y être autorisée</li>
+<li>Un appartement y sera de préférence lié</li>
+<li>Si un lieu était trouvé, un conseil/soutien pour la transaction serait le
+bienvenu.</li>
+</ul>'
+outcomes = '<li>Un ou plusieurs biens potentiels ont été identifiés</li>
+<li>Un graphisme clair et des outils de communication appropriés ont été
+développés pour communiquer avec efficacité et cohérence tant en
+interne qu\'avec les différents partenaires externes.</li>'
+suggested_start_date = 'Le plus rapidement possible'
+suggested_end_date = 'n.a.'
+suggested_duration = '1 équivalent jour plein'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: '30_started',
+  nonprofit_profile: NonprofitProfile.find_by_name('Opération Thermos'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: Volunteer.where(first_name: "Xavier").first
+  )
+
+
+
+# CREATE MISSION
+title = 'Business Plan de collaboration entre Opération Thermos et Housing First'
+impact = 'Contribue au développement de l\'offre de logement aux sans-abris'
+skills = 'Stratégie, Management'
+picture = 'picture-operation-thermos-2.png'
+full_title = 'Elaboration d\'un "business plan" de collaboration entre Opération Thermos et Housing First.'
+objectives = '<p>L\'activité principale d\'Opération Thermos est la distribution
+quotidienne de repas chauds aux sans-abris.</p>
+<p>L\'association aimerait construire sur ces acquis et sur les liens qu\'elle a
+tissés avec les plus démunis afin de développer un volet d\'aide au logement. Pour ce faire, Opération Thermos aimerait par exemple
+collaborer avec Housing First, une association qui vise l\'insertion par le
+logement et l\'accompagnement.</p>
+<p>La mission du bénévole consistera à:</p>
+<ul>
+<li>Identifier les points sur lesquels les 2 associations pourraient
+unir leurs forces</li>
+<li>Détailler le plus précisément possible le processus de
+fonctionnement de cette collaboration</li>
+<li>Conseiller Opération Thermos sur de possibles investissements dans le domaine</li>
+</ul>'
+outcomes = '<li>Opération thermos réussit, en collaboration avec Housing First, à faire
+bénéficier les sans-abris présents aux repas d\'une aide complémentaire
+pour trouver un logement.</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '4-5 équivalents jour plein'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: '30_started',
+  nonprofit_profile: NonprofitProfile.find_by_name('Opération Thermos'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: Volunteer.where(first_name: "Kevin").first
+  )
+
+# CREATE MISSION
+title = 'Analyse des ventes pour améliorer la distribution'
+impact = 'Contribue au développement d\'une presse indépendante de qualité en Belgique'
+skills = 'Stratégie, Excel'
+picture = 'picture-24h01-1.jpg'
+full_title = 'Analyse des ventes des numéros de 24h01, pour améliorer la distribution des futurs numéros'
+objectives = '<p>Actuellement, 24h01 est distribué à travers 95 points de ventes, par
+abonnements et par commandes directement sur le site web du mook.
+Les données liées aux ventes par ces canaux sont disponibles, mais très
+peu d’analyses ont pour l’instant été réalisées sur base de ces données.</p>
+
+<p>La mission consiste à explorer ces données, pour mettre en évidence
+des conclusions permettant d’améliorer la distribution.</p>
+
+<p>Les analyses potentielles devraient être concrétisées à travers une
+série de graphes Excel ou PowerPoint facilement partageables et
+interprétables pour l’équipe.</p>
+
+<p>Analyses suggérées :</p>
+<ul>
+<li>Répartition des ventes par canaux</li>
+<li>Répartition des ventes par géographie</li>
+<li>Répartition des ventes par type de point de vente physiques</li>
+<li>Analyse de l’historique des ventes</li>
+<li>Proposition d’une segmentation des points de ventes</li>
+</ul>
+<p>La mission pourrait déboucher ultérieurement sur la mise en œuvre des suggestions d’amélioration de la distribution.</p>'
+outcomes = '<li>Les données relatives aux ventes ont été analysées et visualisées</li>
+            <li>Des conclusions ont été tirées pour améliorer la distribution</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '1 équivalent jour plein'
+suggested_format = "n.a."
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: '10_open',
+  nonprofit_profile: NonprofitProfile.find_by_name('24h01'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======Schola ULB============================
+title = 'Mise au point d\'un power point pour les déplacements dans les écoles'
+skills = 'PowerPoint, Communication'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Mise au point d\'un support power point efficace et percutant à destination des élèves et des enseignants pour les déplacements dans les écoles.'
+impact = 'Soutiens le développement du tutorat dans les écoles bruxelloises. '
+objectives = '<p>Pour communiquer le projet Tutorat (soutien scolaire gratuit) dans les écoles, Schola ULB présente à l\'aide de Power Point son projet. Cette communication se fait soit envers les enseignants (explication projet, enjeux de leur implication) soit envers les élèves (l\'aide proposée, sous quelle forme, quels engagements pour eux).</p>
+<p>Le Power point utilisé date de quelques années, une maîtrise de l\'outil serait utile afin de le rendre le plus clair et attrayant possible.</p>
+<p>L’objectif de cette mission est de moderniser le Power Point utilisé et de pouvoir mettre en évidence certains éléments de communication peut-être sous-estimés.</p>
+<p>Pour ce faire, une très bonne connaissance de l\'outil Power Point est essentielle.</p>
+<p>En pratique, le fichier consiste en un document de 15 slides. Le ou la bénévole sera chargé(e) de le moderniser et de le rendre le plus attrayant possible.'
+outcomes = '<li>Le Power Point est facile d\'utilisation, lisible et facile à dupliquer</li>'
+suggested_start_date = 'Pas de préférence'
+suggested_end_date = '31/08/2016 afin d\'avoir une ppt pour les réunions d\'information de septembre'
+picture = 'https://dl.dropboxusercontent.com/s/6votteeoksssovj/SliderSchola_.jpg?dl=0'
+suggested_duration = 'Un demi-jour équivalent temps-plein'
+suggested_format = 'Discussion d\'introduction et présentation du document actuel, Travail de recherche du bénévole, partage des résultats'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Schola ULB'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+# CREATE MISSION
+title = 'Analyse et optimisation du plan de création d\'un numéro de 24h01'
+impact = 'Contribue au développement d\'une presse indépendante de qualité en Belgique'
+skills = 'Project management'
+picture = 'picture-24h01-3.jpg'
+full_title = 'Analyse du plan de création d’un numéro de 24h01 (processus, intervenants, délais) pour une potentielle augmentation de la
+fréquence d’édition (passer de 2 à 4 numéros par an)'
+objectives = '<p>Depuis sa création il y  a 2 ans, l’équipe de 24h01 n’a cessé de se
+professionnaliser et de monter en compétences, chaque numéro étant
+réalisé de manière plus efficace que le précédent.</p>
+
+<p>A l’horizon 2017, l’équipe envisage de passer à la vitesse supérieure en
+publiant 4 numéros par an et en engageant 2 mi-temps
+supplémentaires.</p>
+
+<p>La mission pourrait consister en plusieurs étapes (pouvant déboucher
+sur d’autres missions) :</p>
+<ul>
+<li>Inventaire de l’ensemble des activités menant à la création
+d’un numéro de 24h01, concrétisées dans un plan visuel et
+simple à interpréter (Gantt chart par exemple)
+<ul>
+<li>Activités (quels sont les objectifs et livrables ?)</li>
+<li>Intervenants (qui sont les parties internes et externes
+impliquées, quel contrôle est possible sur ces parties ?)</li>
+<li>Délais (quelles sont les activités les plus
+chronophages ?)</li>
+<li>Chemin critique (quelles sont les activités
+incontournables ?)</li>
+<li>Dépendances (quelles sont les étapes devant
+impérativement observer une séquence définie ?)</li>
+</ul>
+</li>
+<li>Discussion sur l’opportunité de compresser dans le temps
+certaines activités, pour augmenter la fréquence d’édition de 2
+à 4 numéros par an</li>
+</ul>
+<p>Il est à noter que cette mission analyse par essence l’aspect
+opérationnel de la création d’un numéro de 24h01 – sans considérer
+l’aspect financier. La décision d’augmenter la fréquence d’édition doit
+en effet impérativement passer par la réalisation d’un Business Case
+détaillé (qui se basera en partie sur les trouvailles de l’analyse des
+activités). Ce Business Case pourrait faire l’objet d’une mission
+ultérieure.</p>'
+outcomes = '<li>L’ensemble des activités menant à la création d’un numéro de 24h01
+ont été inventoriées dans un plan visuel et simple à interpréter</li>
+<li>Une discussion a été engagée avec l’équipe de rédaction sur
+l’opportunité d’augmenter la fréquence d’édition, supportée par le
+plan réalisé.</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '2-3 équivalents jour plein'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "30_started",
+  nonprofit_profile: NonprofitProfile.find_by_name('24h01'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: Volunteer.where(first_name: "Edouard").first
+  )
+
+# CREATE MISSION
+title = 'Mise à jour du contrat standard des bénévoles des festivals'
+impact = 'Contribue à développer les fondations structurelles de l\'association'
+skills = 'Droit'
+picture = 'picture-vpt-1.jpg'
+full_title = 'Mise à jour du contrat standard des bénévoles participant aux festivals au profit de l\'association'
+objectives = '<p>Pour pouvoir financer les camps avec les enfants, Vacances pour Tous est active durant toute l\'année à travers différentes actions générant des revenus.
+Une source majeure de revenus est la collaboration avec les festivals estivaux belges (ex: Dour, Francofolies...). Durant ces festivals, des bénévoles de Vacances pour Tous
+travaillent sur le terrain (ex: sécurité, logistique...). En contrepartie, les festivals rémunèrent directement Vacances pour Tous pour le travail des bénévoles.</p>
+<p>L\'accord signé avec chaque bénévole repose pour l\'instant sur un contrat standard qui gagnerait à être revu en profondeur
+pour encadrer au mieux l\'activité bénévole, et protéger l\'association de tracas potentiels.</p>
+<p>L\'objectif de cette mission est de parcourir et revoir le contrat existant pour l\'améliorer, en reflétant aussi les nouveaux besoins
+apparus depuis la première version du document (le volume de bénévoles s\'est en effet beaucoup accru depuis).</p>'
+outcomes = '<li>Le contrat standard avec les bénévoles a été mis à jour</li>
+            <li>La nouvelle version du contrat anticipe les besoins futurs de l\'association, en particulier en ce qui concerne sa future croissance potentielle</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '5 heures'
+suggested_format = "Réunion de briefing pour parler du contrat existant, travail du bénévole et suivi par mail, réunion de clôture."
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "10_open",
+  nonprofit_profile: NonprofitProfile.find_by_name('Vacances pour Tous'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+
+# CREATE MISSION
+title = 'Rédaction d\'un contrat standard avec les organisateurs de festivals'
+impact = 'Contribue à développer les fondations structurelles de l\'association'
+skills = 'Droit'
+picture = 'picture-vpt-2.jpg'
+full_title = 'Rédaction d\'un contrat standard avec les organisateurs de festivals'
+objectives = '<p>Pour pouvoir financer les camps avec les enfants, Vacances pour Tous est active durant toute l\'année à travers différentes actions générant des revenus.
+Une source majeure de revenus est la collaboration avec les festivals estivaux belges (ex: Dour, Francofolies...). Durant ces festivals, des bénévoles de Vacances pour Tous
+travaillent sur le terrain (ex: sécurité, logistique...). En contrepartie, les festivals rémunèrent directement Vacances pour Tous pour le travail des bénévoles.</p>
+<p>Pour l\'instant, la participation de Vacances pour Tous à chaque festival est systématiquement régie par les conditions énoncées dans des contrats rédigés par les organisateurs des festivals.
+L\'association aimerait améliorer cette situation en consignant dans un document standard à valeur contractuelle l\'ensemble de ses attentes envers les organisateurs (ex: protection de la réputation de l\'association, pérénnité de la collaboration...)</p>
+<p>L\'objectif de cette mission est d\'accompagner l\'association dans la formulation de ses demandes par rapport aux organisateurs de festivals, et consigner ceux-ci dans un contrat standard réutilisable.</p>'
+outcomes = '<li>L\'association a clairement articulé ses demandes par rapports aux organisateurs des festivals<p>
+            <li>Un contrat standard reprenant ses demandes a été rédigé</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '~5-10 heures'
+suggested_format = "Réunion de briefing pour parler du contrat existant, travail du bénévole et suivi par mail, réunion de clôture."
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "10_open",
+  nonprofit_profile: NonprofitProfile.find_by_name('Vacances pour Tous'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======Schola ULB============================
+title = 'Mise à jour du listing de contacts presse et communication'
+skills = 'Communication, Journalisme'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Mise à jour du listing de contacts presse dans le cadre de la communication des activités de l\'association'
+impact = 'Soutient le développement du tutorat dans les écoles bruxelloises'
+objectives = '<p>Pour communiquer au sujet des différentes activités organisées par l’association, Schola ULB est régulièrement en contact avec une série d’acteurs du monde de la presse (offline et online).</p>
+<p>Les coordonnées de ces acteurs sont répertoriées dans un fichier mis sur pied il y a déjà quelques années. Ce fichier compte une petite centaine de contacts, répartis à travers la presse généraliste, spécialisée, locale…Les secteurs couverts en particulier sont ceux de l’éducation, de l’enfance, et du social.</p>
+<p>L’objectif de cette mission est de remettre le fichier de contact à jour, pour s’assurer de couvrir tous les acteurs pertinents, et disposer des bonnes coordonnées pour les acteurs déjà listés. Pour ce faire, une connaissance du milieu de la presse belge sera un très bon atout (ex : qui contacter au sujet de l’éducation dans quelle rédaction ?). </p>
+<p>En pratique, le fichier consiste en un Excel que le ou la bénévole sera chargé(e) de compléter et remettre à jour. </p>'
+outcomes = '<li>Le fichier de contact presse a été mis à jour (coordonnées correctes pour tous les acteurs listés)</li>
+<li>Eventuellement, le fichier a été étendu pour inclure de nouveaux contacts pertinents pour les activités de Schola ULB</li>'
+suggested_start_date = 'Pas de préférence'
+suggested_end_date = 'n.a.'
+picture = 'https://dl.dropboxusercontent.com/s/gq080oqvuke5roq/ScholaULB_TutoratPrimaire-21.jpg?dl=0'
+suggested_duration = 'Un demi-jour équivalent temps-plein'
+suggested_format = 'Duscussion d\'introduction et présentation du document actuel, Travail de recherche du bénévole, partage des résultats'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "10_open",
+  nonprofit_profile: NonprofitProfile.find_by_name('Schola ULB'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+# CREATE MISSION
+title = 'Optimisation des outils de collaboration de l\'équipe de rédaction'
+impact = 'Contribue au développement d\'une presse indépendante de qualité en Belgique'
+skills = 'Outils de collaboration'
+picture = 'picture-24h01-2.jpg'
+full_title = 'Optimisation de l’ensemble des outils informatiques de collaboration
+de l’équipe 24h01'
+objectives = '<p>Actuellement, l’équipe de la rédaction de 24h01 utilise une série
+d’outils de collaboration, dont certains remplissent des fonctionnalités
+similaires (e.g., utilisation parallèle de Dropbox et Google Drive). Par
+ailleurs, certaines tâches et activités de collaboration gagneraient à
+être supportées par des outils librement disponibles en ligne. Un
+exemple est la gestion de projets : dans le passé, l’équipe a tenté sans
+succès d’assurer le suivi des tâches / to-do lists via Trello. Ceci conduit
+à des inefficiences et des délais dans les activités de l’équipe.</p>
+
+<p>La mission consiste en plusieurs étapes :</p>
+<ul>
+<li>Mapping des outils actuellement utilisés, compréhension de
+l’historique des outils précédents</li>
+<li>Diagnostic des besoins de l’équipe de rédaction</li>
+<li>Proposition d’une série d’outils permettant de rencontrer les
+besoins de l’équipe, avec avantages et inconvénients des
+différents scénarios</li>
+<li>Accompagnement de l’évolution vers les nouveaux outils,
+incluant un potentiel plan de migration si nécessaire</li>
+</ul>
+<p>Au-delà de ces étapes, le soutien d’un bénévole expérimenté dans
+l’utilisation d’outils de collaboration permettrait d’engager l’équipe
+dans des réflexions plus générales sur les modes de travail utilisés
+aujourd’hui.</p>'
+outcomes = '<li>Les besoins de l’équipe de rédaction en outils de collaboration ont été
+compris, et traduits en propositions concrètes d’outils</li>
+<li>L’équipe de rédaction a réalisé une migration vers des outils
+supportant plus efficacement ses activités</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+suggested_duration = '0.5 équivalent jour plein'
+suggested_format = 'Réunion de rencontre, suivie d\'une ou plusieurs sessions avec l\'équipe'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "10_open",
+  nonprofit_profile: NonprofitProfile.find_by_name('24h01'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+# CREATE MISSIONS
+title = 'Compilation des dépenses pour justification des budgets'
+impact = 'Aide l\'association dans le renouvellement de ses subsides'
+skills = 'Word'
+picture = 'picture-le-maitre-mot-2.jpg'
+full_title = 'Compilation des dépenses pour justification des budgets'
+objectives = '<p>Le Maître Mot bénéficie de subsides publics en soutien de ses opérations. Ces subsides sont alloués sur base de budgets prévisionnels soumis par l’association avant attribution. En fin de période budgétaire, l’association est tenue de présenter une compilation de ses dépenses (factures etc.) pour justifier les subsides alloués.</p>
+<p>L’objectif de cette mission est de réaliser le dossier compilant l’ensemble des justificatifs sur une période budgétaire. Les justificatifs auront été rassemblés, et le ou la bénévole aura la mission de produire un document Word bien structuré reprenant l’ensemble de ces éléments.</p>
+<p>Bien qu’il s’agisse d’une obligation comptable, la réalisation de la mission ne nécessite pas spécialement de connaissance comptables préalables.</p>'
+outcomes = '<li>Un document Word compilant l’ensemble des justificatifs de dépenses sur la période budgétaire a été rédigé</p>
+<li>Le document répond à toutes les obligations comptables du Maître Mot en ce qui concerne la justification des subsides alloués</p>
+<li>Le document est bien structuré et clair à la lecture</p>'
+suggested_start_date = 'TBD'
+suggested_end_date = 'TBD'
+suggested_duration = '1-2 équivalents jours pleins'
+suggested_format = 'Réunion de rencontre, suivie d\'une ou plusieurs sessions de travail individuelle ou avec l\'équipe de l\'association.'
+
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "10_open",
+  nonprofit_profile: NonprofitProfile.find_by_name('Le Maître Mot'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+
+# CREATE MISSION
+title = 'Perspective externe sur les finances de l\'association'
+impact = 'Soutenir le Conseil d\'Administration dans la gestion financière des activités'
+skills = 'Finance'
+picture = 'picture-le-maitre-mot-3.jpg'
+full_title = 'Perspective externe sur les aspects financiers de l’association, et préparation du contenu financier discuté lors de l’Assemblée Générale de l’association'
+objectives = '<p>Actuellement, le Conseil d’Administration (CA) de l’association est fort de membres ayant une expérience de terrain des activités de l’association. Cependant, il ne compte pas de personne externe au Maître Mot, qui pourrait apporter un regard nouveau bienvenu sur certains aspects de l’association. Cela est vrai en particulier pour les aspects financiers de l’association, car le CA ne compte pas de membre ayant une expérience professionnelle en finance et comptabilité. </p>
+<p>L’objectif de la mission est d’accompagner les membres du CA dans leur lecture des finances et du bilan de l’association. Concrètement, un comptable externe remet en fin d’année un dossier financier à l’association : c’est ce dossier qui gagnerait à être analysé en compagnie des membres du CA.</p>
+<p>Par ailleurs, en fonction des disponibilités du ou de la bénévole, ce dossier financier pourrait être mis en forme (typiquement, en PowerPoint) de manière à être présenté clairement et pédagogiquement à l’ensemble des membres de l’Assemblée Générale (AG) de l’association (l’AG comprend un nombre plus large de membres que le CA, et ses membres sont moins régulièrement impliqués dans l’association).</p>'
+outcomes = '<li>Le Conseil d’Administration a gagné une compréhension plus claire des résultats financiers de l’association</p>
+<li>Une perspective externe a été apportée à ces résultats, déclenchant des conversations intéressantes pour leur amélioration potentielle</p>
+<li>Eventuellement, les résultats ont été mis en forme pour présentation à l’Assemblée Générale</p>'
+suggested_start_date = 'TBD'
+suggested_end_date = 'TBD'
+suggested_duration = '1-2 équivalents jours pleins'
+suggested_format = 'Une ou plusieurs réunions de travail avec l’association'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "10_open",
+  nonprofit_profile: NonprofitProfile.find_by_name('Le Maître Mot'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======Schola ULB============================
+title = 'Analyse du thème WordPress du Forum des Innovations en Education'
+skills = 'Wordpress'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Analyse préalable à l’évolution du thème WordPress du site du Forum des Innovations en Education'
+impact = 'Soutient le développement du tutorat dans les écoles bruxelloises'
+objectives = '<p>En tant qu’organisateur principal du Forum des Innovations en Education, Schola ULB maintient un catalogue extensif d’innovations en éducation proposées dans le milieu scolaire et associatif. Ce catalogue, qui compte plus de 1.000 projets, est disponible en ligne sur le site  innovation-education.be.</p>
+<p>Ce site est basé sur un thème WordPress qui correspondait aux besoins de l’association lorsqu’il a été mis sur pieds. Cependant, ce thème n’est actuellement plus maintenu par ses fournisseurs. Ceci cause des complexités de gestion (incompatibilité des plugins, failles de sécurité…) qui alourdissent la charge de travail de l’équipe de l’association et menacent la viabilité à long terme du site. Il a donc été décidé de migrer le contenu du site vers un nouveau thème WordPress.</p>
+<p>L’objectif de cette mission est d’accompagner l’association dans la recherche d’un nouveau thème WordPress correspondant aux besoins du site du Forum des Innovations en Education. Le ou la bénévole proposera un ou plusieurs thèmes et leur évaluation selon des critères à définir avec l’association. Idéalement, un mapping du contenu de l’ancien thème vers le nouveau thème sera aussi documenté.</p>
+<p>Une fois le nouveau thème identifié, ses spécifications pourront être communiquées à un prestataire informatique externe à l’association qui s’occupera de réaliser la migration du contenu.</p>'
+outcomes = '<li>Les besoins techniques et fonctionnels du site du Forum des Innovations en Education ont été collectés et consignés dans un cahier des charges</li>
+<li>Un ou plusieurs thèmes WordPress répondant à ce cahier des charges ont été identifiés</li>
+<li>Les informations nécessaires à la migration vers le nouveau thème ont été rassemblées pour être fournies à un prestataire chargé de réaliser la migration</li>'
+suggested_start_date = 'Pas de préférence'
+suggested_end_date = '2 mois avant la rentrée scolaire de septembre'
+picture = 'https://dl.dropboxusercontent.com/s/t93dxfrt89f4lid/scholaulb_fetesolidarites-10.jpg?dl=0'
+suggested_duration = 'Un demi-jour équivalent temps-plein'
+suggested_format = 'Discussion d\'introduction et présentation du document actuel, Travail de recherche du bénévole, partage des résultats et itérations potentielles'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: "10_open",
+  nonprofit_profile: NonprofitProfile.find_by_name('Schola ULB'),
   author: author,
   published_at: published_at,
   staffed_at: staffed_at,

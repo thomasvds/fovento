@@ -191,3 +191,67 @@ vpt = NonprofitProfile.create(name: name,
   neighbourhood: neighbourhood,
   phone_number: phone_number,
   logo: logo)
+
+# ===Schola ULB===
+
+name = 'Schola ULB'
+sector = 'Education'
+description= '<p>Schola ULB est une association sans but lucratif qui mène des actions en éducation, en particulier dans le domaine du soutien scolaire, en gérant quotidiennement le Programme Tutorat,  et de l’innovation, en organisant annuellement le Forum des Innovations en Éducation.</p>
+<p><strong>Programme Tutorat :</strong></p>
+<p>Schola ULB est une association sans but lucratif qui mène des actions en éducation, en particulier dans le domaine du soutien scolaire, en gérant quotidiennement le Programme Tutorat,  et de l’innovation, en organisant annuellement le Forum des Innovations en Éducation. En 25 ans, le Programme Tutorat a permis à près de 26 000 élèves d’être aidés par quelque 2600 étudiants-tuteurs. Il est aujourd’hui présent dans 1 école sur 3 à Bruxelles, étant ainsi le plus important programme de soutien scolaire.</p>
+<p><strong>Forum des innovation en Education :</strong></p>
+<p>Ce grand rendez-vous annuel du monde de l’éducation présente des pratiques innovantes mises en place dans les écoles primaires et secondaires de la Fédération Wallonie-Bruxelles. Avec 7 éditions du Forum au compteur depuis 2006, Schola ULB a recensé près de 1000 projets obtenant ainsi la plus grande base de données en Europe de pratiques innovantes.</p>
+</p>'
+website = 'http://www.schola-ulb.be'
+email = 'info@schola-ulb.be'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.037080567775!2d4.3804282160639545!3d50.811951669131254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c4dc41f60d1b%3A0xdc5a1254495e54cd!2sSchola+ULB+Asbl!5e0!3m2!1sfr!2sbe!4v1460282957802" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://dl.dropboxusercontent.com/s/qs14tsesvdztz0d/Vq9oDrZ2_400x400.jpeg?dl=0'
+address = 'Avenue F.D. Roosevelt, 50'
+neighbourhood = '1050 Bruxelles'
+phone_number = '02 650 36 44'
+
+
+scholaulb = NonprofitProfile.create(name: name,
+  sector: sector,
+  description: description,
+  website: website,
+  email: email,
+  map_frame: map_frame,
+  neighbourhood: neighbourhood,
+  phone_number: phone_number,
+  logo: logo)
+
+# ===Réseau de Consommateurs Responsables (RCR)===
+
+name = 'Réseau de Consommateurs Responsables (RCR)'
+sector = 'Consommation'
+description= '<p>L’asbl Réseau de Consommateurs Responsables (RCR) fait la promotion active d’initiatives locales, collectives et autogérées de « consommation alternative »,
+qui permettent de remettre l’humain et l’environnement au centre des préoccupations et de reconstruire un système viable sur le long terme.</p>
+<p><strong> Les trois axes d’action principaux </strong></p>
+<ul>
+<li>Aide à la création de nouvelles initiatives citoyennes de consommation alternative, soutien et renforcement</li>
+<li>Sensibilisation et information du grand public</li>
+<li>Mise en réseau des initiatives citoyennes</li>
+</ul>
+<p><strong>Actuellement, les initiatives promues sont :</strong>
+<ul>
+<li>Les sytèmes d\échanges locaux, les réseaux d’échanges réciproques de savoirs, les potagers collectifs, les donneries, les groupes d’achats alimentaires, les Repair Cafés</li>
+</ul>'
+website = 'http://www.asblrcr.be'
+email = 'info@asblrcr.be'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.785515863631!2d4.868177216055592!3d50.463718594289226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c19912a98dc035%3A0x42ed2d188eea6418!2sPlace+de+l&#39;Ilon+13%2C+5000+Namur!5e0!3m2!1sfr!2sbe!4v1460285435911" width="100" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://www.dl.dropboxusercontent.com/s/alzbiazs0xtqgdl/LOGO_ScholaULB2.png?dl=0'
+address = 'Place de l\'Ilon, 13'
+neighbourhood = '5000 Namur'
+phone_number = '081 22 69 50'
+
+
+rcr = NonprofitProfile.create(name: name,
+  sector: sector,
+  description: description,
+  website: website,
+  email: email,
+  map_frame: map_frame,
+  neighbourhood: neighbourhood,
+  phone_number: phone_number,
+  logo: logo)
