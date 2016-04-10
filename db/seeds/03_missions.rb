@@ -851,3 +851,444 @@ mission = Mission.create(title: title,
   suggested_duration: suggested_duration,
   suggested_format: suggested_format,
   )
+
+
+#=======Schola ULB============================
+title = 'Comment valoriser au mieux l’expérience du tutorat sur le CV des étudiants ?'
+skills = 'Recrutement, RH'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Comment valoriser au mieux l’expérience du tutorat sur le CV des étudiants ?'
+impact = 'Soutient le développement du tutorat dans les écoles bruxelloises'
+objectives = '<p>Les tuteurs qui encadrent les sessions de Schola ULB sont en grande majorité des élèves universitaires de l’ULB. Certains de ces élèves sont sur le point de rentrer sur le marché du travail et rédigent donc leur CV, en y mentionnant leur expérience de tutorat.</p>
+<p>L’équipe Schola a eu l’occasion de consulter certains de ces CVs et pense qu’ils gagneraient à ce que l’expérience du tutorat soit mieux mise en valeur. En effet, celle-ci apprend beaucoup aux étudiants dans les domaines de la pédagogie, du leadership, de la responsabilité…</p>
+<p>L’objectif de cette mission est de rédiger une ou plusieurs propositions de textes-types que les étudiants pourraient inclure sur leur CV pour valoriser au mieux leur expérience de tutorat. Un petit guide détaillant la manière d’inclure cette expérience sur leur profil LinkedIn serait aussi très apprécié. Enfin, une réflexion sur la manière la plus efficace de communiquer aux étudiants sur ce qu’ils peuvent retirer professionnellement du tutorat pourrait aussi être engagée.</p>'
+outcomes = '<li>Une ou plusieurs propositions de textes-types à inclure dans le CV des étudiants a / ont été rédigée(s)</li>
+<li>Idéalement, un petit guide détaillant comment inclure l’expérience de tutorat sur LinkedIn a été rédigé</li>
+<li>Eventuellement, une réflexion sur la manière de communiquer aux étudiants sur les avantages professionnels du tutorat a été engagée</li>'
+suggested_start_date = 'Pas de préférence'
+suggested_end_date = 'n.a.'
+picture = 'https://dl.dropboxusercontent.com/s/d4sly7qicyyyvce/fondation-bernheim-schola-ulb-jeh8765-c-jerome-hubert---schola-ulb.jpg?dl=0'
+suggested_duration = '3-4 heures'
+suggested_format = 'Réunion de briefing, Travail individuel du bénévole, Réunion de validation et clôture'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Schola ULB'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+
+#=======Repair Café============================
+title = 'Quel modèle de rémunération pour un nouvel administrateur de l’asbl?'
+skills = 'RH, Juridique'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Quelles sont les différents modèles de rémunération pour un nouvel administrateur de l’asbl?'
+impact = 'Promeut la consommation responsable et le vivre ensemble'
+objectives = '<p>Le réseau des Repair Cafés connaît actuellement une forte croissance. Suite à cette croissance, l’équipe porteuse de l’asbl doit faire face à une charge de travail grandissante. Pour parer au mieux à ce challenge, l’opportunité d’accueillir dans l’équipe un nouvel administrateur est à présent considérée.</p>
+<p>Ce nouvel administrateur serait notamment chargé de mener à bien certaines missions assez consommatrices en temps. Pour valoriser cela, l’asbl désire rémunérer l’administrateur.</p>
+<p>L’objectif de cette mission est d’éclairer l’équipe sur les différents modèles de rémunérations pouvant être mis en place pour un administrateur au sein d’une asbl, avec la particularité que l’administrateur sera aussi directement impliqué dans les activités de terrain.</p>
+<p>Idéalement, cet éclairage prendra la forme d’un petit rapport présentant les différents modèles de rémunérations envisageables, avec leurs avantages, inconvénients, et modalités de mise en place. Une recommandation pour un modèle particulier pourra potentiellement être émise en collaboration avec l’équipe de l’asbl (en se basant notamment sur les expériences d’autres associations).</p>'
+outcomes = '<li>Les différents modèles de rémunération ont été analysés en collaboration avec l’équipe de l’asbl</li>
+<li>Potentiellement, une recommandation pour un modèle particulier a été émise</li>'
+suggested_start_date = 'Dès que possible'
+suggested_end_date = 'n.a.'
+picture = 'https://dl.dropboxusercontent.com/s/jpgokrnfzf2t4xk/Repair%20cafe.jpg?dl=0'
+suggested_duration = '1 demi-journée équivalent temps plein'
+suggested_format = 'Discussion d\'introduction au contexte de l\'association, Travail de recherche du bénévole, Partage des résultats.'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Repair Café'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======ONA============================
+title = 'Rédaction d\'un cahier des charges pour l\'évolution des bases de données'
+skills = 'Base de données, Operations'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Rédaction d\'un cahier des charges pour un potentiel outil permettant l\'intégration de multiples bases de données en un système global'
+impact = 'Contribue à l\'intégration et l\'autonomie des personnes déficientes visuelles'
+objectives = '<p>Dans le cadre de sa mission, l\'ONA fait appel à différents publics: collaborateurs, bénéficiaires, bénévoles, donateurs, partenaires...</p>
+<p>Les services de l\'association sont amenés à communiquer avec ces différents publics, ce qui implique de gérer à la fois la communication, le suivi, et la logistique. Pour ce faire, l\'ONA dispose de multiples bases de données, qui sont actuellement gérées via des outils séparés. Par exemple :</p>
+<ul>
+<li>Les bénéficiaires et volontaires sont gérés via différents fichiers Excel (par antenne, par année...)</li>
+<li>Les donateurs sont gérés via un logiciel propre, hébergé chez un fournisseur externe.</li>
+<li>Les lecteurs de la bibliothèque sont également repris dans un logiciel spécifique.</li>
+</ul>
+<p>A l\'heure actuelle, il n\'existe pas de réelle coordination sur ces bases de données, et l\'ONA ne dispose pas, en interne, de personne dédiée à cette tâche. Tout le monde peut y faire des modifications, sauf lorsque les bases de données sont hébergées via des logiciels spécifiques, qui sont souvent propres aux services concernés (par exemple : base de données lecteurs pour la bibliothèque, ou base de données donateurs pour la communication).
+L\'ONA souhaite donc établir une solution unique et centralisée permettant de réunir toutes les bases de données en un seul outil auquel tout le monde pourrait avoir accès (permettre un accès partagé).</p>
+<p>L\'objectif de cette mission est d\'accompagner l\'association dans la rédaction du cahier des charges de cette solution. Le cahier des charges sera ensuite remis à un prestataire informatique qui développera l\'outil et réalisera la migration des données.</p>'
+outcomes = '
+<li>Un cahier des charges a été rédigé, détaillant les fonctionnalités telles que: gestion des contacts, gestion des cotisations, création de listings pour envoi de courriers, impression des documents, réalisation de statistiques, export de données en Excel, gestion et envoi de newsletters, réalisation d\'enquêtes en ligne, organisation d\'événements...</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+picture = 'https://dl.dropboxusercontent.com/s/bmmq0ayxqw0vtdr/ONA%20mission1.jpg?dl=0'
+suggested_duration = '1,5 journées équivalent temps plein'
+suggested_format = 'Discussion d\'introduction et présentation des fichiers actuels, Travail d\'intégration de la part du bénévole, Partage des résultats'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Oeuvre Nationale des Aveugles'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======RCR============================
+title = 'Encodage des justificatifs de compatibilité de l\'année écoulée'
+skills = 'Administration'
+status = '40_accomplished'
+author = 'Edouard'
+full_title = 'Encodage des justificatifs de compatibilité de l\'année écoulée'
+impact = 'Soutiens les initiatives de consommation responsable'
+objectives = '<p>En fin d\'année, la comptabilité doit être réalisée. Une grosse partie du travail consiste à encoder les entrées et sorties comptables.</p>
+<p> La mission consiste donc à participer à l’encodage de la comptabilité avec un membre de l\'association.</p>'
+outcomes = "<li>L'association a progressé dans l'encodage de sa comptabilité</li>"
+suggested_start_date = 'Décembre 2015'
+suggested_end_date = 'Décembre 2015'
+picture = 'https://dl.dropboxusercontent.com/s/dpgegv83dsiy7ge/RCR%20Mission.jpg?dl=0'
+suggested_duration = 'Un demi-jour équivalent temps-plein'
+suggested_format = 'Une session de travail conjoint'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+volunteer = Volunteer.where(first_name: "William").first
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Réseau de Consommateurs Responsables'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: volunteer
+  )
+
+title = 'Rédaction d\'un cahier des charges pour l\'évolution des bases de données'
+impact = 'Soutiens l\'interculturalité par la diffusion des musiques du monde'
+skills = 'Bases de données, Opérations'
+picture = 'https://dl.dropboxusercontent.com/s/6nzn2imtkydeos1/Muziekpublique_Mission.jpg?dl=0'
+full_title = 'Accompagner l\'équipe de Muziekpublique dans la rédaction d\'un cahier des charges concernant la refonte de ses bases de données'
+objectives = '    <p>
+        Dans le cadre de ses cours et de ses concerts, l\'association maintient une série de bases de données de contact et d\'administration. Ces bases de
+        données couvrent notamment les données suivantes:
+    </p>
+    <ul>
+        <li>
+            Membres du réseau: 6.000 membres annuellement, 20.000 en cumulé, qui sont régulièrement informés des événements de l\'association
+        </li>
+        <li>
+            Bénévoles: 400 bénévoles, qui sont présents pour apporter leur soutien sur les événements
+        </li>
+        <li>
+            Cours et élèves: 40 cours, comptant au total 400 élèves (dont la plupart sont aussi membres du réseau)
+        </li>
+        <li>
+            Autres contacts: presse, institutions, partenaires, surtout utilisés à des fins de communication sur les événements
+        </li>
+    </ul>
+        <p>
+            Actuellement, ces bases de données sont maintenues dans Microsoft Access. Leur intégrité est insuffisante pour garantir un travail vraiment
+            efficace de l\'équipe de gestion de l\'association: elles comptent beaucoup de doublons, l\'information est parfois lacunaire, les relations entre les
+            différentes tables ne sont pas tenues à jour et mènent à des problèmes de versions, etc. Cela génère aussi de l\'insatisfaction de la part des
+            élèves, qui se voient par exemple obligés de refournir chaque année les mêmes données pour leur réinscription aux cours.
+        </p>
+    <p>
+        En réaction à cette situation, l\'équipe de Muziekpublique a décidé de procéder à une revue de ses besoins liés aux bases de données pour assainir leurs
+        fondations. Cette revue n\'a pas encore débouché sur des résultats actionnables, faute d\'avoir pu aligner tous les utilisateurs des données sur une base
+        de fonctionnalités commune.
+    </p>
+<p>
+    L\'objectif de cette mission est d\'accompagner l\'équipe de Muziekpublique dans la rédaction d\'un cahier de charge concernant la refonte de ses bases de
+    données. Ce cahier des charges sera ensuite transmis à un prestataire informatique externe qui réalisera la refonte et la migration des données.
+    Concrètement, cette mission nécessitera de comprendre et structurer les besoins de chacun des membres de l\'équipe par rapport aux données, pour ensuite les
+    consolider dans une vision commune. Le travail déjà existant à ce sujet pourra bien sûr être valorisé pour accélérer le démarrage de la mission.
+</p>'
+outcomes = '<li>Un cahier des charges répondant aux besoins de l\'association a été validé en vue d\'être transmis à un partenaire externe'
+suggested_start_date = 'n.a'
+suggested_end_date = 'n.a.'
+suggested_duration = '1,5 journées équivalent temps plein'
+suggested_format = 'Discussion d\'introduction et présentation des fichiers actuels, Travail d\'intégration de la part du bénévole, Partage des résultats'
+status = '10_open'
+author = 'Thomas'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Muziekpublique'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======Musiekpublique============================
+title = 'Perspective externe sur la communication de l\'association'
+skills = 'Communication'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Perspective externe sur la communication autour des concerts et des cours'
+impact = 'Soutiens l\'interculturalité par la diffusion des musiques du monde'
+objectives = '<p>La communication menée par l\'équipe de Muziekpublique autour de ses événements est assez particulière, car elle doit viser à la fois un public de niche (les fans de certains styles de musique du monde) et assez large (les personnes intéressées de découvrir la musique du monde en général). Actuellement, l\'association gère cette communication notamment à travers des partenariats avec d\'autres associations (surtout pour les concerts spécifiques), et via des campagnes d\'affichage dans Bruxelles (pour les \'saisons\' de concerts), mais aussi via des brochures, facebook, etc. </p>
+<p>Ce processus n\'est pas encore entièrement formalisé et demande beaucoup d\'énergie à l\'équipe.</p>
+<p>L\'objectif de cette mission est de réaliser une ou plusieurs session(s) de revue et brainstorming sur la communication actuelle, pour identifier des pistes d\'amélioration en termes d\'audience touchée et d\'efficacité de l\'approche. L\'équipe est très ouverte aux perspectives externes sur son approche de la part d\'un ou une bénévole professionnel(le) en communication.<p>'
+outcomes = '<li>Un avis critique a été apporté par le bénévole sur le modèle de communication</li>
+<li>Des pistes d\'amélioration pour le futur modèle ont été partagées</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+picture = 'https://dl.dropboxusercontent.com/s/k3w5yna881woajw/Musiekpublique%20Mission%203.jpg?dl=0'
+suggested_duration = '1/2 jour équivalent temps plein'
+suggested_format = 'Discussion d\'introduction et présentation du modèle actuel, Réflexion du bénévole, Partage des résultats'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Muziekpublique'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+title = 'Rédaction d\'un cahier des charges pour la refonte du site de l\'association'
+impact = 'Soutiens la diffusion des musiques du monde'
+skills = 'Opérations'
+picture = 'https://dl.dropboxusercontent.com/s/y87nyz3hhuxppvu/Muziekpublique%20Mission%202.jpg?dl=0'
+full_title = 'Accompagnement de l\'équipe de Muziekpublique dans la rédaction d\'un cahier de charge pour le nouveau site de l\'association'
+objectives = '    <p>
+        Dans le cadre de ses cours, de ses concerts et évènement, l\'association a besoin d\'un site plus adapté a ses activités. L\'association gère pour l\'instant :
+    </p>
+    <ul>
+        <li>
+            Membres du réseau: 6.000 membres annuellement, 20.000 en cumulé, qui sont régulièrement informés des événements de l\'association
+        </li>
+        <li>
+            Bénévoles: 400 bénévoles, qui sont présents pour apporter leur soutien sur les événements
+        </li>
+        <li>
+            Cours et élèves: 40 cours, comptant au total 400 élèves (dont la plupart sont aussi membres du réseau)
+        </li>
+        <li>
+            Autres contacts: presse, institutions, partenaires, surtout utilisés à des fins de communication sur les événements
+        </li>
+    </ul>
+        <p>
+            Actuellement, le site ne permet de garantir un travail vraiment efficace des activité de l\'association en plus de cela son administration est compliquée.
+        </p>
+    <p>
+        En réaction à cette situation, l\'équipe de Muziekpublique a décidé de procéder à une revue de ses besoins lié au site Internet.
+    </p>
+<p>
+    L\'objectif de cette mission est d\'accompagner l\'équipe de Muziekpublique dans la rédaction d\'un cahier de charge concernant la refonte de son site internet. Ce cahier des charges sera ensuite transmis à un prestataire informatique externe qui réalisera la refonte et la migration des données.
+    Concrètement, cette mission nécessitera de comprendre et structurer les besoins de chacun des membres de l\'équipe par rapport aux sites internet, pour ensuite les
+    consolider dans une vision commune.
+</p>'
+outcomes = '<li>Un cahier des charges répondant aux besoins de l\'association a été validé en vue d\'être transmis à un partenaire externe'
+suggested_start_date = 'n.a'
+suggested_end_date = 'n.a.'
+suggested_duration = '2,5 journées équivalent temps plein'
+suggested_format = 'Discussion d\'introduction, Travail d\'intégration de la part du bénévole, Partage des résultats'
+status = '10_open'
+author = 'Thomas'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Muziekpublique'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======Muziekpublique============================
+title = 'Initiation à Google AdWords et au marketing digital'
+skills = 'AdWords, Marketing digital'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Initiation à Google AdWords'
+impact = 'Soutiens l\'interculturalité par la diffusion des musiques du monde'
+objectives = '<p>Afin d\'élargir l\'audience de sa communication sur les concerts et les cours, MuziekPublique envisage de commencer à utiliser Google AdWords.</p>
+<p>L\'objectif de cette mission est de donner une rapide formation à l\'équipe de l\'association sur la manière optimale d\'utiliser ce service. Idéalement, ce serait aussi l\'occasion de coacher l\'équipe sur d\'autres tips & tricks concernant le marketing digital en général, en passant par exemple en revue ce qui est utilisé actuellement par l\'association.</p>'
+outcomes = '<li>L\'association a compris le fonctionnement d\'AdWords et est prête à utiliser le service</li>
+<li>D\'éventuelles pistes d\'améliorations sur les outils de marketing existants ont été proposées</li>'
+suggested_start_date = 'n.a.'
+suggested_end_date = 'n.a.'
+picture = 'https://dl.dropboxusercontent.com/s/f4ryjpysdp8zr2h/Muziekpublique%20Mission%204.jpeg?dl=0'
+suggested_duration = '1/2 jour équivalent temps plein'
+suggested_format = 'Séance d\'initiation au nouveau logiciel, Echange sur d\'éventuelles pistes d\'améliorations'
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Muziekpublique'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+title = 'Mise sur pied de la structure juridique de l\'association'
+impact = 'Soutiens une initiative citoyenne pour inspirer d\'autres citoyens!'
+skills = 'Droit'
+full_title = 'Accompagnement de l\'équipe Fovento dans la rédaction de ses suppport juridiques'
+objectives = '    <p>Dans le cadre de son activité en tant qu\'ASBL et en tant que plateforme de bénévolat de compétences, Fovento a des besoins juridiques. En effet, elle doit rédiger:</p>
+<ul>
+<li> Tous les documents liés à sa constitution légale </li>
+<li> Les conditions générales de la plateforme </li>
+<li> Les conditions d\'utilisation</li>
+</ul>
+<p>L\'objectif de cette mission est donc que Fovento puisse avoir ces documents afin de pouvoir publier les statuts au Moniteur et intégrer les conditions à sa plateforme.
+</p>'
+outcomes = '<li>Les statuts ont été rédigés</li> <li>Les conditions générales et d\'utilisation ont été rédigées</li>'
+suggested_start_date = 'Juillet 2015'
+suggested_end_date = 'Avril 2016'
+suggested_duration = '3 journées équivalent temps plein'
+suggested_format = 'Discussion d\'introduction, Travail de rédaction de la part du bénévole, Partage des résultats'
+status = '40_accomplished'
+author = 'Edouard'
+picture = 'https://dl.dropboxusercontent.com/s/g3zzd8308tasmp1/flagey.jpg?dl=0'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Fovento'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: Volunteer.where(first_name: "Eric Pascal").first
+  )

@@ -223,8 +223,8 @@ scholaulb = NonprofitProfile.create(name: name,
 
 # ===Réseau de Consommateurs Responsables (RCR)===
 
-name = 'Réseau de Consommateurs Responsables (RCR)'
-sector = 'Consommation'
+name = 'Réseau de Consommateurs Responsables'
+sector = 'Consommation responsable'
 description= '<p>L’asbl Réseau de Consommateurs Responsables (RCR) fait la promotion active d’initiatives locales, collectives et autogérées de « consommation alternative »,
 qui permettent de remettre l’humain et l’environnement au centre des préoccupations et de reconstruire un système viable sur le long terme.</p>
 <p><strong> Les trois axes d’action principaux </strong></p>
@@ -235,12 +235,12 @@ qui permettent de remettre l’humain et l’environnement au centre des préocc
 </ul>
 <p><strong>Actuellement, les initiatives promues sont :</strong>
 <ul>
-<li>Les sytèmes d\échanges locaux, les réseaux d’échanges réciproques de savoirs, les potagers collectifs, les donneries, les groupes d’achats alimentaires, les Repair Cafés</li>
+<li>Les sytèmes d\'échanges locaux, les réseaux d’échanges réciproques de savoirs, les potagers collectifs, les donneries, les groupes d’achats alimentaires, les Repair Cafés</li>
 </ul>'
 website = 'http://www.asblrcr.be'
 email = 'info@asblrcr.be'
-map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.785515863631!2d4.868177216055592!3d50.463718594289226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c19912a98dc035%3A0x42ed2d188eea6418!2sPlace+de+l&#39;Ilon+13%2C+5000+Namur!5e0!3m2!1sfr!2sbe!4v1460285435911" width="100" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
-logo = 'https://www.dl.dropboxusercontent.com/s/alzbiazs0xtqgdl/LOGO_ScholaULB2.png?dl=0'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.785515863631!2d4.868177216055592!3d50.463718594289226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c19912a98dc035%3A0x42ed2d188eea6418!2sPlace+de+l&#39;Ilon+13%2C+5000+Namur!5e0!3m2!1sfr!2sbe!4v1460285435911" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://dl.dropboxusercontent.com/s/66i3bapvr3474b9/rcr.png?dl=0'
 address = 'Place de l\'Ilon, 13'
 neighbourhood = '5000 Namur'
 phone_number = '081 22 69 50'
@@ -255,3 +255,128 @@ rcr = NonprofitProfile.create(name: name,
   neighbourhood: neighbourhood,
   phone_number: phone_number,
   logo: logo)
+
+name = 'Muziekpublique'
+sector = 'Culture'
+description= '<p>Muziekpublique est une asbl qui promeut et défend les musiques du monde, plus particulièrement celles qui ont un lien avec les musiques acoustiques, traditionnelles, populaires, folk, métissées, classiques, jazz et "nu:trad". Ce travail se réalise autours de quatre axes : </p>
+<ul>
+<li>L’organisation de concerts</li>
+<li>L\'organisation de cours</li>
+<li>La production de cd</li>
+<li>La production des créations.</li>
+</ul>
+<p>Il est difficile de mettre un nom sur la stylistique des projets musicaux de l’asbl, on peut néanmoins aisément reconnaître une politique culturelle forte. L’idée étant de défendre des groupes dont la musique ne contribue pas à l’exotisation et à la stigmatisation des "cultures". L’idée étant aussi d’inviter d’excellents instrumentistes et compositeurs, peu importe qu’ils soient connus ou pas. L’association s’impose une couverture large des stylistiques tout en essayant de décloisonner son public.</p>
+<p>Outre ses collaborations internationales, Muziekpublique travaille activement sur le réseau belge des musiques du monde. Pour le consolider et par souci de proposer une offre complémentaire aux académies, l’asbl propose une quarantaine de cours d’instruments et de danse. L’asbl met aussi ses infrastructures à disposition pour des résidences, des créations, et des enregistrements.
+</p>'
+website = 'http://www.muziekpublique.be'
+email = 'info@muziekpublique.be'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.615467722677!2d4.360114116099611!3d50.83828616722337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c486148fdc03%3A0x52f5de16cdb03f3a!2sSquare+du+Bastion!5e0!3m2!1sfr!2sbe!4v1460286767792" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://dl.dropboxusercontent.com/s/z0bd9q4d39xanlj/Muziekpublique.jpg?dl=0'
+address = 'Galerie de la Porte de Namur, 3 Square du Bastion'
+neighbourhood = '1050 Bruxelles'
+phone_number = '02 217 26 00'
+
+
+muziekpublique = NonprofitProfile.create(name: name,
+  sector: sector,
+  description: description,
+  website: website,
+  email: email,
+  map_frame: map_frame,
+  neighbourhood: neighbourhood,
+  phone_number: phone_number,
+  logo: logo)
+
+# ===ONA===
+
+name = 'Oeuvre Nationale des Aveugles'
+sector = 'Handicap'
+description= '
+<p>L’ONA asbl a été créée en 1922 et couvre la partie francophone de la Belgique.
+Elle agit pour l’autonomie des personnes déficientes visuelles et leur pleine participation à la vie sociale.
+Grâce à ses antennes locales, l’association propose des activités et des services de proximité aux personnes déficientes visuelles.
+Enfin, l’ONA réalise un travail de sensibilisation auprès de la population et des pouvoirs publics sur les différentes problématiques du handicap visuel.
+</p>
+<p><strong>Quelques actions:</strong></p>
+<ul>
+<li>Une des missions premières de l’ONA est d’accueillir, d’écouter, d’informer et d’accompagner les personnes aveugles et malvoyantes</li>
+<li>Notre équipe, composée de psychologues, d’éducateurs, de pédagogues et logopèdes, accompagne les jeunes qui ont fait le choix de suivre tout ou partie de leur scolarité dans l’enseignement ordinaire</li>
+<li> Notre centre de documentation dispose de nombreuses publications consultables sur place</li>
+<li>Notre bibliothèque est ouverte à toute personne se trouvant dans l’incapacité de lire un livre « ordinaire »</li>
+<li>Le centre de transcription transcrit et adapte une multitude de documents pour les rendre accessibles aux personnes aveugles et malvoyantes</li>
+</ul>
+'
+website = 'http://www.ona.be/'
+email = 'info@ona.be'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13714.240312981196!2d4.4308238577750485!3d50.839747795472796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3db671bc9130f%3A0x5a9f7442977097e9!2sBoulevard+de+la+Woluwe+34%2C+1150+Woluwe-Saint-Pierre%2C+Belgique!5e0!3m2!1sfr!2sus!4v1460295563849" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://dl.dropboxusercontent.com/s/lyyc51yvjkwq6hu/ONA.jpg?dl=0'
+address = 'Boulevard de la Woluwe 34 bte 1'
+neighbourhood = '1200 Bruxelles'
+phone_number = '02 241 65 68 '
+
+
+ona = NonprofitProfile.create(name: name,
+  sector: sector,
+  description: description,
+  website: website,
+  email: email,
+  map_frame: map_frame,
+  neighbourhood: neighbourhood,
+  phone_number: phone_number,
+  logo: logo)
+
+
+# ===Repair Café===
+
+name = 'Repair Café'
+sector = 'Consommation responsable'
+description= '
+<p>Réparer ensemble, c’est l’idée des Repair Cafés ; des rencontres ouvertes à tous dont l’entrée est libre. Outils et matériel sont disponibles là où est organisé le Repair Café, pour faire toutes les réparations possibles et imaginables. Vêtements, meubles, appareils électriques, bicyclettes, vaisselle, objets utiles, jouets, et autres. Des experts en la matière sont aussi au rendez-vous, électriciens, couturières, menuisiers, réparateurs de bicyclettes.</p>
+<p>On y apporte les choses en mauvais état qu’on a chez soi. Et on se met à l’ouvrage avec les gens du métier. Il y a toujours quelque chose à apprendre au Repair Café. Qui n’a rien à réparer, prend un café ou un thé. Ou aide à réparer quelque chose appartenant à un autre. On peut toujours aussi y trouver des idées à la table de lecture, proposant des ouvrages sur la réparation et le bricolage.</p>
+<p>Le Repair Café apprend aux gens à voir autrement ce qu’ils possèdent, à en redécouvrir la valeur. Le Repair Café favorise un changement de mentalité, qui est la condition première à une société durable construite par tous.</p>
+'
+website = 'http://www.repaircafe.be/'
+email = 'contact@repaircafe.be'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42720.16820446179!2d4.308434275510801!3d50.828305418319005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c4873e07a55f%3A0xc13c085608dd5d!2s1000+Bruxelles%2C+Belgique!5e0!3m2!1sfr!2sus!4v1460298351452" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://dl.dropboxusercontent.com/s/2uvzeuufvnogp5u/repair-cafe.png?dl=0'
+address = 'Bruxelles'
+neighbourhood = 'Bruxelles'
+phone_number = ''
+
+
+repaircafé = NonprofitProfile.create(name: name,
+  sector: sector,
+  description: description,
+  website: website,
+  email: email,
+  map_frame: map_frame,
+  neighbourhood: neighbourhood,
+  phone_number: phone_number,
+  logo: logo)
+
+# ===Fovento===
+
+name = 'Fovento'
+sector = 'Citoyenneté'
+description= '
+<p>Fovento est cette super plate-forme web de bénévolat de compétences sur laquelle tu navigues actuellement ! On espère du coup que tu sais de quoi il s\'agit :)</p>
+'
+website = 'http://www.fovento.be/'
+email = 'contact@fovento.be'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.2191264327516!2d4.370610315676772!3d50.82710496803425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c493465074db%3A0x7739f8c4fca893b8!2sPlace+Eug%C3%A8ne+Flagey+18%2C+1050+Ixelles%2C+Belgique!5e0!3m2!1sfr!2sus!4v1460299341931" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://dl.dropboxusercontent.com/s/1rj4oepx8i3gerz/fovlogomissions.png?dl=0'
+address = 'Bruxelles'
+neighbourhood = 'Bruxelles'
+phone_number = ''
+
+
+fovento = NonprofitProfile.create(name: name,
+  sector: sector,
+  description: description,
+  website: website,
+  email: email,
+  map_frame: map_frame,
+  neighbourhood: neighbourhood,
+  phone_number: phone_number,
+  logo: logo)
+

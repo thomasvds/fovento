@@ -64,9 +64,15 @@
 </div>
 
 <div class="wrapper">
-  <div class="container padded">
-  <div class="tagline"><h2>Un modèle simple et efficace pour maximiser ton impact</h2></div>
+  <div class="container padded timelinewrapper">
+    <div class="tagline"><h2>Un modèle simple et efficace</h2></div>
     <%= render 'pages/home/timeline' %>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="applybox padded">
+    <div class="tagline question"><h1>QUEL SERA TON IMPACT?</h1></div>
   </div>
 </div>
 
@@ -85,6 +91,15 @@
     }
   }
   setInterval(pulse, 3000);
+
+  $('.question').hide()
+
+  $(window).on('scroll', function(e){
+    console.log($(this).scrollTop())
+    if ($(this).scrollTop() > 1600) {
+      $('.question').show("scale",{}, 1000);
+    }
+  });
 </script>
 
 
