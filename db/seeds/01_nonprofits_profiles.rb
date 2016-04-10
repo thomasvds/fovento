@@ -380,3 +380,40 @@ fovento = NonprofitProfile.create(name: name,
   phone_number: phone_number,
   logo: logo)
 
+# ===BruSel===
+
+name = 'BruSEL'
+sector = 'Citoyenneté'
+description= '<p>
+    «Système d’Echange Local» sur Bruxelles 19 communes et ses environs.
+</p>
+<p>
+    Un Sel est une association dont les membres échangent entre eux des services, des savoirs et/ou des biens dans le désir d’évoluer vers plus de citoyenneté
+et de solidarité. Les échanges sont mesurés dans une unité qui se réfère au temps, (les « Blés, Bonheurs, Grains, Flheures, Radis …. »). Au BruSEL,    <em>1 heure de service = 60 BLEs</em>.
+</p>
+<p>
+    Pour certains, le SEL permet de suivre un cours, de donner un coup de main, de donner ou de partager des objets dans un cadre convivial sans toucher à son
+    porte-monnaie. Pour d’autres, le SEL répond à une philosophie et est un choix de vie.
+</p>
+<p>
+    L’expérience prouve que le SEL permet de rencontrer des nouvelles personnes qui partagent votre philosophie et qu’il encourage le don mais qui n’est pas
+    destiné à répondre aux personnes qui attendent exclusivement de briser leur solitude.
+</p>'
+website = 'http://www.brusel.be/'
+email = 'info@brusel.be'
+map_frame = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42720.16820446179!2d4.308434275510801!3d50.828305418319005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c4873e07a55f%3A0xc13c085608dd5d!2s1000+Bruxelles%2C+Belgique!5e0!3m2!1sfr!2sus!4v1460298351452" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>'
+logo = 'https://dl.dropboxusercontent.com/s/1yf0rr2cd1meo6m/Brusel%20logo.jpg?dl=0'
+address = 'Bruxelles'
+neighbourhood = 'Bruxelles'
+phone_number = '0475 375 009'
+
+
+brusel = NonprofitProfile.create(name: name,
+  sector: sector,
+  description: description,
+  website: website,
+  email: email,
+  map_frame: map_frame,
+  neighbourhood: neighbourhood,
+  phone_number: phone_number,
+  logo: logo)

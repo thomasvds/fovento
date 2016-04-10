@@ -92,12 +92,9 @@
   }
   setInterval(pulse, 3000);
 
-  $('.question').hide()
-
   $(window).on('scroll', function(e){
-    console.log($(this).scrollTop())
     if ($(this).scrollTop() > 1600) {
-      $('.question').show("scale",{}, 1000);
+      $('.question').animate({opacity: 1}, 10000);
     }
   });
 </script>

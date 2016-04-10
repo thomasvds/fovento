@@ -1292,3 +1292,202 @@ mission = Mission.create(title: title,
   suggested_format: suggested_format,
   volunteer: Volunteer.where(first_name: "Eric Pascal").first
   )
+
+# CREATE MISSIONS BruSel
+title = 'Mise à jour et structuration de la charte des membres du SEL'
+impact = 'Soutiens l\'échange de services et le renforcement des liens sociaux'
+skills = 'Rédaction, Management'
+picture = 'https://dl.dropboxusercontent.com/s/ozhk8a7ggbwac1y/BruSel%20mission%201.jpg?dl=0'
+full_title = 'Mise à jour et structuration de la charte des membres du SEL pour en faire un document clair facile et lisible'
+objectives = '<p>
+    Les activités du SEL sont régies par une charte à laquelle adhèrent tous les membres participants lorsqu’ils rejoignent le réseau. Cette charte décrit les
+    grands principes de fonctionnement du réseau, ainsi que les détails liés à la mise en œuvre de ses activités.
+</p>
+<p>
+    La charte actuelle contient une vingtaine d’articles (~2 pages), et est le résultat d’une série d’itérations sur des versions successives. Au cours du
+    temps, ces itérations ont amené de la complexité dans la lecture et la compréhension de la charte, ainsi que dans sa maintenabilité. Au final, le document
+    est devenu une sorte de patchwork dont la pertinence ne satisfait pas l’équipe de coordination du réseau.
+</p>
+<p>
+    L’objectif de cette mission est de restructurer la charte, pour en faire un document clair et facilement lisible, et en permettant aussi que d’éventuelles
+    modifications futures soient plus facilement réalisables. A priori, il s’agira de repartir à zéro pour la structure du document, tout en s’assurant que les
+    points importants de la charte existante sont bien reflétés dans le nouveau document. L’équipe de coordination du SEL sera disponible pour orienter et
+    valider la proposition de nouveau document conformément aux besoins du réseau.
+</p>'
+outcomes = '<li>Une version mise à jour de la charte a été rédigée et validée avec l’association</li>'
+suggested_start_date = 'n.a'
+suggested_end_date = 'n.a'
+suggested_duration = '0,5 journée équivalent temps plein'
+suggested_format = 'Discussion d\'introduction, Présentation de la charte actuelle, Travail individuel du bénévole, Partage et amendements du document mis à jour'
+status = '10_open'
+author = 'Thomas'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('BruSEL'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======Schola ULB============================
+title = 'Conseils sur le processus de recrutement et les entretiens collectifs'
+skills = 'RH, Recrutement'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Conseils sur le processus de recrutement et les entretiens collectifs'
+impact = 'Soutiens le développement du tutorat dans les écoles bruxelloises'
+objectives = '<p>Schola recrute les étudiants tuteurs lors d’entretiens collectifs.
+<p>L\'objectif de la mission est d\'améliorer ce processus d’entretien collectif en donnant un avis éclairé sur :
+<ul>
+<li>Le format (durée, taille du groupe ?)</li>
+<li>Les compétences observées (pertinence ?)</li>
+</ul>'
+outcomes = '<li>Une nouvelle grille de lecture des compétences des tuteurs a été établie</li>
+<li>D\'éventuels changements ont été apportés dans le format des entretiens</li>'
+suggested_start_date = '12/04; 18/05; 02/06 (dates des prochaines séances d\'entretien à observer'
+suggested_end_date = 'Septembre 2016'
+picture = 'https://dl.dropboxusercontent.com/s/4qhltn9msogjxj9/Schola%20Mission%204.jpg?dl=0'
+suggested_duration = '1 jour équivalent temps-plein'
+suggested_format = '2h de présentation de notre processus de recrutement, 2h d’observation de notre séance d’information suivie de l’entretien collectif, 2h de débriefing + conseils avec la référente volontariat, 1h de feedback (tél, mail) pour évaluer l’impact des changements apportés'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Schola ULB'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: volunteer
+  )
+
+# CREATE MISSIONS BruSel mission 2
+title = 'Analyse de l’historique des données de transactions du SEL'
+impact = 'Soutiens l\'échange de services et le renforcement des liens sociaux'
+skills = 'Analyse de données'
+picture = 'https://dl.dropboxusercontent.com/s/0te3kiiym6plha5/Sel%20mission%202.PNG?dl=0'
+full_title = 'Analyse de l’historique des données de transactions du SEL pour en retirer des analyses et statistiques intéressantes'
+objectives = '<p>
+    Comme le SEL repose sur une plate-forme en ligne pour le suivi des transactions de services, toutes ces transactions sont enregistrées dans une base de
+    données. Cette base de données contient l’historique des transactions à partir de 2012.
+</p>
+<p>
+    Chaque transaction est répertoriée selon la catégorie à laquelle elle appartient, le nombre d’heures de travail humain fournies, les deux personnes
+    participant à la transaction, et la date de celle-ci.
+</p>
+<p>
+    Bien que la plate-forme dispose d’outils d’analyse des transactions, ceux-ci sont assez sommaires (nombre et proportion de transactions dans chaque
+    catégorie, visibles pour chaque année séparément).
+</p>
+<p>
+    L’équipe de coordination du SEL serait intéressée qu’un(e) bénévole se penche sur toutes les données disponibles, et en retire des analyses et statistiques
+    intéressantes pour la gestion du réseau (visualisation et volumétrie, tendances, métriques…). Cette mission est donc assez exploratoire, et il appartiendra
+    au ou à la bénévole de définir les pistes intéressantes à creuser, en collaboration avec l’équipe du SEL.
+</p>'
+outcomes = '<li>Une série d’analyses et statistiques ont été réalisées sur les données de transactions du SEL, et ont fourni à l’équipe de coordination une perspective
+    intéressante sur les activités du réseau</li>
+   <li> Eventuellement, des axes d’évolution du SEL ont été identifiés suite aux résultats des analyses</li>
+ '
+suggested_start_date = 'n.a'
+suggested_end_date = 'n.a'
+suggested_duration = '0,5 journée équivalent temps plein'
+suggested_format = 'Discussion d\'introduction, Présentation des données disponibles, Travail d\'analyse du bénévole, Partage des résultatset discussion'
+status = '10_open'
+author = 'Thomas'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('BruSEL'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  )
+
+#=======Schola ULB============================
+title = 'Valorisation du tutorat dans la recherche professionnelle'
+skills = 'RH, Recrutement'
+status = '10_open'
+author = 'Thomas'
+full_title = 'Accompagnement des tuteurs dans la valorisation de leur engagement dans leur recherche d\'emploi'
+impact = 'Soutiens le développement du tutorat dans les écoles bruxelloises'
+objectives = '<p>Les étudiants tuteurs sont des maillons essentiels dans le fonctionnement de Schola.</p>
+<p>Nous aimerions promouvoir le tutorat et ainsi développer le réseau potentiel d\'étudiants volontaires.<p>
+<p>L\'objectif de la mission est donc de rendre attractif le rôle de tuteur en abordant le tutorat comme un atout majeur dans la recherche d\'emploi.<p>'
+outcomes = '<li>L\'étudiant possède un bon aperçu de la manière de valoriser son expérience de tutorat dans sa recherche d\'emploi et est prêt à mettre cet apprentissage en action</li>'
+suggested_start_date = '1 matinée - 1ère semaine de juillet / 1ère semaine de septembre (9h-13h30)'
+suggested_end_date = 'n.a.'
+picture = 'https://dl.dropboxusercontent.com/s/e6mxteu4vocq5as/Schola%20Mission%207.jpg?dl=0'
+suggested_duration = '1 jour équivalent temps-plein'
+suggested_format = 'Préparation (1/2 j); Rencontre avec un groupe de 10-15 étudiants tuteurs (2h); Travail sur la valorisation du tutorat sur un CV (identification des mots-clés et compétences phare; Travail sur la valorisation du tutorat dans un entretien.'
+published_at = Time.now
+staffed_at = Time.now
+started_at = Time.now
+closed_at = Time.now
+
+mission = Mission.create(title: title,
+  skills: skills,
+  status: status,
+  nonprofit_profile: NonprofitProfile.find_by_name('Schola ULB'),
+  author: author,
+  published_at: published_at,
+  staffed_at: staffed_at,
+  started_at: started_at,
+  closed_at: closed_at,
+  full_title: full_title,
+  objectives: objectives,
+  outcomes: outcomes,
+  suggested_start_date: suggested_start_date,
+  suggested_end_date: suggested_end_date,
+  picture: picture,
+  impact: impact,
+  suggested_duration: suggested_duration,
+  suggested_format: suggested_format,
+  volunteer: volunteer
+  )
