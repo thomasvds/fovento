@@ -4,7 +4,7 @@
     <div class='row'>
       <% @candidacies.each do |candidacy| %>
       <div class='col-xs-12 col-md-6'>
-        <%= render 'candidacy_card', candidacy: candidacy %>
+        <%= render 'card', candidacy: candidacy %>
         <% if candidacy.status == "pending confirmation" %>
         <p class="text-center">Pour accepter cette candidature, cliquer sur le bouton ci-dessous. Attention, cette action est irréversible et enverra un mail de confirmation au bénévole, ainsi qu'un mail de notification à tous les bénévoles non-retenus.</p>
         <div class="buttons_box">

@@ -1,0 +1,30 @@
+<div class="candidacy-card">
+
+  <div style="height: 8px;"><div style="height: 100%;"></div></div>
+  <div class="candidacy-card-header">
+    <img src=<%= candidacy.volunteer.picture %> class="avatar-candidacy hidden-xs">
+
+    <h2>
+      <%= candidacy.volunteer.first_name %> <%= candidacy.volunteer.last_name %>
+      <%= link_to candidacy.volunteer.linkedin_public_profile, class: 'btn btn-social-icon btn-linkedin btn-xs', :target => "_blank"  do %>
+      <span class="fa fa-linkedin"></span>
+      <% end %>
+    </h2>
+    <ul class="fa-ul">
+      <li><i class="fa fa-li fa-calendar"></i>A postulé le <%= candidacy.created_at.strftime("%d/%m/%Y")%> à  <%= candidacy.created_at.strftime("%H:%M")%></li>
+      <li><i class="fa fa-li fa-envelope"></i><%= candidacy.volunteer.email %></li>
+      <li><i class="fa fa-li fa-phone"></i><%= candidacy.volunteer.phone_number %></li>
+    </ul>
+  </div>
+  <div class="candidacy-card-content">
+    <p><strong>Motivations pour l'association / le secteur:</strong></p>
+    <p><emph><%= candidacy.motivation_for_mission %></emph></p>
+
+    <p><strong>Expériences sur des projets similaires:</strong></p>
+    <p><emph><%= candidacy.motivation_for_skills %></emph></p>
+
+    <p><strong>En pratique:</strong></p>
+    <p><emph><%= candidacy.engagement_practicalities %></emph></p>
+  </div>
+</div>
+
