@@ -4,7 +4,7 @@ class Volunteers::OmniauthCallbacksController < Devise::OmniauthCallbacksControl
 
     if @volunteer.persisted?
       @volunteer.skip_confirmation!
-      sign_in_and_redirect @volunteer, :event => :authentication #this will throw if @user is not activated
+      sign_in_and_redirect @volunteer, :event => :authentication#this will throw if @user is not activated
       set_flash_message(:notice, :success, :kind => "LinkedIn") if is_navigational_format?
     else
       session["devise.linkedin_data"] = request.env["omniauth.auth"]

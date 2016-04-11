@@ -1,5 +1,14 @@
-<h1>VolunteerMailer#rejected</h1>
+<h1>Ta candidature Fovento</h1>
 
-<p>
-  find me in app/views/volunteer_mailer/rejected.html.erb
-</p>
+<p>Hello <%= @volunteer.first_name %>,</p>
+
+<p>Un autre bénévole a été sélectionné par l'association <%= @mission.nonprofit_profile.name %> pour la mission Fovento suivante: <%= @mission.title %>. Ta candidature n'a malheureusement pas été retenue, mais ce n'est que partie remise!<p>
+
+<p>La Team Fovento te recommande d'aller faire un tour sur la page des <%= link_to "missions", missions_url %>, car d'autres missions correspondent sans doute à ton profil. Bonne exploration à toi!</p>
+
+<p>Cheers,<p>
+
+<p>La Team Fovento</p>
+
+
+<p><%= link_to "contact", contact_url %></p>

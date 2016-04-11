@@ -59,9 +59,9 @@ class CandidaciesController < ApplicationController
       @mission.candidacies.each do |candidacy|
         case candidacy.status
         when "rejected"
-          VolunteerMailer.rejected(candidacy.volunteer).deliver_now
+          VolunteerMailer.rejected(candidacy).deliver_now
         when "confirmed"
-          VolunteerMailer.accepted(candidacy.volunteer).deliver_now
+          VolunteerMailer.accepted(candidacy).deliver_now
         end
       end
     end

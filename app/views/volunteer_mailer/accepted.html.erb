@@ -1,5 +1,18 @@
-<h1>VolunteerMailer#accepted</h1>
+<h1>Ta candidature Fovento</h1>
 
-<p>
-  find me in app/views/volunteer_mailer/accepted.html.erb
-</p>
+<p>Hello,</p>
+
+<p>Bonne nouvelle, <%= @volunteer.first_name %>! Ta candidature a été acceptée par l'association <%= @mission.nonprofit_profile.name %> pour la mission Fovento suivante: <%= @mission.title %>.<p>
+
+<p>Si ce n'est pas encore fait, l'association va rapidement te contacter pour discuter du début de ta mission.</p>
+
+<p>Quand tu débuteras la mission, n'oublie pas de remplir la checklist de démarrage à cette adresse: <%= link_to "Checklist de démarrage", mission_begin_url(@mission) %>. Tu peux aussi ici accéder directement via ton <%= link_to "dashboard", dashboard_url %>. Ces deux liens nécessitent que tu sois connecté(e) à ton compte Fovento.</p>
+
+<p>Nous te souhaitons beaucoup d'impact et de plaisir dans cette mission!</p>
+
+<p>Cheers,<p>
+
+<p>La Team Fovento</p>
+
+
+<p><%= link_to "contact", contact_url %></p>

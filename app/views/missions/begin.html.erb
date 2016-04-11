@@ -1,34 +1,39 @@
-<div class='container padded'>
+<div class='form-banner' style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.3) 5%, rgba(0,0,0,0.1) 100%), url(<%= image_path("workers2.jpg") %>);">
   <div class='row'>
-    <div class='col-xs-12 col-md-6 col-md-offset-3'>
-      <div class='thumbnail'>
-        <div class='form_box'>
-          <h2>Checklist de démarrage</h2>
-          <%= content_for(:links) do %>
-          Je m'engage à réaliser la mission de manière professionnelle, en accord avec les <%= link_to "valeurs de la communauté Fovento", community_and_impact_path, :target => "_blank" %> et les <%=link_to "conditions d'utilisation", terms_and_conditions_path, :target => "_blank" %> plate-forme
-          <% end %>
+    <div class='col-xs-12 col-md-8 col-md-offset-2'>
+      <!-- <div class='thumbnail'> -->
+      <div class='logbook-box padded'>
+        <div class='background'>
+          <div class='form'>
+            <h2>Checklist de démarrage</h2>
+            <%= content_for(:links) do %>
+            Je m'engage à mener la mission professionnellement, en accord avec les <%= link_to "valeurs Fovento", community_and_impact_path, :target => "_blank" %> et les <%=link_to "conditions d'utilisation", terms_and_conditions_path, :target => "_blank" %>
+            <% end %>
 
-          <!-- FORM FOR THE MISSION -->
-          <%= simple_form_for @mission, :url => mission_start_path(@mission), method: 'put', html: { class: 'form-box' } do |f| %>
-          <!-- NESTED FORM FOR THE LOGBOOK -->
-          <%= f.simple_fields_for :logbook do |l| %>
-          <%= l.input :objectives_understood, as: :boolean,  inline_label: "Les objectifs et résultats attendus de la mission ont été bien discutés et clarifiés avec l'association" %>
-          <%= l.input :ways_of_working_defined, as: :boolean, inline_label: "Le format de la mission a été décidé avec l'association (nombre de réunions, points de contact...)" %>
-          <%= l.input :planned_end_date, start_year: Date.today.year,end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Quelle est la date de fin approximative de la mission?" %>
-          <%= l.input :values_and_terms_accepted, as: :boolean, inline_label: content_for(:links) %>
-          <% end %>
+            <!-- FORM FOR THE MISSION -->
+            <%= simple_form_for @mission, :url => mission_start_path(@mission), method: 'put', html: { class: 'form-box' } do |f| %>
+            <!-- NESTED FORM FOR THE LOGBOOK -->
+            <%= f.simple_fields_for :logbook do |l| %>
+            <%= l.input :objectives_understood, as: :boolean,  inline_label: "J'ai bien compris les besoin de l'association par rapport à cette mission, et j'ai une vision claire des résultats attendus" %>
+            <%= l.input :ways_of_working_defined, as: :boolean, inline_label: "Les aspects pratiques de la mission on été discutés et confirmés avec l'association (points de contact, dates-clé...)" %>
+            <%= l.input :planned_end_date, start_year: Date.today.year,end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Date de fin estimée de la mission:" %>
+            <%= l.input :values_and_terms_accepted, as: :boolean, inline_label: content_for(:links) %>
+            <% end %>
 
-          <!-- MISSION START SUBMISSION BUTTON -->
-          <div style="display: flex; justify-content: space-around;">
-            <%= f.button :submit, value: "Confirmer le démarrage", onclick: 'return confirm("Confirmer?")', class: 'btn-primary btn-xs' %>
+            <!-- MISSION START SUBMISSION BUTTON -->
+            <div style="display: flex; justify-content: space-around">
+              <%= f.button :submit, value: "Confirmer le démarrage", onclick: 'return confirm("Confirmer?")', class: 'btn-primary btn-xs' %>
+            </div>
+            <% end %>
+            <!-- END OF MISSION FORM -->
           </div>
-          <% end %>
-          <!-- END OF MISSION FORM -->
         </div>
       </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>
+
 
 <script>
   $(document).ready(function () {

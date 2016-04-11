@@ -9,15 +9,17 @@ class VolunteerMailer < ApplicationMailer
     mail(to: @nonprofit_profile.email , subject: 'Fovento: proposition de bénévole')
   end
 
-  def rejected(volunteer)
-    @volunteer = volunteer
+  def rejected(candidacy)
+    @volunteer = candidacy.volunteer
+    @mission = candidacy.mission
 
-    mail(to: @volunteer.email, subject: 'Too bad!')
+    mail(to: @volunteer.email, subject: 'Ta candidature Fovento')
   end
 
-  def accepted(volunteer)
-    @volunteer = volunteer
+  def accepted(candidacy)
+    @volunteer = candidacy.volunteer
+    @mission = candidacy.mission
 
-    mail(to: @volunteer.email, subject: 'Congrats!')
+    mail(to: @volunteer.email, subject: 'Ta candidature Fovento: congrats!')
   end
 end
