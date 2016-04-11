@@ -61,7 +61,7 @@ suggested_start_date = 'Mission récurrente, ayant lieu le samedi matin'
 suggested_end_date = 'n.a.'
 suggested_duration = '3 heures par session'
 suggested_format = 'Discussion au téléphone, présence à une ou plusieurs séances d\'inscription'
-status = '10_open'
+status = '0_draft'
 author = 'Thomas'
 published_at = Time.now
 staffed_at = Time.now
@@ -418,7 +418,7 @@ suggested_format = "n.a."
 
 mission = Mission.create(title: title,
   skills: skills,
-  status: '10_open',
+  status: '0_draft',
   nonprofit_profile: NonprofitProfile.find_by_name('24h01'),
   author: author,
   published_at: published_at,
@@ -756,7 +756,7 @@ suggested_format = 'Réunion de rencontre, suivie d\'une ou plusieurs sessions d
 
 mission = Mission.create(title: title,
   skills: skills,
-  status: "10_open",
+  status: "0_draft",
   nonprofit_profile: NonprofitProfile.find_by_name('Le Maître Mot'),
   author: author,
   published_at: published_at,
@@ -794,7 +794,7 @@ suggested_format = 'Une ou plusieurs réunions de travail avec l’association'
 
 mission = Mission.create(title: title,
   skills: skills,
-  status: "10_open",
+  status: "0_draft",
   nonprofit_profile: NonprofitProfile.find_by_name('Le Maître Mot'),
   author: author,
   published_at: published_at,
@@ -1319,7 +1319,7 @@ suggested_start_date = 'n.a'
 suggested_end_date = 'n.a'
 suggested_duration = '0,5 journée équivalent temps plein'
 suggested_format = 'Discussion d\'introduction, Présentation de la charte actuelle, Travail individuel du bénévole, Partage et amendements du document mis à jour'
-status = '10_open'
+status = '0_draft'
 author = 'Thomas'
 published_at = Time.now
 staffed_at = Time.now
@@ -1423,7 +1423,7 @@ suggested_start_date = 'n.a'
 suggested_end_date = 'n.a'
 suggested_duration = '0,5 journée équivalent temps plein'
 suggested_format = 'Discussion d\'introduction, Présentation des données disponibles, Travail d\'analyse du bénévole, Partage des résultatset discussion'
-status = '10_open'
+status = '0_draft'
 author = 'Thomas'
 published_at = Time.now
 staffed_at = Time.now
