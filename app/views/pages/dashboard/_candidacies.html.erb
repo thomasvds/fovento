@@ -9,39 +9,36 @@
   </thead>
   <tbody>
     <!-- GENERATE TERMS AND CONDITIONS ONLY ONCE -->
-    <%= content_for(:links) do %>
-    Je m'engage à réaliser la mission de manière professionnelle, en accord avec les <%= link_to "valeurs de la communauté Fovento", community_and_impact_path, :target => "_blank" %> et les <%=link_to "conditions d'utilisation", terms_and_conditions_path, :target => "_blank" %> plate-forme
-    <% end %>
     <% candidacies.each do |candidacy| %>
     <tr>
       <td><%= candidacy.mission.title %> &nbsp;
         <%= link_to mission_path(candidacy.mission) do %>
-        <i class="fa fa-external-link" style="color: gray; font-size: 15px;"></i>
+        <i class="fa fa-external-link infoicon"></i>
         <% end %>
       </td>
       <td>
         <% case candidacy.status %>
         <% when "pending moderation", "pending confirmation" %>
         <span class="label label-info gray">Envoyée</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu ta candidature et celles d'autres bénévoles potentiels. Tu sauras bientôt si ta candidature est retenue. Nous demandons aux associations de se décider endéans 7 jours au plus tard, mais en général tu auras des informations endéans 48 heures."></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu ta candidature et celles d'autres bénévoles potentiels. Tu sauras bientôt si ta candidature est retenue. Nous demandons aux associations de se décider endéans 7 jours au plus tard, mais en général tu auras des informations endéans 48 heures."></i>
         <% when "rejected" %>
         <span class="label label-danger">Non retenue</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Relax...les candidatures ne sont pas un entretien d'embauche :) L'association a choisi un autre bénévole, sans doute pour des raisons purement pratiques (e.g., disponibilité). N'hésite pas à postuler pour d'autres missions! "></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Relax...les candidatures ne sont pas un entretien d'embauche :) L'association a choisi un autre bénévole, sans doute pour des raisons purement pratiques (e.g., disponibilité). N'hésite pas à postuler pour d'autres missions! "></i>
         <% when "confirmed" %>
         <span class="label label-success">Acceptée</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Congrats! Tu peux maintenant suivre la mission dans 'Mes Missions'. Ta candidature reste enregistrée ici si tu veux y accéder plus tard."></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Congrats! Tu peux maintenant suivre la mission dans 'Mes Missions'. Ta candidature reste enregistrée ici si tu veux y accéder plus tard."></i>
         <% end %>
       </td>
       <td><%= candidacy.created_at.strftime("%d/%m/%Y") %></td>
       <td>
         <%= link_to mission_candidacy_path(candidacy.mission, candidacy) do%>
-        <i class="fa fa-eye" style="color: gray; font-size: 20px;"></i>
+        <i class="fa fa-eye actionicon"></i>
         <% end %>
         &nbsp;
         &nbsp;
 
         <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :delete, :confirm=>'Confirmer?' do %>
-        <i class="fa fa-trash" style="color: gray; font-size: 20px;"></i>
+        <i class="fa fa-trash actionicon"></i>
         <% end %>
 
       </td>
@@ -51,5 +48,5 @@
   </tbody>
 
 </table>
-<i class="fa fa-eye" style="color: gray; font-size: 15px;"></i><small>   Voir la candidature</small>  &nbsp;
-<i class="fa fa-trash" style="color: gray; font-size: 15px;"></i><small>   Retirer la candidature</small>
+<i class="fa fa-eye infoicon"></i><small>   Voir la candidature</small>  &nbsp;
+<i class="fa fa-trash infoicon"></i><small>   Retirer la candidature</small>

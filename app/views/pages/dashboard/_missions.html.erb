@@ -15,7 +15,7 @@
       <!-- MISSION TITLE -->
       <td><%= mission.title %> &nbsp;
         <%= link_to mission_path(mission) do %>
-        <i class="fa fa-external-link" style="color: gray; font-size: 15px;"></i>
+        <i class="fa fa-external-link infoicon"></i>
         <% end %>
       </td>
       <!-- STATUS AND CONTEXTUAL HELP -->
@@ -23,19 +23,19 @@
         <% case mission.status %>
         <% when '20_staffed'%>
         <span class="label label-warning">En attente de démarrage</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Lors de ta première rencontre avec l'association, tu pourras confirmer le démarrage de la mission dans les actions à droite"></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Lors de ta première rencontre avec l'association, tu pourras confirmer le démarrage de la mission dans les actions à droite"></i>
         <% when '30_started' %>
         <span class="label label-primary">En cours</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Lorsque tu auras accompli la mission ou si tu souhaites l'interrompre, signale-le dans les actions à droite"></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Lorsque tu auras accompli la mission ou si tu souhaites l'interrompre, signale-le dans les actions à droite"></i>
         <% when '40_accomplished' %>
         <span class="label label-success">Accomplie</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title=" Mission accomplie, well done. N'hésite pas à te lancer sur d'autres missions!"></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title=" Mission accomplie, well done. N'hésite pas à te lancer sur d'autres missions!"></i>
         <% when '50_interrupted' %>
         <span class="label label-danger">Interrompue</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title=" Mission interrompue. Contacte l'équipe Fovento si tu souhaites réactiver cette mission."></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title=" Mission interrompue. Contacte l'équipe Fovento si tu souhaites réactiver cette mission."></i>
         <% when '99_cancelled' %>
         <span class="label label-info gray">Annulée</span>
-        <i class="fa fa-info custom-tooltip" style="color: gray; font-size: 15px;" data-toggle="tooltip" data-placement="bottom" title="Mission annulée ou interrompue. N'hésite pas à te lancer sur d'autres missions!"></i>
+        <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Mission annulée ou interrompue. N'hésite pas à te lancer sur d'autres missions!"></i>
         <% end %>
       </td>
       <!-- MISSION STAFFING DATE -->
@@ -44,15 +44,21 @@
       <td>
         <% case mission.status %>
         <% when '20_staffed'%>
-        <i class="fa fa-play-circle" style="color: gray; font-size: 20px;" data-toggle="modal" data-target="#<%= mission.id.to_s%>"></i>
-        <%= render 'logbooks/start', mission: mission %>
+        <%= link_to mission_begin_path(mission) do %>
+        <i class="fa fa-play-circle actionicon"></i>
+        <% end %>
+
         <% when '30_started' %>
-        <i class="fa fa-check-square" style="color: gray; font-size: 20px;" data-toggle="modal" data-target="#<%= mission.id.to_s%>"></i>
-        <%= render 'logbooks/accomplish', mission: mission %>
+        <%= link_to mission_finish_path(mission) do %>
+        <i class="fa fa-check-square actionicon"></i>
+        <% end %>
+
         &nbsp;
         &nbsp;
-        <i class="fa fa-times-circle" style="color: gray; font-size: 20px;" data-toggle="modal" data-target="#<%= mission.id.to_s + '_interrupt'%>"></i>
-        <%= render 'logbooks/interrupt', mission: mission %>
+        <%= link_to mission_stop_path(mission) do %>
+        <i class="fa fa-times-circle actionicon"></i>
+        <% end %>
+
         <% end %>
       </td>
     </tr>
@@ -61,6 +67,6 @@
 </table>
 
 <!-- ACTION ICONS LEGEND -->
-<i class="fa fa-play-circle" style="color: gray; font-size: 15px;"></i><small>   Confirmer le démarrage</small> &nbsp;
-<i class="fa fa-check-square" style="color: gray; font-size: 15px;"></i><small>   Marquer la mission accomplie</small> &nbsp;
-<i class="fa fa-times-circle" style="color: gray; font-size: 15px;"></i><small>   Interrompre la mission</small>
+<i class="fa fa-play-circle infoicon"></i><small>   Confirmer le démarrage</small> &nbsp;
+<i class="fa fa-check-square infoicon"></i><small>   Marquer la mission accomplie</small> &nbsp;
+<i class="fa fa-times-circle infoicon"></i><small>   Interrompre la mission</small>

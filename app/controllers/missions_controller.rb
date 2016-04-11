@@ -70,6 +70,10 @@ class MissionsController < ApplicationController
     end
   end
 
+  # DEDICATED PAGE FOR MOBILE USERS ONLY, REPLACING START MODAL
+  def begin
+  end
+
   def start
     @mission.update(status: "30_started")
     @mission.update(mission_params)
@@ -79,6 +83,10 @@ class MissionsController < ApplicationController
     end
   end
 
+  # DEDICATED PAGE FOR MOBILE USERS ONLY, REPLACING ACCOMPLISH MODAL
+  def finish
+  end
+
   def accomplish
     @mission.update(status: "40_accomplished")
     @mission.update(mission_params)
@@ -86,6 +94,10 @@ class MissionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to dashboard_path, notice: "Encore merci pour ton engagement!" }
     end
+  end
+
+  # DEDICATED PAGE FOR MOBILE USERS ONLY, REPLACING INTERRUPT MODAL
+  def stop
   end
 
   def interrupt

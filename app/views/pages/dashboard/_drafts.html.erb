@@ -24,22 +24,22 @@
       <!-- MISSION ACTIONS, INCLUDING LOGBOOK EDITING -->
       <td>
         <%= link_to edit_mission_path(mission) do%>
-        <i class="fa fa-pencil" style="color: gray; font-size: 20px;"></i>
+        <i class="fa fa-pencil actionicon"></i>
         <% end %>
         &nbsp;
         &nbsp;
         <%= link_to mission_path(mission) do%>
-        <i class="fa fa-eye" style="color: gray; font-size: 20px;"></i>
+        <i class="fa fa-eye actionicon"></i>
         <% end %>
         &nbsp;
         &nbsp;
         <%= link_to mission_publish_path(mission), method: :put do%>
-        <i class="fa fa-check-square" style="color: gray; font-size: 20px;"></i>
+        <i class="fa fa-check-square actionicon"></i>
         <% end %>
         &nbsp;
         &nbsp;
         <%= link_to mission_path(mission), method: :delete do%>
-        <i class="fa fa-trash" style="color: gray; font-size: 20px;"></i>
+        <i class="fa fa-trash actionicon"></i>
         <% end %>
         &nbsp;
         &nbsp;
@@ -50,7 +50,7 @@
 </table>
 
 <!-- ACTION ICONS LEGEND -->
-<i class="fa fa-pencil" style="color: gray; font-size: 15px;"></i><small>   Editer</small> &nbsp;
-<i class="fa fa-eye" style="color: gray; font-size: 15px;"></i><small>   Preview</small> &nbsp;
-<i class="fa fa-check-square" style="color: gray; font-size: 15px;"></i><small>   Publier</small> &nbsp;
-<i class="fa fa-trash" style="color: gray; font-size: 15px;"></i><small>   Supprimer le draft</small>
+<i class="fa fa-pencil infoicon"></i><small>   Editer</small> &nbsp;
+<i class="fa fa-eye infoicon"></i><small>   Preview</small> &nbsp;
+<i class="fa fa-check-square infoicon"></i><small>   Publier</small> &nbsp;
+<i class="fa fa-trash infoicon"></i><small>   Supprimer le draft</small>

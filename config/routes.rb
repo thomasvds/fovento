@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   end
 
   put 'mission/:id/publish', to: 'missions#publish', as: 'mission_publish'
+
+  # MOBILE-ONLY
+  get 'mission/:id/begin', to: 'missions#begin', as: 'mission_begin'
+  get 'mission/:id/finish', to: 'missions#finish', as: 'mission_finish'
+  get 'mission/:id/stop', to: 'missions#stop', as: 'mission_stop'
+
   put 'mission/:id/start', to: 'missions#start', as: 'mission_start'
   put 'mission/:id/accomplish', to: 'missions#accomplish', as: 'mission_accomplish'
   put 'mission/:id/interrupt', to: 'missions#interrupt', as: 'mission_interrupt'
