@@ -8,7 +8,7 @@
           <%= simple_form_for @mission, :url => mission_accomplish_path(@mission), method: 'put', html: { class: 'form-box' } do |f| %>
           <!-- NESTED FORM FOR THE LOGBOOK -->
           <%= f.simple_fields_for :logbook do |l| %>
-          <%= l.input :hours_worked, label: "Combien d'heures environ as-tu consacrées pour accomplir cette mission?" %>
+          <%= l.input :hours_worked, as: :integer, label: "Combien d'heures environ as-tu consacrées pour accomplir cette mission?" %>
 
           <%= l.input :nps, label: "Sur une échelle de 1 à 10, à quel point recommanderais-tu Fovento à une connaissance (10: très probable, 1: très improbable)?", collection: 1..10 %>
 
