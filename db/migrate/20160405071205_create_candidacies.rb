@@ -4,7 +4,8 @@ class CreateCandidacies < ActiveRecord::Migration
       t.string :motivation_for_mission
       t.string :motivation_for_skills
       t.string :engagement_practicalities
-      t.timestamp :consulted_at
+      t.timestamp :written_at
+      t.timestamp :transferred_at
       t.timestamp :decided_at
       t.integer :browse_count, default: 1
       t.string :status, default: 'browsing'

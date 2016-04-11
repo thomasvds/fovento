@@ -22,7 +22,7 @@ class CandidaciesController < ApplicationController
   def update
     respond_to do |format|
       if @candidacy.update(candidacy_params)
-        @candidacy.update(status: "pending moderation")
+        @candidacy.update(status: "pending moderation", written_at: Time.now)
         format.html { redirect_to dashboard_path, notice: "Merci pour ta candidature! Elle va être partagée avec l'association." }
         format.json { render :show, status: :created }
       else
@@ -34,7 +34,7 @@ class CandidaciesController < ApplicationController
 
   def transfer
     VolunteerMailer.transfer(@candidacy).deliver_now
-    @candidacy.update(status: "pending confirmation")
+    @candidacy.update(status: "pending confirmation", transferred_at: Time.now)
     respond_to do |format|
         format.html { redirect_to dashboard_path, notice: "La candidature a été envoyée à l'association." }
     end
@@ -49,7 +49,7 @@ class CandidaciesController < ApplicationController
     else
       #Set all candidacies of the mission to rejected by default
       @candidacy.mission.candidacies.each do |candidacy|
-        candidacy.update(status: "rejected")
+        candidacy.update(status: "rejected", decided_at: Time.now)
       end
       #Retrieve the current candidacy and confirm it, undoing rejection
       @candidacy.update(status: "confirmed")

@@ -6,6 +6,7 @@
     <th>Titre de la mission</th>
     <th>Bénévole</th>
     <th>Statut</th>
+    <th>Dépôt/transfert</th>
     <th>Actions</th>
   </thead>
 
@@ -24,6 +25,13 @@
         <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="L'association a reçu la candidature, et doit maintenant la sélectionner ou la refuser. Tu peux aussi forcer la validation si nécessaire, en accord avec l'association."></i>
         <% end %>
       </td>
+      <!-- TIMING -->
+      <% case candidacy.status %>
+        <% when 'pending moderation' %>
+        <td><%= candidacy.written_at.strftime("%d/%m/%Y") %></td>
+        <% when 'pending confirmation' %>
+        <td><%= candidacy.transferred_at.strftime("%d/%m/%Y") %></td>
+      <% end %>
       <!-- ACTIONS -->
       <td>
         <%= link_to mission_candidacy_path(candidacy.mission, candidacy) do%>

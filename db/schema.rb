@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20160407123259) do
     t.string   "motivation_for_mission"
     t.string   "motivation_for_skills"
     t.string   "engagement_practicalities"
-    t.datetime "consulted_at"
+    t.datetime "written_at"
+    t.datetime "transferred_at"
     t.datetime "decided_at"
     t.integer  "browse_count",              default: 1
     t.string   "status",                    default: "browsing"

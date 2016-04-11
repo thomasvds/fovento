@@ -39,7 +39,7 @@
         <% end %>
       </td>
       <!-- MISSION STAFFING DATE -->
-      <td><%= mission.staffed_at.strftime("%d/%m/%Y") %></td>
+      <td><%= mission.updated_at.strftime("%d/%m/%Y") %></td>
       <!-- MISSION ACTIONS, INCLUDING LOGBOOK EDITING -->
       <td>
         <% case mission.status %>
