@@ -5,7 +5,7 @@
         <div class='form_box'>
           <h2>Interruption de mission</h2>
           <!-- FORM FOR THE MISSION -->
-          <%= simple_form_for @mission,  :url => mission_interrupt_path(@mission), method: 'put', html: {id: "interrupt_#{mission.id}", class: 'form-box' } do |f| %>
+          <%= simple_form_for @mission,  :url => mission_interrupt_path(@mission), method: 'put', html: {id: "interrupt_#{@mission.id}", class: 'form-box' } do |f| %>
           <!-- NESTED FORM FOR THE LOGBOOK -->
           <%= f.simple_fields_for :logbook do |l| %>
           <%= l.input :volunteer_feedback, label: "Peux-tu nous en dire plus sur les raisons de cette interruption?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'} %>
