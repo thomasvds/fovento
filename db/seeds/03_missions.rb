@@ -942,7 +942,7 @@ mission = Mission.create(title: title,
 
 #=======ONA============================
 title = 'Rédaction d\'un cahier des charges pour l\'évolution des bases de données'
-skills = 'Base de données, Operations'
+skills = 'Bases de données, Operations'
 status = '10_open'
 author = 'Thomas'
 full_title = 'Rédaction d\'un cahier des charges pour un potentiel outil permettant l\'intégration de multiples bases de données en un système global'

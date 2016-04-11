@@ -1,0 +1,21 @@
+.skillbutton {
+  font-size: 12px;
+  margin: 2px 2px 2px 2px;
+  cursor: pointer;
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: lighter;
+  line-height: 1;
+  color: $gray;
+  background-color: $gray-lighter;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+.skilltosearch {
+  background-color: $primary-light;
+  color: white;
+}

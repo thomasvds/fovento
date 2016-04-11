@@ -4,9 +4,27 @@ class MissionsController < ApplicationController
 
   #====== READ METHODS ======
   def index
-    q = Quote.count
-    @quote = Quote.offset(rand(q)).first
-    @missions = Mission.where.not(status: "0_draft").order(:status)
+    if params[:skills].nil?
+      @missions = Mission.where.not(status: "0_draft").order(:status)
+    else
+      skills_to_search = params[:skills][:list].split(",")
+      skills_to_search.each do |s|
+        @missions = Mission.where("skills ILIKE '%#{s}%'").where.not(status: "0_draft").order(:status)
+      end
+    end
+
+    skills_available = []
+    Mission.all.each do |m|
+      skills = m.skills.split(",")
+      skills.each do |s|
+        s.strip!
+        skills_available << s
+      end
+    end
+    @skills_available = skills_available.sort.uniq!
+  end
+
+  def search
   end
 
   def show

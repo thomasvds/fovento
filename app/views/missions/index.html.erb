@@ -1,7 +1,18 @@
 <div class="wrapper-gray">
   <div class="container padded">
     <div class="controls text-center">
-      <%= @quote.content %>
+
+      <div class="searchform">
+        <%= simple_form_for :skills, url: missions_path, method: :get do |f| %>
+        <%= f.input :list, :as => :string, input_html: {id: "skillsform"} %>
+        <% @skills_available.each do |skill| %>
+        <div class="skillbutton">
+          <%= skill %>
+        </div>
+        <% end %>
+        <%= f.button :submit, value: "Chercher", class: 'btn-primary btn-xs searchbutton' %>
+        <% end %>
+      </div>
     </div>
     <br>
 
@@ -12,3 +23,14 @@
     </div>
   </div>
 </div>
+
+<script>
+  $( ".skillbutton" ).click(function() {
+    $( this ).toggleClass("skilltosearch");
+    var skills = [];
+    $(".skilltosearch").each(function() {
+      skills.push($(this).text().trim());
+    });
+    $("#skillsform").val(skills);
+  });
+</script>
