@@ -4,13 +4,19 @@ class MissionsController < ApplicationController
 
   #====== READ METHODS ======
   def index
-    if params[:skills].nil?
+
+    if params[:skills].nil? || params[:skills][:list].first == ""
       @missions = Mission.where.not(status: "0_draft").order(:status)
     else
-      skills_to_search = params[:skills][:list].split(",")
-      skills_to_search.each do |s|
-        @missions = Mission.where("skills ILIKE '%#{s}%'").where.not(status: "0_draft").order(:status)
+      @skills_to_search = params[:skills][:list].split(",")
+      @missions = []
+      @skills_to_search.each do |s|
+        results = Mission.where("skills ILIKE '%#{s}%'").where.not(status: "0_draft")
+        results.each do |r|
+          @missions << r
+        end
       end
+      @missions = @missions.sort_by(&:status).uniq
     end
 
     skills_available = []
@@ -22,9 +28,6 @@ class MissionsController < ApplicationController
       end
     end
     @skills_available = skills_available.sort.uniq!
-  end
-
-  def search
   end
 
   def show

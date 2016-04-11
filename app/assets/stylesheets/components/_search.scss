@@ -19,3 +19,27 @@
   background-color: $primary-light;
   color: white;
 }
+
+.allskills {
+  background-color: white;
+  color: $primary;
+  text-decoration: none !important;
+}
+
+.searchboxheader {
+  h3 {
+    color: $gray;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  p {
+    margin-bottom: 0px;
+    text-align: left;
+    color: $gray;
+  }
+
+  hr {
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+}

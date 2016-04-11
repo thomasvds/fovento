@@ -5,10 +5,10 @@ class PagesController < ApplicationController
 
   def home_volunteers
     @volunteers = Volunteer.order("RANDOM()").first(12)
-    @nonprofits = NonprofitProfile.order("RANDOM()")
   end
 
   def home_nonprofits
+    @nonprofits = NonprofitProfile.order("RANDOM()")
   end
 
   def how_it_works

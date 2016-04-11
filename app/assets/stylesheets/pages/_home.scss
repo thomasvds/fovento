@@ -79,6 +79,7 @@
       font-size: 18px;
       margin-bottom: 35px;
       margin-top: 10px;
+      color: $gray;
     }
   .volunteer {
     // display: flex;
@@ -87,7 +88,7 @@
     // flex-direction: column;
     text-align: center;
     p {
-      color: $gray-dark;
+      color: $gray;
       font-size: 16px;
     }
   }

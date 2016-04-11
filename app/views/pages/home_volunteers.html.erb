@@ -91,17 +91,8 @@
       <% end %>
     </div>
 
-    <h3>Elles font confiance aux bénévoles Fovento:</h3>
-    <div class= "row">
-      <% @nonprofits.each do |n| %>
-      <div class="col-xs-4">
-        <div class="nonprofit"><%= image_tag n.logo, class: 'avatar-nonprofit-home' %></div>
-      </div>
-      <% end %>
-    </div>
-
   </div>
-
+</div>
   <script>
     $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
     $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '21px' });

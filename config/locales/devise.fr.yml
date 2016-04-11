@@ -27,7 +27,7 @@ fr:
         subject: "Ton mot de passe a été modifié avec succés."
     omniauth_callbacks:
       failure: "Nous n'avons pas pu vous authentifier via %{kind} : '%{reason}'."
-      success: "Authentification réussie."
+      success: "Connection réussie."
     passwords:
       no_token: "Vous ne pouvez accéder à cette page sans passer par un e-mail de réinitialisation de mot de passe. Si vous êtes passé par un e-mail de ce type, assurez-vous d'utiliser l'URL complète."
       send_instructions: "Vous allez recevoir les instructions de réinitialisation du mot de passe dans quelques instants"

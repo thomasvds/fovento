@@ -1,8 +1,9 @@
-<div class='container padded'>
-  <div class='row'>
-    <div class='col-xs-12 col-md-6 col-md-offset-3'>
-      <div class='thumbnail'>
-      <div class='form_box'>
+<div class='devise-banner' style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.3) 5%, rgba(0,0,0,0.1) 100%), url(<%= image_path("girlhorizon.jpg") %>);">
+  <!-- <div class='thumbnail'> -->
+  <div class='devise-box padded' style="max-width: 500px;">
+    <div class='background'>
+      <div class='form text-center'>
+
         <h2>Inscription</h2>
         <br />
         <%= render "devise/shared/social_logins" %>
@@ -25,10 +26,10 @@
         <% end %>
         <br />
         <div class="form_options">
-        <%= render "devise/shared/links" %>
+          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div>
+

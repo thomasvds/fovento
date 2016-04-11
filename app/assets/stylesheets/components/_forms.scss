@@ -57,3 +57,38 @@
     font-size: 14px;
   }
 }
+
+.devise-banner {
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.devise-box {
+
+  .background{
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+  }
+
+  .form{
+    padding: 30px;
+    color: $gray;
+    h2 {
+      color: $primary-light;
+      text-align: center;
+    }
+    p {
+      font-size: 14px;
+      color: $gray;
+    }
+
+    .form_options a {
+      text-decoration: none;
+      color: $gray;
+      font-size: 14px;
+    }
+  }
+
+}

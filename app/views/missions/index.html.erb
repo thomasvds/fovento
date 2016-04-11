@@ -1,30 +1,41 @@
 <div class="wrapper-gray">
   <div class="container padded">
-    <div class="controls text-center">
 
-      <div class="searchform">
+    <div class="controls text-center">
+      <div class="searchboxheader">
+      <h3>Découvre les missions Fovento. Quel sera ton impact?</h3>
+        <p>Rechercher les missions par compétence &nbsp;  <i class="fa fa-search actionicon" id="boxopener"></i></p>
+        <hr>
+      </p>
+      <div class="searchbox">
         <%= simple_form_for :skills, url: missions_path, method: :get do |f| %>
-        <%= f.input :list, :as => :string, input_html: {id: "skillsform"} %>
+        <%= f.input :list, :as => :hidden, input_html: {id: "skillsform"} %>
         <% @skills_available.each do |skill| %>
-        <div class="skillbutton">
+        <div class="skillbutton <%= "skilltosearch" if (!@skills_to_search.nil? && @skills_to_search.include?(skill))%>">
           <%= skill %>
         </div>
         <% end %>
-        <%= f.button :submit, value: "Chercher", class: 'btn-primary btn-xs searchbutton' %>
+        <%= link_to "Afficher toutes les missions", missions_path, class: "skillbutton allskills" %>
+        <%= f.button :submit, class: 'hidden' %>
         <% end %>
       </div>
     </div>
-    <br>
+  </div>
 
-    <div class="row" id="portfolio">
-      <% @missions.each do |mission| %>
-      <%= render 'card', mission: mission %>
-      <% end %>
-    </div>
+
+  <br>
+
+  <div class="row" id="portfolio">
+    <% @missions.each do |mission| %>
+    <%= render 'card', mission: mission %>
+    <% end %>
   </div>
 </div>
 
 <script>
+  $("#boxopener").click(function(){
+    $(".searchbox").slideToggle();
+  });
   $( ".skillbutton" ).click(function() {
     $( this ).toggleClass("skilltosearch");
     var skills = [];
@@ -32,5 +43,6 @@
       skills.push($(this).text().trim());
     });
     $("#skillsform").val(skills);
+    $(".simple_form").trigger("submit");
   });
 </script>

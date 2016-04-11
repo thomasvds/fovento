@@ -899,7 +899,7 @@ mission = Mission.create(title: title,
 
 #=======Repair Café============================
 title = 'Quel modèle de rémunération pour un nouvel administrateur de l’asbl?'
-skills = 'RH, Juridique'
+skills = 'RH, Droit'
 status = '10_open'
 author = 'Thomas'
 full_title = 'Quelles sont les différents modèles de rémunération pour un nouvel administrateur de l’asbl?'
@@ -942,7 +942,7 @@ mission = Mission.create(title: title,
 
 #=======ONA============================
 title = 'Rédaction d\'un cahier des charges pour l\'évolution des bases de données'
-skills = 'Bases de données, Operations'
+skills = 'Bases de données, Opérations'
 status = '10_open'
 author = 'Thomas'
 full_title = 'Rédaction d\'un cahier des charges pour un potentiel outil permettant l\'intégration de multiples bases de données en un système global'

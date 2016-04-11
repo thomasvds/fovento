@@ -2,7 +2,7 @@
   <% resource_class.omniauth_providers.each do |provider| %>
     <%= link_to omniauth_authorize_path(resource_name, provider), class: "text-center btn btn-block btn-social btn-#{OmniAuth::Utils.camelize(provider).downcase} text-center" do %>
        <span class="<%= "fa fa-#{OmniAuth::Utils.camelize(provider)}".downcase%>"></span>
-       <%="#{OmniAuth::Utils.camelize(provider)} Connect"%>
+       <%="Connection #{OmniAuth::Utils.camelize(provider)}"%>
     <% end %>
   <% end -%>
 <% end -%>
