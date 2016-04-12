@@ -59,13 +59,9 @@
               <!-- Must connect modal -->
               <%= render 'shared/mustconnect' %>
             <% elsif current_volunteer.candidate?(@mission) %>
-              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)), class: 'btn btn-default btn-xs hidden-xs' %>
+              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, @candidacy), class: 'btn btn-default btn-xs hidden-xs' %>
             <% else %>
-              <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target="#applyModal">
-                  Je me lance!
-              </button>
-              <!-- Candidacy modal -->
-              <%= render 'candidacies/new', mission: @mission, candidacy: @candidacy %>
+              <%= link_to "Je me lance!", edit_mission_candidacy_path(@mission, @candidacy), class: 'btn btn-primary btn-xs hidden-xs' %>
             <% end %>
           <% end %>
         </div>
@@ -81,11 +77,9 @@
                   Je me lance!
               </button>
             <% elsif current_volunteer.candidate?(@mission) %>
-              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)), class: 'btn btn-default btn-md' %>
+              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, @candidacy), class: 'btn btn-default btn-md' %>
             <% else %>
-              <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
-                  Je me lance!
-              </button>
+              <%= link_to "Je me lance!", edit_mission_candidacy_path(@mission, @candidacy), class: 'btn btn-primary btn-md' %>
             <% end %>
           </div>
         </div>
@@ -164,10 +158,9 @@
                   Je me lance!
               </button>
             <% elsif current_volunteer.candidate?(@mission) %>
-              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, current_volunteer.candidacy_for_mission(@mission)), class: 'btn btn-default btn-md' %>
+              <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, @candidacy), class: 'btn btn-default btn-md' %>
             <% else %>
-              <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#applyModal">
-                  Je me lance!
+              <%= link_to "Je me lance!", edit_mission_candidacy_path(@mission, @candidacy), class: 'btn btn-primary btn-md' %>
               </button>
             <% end %>
           </div>

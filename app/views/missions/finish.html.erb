@@ -1,29 +1,27 @@
-<div class='container padded'>
-  <div class='row'>
-    <div class='col-xs-12 col-md-6 col-md-offset-3'>
-      <div class='thumbnail'>
-        <div class='form_box'>
-          <h2>Well done! Terminons en beauté.</h2>
-          <!-- FORM FOR THE MISSION -->
-          <%= simple_form_for @mission, :url => mission_accomplish_path(@mission), method: 'put', html: { class: 'form-box' } do |f| %>
-          <!-- NESTED FORM FOR THE LOGBOOK -->
-          <%= f.simple_fields_for :logbook do |l| %>
-          <%= l.input :hours_worked, as: :integer, label: "Combien d'heures environ as-tu consacrées pour accomplir cette mission?" %>
+<div class='form-banner' style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.3) 5%, rgba(0,0,0,0.1) 100%), url(<%= image_path("workers2.jpg") %>);">
+  <div class='form-box padded'>
+    <div class='background'>
+      <div class='form'>
+        <h2>Well done! Terminons en beauté.</h2>
+        <!-- FORM FOR THE MISSION -->
+        <%= simple_form_for @mission, :url => mission_accomplish_path(@mission), method: 'put', html: { class: 'form-box' } do |f| %>
+        <!-- NESTED FORM FOR THE LOGBOOK -->
+        <%= f.simple_fields_for :logbook do |l| %>
+        <%= l.input :hours_worked, as: :integer, label: "Combien d'heures environ as-tu consacrées pour accomplir cette mission?" %>
 
-          <%= l.input :nps, label: "Sur une échelle de 1 à 10, à quel point recommanderais-tu Fovento à une connaissance (10: très probable, 1: très improbable)?", collection: 1..10 %>
+        <%= l.input :nps, label: "Sur une échelle de 1 à 10, à quel point recommanderais-tu Fovento à une connaissance (10: très probable, 1: très improbable)?", collection: 1..10 %>
 
-          <%= l.input :volunteer_testimonial, as: :text, label: "Inspire d'autres bénévoles à agir comme toi! Tu peux laisser ici un court témoignage:", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
+        <%= l.input :volunteer_testimonial, as: :text, label: "Inspire d'autres bénévoles à agir comme toi! Tu peux laisser ici un court témoignage:", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
 
-          <%= l.input :testimonial_publishable, label: "J'autorise la publication de mon témoignage sur la plate-forme", :default => true %>
+        <%= l.input :testimonial_publishable, label: "J'autorise la publication de mon témoignage sur la plate-forme", :default => true %>
 
-          <%= l.input :volunteer_feedback, as: :text, label: "L'équipe Fovento te remercie d'avoir utilisé la plate-forme. As-tu du feedback pour l'améliorer?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
-          <% end %>
+        <%= l.input :volunteer_feedback, as: :text, label: "L'équipe Fovento te remercie d'avoir utilisé la plate-forme. As-tu du feedback pour l'améliorer?", :input_html => { :rows => 4 , :style => 'font-size: 12px; font-style: italic'}, placeholder: "(optionnel)" %>
+        <% end %>
 
-          <div style="display: flex; justify-content: space-around;">
-            <%= f.button :submit, value: "Clôturer la mission", onclick: 'return confirm("Confirmer?")', class: 'btn-primary btn-xs' %>
-          </div>
-          <% end %>
+        <div style="display: flex; justify-content: space-around;">
+          <%= f.button :submit, value: "Clôturer la mission", onclick: 'return confirm("Confirmer?")', class: 'btn-primary btn-xs' %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>

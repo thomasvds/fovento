@@ -12,14 +12,6 @@ class Volunteer < ActiveRecord::Base
     return candidacies.any? { |candidacy| candidacy.mission == mission && candidacy.status != "browsing" }
   end
 
-  def candidacy_for_mission(mission)
-    if candidate?(mission)
-      return candidacies.find { |candidacy| candidacy.mission == mission }
-    else
-      return false
-    end
-  end
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |volunteer|
       volunteer.email = auth.info.email

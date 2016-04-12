@@ -1,38 +1,31 @@
 
+<div class='form-banner' style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.3) 5%, rgba(0,0,0,0.1) 100%), url(<%= image_path("startbackgroundlight.jpg") %>);">
+  <div class='form-box padded'>
+    <div class='background'>
+      <div class='form text-center'>
+        <h2>Des questions? Contacte-nous!</h2>
 
-<div class='form-banner' style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.3) 5%, rgba(0,0,0,0.1) 100%), url(<%= image_path("workers2.jpg") %>);">
-  <div class='row'>
-    <div class='col-xs-12 col-sm-8 col-sm-offset-2'>
-      <!-- <div class='thumbnail'> -->
-      <div class='logbook-box padded'>
-        <div class='background'>
-          <div class='form'>
-            <div align="center">
-              <h3>Des questions? N'hésite pas à contacter la team Fovento!</h3>
+        <%= simple_form_for @contact, :html => {:class => 'form-horizontal' }, url: pages_sendcontact_path, method: :put do |f| %>
 
-              <%= simple_form_for @contact, :html => {:class => 'form-horizontal' }, url: pages_sendcontact_path, method: :put do |f| %>
-
-              <% if volunteer_signed_in? %>
-              <%= f.input :name, label: 'Nom', :disabled => true, :input_html => { :value => current_volunteer.first_name + " " +current_volunteer.last_name } %>
-              <%= f.input :email, :as => :hidden, :input_html => { :value => current_volunteer.email } %>
-              <% else %>
-              <%= f.input :name, label: 'Nom', :required => true %>
-              <%= f.input :email, :required => true %>
-              <% end %>
-              <%= f.input :message, :as => :text, :required => true %>
-              <div class= "hidden">
-                <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-              </div>
-              <div>
-              </br>
-              <%= f.button :submit, 'Envoyer', :class=> "btn btn-primary" %>
-            </div>
-            <% end %>
-          </div>
+        <% if volunteer_signed_in? %>
+        <%= f.input :name, label: 'Nom', :disabled => true, :input_html => { :value => current_volunteer.first_name + " " +current_volunteer.last_name } %>
+        <%= f.input :email, :as => :hidden, :input_html => { :value => current_volunteer.email } %>
+        <% else %>
+        <%= f.input :name, label: 'Nom', :required => true %>
+        <%= f.input :email, :required => true %>
+        <% end %>
+        <%= f.input :message, :as => :text, :required => true,
+        :input_html => { :rows => 6}  %>
+        <div class= "hidden">
+          <%= f.input :nickname, :hint => 'Leave this field blank!' %>
         </div>
-        <p class="text-center" style="padding-bottom: 10px;">Fovento ASBL - BE 0629.802.588 - contact@fovento.be</p>
+        <div>
+        </br>
+        <%= f.button :submit, 'Envoyer', :class=> "btn btn-primary" %>
       </div>
+      <% end %>
     </div>
-    <!-- </div> -->
+    <p class="text-center" style="padding-bottom: 10px;">Fovento ASBL - BE 0629.802.588 - contact@fovento.be</p>
   </div>
 </div>
+

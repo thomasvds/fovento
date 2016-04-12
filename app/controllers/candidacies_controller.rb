@@ -1,7 +1,7 @@
 class CandidaciesController < ApplicationController
   before_action :authenticate_volunteer!, except: [:index, :confirm]
 
-  before_action :set_candidacy, only: [:transfer, :confirm, :show, :update, :edit, :destroy]
+  before_action :set_candidacy, except: [:index]
   before_action :find_mission, only: [:confirm, :show]
   before_action :find_volunteer, only: [:show]
 
@@ -13,6 +13,9 @@ class CandidaciesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   # This method is used when the volunteer actually applies for a
