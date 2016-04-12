@@ -19,4 +19,8 @@
 .footerbox {
   display: flex;
   justify-content: space-between;
+
+  .nodeco {
+      text-decoration: none !important;
+  }
 }
