@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   put 'mission/:id/interrupt', to: 'missions#interrupt', as: 'mission_interrupt'
 
   get 'pages/dashboard', as: 'dashboard'
+  get 'pages/values', as: 'values'
   get 'pages/how_it_works', as: 'how_it_works'
   get 'pages/contact', as: 'contact'
   put 'pages/sendcontact', to: 'pages#sendcontact'

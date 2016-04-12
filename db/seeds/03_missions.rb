@@ -57,11 +57,11 @@ objectives = '<p>Un des piliers d’action du Maître Mot est la tenue de cours 
 <p>Les membres de l’asbl peuvent déjà compter sur une solide base de connaissance de plusieurs langues (anglais, italien, espagnol…) pour parer à cette difficulté initiale. La langue arabe cependant n’est pas maîtrisée en interne, malgré sa prévalence chez les participants potentiels.<p>
 <p>Pour lui permettre d’assurer au mieux les séances d’orientation et inscription initiales, le Maître Mot est donc à la recherche de bénévoles arabophones prêts à passer quelques heures à l’asbl lors de ces séances, qui ont typiquement lieu le samedi matin. Une aide même ponctuelle sera très appréciée de la part de l’équipe aussi bien que des participants potentiels.<p>'
 outcomes = '<li>Le/la bénévole a été présent(e) lors d’une ou plusieurs sessions d’inscriptions, et a facilité la communication avec les participants potentiels grâce à sa maîtrise de la langue arabe</li>'
-suggested_start_date = 'Mission récurrente, ayant lieu le samedi matin'
+suggested_start_date = 'Mission ponctuelle sur 3 matinées, les 13, 14 et 15 décembre.'
 suggested_end_date = 'n.a.'
 suggested_duration = '3 heures par session'
-suggested_format = 'Discussion au téléphone, présence à une ou plusieurs séances d\'inscription'
-status = '0_draft'
+suggested_format = ' Présence à une ou plusieurs séances d\'inscription, ayant lieu de 10h à 12h.'
+status = '10_open'
 author = 'Thomas'
 published_at = Time.now
 staffed_at = Time.now
@@ -756,7 +756,7 @@ suggested_format = 'Réunion de rencontre, suivie d\'une ou plusieurs sessions d
 
 mission = Mission.create(title: title,
   skills: skills,
-  status: "0_draft",
+  status: "10_open",
   nonprofit_profile: NonprofitProfile.find_by_name('Le Maître Mot'),
   author: author,
   published_at: published_at,
@@ -781,7 +781,8 @@ impact = 'Soutenir le Conseil d\'Administration dans la gestion financière des 
 skills = 'Finance'
 picture = 'picture-le-maitre-mot-3.jpg'
 full_title = 'Perspective externe sur les aspects financiers de l’association, et préparation du contenu financier discuté lors de l’Assemblée Générale de l’association'
-objectives = '<p>Actuellement, le Conseil d’Administration (CA) de l’association est fort de membres ayant une expérience de terrain des activités de l’association. Cependant, il ne compte pas de personne externe au Maître Mot, qui pourrait apporter un regard nouveau bienvenu sur certains aspects de l’association. Cela est vrai en particulier pour les aspects financiers de l’association, car le CA ne compte pas de membre ayant une expérience professionnelle en finance et comptabilité. </p>
+objectives = '<p>Actuellement, le Conseil d’Administration (CA) de l’association est fort de membres ayant une expérience de terrain des activités de l’association ou d’activités similaires dans d’autres contextes. Cependant, il ne compte pas de personne ayant des compétences plus techniques au niveau
+comptable, financier ou juridique. Cela est vrai en particulier pour les aspects financiers de l’association, car le CA ne compte pas de membre ayant une expérience professionnelle en finance et comptabilité. </p>
 <p>L’objectif de la mission est d’accompagner les membres du CA dans leur lecture des finances et du bilan de l’association. Concrètement, un comptable externe remet en fin d’année un dossier financier à l’association : c’est ce dossier qui gagnerait à être analysé en compagnie des membres du CA.</p>
 <p>Par ailleurs, en fonction des disponibilités du ou de la bénévole, ce dossier financier pourrait être mis en forme (typiquement, en PowerPoint) de manière à être présenté clairement et pédagogiquement à l’ensemble des membres de l’Assemblée Générale (AG) de l’association (l’AG comprend un nombre plus large de membres que le CA, et ses membres sont moins régulièrement impliqués dans l’association).</p>'
 outcomes = '<li>Le Conseil d’Administration a gagné une compréhension plus claire des résultats financiers de l’association</p>
@@ -794,7 +795,7 @@ suggested_format = 'Une ou plusieurs réunions de travail avec l’association'
 
 mission = Mission.create(title: title,
   skills: skills,
-  status: "0_draft",
+  status: "10_open",
   nonprofit_profile: NonprofitProfile.find_by_name('Le Maître Mot'),
   author: author,
   published_at: published_at,
