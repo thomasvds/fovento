@@ -1,7 +1,43 @@
+<% small_banner = @mission.status != '10_open' && @mission.status != '0_draft' %>
 
-<div class='mission-banner' style="background-image: linear-gradient(-225deg, rgba(1,1,1,0.8) 0%, rgba(62,146,204,0.6) 80%), url(<%=image_path(@mission.picture)%>);">
+<div class=<%= small_banner ? "small-banner" : "mission-banner"%> style="background-image: linear-gradient(-225deg, rgba(1,1,1,0.6) 0%, rgba(62,146,204,0.3) 80%), url(<%=image_path(@mission.picture)%>);">
   <div class="placeholder" style="flex: 1 0; min-height: 70px;"> </div>
   <div class="container">
+
+
+    <!-- ROADBOOK HEADER -->
+    <div class="page-header" style="border-bottom: none">
+      <h3 style="color: white"><%= @mission.title %></h3>
+      <% @skills.each do |skill| %>
+      <span style="font-size: 16px;" class="label label-info gray"><i class="fa fa-lightbulb-o"></i>
+        <%= skill %>
+      </span>
+      &nbsp
+      <% end %>
+    </div>
+    <!-- end of header row (header is bootstrap responsive) -->
+
+    <!-- IMPACT BOX AND APPLY BUTTON -->
+    <div class"row">
+      <div class="col-xs-12">
+        <div class="impact_box" style="min-width: 100%">
+          <div><i class="fa fa-heart" id="heart"></i><strong> </strong> <%= @mission.impact %></div>
+          <% if @mission.status == '10_open' %>
+          <% if !volunteer_signed_in? %>
+          <button type="button" class="btn btn-primary btn-xs hidden-xs applybutton" data-toggle="modal" data-target=".mustconnectmodal">
+            Je me lance!
+          </button>
+          <!-- Must connect modal -->
+          <%= render 'shared/mustconnect' %>
+          <% elsif current_volunteer.candidate?(@mission) %>
+          <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, @candidacy), class: 'btn btn-default btn-xs hidden-xs' %>
+          <% else %>
+          <%= link_to "Je me lance!", edit_mission_candidacy_path(@mission, @candidacy), class: 'applybutton btn btn-primary btn-xs hidden-xs' %>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <!-- TOP BOX FOR STAFFED MISSIONS, WITH TESTIMONIAL -->
     <% if @mission.status != '10_open' && @mission.status != '0_draft' %>
     <div class="row">
@@ -34,40 +70,6 @@
     </div>
     <% end %>
     <!-- end of top box row -->
-
-    <!-- ROADBOOK HEADER -->
-    <div class="page-header">
-      <h3 style="color: white"><%= @mission.title %></h3>
-      <% @skills.each do |skill| %>
-      <span style="font-size: 16px;" class="label label-info gray"><i class="fa fa-lightbulb-o"></i>
-        <%= skill %>
-      </span>
-      &nbsp
-      <% end %>
-    </div>
-    <!-- end of header row (header is bootstrap responsive) -->
-
-    <!-- IMPACT BOX AND APPLY BUTTON -->
-    <div class"row">
-      <div class="col-xs-12">
-        <div class="impact_box" style="min-width: 100%">
-          <div><i class="fa fa-heart" id="heart"></i><strong> impact:</strong> <%= @mission.impact %></div>
-          <% if @mission.status == '10_open' %>
-          <% if !volunteer_signed_in? %>
-          <button type="button" class="btn btn-primary btn-xs hidden-xs" data-toggle="modal" data-target=".mustconnectmodal">
-            Je me lance!
-          </button>
-          <!-- Must connect modal -->
-          <%= render 'shared/mustconnect' %>
-          <% elsif current_volunteer.candidate?(@mission) %>
-          <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, @candidacy), class: 'btn btn-default btn-xs hidden-xs' %>
-          <% else %>
-          <%= link_to "Je me lance!", edit_mission_candidacy_path(@mission, @candidacy), class: 'btn btn-primary btn-xs hidden-xs' %>
-          <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
   </div>
   <!-- end of impact and apply row -->
 </div>

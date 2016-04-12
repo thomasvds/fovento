@@ -7,14 +7,27 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  padding-top: 100px;
+}
+
+.small-banner {
+  background-size: cover !important;
+  // height: 300px;
+  width: 100%;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-top: 10px;
 }
 
 
 .roadbook_volunteer_box {
   display: flex;
   align-items: center;
-  margin-top: -60px;
-  margin-bottom: -35px;
+  margin-top: -20px;
+  margin-bottom: 15px;
   border-radius: 5px;
   background-color: $primary-light;
   padding: 10px 10px 0px 20px;
@@ -68,6 +81,12 @@
   }
 }
 
+.applybutton {
+  padding: 10px 20px 10px 20px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
 .roadbook_mobile_apply_box {
   display: flex;
   align-items: center;
@@ -84,11 +103,11 @@
 
 .impact_box {
   border-radius: 5px;
-  padding: 15px 10px 10px 20px;
+  padding: 25px 20px 20px 25px;
   margin-right: -15px;
   margin-left: -15px;
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   position: relative;
   background-color: white;
   box-shadow: 2px 4px 2px rgba(0,0,0,0.1);
@@ -108,7 +127,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 5px;
 }
 
 

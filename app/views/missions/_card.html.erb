@@ -6,25 +6,7 @@
     <!-- <div style="height: 4px;"><div style="height: 100%;"></div></div> -->
 
     <!-- LARGE CARD PICTURE -->
-    <div class="image_box" style="background-image: linear-gradient(180deg, rgba(1,1,1,0.44) 20%, rgba(62,146,204,0.1) 80%), url(<%=image_path(mission.picture)%>);">
-
-
-
-      <!-- TITLE -->
-      <div class="title_box">
-        <%= mission.title %>
-      </div>
-
-      <!-- SKILLS BOX -->
-      <div class="skills_box">
-        <% mission.skills.split(',').each do |skill| %>
-        <span style="font-size: 12px; opacity: 0.65;" class="label label-info gray"><i class="fa fa-lightbulb-o"></i>
-          <%= skill %>
-        </span>
-        &nbsp;
-        <% end %>
-      </div>
-
+    <div class="image_box" style="background-image: linear-gradient(180deg, rgba(62,146,204,0.1) 20%, rgba(1,1,1,0.5) 80%), url(<%=image_path(mission.picture)%>);">
 
       <!-- STATUS & VOLUNTEER INFORMATION -->
       <!-- If the mission is accomplished... -->
@@ -56,6 +38,27 @@
           <%= info_message %>. Découvre-la!
         </div>
       </div>
+
+
+      <!-- SKILLS BOX -->
+      <div class="skills_box">
+        <% mission.skills.split(',').each do |skill| %>
+        <span style="font-size: 12px; opacity: 0.8;" class="label label-info gray"><i class="fa fa-lightbulb-o"></i>
+          <%= skill %>
+        </span>
+        &nbsp;
+        <% end %>
+      </div>
+
+      <!-- TITLE -->
+      <div class="title_box">
+        <%= mission.title %>
+      </div>
+
+
+
+
+
     </div>
     <!-- ASSOCIATION BOX -->
     <div class ="association_box">

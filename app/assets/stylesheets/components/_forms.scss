@@ -27,6 +27,14 @@
       color: $gray;
     }
 
+    .form-hint {
+      p {
+        font-size: 12px;
+        color: $gray;
+        font-style: italic;
+      }
+    }
+
     .form_options a {
       text-decoration: none;
       color: $gray;
