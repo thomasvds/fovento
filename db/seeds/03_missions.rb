@@ -818,7 +818,7 @@ skills = 'Wordpress'
 status = '10_open'
 author = 'Thomas'
 full_title = 'Analyse préalable à l’évolution du thème WordPress du site du Forum des Innovations en Education'
-impact = 'Soutient le développement du tutorat dans les écoles bruxelloises'
+impact = 'Soutiens le développement du tutorat dans les écoles bruxelloises'
 objectives = '<p>En tant qu’organisateur principal du Forum des Innovations en Education, Schola ULB maintient un catalogue extensif d’innovations en éducation proposées dans le milieu scolaire et associatif. Ce catalogue, qui compte plus de 1.000 projets, est disponible en ligne sur le site  innovation-education.be.</p>
 <p>Ce site est basé sur un thème WordPress qui correspondait aux besoins de l’association lorsqu’il a été mis sur pieds. Cependant, ce thème n’est actuellement plus maintenu par ses fournisseurs. Ceci cause des complexités de gestion (incompatibilité des plugins, failles de sécurité…) qui alourdissent la charge de travail de l’équipe de l’association et menacent la viabilité à long terme du site. Il a donc été décidé de migrer le contenu du site vers un nouveau thème WordPress.</p>
 <p>L’objectif de cette mission est d’accompagner l’association dans la recherche d’un nouveau thème WordPress correspondant aux besoins du site du Forum des Innovations en Education. Le ou la bénévole proposera un ou plusieurs thèmes et leur évaluation selon des critères à définir avec l’association. Idéalement, un mapping du contenu de l’ancien thème vers le nouveau thème sera aussi documenté.</p>
@@ -859,7 +859,7 @@ skills = 'Recrutement, RH'
 status = '10_open'
 author = 'Thomas'
 full_title = 'Comment valoriser au mieux l’expérience du tutorat sur le CV des étudiants ?'
-impact = 'Soutient le développement du tutorat dans les écoles bruxelloises'
+impact = 'Soutiens le développement du tutorat dans les écoles bruxelloises'
 objectives = '<p>Les tuteurs qui encadrent les sessions de Schola ULB sont en grande majorité des élèves universitaires de l’ULB. Certains de ces élèves sont sur le point de rentrer sur le marché du travail et rédigent donc leur CV, en y mentionnant leur expérience de tutorat.</p>
 <p>L’équipe Schola a eu l’occasion de consulter certains de ces CVs et pense qu’ils gagneraient à ce que l’expérience du tutorat soit mieux mise en valeur. En effet, celle-ci apprend beaucoup aux étudiants dans les domaines de la pédagogie, du leadership, de la responsabilité…</p>
 <p>L’objectif de cette mission est de rédiger une ou plusieurs propositions de textes-types que les étudiants pourraient inclure sur leur CV pour valoriser au mieux leur expérience de tutorat. Un petit guide détaillant la manière d’inclure cette expérience sur leur profil LinkedIn serait aussi très apprécié. Enfin, une réflexion sur la manière la plus efficace de communiquer aux étudiants sur ce qu’ils peuvent retirer professionnellement du tutorat pourrait aussi être engagée.</p>'

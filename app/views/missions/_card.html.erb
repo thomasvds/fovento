@@ -3,66 +3,66 @@
     <%= link_to "", mission_path(mission), class: "card-link"%>
 
     <!-- FILLER FOR COLORED LINE ON TOP -->
-    <div style="height: 8px;"><div style="height: 100%;"></div></div>
-
-    <!-- SKILLS BOX -->
-    <div class="skills_box">
-      <% mission.skills.split(',').each do |skill| %>
-      <span style="font-size: 12px;" class="label label-info gray"><i class="fa fa-lightbulb-o"></i>
-        <%= skill %>
-      </span>
-      &nbsp;
-      <% end %>
-    </div>
-
-    <!-- TITLE -->
-    <div class="title_box">
-      <%= mission.title %>
-    </div>
-
-    <!-- STATUS & VOLUNTEER INFORMATION -->
-    <!-- If the mission is accomplished... -->
-    <% case mission.status %>
-    <% when '10_open' %>
-    <span style="font-size: 14px;" class="label label-primary dispo">Disponible! &nbsp;&nbsp; <i class="fa fa-play-circle play-icon"></i></span>
-    <% info_message = "Cette mission est disponible"%>
-    <!--<%= image_tag image_path('start.png'), class: 'avatar-card' %>-->
-    <!-- If the mission is ongoing... -->
-    <% when '40_accomplished' %>
-    <span style="font-size: 12px;" class="label label-info status gray">Accomplie &nbsp;&nbsp;</span>
-    <% info_message = mission.volunteer.first_name + " a accompli cette mission"%>
-    <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
-    <!-- If the mission is ongoing... -->
-    <% when '30_started', '20_staffed' %>
-    <span style="font-size: 12px;" class="label label-info status gray">En cours  &nbsp;</span>
-    <% info_message = mission.volunteer.first_name + " est en train d'accomplir cette mission"%>
-    <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
-    <% when '50_interrupted' %>
-    <span style="font-size: 12px;" class="label label-info status gray">Interrompue  &nbsp;</span>
-    <% info_message = "Cette mission a été interrompue"%>
-    <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
-    <% when '99_cancelled' %>
-    <span style="font-size: 12px;" class="label label-info status gray">Annulée  &nbsp;</span>
-    <% end %>
+    <!-- <div style="height: 4px;"><div style="height: 100%;"></div></div> -->
 
     <!-- LARGE CARD PICTURE -->
-    <div class="image_box" style="background-image: linear-gradient(-225deg, rgba(1,1,1,0.05) 0%, rgba(62,146,204,0.1) 80%), url(<%=image_path(mission.picture)%>);">
+    <div class="image_box" style="background-image: linear-gradient(180deg, rgba(1,1,1,0.44) 20%, rgba(62,146,204,0.1) 80%), url(<%=image_path(mission.picture)%>);">
+
+
+
+      <!-- TITLE -->
+      <div class="title_box">
+        <%= mission.title %>
+      </div>
+
+      <!-- SKILLS BOX -->
+      <div class="skills_box">
+        <% mission.skills.split(',').each do |skill| %>
+        <span style="font-size: 12px; opacity: 0.65;" class="label label-info gray"><i class="fa fa-lightbulb-o"></i>
+          <%= skill %>
+        </span>
+        &nbsp;
+        <% end %>
+      </div>
+
+
+      <!-- STATUS & VOLUNTEER INFORMATION -->
+      <!-- If the mission is accomplished... -->
+      <% case mission.status %>
+      <% when '10_open' %>
+      <span style="font-size: 14px;" class="label label-primary dispo">Disponible! &nbsp;&nbsp; <i class="fa fa-play-circle play-icon"></i></span>
+      <% info_message = "Cette mission est disponible"%>
+      <!--<%= image_tag image_path('start.png'), class: 'avatar-card' %>-->
+      <!-- If the mission is ongoing... -->
+      <% when '40_accomplished' %>
+      <span style="font-size: 12px;" class="label label-info status gray">Accomplie &nbsp;&nbsp;</span>
+      <% info_message = mission.volunteer.first_name + " a accompli cette mission"%>
+      <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
+      <!-- If the mission is ongoing... -->
+      <% when '30_started', '20_staffed' %>
+      <span style="font-size: 12px;" class="label label-info status gray">En cours  &nbsp;</span>
+      <% info_message = mission.volunteer.first_name + " est en train d'accomplir cette mission"%>
+      <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
+      <% when '50_interrupted' %>
+      <span style="font-size: 12px;" class="label label-info status gray">Interrompue  &nbsp;</span>
+      <% info_message = "Cette mission a été interrompue"%>
+      <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
+      <% when '99_cancelled' %>
+      <span style="font-size: 12px;" class="label label-info status gray">Annulée  &nbsp;</span>
+      <% end %>
+
       <div class="hoverinfo">
         <div class="info">
-        <%= info_message %>. Découvre-la!
+          <%= info_message %>. Découvre-la!
         </div>
       </div>
     </div>
-
-    <!-- BOTTOM CONTAINER -->
-    <div class ="bottom_container">
-      <!-- ASSOCIATION BOX -->
-      <div class ="association_box">
-        <%= image_tag mission.nonprofit_profile.logo, class: 'logo_box' %>
-        <div class="name_and_sector_box">
-          <div class="name"><%= mission.nonprofit_profile.name %></div>
-          <div class="sector"><%= mission.nonprofit_profile.sector %></div>
-        </div>
+    <!-- ASSOCIATION BOX -->
+    <div class ="association_box">
+      <%= image_tag mission.nonprofit_profile.logo, class: 'logo_box' %>
+      <div class="name_and_sector_box">
+        <div class="name"><%= mission.nonprofit_profile.name %></div>
+        <div class="sector"><%= mission.nonprofit_profile.sector %></div>
       </div>
     </div>
   </div>
