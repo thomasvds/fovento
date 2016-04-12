@@ -6,6 +6,8 @@
   box-shadow: 2px 4px 2px rgba(0,0,0,0.1);
   position: relative;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 
   .card-link {
     position: absolute;
@@ -25,9 +27,11 @@
 
   .title_box {
     font-size: 16px;
-    color: $primary;
+    color: white;
+    // color: $primary;
     padding: 1px 10px 1px 10px;
     margin-bottom: 5px;
+    margin-top: 7px;
   }
 
   .skills_box {
@@ -51,17 +55,20 @@
 
   .dispo {
     position: absolute;
-    top: 223px;
-    right: 7px;
+    top: 227px;
+    right: 4px;
     z-index: 1;
   }
 
   .image_box {
-    height: 170px;
+    border-radius: 5px 5px 0 0;
+    flex: 1;
     background-size: cover !important;
     .hoverinfo {
+      margin-top: 36px;
       opacity: 0;
-      background-image: linear-gradient(-225deg, $primary-light 10%, rgba(0,0,0,0.2) 80%);
+      background-color: rgba(62,146,204,0.7);
+      // background-image: linear-gradient(-225deg, $primary-light 30%, rgba(0,0,0,0.2) 80%);
       height: 100%;
       display: flex;
       justify-content: space-around;
@@ -75,75 +82,31 @@
       }
     }
   }
-
-  .bottom_container {
-    height: 140px;
-
-    .association_box {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      margin-left: 10px;
-      .logo_box {
-        height: 70px;
-        flex: 0 0 20%;
-      }
-      .name_and_sector_box {
-        flex: 0 0 70%;
-        font-size: 12px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        .name {
-          color: $primary;
-        }
-        .sector {
-          color: $gray-light;
-        }
-      }
+  .association_box {
+    flex: 0 0 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    .logo_box {
+      height: 70px;
+      flex: 0 0 20%;
     }
-
-    .card_impact_box {
-      font-style: italic;
-      height: 30px;
+    .name_and_sector_box {
+      flex: 0 0 70%;
       font-size: 12px;
-      color: $gray-light;
-      margin-bottom: 8px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      .name {
+        color: $primary;
+      }
+      .sector {
+        color: $gray-light;
+      }
     }
-
-    // .apply_box {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: space-around;
-    //   text-transform: uppercase;
-    //   .knowmore {
-    //     padding: 0 10px;
-    //     border-radius: 3px;
-    //     line-height: 20px;
-    //     color: $gray-light;
-    //     font-size: 14px;
-    //     border: 1px solid $gray-light;
-    //     &:hover {
-    //       color: white;
-    //       background: $gray-lighter;
-    //       border-color: $gray-lighter;
-    //     }
-    //   }
-    //   .apply {
-    //     padding: 0 10px;
-    //     border-radius: 3px;
-    //     line-height: 20px;
-    //     color: white;
-    //     background: $primary;
-    //     font-size: 14px;
-    //     border: 1px solid $primary;
-    //     &:hover {
-    //       background: $primary-dark;
-    //     }
-    //   }
-    // }
   }
 }
 
@@ -159,15 +122,28 @@
   }
 }
 
-.card:before {
-  background-color: $primary;
-  border-radius: 5px 5px 0 0;
-  content: "";
-  float: none;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-}
+// .card:before {
+//   background-color: $primary;
+//   border-radius: 5px 5px 0 0;
+//   content: "";
+//   float: none;
+//   margin: 0;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 4px;
+// }
+
+// .bottom_container:after {
+//   background-color: $primary;
+//   border-radius: 0 0 5px 5px;
+//   content: "";
+//   float: none;
+//   margin: 0;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 4px;
+// }
