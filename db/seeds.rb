@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Start by cleaning the current DB
-Candidacy.destroy_all
-Logbook.destroy_all
-Mission.destroy_all
-NonprofitProfile.destroy_all
-Volunteer.destroy_all
+# # Start by cleaning the current DB
+# Candidacy.destroy_all
+# Logbook.destroy_all
+# Mission.destroy_all
+# NonprofitProfile.destroy_all
+# Volunteer.destroy_all
 
 # Load the different seed files
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed| load seed }
