@@ -40,7 +40,7 @@ class CandidaciesController < ApplicationController
     VolunteerMailer.transfer(@candidacy).deliver_now
     @candidacy.update(status: "pending confirmation", transferred_at: Time.now)
     respond_to do |format|
-        format.html { redirect_to dashboard_path, notice: "La candidature a été envoyée à l'association." }
+      format.html { redirect_to dashboard_path, notice: "La candidature a été envoyée à l'association." }
     end
   end
 
@@ -53,7 +53,12 @@ class CandidaciesController < ApplicationController
     else
       #Set all candidacies of the mission to rejected by default
       @candidacy.mission.candidacies.each do |candidacy|
-        candidacy.update(status: "rejected", decided_at: Time.now)
+        #Don't forget to skip candidacies that are just browsing!
+        if candidacy.status == 'browsing'
+          candidacy.status = 'past_browsing'
+        else
+          candidacy.update(status: "rejected", decided_at: Time.now)
+        end
       end
       #Retrieve the current candidacy and confirm it, undoing rejection
       @candidacy.update(status: "confirmed")
@@ -112,7 +117,7 @@ class CandidaciesController < ApplicationController
         :id,
         :phone_number
       ]
-    )
+      )
   end
 
   def slack_notif_new_written_candidacy(candidacy)

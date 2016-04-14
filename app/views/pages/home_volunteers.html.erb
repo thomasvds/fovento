@@ -29,33 +29,69 @@
 <!---         WHAT               -->
 <div class="wrapper" id="whatid">
   <div class="container text-center padded" >
+
+
     <div class="tagline"><h2>Une nouvelle approche de l'engagement citoyen</h2></div>
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <div class="feature-holder">
-          <div class="feature">
-            <%= image_tag("impact.png") %>
-            <h2>IMPACT</h2>
-            <p>Accomplis des missions avec des associations soutenant les causes qui t'inspirent</p>
+          <div class= "flipcard">
+            <div class="front">
+              <div class="feature">
+                <%= image_tag("impact.png") %>
+                <h2>IMPACT</h2>
+                <p>Accomplis des missions avec des associations soutenant les causes qui t'inspirent</p>
+              </div>
+            </div>
+            <!-- <div class="back">
+              <div class="featureback">
+                <h2>IMPACT</h2>
+                <%= image_tag("impact.png") %>
+                <p>Soutiens les associations suivantes:</p>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-4">
         <div class="feature-holder">
-          <div class="feature">
-            <%= image_tag("technology.png") %>
-            <h2>CHALLENGE</h2>
-            <p>Les missions font appel au meilleur de tes compétences intellectuelles et humaines</p>
+          <div class= "flipcard">
+            <div class="front">
+              <div class="feature">
+                <%= image_tag("technology.png") %>
+                <h2>CHALLENGE</h2>
+                <p>Les missions font appel au meilleur de tes compétences intellectuelles et humaines</p>
+              </div>
+            </div>
+           <!--  <div class="back">
+              <div class="featureback">
+                <h2>CHALLENGE</h2>
+                <%= image_tag("impact.png") %>
+                <p>Plein de compétences pour toi</p>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
+
       <div class="col-xs-12 col-sm-4">
         <div class="feature-holder">
-          <div class="feature">
-            <%= image_tag("arrows (1).png") %>
-            <h2>FLEXIBILITÉ</h2>
-            <p>Trouve des missions courtes à la demande, sans contraintes à long terme</p>
+          <div class= "flipcard">
+            <div class="front">
+              <div class="feature">
+                <%= image_tag("arrows (1).png") %>
+                <h2>FLEXIBILITÉ</h2>
+                <p>Trouve des missions courtes à la demande, sans contraintes à long terme</p>
+              </div>
+            </div>
+            <!-- <div class="back">
+              <div class="featureback">
+                <h2>FLEXIBILITÉ</h2>
+                <%= image_tag("impact.png") %>
+                <p>Ce n'est vraiment pas long</p>
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -93,28 +129,34 @@
 
   </div>
 </div>
-  <script>
-    $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
-    $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '21px' });
-    $("#scrollarrow").click(function() {
-      $('html, body').animate({
-        scrollTop: $("#scrollanchor").offset().top
-      }, 1500);
-    });
-    function pulse(){
-      if($(window).scrollTop() < 100) {
-        $("#scrollarrow").animate({fontSize: "+=15"}, 700);
-        $("#scrollarrow").animate({fontSize: "-=15"}, 700).delay(3000);
-      }
+<script>
+  $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
+  $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '21px' });
+  $("#scrollarrow").click(function() {
+    $('html, body').animate({
+      scrollTop: $("#scrollanchor").offset().top
+    }, 1500);
+  });
+  function pulse(){
+    if($(window).scrollTop() < 100) {
+      $("#scrollarrow").animate({fontSize: "+=15"}, 700);
+      $("#scrollarrow").animate({fontSize: "-=15"}, 700).delay(3000);
     }
-    setInterval(pulse, 3000);
+  }
+  setInterval(pulse, 3000);
 
-    $(window).on('scroll', function(e){
-      if ($(this).scrollTop() > 1600) {
-        $('.question').animate({opacity: 1}, 10000);
-      }
-    });
-  </script>
+  $(window).on('scroll', function(e){
+    if ($(this).scrollTop() > 1600) {
+      $('.question').animate({opacity: 1}, 10000);
+    }
+  });
+  // $(".flipcard").autoSize(true);
+  // $(".front").autoSize(true);
+  // $(".flipcard").flip({
+  //   // axis: 'y',
+  //   trigger: 'click'
+  // });
+</script>
 
 
 
