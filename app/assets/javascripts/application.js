@@ -5,4 +5,6 @@
 //= require jquery.validate
 //= require jquery.validate.additional-methods
 //= require pin
+//= require sweet-alert
+//= require sweet-alert-confirm
 //= require_tree .

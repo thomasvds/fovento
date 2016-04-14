@@ -40,18 +40,18 @@
         &nbsp;
         &nbsp;
         <% if candidacy.status == "pending moderation" %>
-        <%= link_to mission_candidacy_transfer_path(candidacy.mission, candidacy), method: :put do%>
+        <%= link_to mission_candidacy_transfer_path(candidacy.mission, candidacy), method: :put, class: "swalbutton" do%>
         <i class="fa fa-envelope actionicon"></i>
         <% end %>
         &nbsp;
         &nbsp;
         <% end %>
-        <%= link_to mission_candidacy_confirm_path(candidacy.mission, candidacy), method: :put do%>
+        <%= link_to mission_candidacy_confirm_path(candidacy.mission, candidacy), method: :put, class: "swalbutton" do%>
         <i class="fa fa-check-square actionicon"></i>
         <% end %>
         &nbsp;
         &nbsp;
-        <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :delete do%>
+        <%= link_to mission_candidacy_path(candidacy.mission, candidacy), method: :delete, class: "swalbutton" do%>
         <i class="fa fa-trash actionicon"></i>
         <% end %>
         &nbsp;
