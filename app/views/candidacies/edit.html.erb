@@ -16,7 +16,7 @@
         <% end %>
 
         <div style="display: flex; justify-content: space-around;">
-          <%= f.button :submit, value: "Envoyer ma candidature",onclick: 'return confirm("Confirmer?")', class: 'btn-primary btn-xs' %>
+          <%= f.button :submit, value: "Envoyer ma candidature", class: 'btn-primary btn-xs btn-submit' %>
         </div>
         <% end %>
       </div>
@@ -42,4 +42,22 @@
       }
     });
   });
+
+  $('.btn-submit').on('click',function(e){
+    e.preventDefault();
+    var form = $(this).parents('form');
+    swal({
+      title: "Confirmer l'envoi?",
+        // text: "You will not be able to recover this imaginary file!",
+        type: "success",
+        showCancelButton: true,
+        confirmButtonColor: "#66a9d7",
+        confirmButtonText: "Je confirme!",
+        closeOnConfirm: false
+      }, function(isConfirm){
+        if (isConfirm){
+          form.submit();
+        };
+      });
+  })
 </script>
