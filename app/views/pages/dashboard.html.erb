@@ -1,9 +1,15 @@
+<div class="mission-banner" style="background-image: linear-gradient(-225deg, rgba(1,1,1,0.2) 0%, rgba(62,146,204,0.1) 80%), url(http://s3-eu-west-1.amazonaws.com/fovento/images/coffee-desk-notes-workspace.jpg);">
+  <div class="placeholder" style="flex: 1 0; min-height: 70px;"> </div>
+  <div class="container">
+    <div class="page-header" style="color: white">
+     <h2><%= image_tag current_volunteer.picture, class: "avatar-candidacy" %> &nbsp; Bienvenue sur ton dashboard, <%= current_volunteer.first_name %>!</h2>
+   </div>
+ </div>
+</div>
+
+
 <div class="wrapper-gray">
   <div class="container padded">
-
-    <div class="page-header">
-    <h2>Bienvenue, <%= current_volunteer.first_name %>!</h2>
-    </div>
 
     <div class="dashboard-card">
       <%= render 'pages/dashboard/candidacies', candidacies: @candidacies %>
@@ -16,7 +22,7 @@
     <% if current_volunteer.ambassador %>
 
     <div class="page-header">
-    <h2><i class="fa fa-hand-peace-o"></i> Espace Ambassadeur</h2>
+      <h2><i class="fa fa-hand-peace-o"></i> Espace Ambassadeur</h2>
     </div>
 
     <div class="dashboard-card ambassador-card">

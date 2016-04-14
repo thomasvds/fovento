@@ -43,13 +43,15 @@
                 <p>Accomplis des missions avec des associations soutenant les causes qui t'inspirent</p>
               </div>
             </div>
-            <!-- <div class="back">
+            <div class="back">
               <div class="featureback">
-                <h2>IMPACT</h2>
-                <%= image_tag("impact.png") %>
-                <p>Soutiens les associations suivantes:</p>
+              <div class="figure">10+</div>
+                <%= image_tag("bluebrussels2.png") %>
+                <p>Soutiens plus d'une dizaine d'asbls,
+                actives en Belgique et à Bruxelles en
+                particulier</p>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -64,13 +66,12 @@
                 <p>Les missions font appel au meilleur de tes compétences intellectuelles et humaines</p>
               </div>
             </div>
-           <!--  <div class="back">
+           <div class="back">
               <div class="featureback">
-                <h2>CHALLENGE</h2>
-                <%= image_tag("impact.png") %>
-                <p>Plein de compétences pour toi</p>
+                <%= image_tag("man.png") %>
+                <p>Management, Comm', RH, Design, Finance, IT...toutes les compétences sont bienvenues!</p>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -85,13 +86,12 @@
                 <p>Trouve des missions courtes à la demande, sans contraintes à long terme</p>
               </div>
             </div>
-            <!-- <div class="back">
+            <div class="back">
               <div class="featureback">
-                <h2>FLEXIBILITÉ</h2>
-                <%= image_tag("impact.png") %>
-                <p>Ce n'est vraiment pas long</p>
+                <%= image_tag("time.png") %>
+                <p>3 heures suffisent déjà! C'est moins que ton temps mensuel à regarder des photos de chats sur le web</p>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -150,12 +150,10 @@
       $('.question').animate({opacity: 1}, 10000);
     }
   });
-  // $(".flipcard").autoSize(true);
-  // $(".front").autoSize(true);
-  // $(".flipcard").flip({
-  //   // axis: 'y',
-  //   trigger: 'click'
-  // });
+
+  $(".flipcard").flip({
+    trigger: 'click'
+  });
 </script>
 
 

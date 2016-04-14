@@ -54,9 +54,7 @@ class CandidaciesController < ApplicationController
       #Set all candidacies of the mission to rejected by default
       @candidacy.mission.candidacies.each do |candidacy|
         #Don't forget to skip candidacies that are just browsing!
-        if candidacy.status == 'browsing'
-          candidacy.update(status: "past_browsing")
-        else
+        if candidacy.status != "browsing"
           candidacy.update(status: "rejected", decided_at: Time.now)
         end
       end
@@ -64,7 +62,7 @@ class CandidaciesController < ApplicationController
       @candidacy.update(status: "confirmed")
       #Update the mission with chosen volunteer and staffed status
       @candidacy.mission.update(status: "20_staffed", volunteer: @candidacy.volunteer, staffed_at: Time.now)
-      #Mail all volunteers that had a candidacy on the mission
+      #Mail all volunteers that had a written candidacy on the mission
       @mission.candidacies.each do |candidacy|
         case candidacy.status
         when "rejected"
