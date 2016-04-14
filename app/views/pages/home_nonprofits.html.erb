@@ -1,9 +1,23 @@
 <div class="wrapper">
-  <div class="container padded">
-    <h3>Elles font confiance aux bénévoles Fovento:</h3>
+  <div class="container padded text-center">
+    <h3>Elles font confiance aux bénévoles Fovento. Pour les rejoindre, <%= link_to "contactez-nous", contact_path %>!</h3>
     <div class= "row">
-      <% @nonprofits.each do |n| %>
-      <div class="col-xs-3">
+      <% @nonprofits[0..5].each do |n| %>
+      <div class="col-xs-2">
+        <div class="nonprofit"><%= image_tag n.logo, class: 'avatar-nonprofit-home' %></div>
+      </div>
+      <% end %>
+    </div>
+    <div class= "row">
+      <% @nonprofits[6..11].each do |n| %>
+      <div class="col-xs-2">
+        <div class="nonprofit"><%= image_tag n.logo, class: 'avatar-nonprofit-home' %></div>
+      </div>
+      <% end %>
+    </div>
+    <div class= "row">
+      <% @nonprofits[12..@nonprofits.count-1].each do |n| %>
+      <div class="col-xs-2">
         <div class="nonprofit"><%= image_tag n.logo, class: 'avatar-nonprofit-home' %></div>
       </div>
       <% end %>

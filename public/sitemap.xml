@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.fovento.be/</loc>
+  <image:image>
+       <image:loc>http://s3-eu-west-1.amazonaws.com/fovento/images/fblogo.png</image:loc>
+       <image:caption>Donne du sens à tes compétences</image:caption>
+  </image:image>
+</url>
+<url>
+  <loc>http://www.fovento.be/pages/home_volunteers</loc>
+</url>
+<url>
+  <loc>http://www.fovento.be/missions</loc>
+</url>
+<url>
+  <loc>http://www.fovento.be/pages/values</loc>
+</url>
+<url>
+  <loc>http://www.fovento.be/pages/how_it_works</loc>
+</url>
+<url>
+  <loc>http://www.fovento.be/volunteers/sign_in</loc>
+</url>
+<url>
+  <loc>http://www.fovento.be/pages/contact</loc>
+</url>
+<url>
+  <loc>http://www.fovento.be/pages/home_nonprofits</loc>
+</url>
+<url>
+  <loc>http://www.fovento.be/pages/terms_and_conditions</loc>
+</url>
+</urlset>
