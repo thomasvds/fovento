@@ -55,7 +55,7 @@ class CandidaciesController < ApplicationController
       @candidacy.mission.candidacies.each do |candidacy|
         #Don't forget to skip candidacies that are just browsing!
         if candidacy.status == 'browsing'
-          candidacy.status = 'past_browsing'
+          candidacy.update(status: "past_browsing")
         else
           candidacy.update(status: "rejected", decided_at: Time.now)
         end
