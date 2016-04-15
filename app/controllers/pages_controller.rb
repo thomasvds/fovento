@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     if @volunteer.ambassador
       @draft_missions = Mission.where("status = ?", "0_draft")
       @pending_candidacies = Candidacy.where(:status => ["pending moderation", "pending confirmation"])
-      @browses = Candidacy.where(:status => ["browsing"])
+      @browses = Candidacy.where(:status => ["browsing"]).where("browse_count > ?", 1)
     end
   end
 

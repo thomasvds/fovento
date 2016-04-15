@@ -91,8 +91,12 @@ class MissionsController < ApplicationController
     end
   end
 
-  # DEDICATED PAGE FOR MOBILE USERS ONLY, REPLACING START MODAL
   def begin
+    if current_volunteer != @mission.volunteer
+      respond_to do |format|
+        format.html { redirect_to dashboard_path, alert: "Accès refusé." }
+      end
+    end
   end
 
   def start
@@ -104,8 +108,12 @@ class MissionsController < ApplicationController
     end
   end
 
-  # DEDICATED PAGE FOR MOBILE USERS ONLY, REPLACING ACCOMPLISH MODAL
   def finish
+    if current_volunteer != @mission.volunteer
+      respond_to do |format|
+        format.html { redirect_to dashboard_path, alert: "Accès refusé." }
+      end
+    end
   end
 
   def accomplish
@@ -117,8 +125,12 @@ class MissionsController < ApplicationController
     end
   end
 
-  # DEDICATED PAGE FOR MOBILE USERS ONLY, REPLACING INTERRUPT MODAL
   def stop
+    if current_volunteer != @mission.volunteer
+      respond_to do |format|
+        format.html { redirect_to dashboard_path, alert: "Accès refusé." }
+      end
+    end
   end
 
   def interrupt

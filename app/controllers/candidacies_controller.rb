@@ -13,9 +13,19 @@ class CandidaciesController < ApplicationController
   end
 
   def show
+    if (current_volunteer != @candidacy.volunteer && !current_volunteer.ambassador)
+      respond_to do |format|
+        format.html { redirect_to missions_path, alert: "Accès refusé." }
+      end
+    end
   end
 
   def edit
+    if current_volunteer != @candidacy.volunteer
+      respond_to do |format|
+        format.html { redirect_to missions_path, alert: "Accès refusé." }
+      end
+    end
   end
 
   # This method is used when the volunteer actually applies for a
