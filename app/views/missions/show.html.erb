@@ -149,33 +149,33 @@
          <p><strong>Résultats attendus</strong></p>
          <ul class="fa-ul">
           <%= raw(@mission.outcomes.gsub('<li>','<li><i class="fa-li fa fa-check-square"></i>')) %>
-         </ul>
-        </div>
+        </ul>
       </div>
-    <!-- end of second responsive grid column -->
     </div>
+    <!-- end of second responsive grid column -->
+  </div>
   <!-- end of nonprofit and mission row -->
 
-    <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
-    <% if @mission.status == '10_open' %>
-    <div class="row">
-      <div class="col-xs-12 visible-xs-block">
-        <div class="roadbook_mobile_apply_box">
-          <% if !volunteer_signed_in? %>
-          <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".mustconnectmodal">
-            Je me lance!
-          </button>
-          <% elsif current_volunteer.candidate?(@mission) %>
-          <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, @candidacy), class: 'btn btn-default btn-md' %>
-          <% else %>
-          <%= link_to "Je me lance!", edit_mission_candidacy_path(@mission, @candidacy), class: 'btn btn-primary btn-md' %>
-          <% end %>
-        </div>
+  <!-- APPLY BUTTON FOR MOBILE VIEW ONLY -->
+  <% if @mission.status == '10_open' %>
+  <div class="row">
+    <div class="col-xs-12 visible-xs-block">
+      <div class="roadbook_mobile_apply_box">
+        <% if !volunteer_signed_in? %>
+        <button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target=".mustconnectmodal">
+          Je me lance!
+        </button>
+        <% elsif current_volunteer.candidate?(@mission) %>
+        <%= link_to "Voir ma candidature", mission_candidacy_path(@mission, @candidacy), class: 'btn btn-default btn-md' %>
+        <% else %>
+        <%= link_to "Je me lance!", edit_mission_candidacy_path(@mission, @candidacy), class: 'btn btn-primary btn-md' %>
+        <% end %>
       </div>
     </div>
-    <% end %>
-  <!-- end of the 2 final rows -->
   </div>
+  <% end %>
+  <!-- end of the 2 final rows -->
+</div>
 <!-- end of container -->
 <!-- support pin -->
 <%= render 'shared/support' %>
@@ -183,14 +183,24 @@
 <!-- end of wrapper -->
 
 
+<% content_for :javascript do %>
 
 <!-- ADDTHIS SOCIAL SHARE BUTTONS -->
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56fd932ee415261b"></script>
 
+<script>
+  $(document).ready(function() {
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    $(".pinned").pin({
+      containerSelector: ".wrapper-gray",
+      minWidth: 940,
+      padding: {top: 516}
+    });
+  });
+</script>
 
-
-
+<% end %>
 
 
 

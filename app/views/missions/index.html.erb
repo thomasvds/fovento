@@ -32,6 +32,8 @@
   </div>
 </div>
 
+<% content_for :javascript do %>
+
 <script>
   $("#boxopener").click(function(){
     $(".searchbox").slideToggle();
@@ -46,3 +48,5 @@
     $(".simple_form").trigger("submit");
   });
 </script>
+
+<% end %>

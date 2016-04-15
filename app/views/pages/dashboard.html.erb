@@ -40,14 +40,9 @@
   </div>
 </div>
 
+<% content_for :javascript do %>
+
 <script type="text/javascript">
-  function number_boxes_checked(id){
-    var sum = 0;
-    $(".startcheckbox_" + id).each(function(){
-      console.log(parseInt($(this).val()));
-      sum += parseInt($(this).val());
-    });
-  }
 
   // $('.swalbutton').on('click',function(e){
   //   var t = $(this);
@@ -73,3 +68,5 @@
   //   }
   // });
 </script>
+
+<% end %>

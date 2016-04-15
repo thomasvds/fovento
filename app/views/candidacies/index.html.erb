@@ -10,6 +10,8 @@
         <div class="buttons_box">
           <button class="btn btn-success btn-xs" id="confirm_<%= candidacy.id.to_s%>">Sélectionner ce bénévole</button>
           <%= link_to "Confirmer la sélection", mission_candidacy_confirm_path(candidacy.mission, candidacy), class: "btn btn-warning btn-xs hidden", type: "hidden", method: :put, id: "reallyconfirm_"+candidacy.id.to_s %>
+
+          <% content_for :javascript do %>
           <script>
             $("#confirm_<%=candidacy.id.to_s%>").on('click',function(){
               $("#reallyconfirm_<%=candidacy.id.to_s%>").removeClass("hidden");
@@ -17,7 +19,9 @@
             });
           </script>
           <% end %>
+
         </div>
+        <% end %>
       </div>
       <% end %>
     </div>

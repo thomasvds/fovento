@@ -1,10 +1,13 @@
-<!-- BANNER -->
-<script>
+<script type="text/javascript">
+  // Navbar appearance, has to be loaded first
   $('.navbar-wagon-link').addClass("unscrolled")
   $('.navbar-wagon-button').addClass("unscrolled")
   $('.navicon').addClass("unscrolled")
   $('.navicon-small').addClass("unscrolled")
 </script>
+
+<!-- BANNER -->
+
 <div class="banner" style="background-image: linear-gradient(-200deg, rgba(0,0,0,0.5) 5%, rgba(0,0,0,0.1) 100%), url(http://s3-eu-west-1.amazonaws.com/fovento/images/banner.jpg);">
 
   <div class="banner-top"> </div>
@@ -45,51 +48,52 @@
             </div>
             <div class="back">
               <div class="featureback">
-              <div class="figure">10+</div>
+                <div class="figure">10+</div>
                 <%= image_tag("impactback.png") %>
                 <p>Soutiens plus d'une dizaine d'asbls,
-                actives en Belgique et à Bruxelles en
-                particulier</p>
+                  actives en Belgique et à Bruxelles en
+                  particulier</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-xs-12 col-sm-4">
-        <div class="feature-holder">
-          <div class= "flipcard">
-            <div class="front">
-              <div class="feature">
-                <%= image_tag("technology.png") %>
-                <h2>CHALLENGE</h2>
-                <p>Les missions font appel au meilleur de tes compétences intellectuelles et humaines</p>
+        <div class="col-xs-12 col-sm-4">
+          <div class="feature-holder">
+            <div class= "flipcard">
+              <div class="front">
+                <div class="feature">
+                  <%= image_tag("technology.png") %>
+                  <h2>CHALLENGE</h2>
+                  <p>Les missions font appel au meilleur de tes compétences intellectuelles et humaines</p>
+                </div>
               </div>
-            </div>
-           <div class="back">
-              <div class="featureback">
-                <%= image_tag("challengeback.png") %>
-                <p>Management, Comm', RH, Design, Finance, IT...toutes les compétences sont bienvenues!</p>
+              <div class="back">
+                <div class="featureback">
+                  <%= image_tag("challengeback.png") %>
+                  <p>Management, Comm', RH, Design, Finance, IT...toutes les compétences sont bienvenues!</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-xs-12 col-sm-4">
-        <div class="feature-holder">
-          <div class= "flipcard">
-            <div class="front">
-              <div class="feature">
-                <%= image_tag("arrows (1).png") %>
-                <h2>FLEXIBILITÉ</h2>
-                <p>Trouve des missions courtes à la demande, sans contraintes à long terme</p>
+        <div class="col-xs-12 col-sm-4">
+          <div class="feature-holder">
+            <div class= "flipcard">
+              <div class="front">
+                <div class="feature">
+                  <%= image_tag("arrows (1).png") %>
+                  <h2>FLEXIBILITÉ</h2>
+                  <p>Trouve des missions courtes à la demande, sans contraintes à long terme</p>
+                </div>
               </div>
-            </div>
-            <div class="back">
-              <div class="featureback">
-                <%= image_tag("timeback.png") %>
-                <p>3 heures suffisent déjà! C'est moins que ton temps mensuel à regarder des photos de chats sur le web</p>
+              <div class="back">
+                <div class="featureback">
+                  <%= image_tag("timeback.png") %>
+                  <p>3 heures suffisent déjà! C'est moins que ton temps mensuel à regarder des photos de chats sur le web</p>
+                </div>
               </div>
             </div>
           </div>
@@ -97,41 +101,46 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="wrapper">
-  <div class="container padded timelinewrapper">
-    <div class="tagline"><h2>Un modèle simple et efficace</h2></div>
-    <%= render 'pages/home/timeline' %>
-  </div>
-</div>
-
-<div class="wrapper">
-  <div class="applybox padded">
-    <div class="tagline question"><h1>QUEL SERA TON IMPACT?</h1></div>
-    <div class="btn-box">
-      <%= link_to 'VOIR LES MISSIONS', missions_path, class: 'apply-btn btn' %>
+  <div class="wrapper">
+    <div class="container padded timelinewrapper">
+      <div class="tagline"><h2>Un modèle simple et efficace</h2></div>
+      <%= render 'pages/home/timeline' %>
     </div>
   </div>
-</div>
 
-<div class="wrapper">
-  <div class="volunteercarousel padded text-center">
-    <h3>Ils ont décidé de s'engager citoyennement. Tu les rejoins?</h3>
-    <div class= "row">
-      <% @volunteers.each do |v| %>
-      <div class="col-xs-4 col-sm-3 col-md-2 col-lg-1 volunteer text-center">
-        <div><%= image_tag v.picture, class: 'avatar-home' %></div>
-        <div><p><%= v.first_name %></p></div>
+  <div class="wrapper">
+    <div class="applybox padded">
+      <div class="tagline" style="color: white;"><h1>QUEL SERA TON IMPACT?</h1></div>
+      <div class="btn-box">
+        <%= link_to 'VOIR LES MISSIONS', missions_path, class: 'apply-btn btn' %>
       </div>
-      <% end %>
     </div>
-
   </div>
-</div>
-<script>
+
+  <div class="wrapper">
+    <div class="volunteercarousel padded text-center">
+      <h3>Ils ont décidé de s'engager citoyennement. Tu les rejoins?</h3>
+      <div class= "row">
+        <% @volunteers.each do |v| %>
+        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-1 volunteer text-center">
+          <div><%= image_tag v.picture, class: 'avatar-home' %></div>
+          <div><p><%= v.first_name %></p></div>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
+  <% content_for :javascript do %>
+  <script>
+
+  // Title dynamic resizing
   $("#headline").fitText(0.8, { minFontSize: '40px', maxFontSize: '70px' });
   $("#intro").fitText(1, { minFontSize: '10px', maxFontSize: '21px' });
+
+  // Banner downarrow effects
   $("#scrollarrow").click(function() {
     $('html, body').animate({
       scrollTop: $("#scrollanchor").offset().top
@@ -145,17 +154,13 @@
   }
   setInterval(pulse, 3000);
 
-  $(window).on('scroll', function(e){
-    if ($(this).scrollTop() > 1600) {
-      $('.question').animate({opacity: 1}, 10000);
-    }
-  });
-
+  // Flipping of feature cards
   $(".flipcard").flip({
     trigger: 'click'
   });
-</script>
 
+</script>
+<% end %>
 
 
 

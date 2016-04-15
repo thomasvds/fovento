@@ -20,6 +20,7 @@
   </script>
 </head>
 <body class='<%= "#{params[:controller]}-#{params[:action]}".gsub('_', '-') %>'>
+  <!-- Has to be loaded first for the homepage effects -->
   <%= javascript_include_tag 'application' %>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
@@ -28,18 +29,8 @@
   </div>
   <%= render 'shared/footer' %>
 
-  <%= yield :after_js %>
+  <%= yield :javascript %>
 
-  <script>
-    $(document).ready(function() {
-      $("body").tooltip({ selector: '[data-toggle=tooltip]' });
-      $(".pinned").pin({
-        containerSelector: ".wrapper-gray",
-        minWidth: 940,
-        padding: {top: 516}
-      });
-    });
-  </script>
 </body>
 
 </html>
