@@ -43,30 +43,29 @@
 <% content_for :javascript do %>
 
 <script type="text/javascript">
+  $('.swalbutton').on('click',function(e){
+    var t = $(this);
 
-  // $('.swalbutton').on('click',function(e){
-  //   var t = $(this);
+    // Only if the event is triggered by a human
+    if(e.originalEvent !== undefined ){
+      e.preventDefault();
+      e.stopPropagation();
 
-  //   // Only if the event is triggered by a human
-  //   if(e.originalEvent !== undefined ){
-  //     e.preventDefault();
-  //     e.stopPropagation();
-
-  //     swal({
-  //       title: "Confirmer l'action?",
-  //       text: "Cette action est irréversible!",
-  //       type: "warning",
-  //       showCancelButton: true,
-  //       confirmButtonColor: "#FE4A49",
-  //       confirmButtonText: "Confirmer",
-  //       closeOnConfirm: false
-  //     }, function(isConfirm){
-  //       if (isConfirm){
-  //         t.click();
-  //       }
-  //     });
-  //   }
-  // });
+      swal({
+        title: "Confirmer l'action?",
+        text: "Cette action est irréversible!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#FE4A49",
+        confirmButtonText: "Confirmer",
+        closeOnConfirm: false
+      }, function(isConfirm){
+        if (isConfirm){
+          t.click();
+        }
+      });
+    }
+  });
 </script>
 
 <% end %>
