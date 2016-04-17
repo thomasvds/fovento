@@ -34,7 +34,7 @@ class PagesController < ApplicationController
       @pending_candidacies = Candidacy.where(:status => ["pending moderation", "pending confirmation"])
       @browses = Candidacy.where(status: "browsing").where("browse_count > ?", 1)
       @staffed_missions = Mission.where(status: "20_staffed")
-      @started_missions = Mission.where(status: "20_staffed")
+      @started_missions = Mission.where(status: "30_started")
       @nonprofit_profiles = NonprofitProfile.all
     end
   end
