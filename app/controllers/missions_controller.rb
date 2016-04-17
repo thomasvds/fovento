@@ -100,7 +100,7 @@ class MissionsController < ApplicationController
   end
 
   def start
-    @mission.update(status: "30_started")
+    @mission.update(status: "30_started", started_at: Time.now)
     @mission.update(mission_params)
 
     respond_to do |format|
@@ -117,7 +117,7 @@ class MissionsController < ApplicationController
   end
 
   def accomplish
-    @mission.update(status: "40_accomplished")
+    @mission.update(status: "40_accomplished", closed_at: Time.now)
     @mission.update(mission_params)
 
     respond_to do |format|
@@ -134,7 +134,7 @@ class MissionsController < ApplicationController
   end
 
   def interrupt
-    @mission.update(status: "50_interrupted")
+    @mission.update(status: "50_interrupted", closed_at: Time.now)
     @mission.update(mission_params)
 
     respond_to do |format|
