@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :volunteers, controllers: { registrations: 'volunteers/registrations', omniauth_callbacks: 'volunteers/omniauth_callbacks' }
 
+  resources :nonprofit_profiles
+
   resources :missions do
     resources :candidacies, except: [:create]
     put 'candidacies/:id/transfer', to: 'candidacies#transfer', as: 'candidacy_transfer'

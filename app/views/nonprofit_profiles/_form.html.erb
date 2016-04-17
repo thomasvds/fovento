@@ -1,0 +1,21 @@
+<%= simple_form_for nonprofit_profile do |f|%>
+
+
+    <%= f.button :submit, value: "Sauver le profil", class: 'btn btn-primary btn-xs' %>
+
+    <%= link_to "Retour au dashboard", dashboard_path, class: 'btn btn-default btn-xs' %>
+
+    <br>
+    <br>
+
+    <%= f.input :name, label: "Nom"%>
+    <%= f.input :sector, label: "Secteur"%>
+    <%= f.input :email, label: "Email"%>
+    <%= f.input :phone_number, label: "Téléphone"%>
+    <%= f.input :website, label: "Site web"%>
+    <%= f.input :description, label: "Description"%>
+    <%= f.input :address, label: "Adresse"%>
+    <%= f.input :neighbourhood, label: "Commune"%>
+    <%= f.input :map_frame, label: "Google Map frame"%>
+    <%= f.input :logo, label: "Lien web vers le logo"%>
+<% end %>

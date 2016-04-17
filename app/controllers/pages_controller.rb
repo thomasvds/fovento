@@ -35,6 +35,7 @@ class PagesController < ApplicationController
       @browses = Candidacy.where(status: "browsing").where("browse_count > ?", 1)
       @staffed_missions = Mission.where(status: "20_staffed")
       @started_missions = Mission.where(status: "20_staffed")
+      @nonprofit_profiles = NonprofitProfile.all
     end
   end
 

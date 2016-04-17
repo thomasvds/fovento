@@ -19,6 +19,7 @@
       <%= render 'pages/dashboard/missions', missions: @missions %>
     </div>
 
+    <!-- AMBASSADORS ONLY -->
     <% if current_volunteer.ambassador %>
 
     <div class="page-header">
@@ -27,6 +28,10 @@
 
     <div class="dashboard-card ambassador-card">
       <%= render 'pages/dashboard/drafts', missions: @draft_missions %>
+    </div>
+
+    <div class="dashboard-card ambassador-card">
+      <%= render 'pages/dashboard/nonprofit_profiles', nonprofit_profiles: @nonprofit_profiles %>
     </div>
 
     <div class="dashboard-card ambassador-card">
