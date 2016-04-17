@@ -1,0 +1,31 @@
+<h2>Missions en attente de démarrage</h2>
+<p> Surveille ici les missions staffées, que le bénévole doit démarrer.</p>
+<table class='table table-condensed table-hover table-striped  dashboard-table'>
+
+  <thead>
+    <th>Mission</th>
+    <th>Bénévole</th>
+    <th>Staffée</th>
+    <th>Actions</th>
+  </thead>
+
+  <tbody>
+    <% missions.each do |mission| %>
+    <tr>
+      <td><%= mission.title %></td>
+      <td><%= mission.volunteer.last_name %></td>
+      <td><%= mission.staffed_at.nil? ? "n.a." : mission.staffed_at.strftime("%d/%m/%Y") %></td>
+      <td>
+        <%= link_to mission_path(mission) do%>
+        <i class="fa fa-envelope actionicon"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- ACTION ICONS LEGEND -->
+<i class="fa fa-envelope infoicon"></i><small>   Contacter le bénévole</small>

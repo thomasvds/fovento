@@ -36,6 +36,15 @@
     <div class="dashboard-card ambassador-card">
       <%= render 'pages/dashboard/remarketing', candidacies: @browses %>
     </div>
+
+    <div class="dashboard-card ambassador-card">
+      <%= render 'pages/dashboard/staffedmissions', missions: @staffed_missions %>
+    </div>
+
+    <div class="dashboard-card ambassador-card">
+      <%= render 'pages/dashboard/startedmissions', missions: @started_missions %>
+    </div>
+
     <% end %>
   </div>
 </div>

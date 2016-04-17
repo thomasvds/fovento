@@ -1,0 +1,33 @@
+<h2>Missions en cours</h2>
+<p> Surveille ici les missions en cours</p>
+<table class='table table-condensed table-hover table-striped  dashboard-table'>
+
+  <thead>
+    <th>Mission</th>
+    <th>Bénévole</th>
+    <th>Démarrée</th>
+    <th>Fin estimée</th>
+    <th>Actions</th>
+  </thead>
+
+  <tbody>
+    <% missions.each do |mission| %>
+    <tr>
+      <td><%= mission.title %></td>
+      <td><%= mission.volunteer.last_name %></td>
+      <td><%= mission.started_at.nil? ? "n.a." : mission.started_at.strftime("%d/%m/%Y") %></td>
+      <td><%= mission.logbook.planned_end_date.nil? ? "n.a." : mission.logbook.planned_end_date.strftime("%d/%m/%Y") %></td>
+      <td>
+        <%= link_to mission_path(mission) do%>
+        <i class="fa fa-envelope actionicon"></i>
+        <% end %>
+        &nbsp;
+        &nbsp;
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- ACTION ICONS LEGEND -->
+<i class="fa fa-envelope infoicon"></i><small>   Contacter le bénévole</small>
