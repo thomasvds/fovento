@@ -1,7 +1,7 @@
 <!-- META TAG CONTENT -->
 <% content_for :meta_title, "Mission de bénévolat de compétences Fovento" %>
 <% content_for :meta_description, @mission.title %>
-<% content_for :meta_image, @mission.picture %>
+<% content_for :meta_image, @mission.nonprofit_profile.logo %>
 
 
 <% small_banner = @mission.status != '10_open' && @mission.status != '0_draft' %>
