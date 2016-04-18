@@ -81,4 +81,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
+
+  # Initialize default meta tags.
+  DEFAULT_META = YAML.load_file(Rails.root.join('config/meta.yml'))
 end

@@ -1,0 +1,5 @@
+# config/meta.yml
+meta_title: "Fovento, bénévolat de compétences"
+meta_description: "Avec Fovento, découvre des missions combinant impact, challenge et flexibilité. Quel sera ton impact?"
+meta_image: "fovento-logo-long-blue.png" # Une image dans votre dossier app/assets/images/
+twitter_account: "@nomdevotrecompte" # indispensable pour les Twitter Cards
