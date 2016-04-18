@@ -29,7 +29,7 @@
         <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Congrats! Tu peux maintenant suivre la mission dans 'Mes Missions'. Ta candidature reste enregistrée ici si tu veux y accéder plus tard."></i>
         <% end %>
       </td>
-      <td><%= candidacy.written_at.strftime("%d/%m/%Y") %></td>
+      <td><%= candidacy.written_at.nil? ? "n.a." : candidacy.written_at.strftime("%d/%m/%Y") %></td>
       <td>
         <%= link_to mission_candidacy_path(candidacy.mission, candidacy) do%>
         <i class="fa fa-eye actionicon"></i>
