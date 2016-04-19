@@ -41,7 +41,7 @@ class MissionsController < ApplicationController
       @candidacy = current_volunteer.candidacies.where(mission_id: @mission.id).first
       if !@candidacy.nil?
         @candidacy.plus_browse_count!
-        if ( @candidacy.browse_count == 3 && @mission.status == "10_open" )
+        if ( @candidacy.browse_count == 3 && @mission.status == "10_open" && !current_volunteer.ambassador )
           VolunteerMailer.motivate(@candidacy).deliver_later
           SlackMotivationNotifierJob.perform_later(@candidacy)
         end
