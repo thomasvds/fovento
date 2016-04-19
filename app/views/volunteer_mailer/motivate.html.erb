@@ -1,0 +1,14 @@
+<p>Hello <%= @volunteer.first_name %>!</p>
+
+<p>Tu hésites à te lancer sur la mission "<%= @mission.title %>"? N'hésite plus! Toute la Team Fovento est disponible pour répondre aux questions que tu pourrais te poser sur cette mission. Tous les détails sur la mission sont <%= link_to "ici", mission_url(@mission) %>. </p>
+
+<p>Pour te lancer directement, c'est <%= link_to "ici!", edit_mission_candidacy_url(@mission, @candidacy) %></p>
+
+<p>Quel sera ton impact?</p>
+
+<p>Cheers,<p>
+
+<p>La Team Fovento</p>
+
+
+<p><%= link_to "contact", contact_url %></p>

@@ -43,11 +43,11 @@ class CandidaciesController < ApplicationController
         format.json { render json: @candidacy.errors, status: :unprocessable_entity }
       end
     end
-    slack_notif_new_written_candidacy(@candidacy)
+    SlackCandidacyNotifierJob.perform_later(@candidacy)
   end
 
   def transfer
-    VolunteerMailer.transfer(@candidacy).deliver_now
+    VolunteerMailer.transfer(@candidacy).deliver_later
     @candidacy.update(status: "pending confirmation", transferred_at: Time.now)
     respond_to do |format|
       format.html { redirect_to dashboard_path, notice: "La candidature a été envoyée à l'association." }
@@ -76,12 +76,15 @@ class CandidaciesController < ApplicationController
       @mission.candidacies.each do |candidacy|
         case candidacy.status
         when "rejected"
-          VolunteerMailer.rejected(candidacy).deliver_now
+          VolunteerMailer.rejected(candidacy).deliver_later
         when "confirmed"
-          VolunteerMailer.accepted(candidacy).deliver_now
+          VolunteerMailer.accepted(candidacy).deliver_later
         end
       end
     end
+
+    SlackMissionStaffNotifierJob.perform_later(@candidacy.mission)
+
     respond_to do |format|
       if volunteer_signed_in?
         format.html { redirect_to dashboard_path, notice: "La candidature a été acceptée." }
@@ -126,19 +129,5 @@ class CandidaciesController < ApplicationController
         :phone_number
       ]
       )
-  end
-
-  def slack_notif_new_written_candidacy(candidacy)
-    volunteer = candidacy.volunteer
-    first_name = volunteer.first_name
-    last_name = volunteer.last_name
-    mission = candidacy.mission.title
-    association = candidacy.mission.nonprofit_profile.name
-    payload = {
-      username:         "Nouvelle candidature!",
-      text:             first_name + " " + last_name + " vient de postuler pour la mission: \"" + mission +"\", pour l'association " + association +". TODO: modérer la candidature."
-    }
-    uri = URI.parse("https://hooks.slack.com/services/#{ENV['SLACK_EMAIL_SIGNUP_TOKEN']}")
-    Net::HTTP.post_form(uri, :payload => JSON.generate(payload))
   end
 end

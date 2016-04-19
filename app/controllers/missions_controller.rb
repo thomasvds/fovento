@@ -41,6 +41,10 @@ class MissionsController < ApplicationController
       @candidacy = current_volunteer.candidacies.where(mission_id: @mission.id).first
       if !@candidacy.nil?
         @candidacy.plus_browse_count!
+        if @candidacy.browse_count == 2
+          VolunteerMailer.motivate(@candidacy).deliver_later
+          SlackMotivationNotifierJob.perform_later(@candidacy)
+        end
       else
         @candidacy = Candidacy.create(volunteer: current_volunteer, mission: @mission)
       end
@@ -103,6 +107,8 @@ class MissionsController < ApplicationController
     @mission.update(status: "30_started", started_at: Time.now)
     @mission.update(mission_params)
 
+    SlackMissionStartNotifierJob.perform_later(@mission)
+
     respond_to do |format|
       format.html { redirect_to dashboard_path, notice: "Démarrage confirmé! Merci pour ton engagement. La Team Fovento te souhaite une excellente mission!" }
     end
@@ -120,6 +126,8 @@ class MissionsController < ApplicationController
     @mission.update(status: "40_accomplished", closed_at: Time.now)
     @mission.update(mission_params)
 
+    SlackMissionEndNotifierJob.perform_later(@mission)
+
     respond_to do |format|
       format.html { redirect_to dashboard_path, notice: "Encore merci pour ton engagement!" }
     end
@@ -136,6 +144,8 @@ class MissionsController < ApplicationController
   def interrupt
     @mission.update(status: "50_interrupted", closed_at: Time.now)
     @mission.update(mission_params)
+
+    SlackMissionEndNotifierJob.perform_later(@mission)
 
     respond_to do |format|
       format.html { redirect_to dashboard_path, alert: "Merci pour ton feedback. L'équipe Fovento te recontactera potentiellement pour en discuter." }
