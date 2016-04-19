@@ -8,7 +8,7 @@ class SlackMotivationNotifierJob < ActiveJob::Base
   def perform(candidacy)
     payload = {
       username:         "Bénévole intéressé par une mission!",
-      text:             candidacy.volunteer.first_name + " " + candidacy.volunteer.last_name + " a consulté la mission \"" + candidacy.mission.title + "\" pour la 2ème fois. Un mail de motivation lui a été envoyé!"
+      text:             candidacy.volunteer.first_name + " " + candidacy.volunteer.last_name + " a consulté la mission \"" + candidacy.mission.title + "\" pour la 3ème fois. Un mail de motivation lui a été envoyé!"
     }
     uri = URI.parse("https://hooks.slack.com/services/#{ENV['SLACK_EMAIL_SIGNUP_TOKEN']}")
     Net::HTTP.post_form(uri, :payload => JSON.generate(payload))
