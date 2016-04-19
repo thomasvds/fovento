@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   get 'pages/home_nonprofits', as: 'home_nonprofits'
   get 'pages/missions_toolkit', as: 'missions_toolkit'
   get 'pages/terms_and_conditions', as: 'terms_and_conditions'
+  get 'pages/ambassadors', as: 'ambassadors'
 
   root to: 'pages#home_volunteers'
   # The priority is based upon order of creation: first created -> highest priority.

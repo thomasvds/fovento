@@ -1,0 +1,220 @@
+<!-- <body data-spy="scroll" data-target="#myScrollspy" data-offset="120">
+
+  <div class="container">
+    <div class="row">
+
+      <nav class="col-sm-3" id="myScrollspy">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="topli active"><a href="#section1">Stratégie</a>
+            <ul class="nav nav-pills nav-stacked">
+              <li class="subli"><a href="#section11">Vision</a></li>
+              <li class="subli"><a href="#section12">Mission</a></li>
+              <li class="subli"><a href="#section13">Ambitions</a></li>
+            </ul>
+          </li>
+          <li class="topli"><a href="#section2">Ambassadeurs</a></li>
+          <li class="topli"><a href="#section3">Gouvernance</a></li>
+          <li class="topli"><a href="#section4">Communication</a></li>
+          <li class="topli"><a href="#section5">La plate-forme</a></li>
+          <li class="topli"><a href="#section6">Boring stuff</a></li>
+        </ul>
+      </nav>
+
+      <div class="col-sm-9">
+
+        <div id="section1">
+          <div class="page-header"><h1>Stratégie</h1></div>
+          <h2 id="section11">La vision de Fovento</h2>
+          <h2 id="section12">La mission de Fovento</h2>
+          <h2 id="section13">Les ambitions de Fovento</h2>
+        </div>
+
+        <div id="section2">
+          <div class="page-header"><h1>Ambassadeurs</h1></div>
+          <h2>Qu'est-ce que le rôle d'ambassadeur?</h2>
+          <h2>Comment devient-on ambassadeur?</h2>
+          <h2>Qui sont les ambassadeurs actuels?</h2>
+        </div>
+
+        <div id="section3">
+          <div class="page-header"><h1>Gouvernance</h1></div>
+          <h2>Principes</h2>
+          <p>Fovento repose sur des principes de gouvernance horizontale et participative. L'équipe Fovento souhaite prendre l'opportunité de cette aventure pour expérimenter de nouvelles formes d'intelligence de groupe, et collaborer au mieux pour porter le projet vers de nouveaux horizons.</p>
+          <p>L'entièreté de l'équipe réalise qu'elle est composée de membres ayant des activités professionnelles à côté de Fovento. Elle souhaite que cet engagement reste un plaisir et ne devienne pas une contrainte. Elle reconnaît aussi que la viabilité à long terme du projet nécessite que chacun y mette du sien avec sérieux, le même sérieux qui est attendu des bénévoles de la plate-forme.</p>
+          <p>L'équipe s'attend à ce que selon les événements de la vie de chacun, certains soient moins disponibles que d'autres à certaines périodes. Pour que le projet continue d'avancer pendant ce temps, les personnes moins disponibles feront confiance à l'équipe active pour leur décisions (sauf exceptions où l'avis de chacun est nécessaire, cf. le point "Décisions"). Cela devrait permettre un déroulé constant du projet, non ralenti par les indisponibilités des uns et des autres mais où chacun serait capable de porter le flambeau et de recevoir la confiance des autres pour cela.</p>
+          <h2>Roles & responsabilités</h2>
+          <p>Les rôles sont définis dans l'équipe de manière à s'assurer que chaque fonction critique de Fovento sera suivie de près par un membre de l'équipe. Cela ne signifie pas que seul ce membre sera chargé de la fonction, mais bien que ce membre aura le devoir de s'assurer que cette fonction est bien couverte pour une période donnée.</p>
+          <p>Par exemple, le responsable du Business Development ASBLs ne doit pas assurer à lui seul tous les rendez-vous avec les ASBLs (ces rendez-vous devraient être accomplis par tous), mais par contre c'est lui qui s'assure que ces rendez-vous se tiennent bien et qu'un nombre satisfaisant d'asbls ont rejoint la plate-forme pour une période donnée. En anglais, on parle de la distinction "responsible" vs. "accountable" : les rôles définis ici le sont pour l' "accountability" pour chaque fonction. Pour résumer cela en une expression: "La personne qui a un rôle donné n'est pas spécialement celle qui se salit les mains avec une fonction, mais doit être celle qui ne dort pas la nuit si la fonction n'a pas été couverte."</p>
+          <p>Les rôles définis pour Fovento sont les suivants:</p>
+          <ul>
+            <li>Business Development ASBLs</li>
+            <li>Business Development bénévoles</li>
+            <li>Communication facebook</li>
+            <li>Communication autres channels</li>
+            <li>Plate-forme web</li>
+            <li>Graphisme</li>
+            <li>Légal & Finances</li>
+            <li>Coordination & facilitation</li>
+          </ul>
+          <p>Ces rôles sont définis en concertation avec l'entièreté de l'équipe, et changeables sur proposition de n'importe quel membre.</p>
+          <h2>Décisions</h2>
+          <h2>Communication interne</h2>
+          <h2>Heartbeat</h2>
+        </div>
+
+        <div id="section4">
+          <div class="page-header"><h1>Communication</h1></div>
+          <h2>Tone of voice</h2>
+          <h2>Watchouts</h2>
+          <h2>Pitch</h2>
+          <h2>Communication aux bénévoles inscrits</h2>
+          <h2>Communication aux nouveaux bénévoles potentiels</h2>
+          <h2>Communication aux associations partenaires</h2>
+          <h2>Communication aux nouvelles associations potentielles</h2>
+          <h2>Communication généraliste</h2>
+          <h2>Dossier de presse</h2>
+          <h2>Matériel de communication</h2>
+        </div>
+
+        <div id="section5">
+          <div class="page-header"><h1>Détails sur la plate-forme</h1></div>
+          <h2>Processes</h2>
+          <h2>Schéma des bases de données</h2>
+          <h2>Github</h2>
+        </div>
+
+        <div id="section6">
+          <div class="page-header"><h1>Boring stuff</h1></div>
+          <h2>Finance</h2>
+          <h2>Statuts</h2>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+
+<script type="text/javascript">
+  var offset = 80;
+
+  $('.nav-pills li a').click(function(event) {
+    event.preventDefault();
+    $($(this).attr('href'))[0].scrollIntoView();
+    scrollBy(0, -offset);
+  });
+
+  $('')
+</script>
+-->
+
+<div class="row">
+  <!--Nav Bar -->
+  <nav class="col-xs-2 bs-docs-sidebar">
+    <ul id="sidebar" class="nav nav-stacked fixed">
+      <li>
+        <a href="#GroupA">Stratégie</a>
+        <ul class="nav nav-stacked">
+          <li><a href="#GroupASub1">Mission</a></li>
+          <li><a href="#GroupASub2">Vision</a></li>
+          <li><a href="#GroupASub3">Ambition</a></li>
+          <li><a href="#GroupASub4">Priorités</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#GroupB">Ambassadeurs</a>
+        <ul class="nav nav-stacked">
+          <li><a href="#GroupBSub1">Rôles</a></li>
+          <li><a href="#GroupBSub2">Sélection</a></li>
+          <li><a href="#GroupBSub3">Liste</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#GroupC">Gouvernance</a>
+        <ul class="nav nav-stacked">
+          <li><a href="#GroupCSub1">Principes</a></li>
+          <li><a href="#GroupCSub2">Rôles & Responsabilités</a></li>
+          <li><a href="#GroupCSub3">Décisions</a></li>
+          <li><a href="#GroupCSub4">Communication interne</a></li>
+          <li><a href="#GroupCSub5">Heartbeat</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#GroupD">Communication</a>
+        <ul class="nav nav-stacked">
+          <li><a href="#GroupDSub1">Tone of voice</a></li>
+          <li><a href="#GroupDSub2">Watchouts</a></li>
+          <li><a href="#GroupDSub3">Pitch</a></li>
+          <li><a href="#GroupDSub4">Bénévoles</a></li>
+          <li><a href="#GroupDSub5">Associations</a></li>
+          <li><a href="#GroupDSub6">Tout public</a></li>
+          <li><a href="#GroupDSub7">Dossier de presse</a></li>
+          <li><a href="#GroupDSub8">Matériel</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#GroupE">Plate-forme</a>
+        <ul class="nav nav-stacked">
+          <li><a href="#GroupESub1">Processes</a></li>
+          <li><a href="#GroupESub2">Bases de données</a></li>
+          <li><a href="#GroupESub3">Github</a></li>
+          <li><a href="#GroupESub4">Heroku</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#GroupF">Boring stuff</a>
+        <ul class="nav nav-stacked">
+          <li><a href="#GroupFSub1">Statuts</a></li>
+          <li><a href="#GroupFSub2">Finances</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <!--Main Content -->
+  <div class="col-xs-10">
+    <section id="GroupA" class="group">
+      <h3>Group A</h3>
+      <div id="GroupASub1" class="subgroup">
+        <h4>Group A Sub 1</h4>
+      </div>
+      <div id="GroupASub2" class="subgroup">
+        <h4>Group A Sub 2</h4>
+      </div>
+    </section>
+    <section id="GroupB" class="group">
+      <h3>Group B</h3>
+      <div id="GroupBSub1" class="subgroup">
+        <h4>Group B Sub 1</h4>
+      </div>
+      <div id="GroupBSub2" class="subgroup">
+        <h4>Group B Sub 2</h4>
+      </div>
+    </section>
+    <section id="GroupC" class="group">
+      <h3>Group C</h3>
+      <div id="GroupCSub1" class="subgroup">
+        <h4>Group C Sub 1</h4>
+      </div>
+      <div id="GroupCSub2" class="subgroup">
+        <h4>Group C Sub 2</h4>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  $('body').scrollspy({
+    target: '.bs-docs-sidebar',
+    offset: 40
+  });
+
+  var offset = 80;
+
+  $('.nav-stacked li a').click(function(event) {
+    event.preventDefault();
+    $($(this).attr('href'))[0].scrollIntoView();
+    scrollBy(0, -offset);
+  });
+</script>
+
+

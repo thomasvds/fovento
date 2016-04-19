@@ -53,6 +53,9 @@ class PagesController < ApplicationController
     end
   end
 
+  def ambassadors
+  end
+
   private
 
   def set_volunteer
