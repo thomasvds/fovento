@@ -127,6 +127,7 @@ class MissionsController < ApplicationController
     @mission.update(mission_params)
 
     SlackMissionEndNotifierJob.perform_later(@mission)
+    VolunteerMailer.closing(@mission).deliver_later
 
     respond_to do |format|
       format.html { redirect_to dashboard_path, notice: "Encore merci pour ton engagement!" }

@@ -30,4 +30,14 @@ class VolunteerMailer < ApplicationMailer
 
     mail(to: @volunteer.email, subject: 'Ta candidature Fovento: congrats!')
   end
+
+  def closing(mission)
+    @volunteer = mission.volunteer
+    @hours = mission.logbook.hours_worked
+    @mission = mission
+    @nonprofit = mission.nonprofit_profile
+
+    mail(to: @nonprofit.email, subject: 'Fovento: Mission accomplie!')
+  end
+
 end
