@@ -9,12 +9,12 @@
     <br>
 
     <%= f.association :nonprofit_profile, label: "Association" %>
-    <%= f.input :title, label: "Titre"%>
+    <%= f.input :title, label: "Titre (appaîtra sur la page de présentation de toutes les missions)"%>
     <%= f.input :full_title, label: "Titre complet"%>
-    <%= f.input :skills, label: "Compétences requises"%>
-    <%= f.input :objectives, label: "Objectifs"%>
-    <%= f.input :outcomes, label: "Résultats attendus"%>
-    <%= f.input :impact, label: "Impact"%>
+    <%= f.input :skills, label: "Compétences requises (avec majuscule, séparées par une virgule - revois les compétences déjà existantes pour t'assurer de ne pas créer de doublons!)"%>
+    <%= f.input :objectives, label: "Contexte & objectifs (chaque paragraphe délimité par des balises <p> ... </p>)", :input_html => { :rows => 8} %>
+    <%= f.input :outcomes, label: "Résultats attendus (pas de . à la fin, chaque élément encadré par des balises <li>...</li>)", :input_html => { :rows => 4} %>
+    <%= f.input :impact, label: "Impact (court, rédigé à l'impératif 2ème personne du pluriel)"%>
     <%= f.input :suggested_duration, label: "Durée estimée" %>
     <%= f.input :suggested_start_date, label: "Date de début"%>
     <%= f.input :suggested_end_date, label: "Date de fin maximale"%>
