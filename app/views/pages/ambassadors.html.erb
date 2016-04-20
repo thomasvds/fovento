@@ -102,24 +102,41 @@
                 <a href="#GroupA">Ambassadeurs</a>
                 <ul class="nav nav-stacked">
                   <li><a href="#GroupASub0">Principes</a></li>
-                  <li><a href="#GroupASub1">Rôles</a></li>
-                  <li><a href="#GroupASub2">Sélection</a></li>
+                  <li><a href="#GroupASub1">Rôle</a></li>
+                  <li><a href="#GroupASub2">Devenir Ambassadeur</a></li>
                   <li><a href="#GroupASub3">Team</a></li>
                 </ul>
               </li>
+
+              <li>
+                <a href="#GroupD">Créer une mission</a>
+                <ul class="nav nav-stacked">
+                  <li><a href="#GroupDSub1">Introduction</a></li>
+                  <li><a href="#GroupDSub2">Principes & critères</a></li>
+                  <li><a href="#GroupDSub3">Contacter une assoc.</a></li>
+                  <li><a href="#GroupDSub4">Gérer la rencontre</a></li>
+                  <li><a href="#GroupDSub5">Rédiger la mission</a></li>
+                  <li><a href="#GroupDSub5bis">Formulaire de création</a></li>
+                  <li><a href="#GroupDSub6">Publier la mission</a></li>
+                  <li><a href="#GroupDSub7">Assurer le suivi</a></li>
+                  <li><a href="#GroupDSub8">Project management</a></li>
+                </ul>
+              </li>
+
               <li>
                 <a href="#GroupB">Plate-forme</a>
                 <ul class="nav nav-stacked">
-                  <li><a href="#GroupBSub0">Principes</a></li>
+                  <li><a href="#GroupBSub0">Généralités</a></li>
                   <li><a href="#GroupBSub1">Inscription</a></li>
                   <li><a href="#GroupBSub2">Staffing</a></li>
                   <li><a href="#GroupBSub3">Suivi & closing</a></li>
+                  <li><a href="#GroupBSub4">Aspects techniques</a></li>
                 </ul>
               </li>
               <li>
                 <a href="#GroupC">Dashboard</a>
                 <ul class="nav nav-stacked">
-                <li><a href="#GroupCSub0">Principes</a></li>
+                  <li><a href="#GroupCSub0">Principes</a></li>
                   <li><a href="#GroupCSub1">Création de missions</a></li>
                   <li><a href="#GroupCSub2">Gestion associations</a></li>
                   <li><a href="#GroupCSub3">Gestion candidatures</a></li>
@@ -128,15 +145,7 @@
                   <li><a href="#GroupCSub3">En cours</a></li>
                 </ul>
               </li>
-              <li>
-                <a href="#GroupD">Missions</a>
-                <ul class="nav nav-stacked">
-                  <li><a href="#GroupDSub1">Principes</a></li>
-                  <li><a href="#GroupDSub1">Identification</a></li>
-                  <li><a href="#GroupDSub2">Rédaction</a></li>
-                  <li><a href="#GroupDSub3">Project management</a></li>
-                </ul>
-              </li>
+
             </ul>
           </nav>
           <!--Main Content -->
@@ -161,22 +170,246 @@
               <div class="page-header"><h3>Ambassadeurs</h3></div>
               <div id="GroupASub0">
                 <h4>Principes</h4>
+                <p>Afin d'accélérer la diffusion du modèle Fovento, l'équipe fondatrice souhaite ouvrir à tous la possibilité de créer de nouvelles missions: c'est le principe des Ambassadeurs!</p>
+                <p>En effet, la valeur de la plate-forme Fovento se matérialise à travers 2 piliers: la mise en contact des bénévoles et associations, et l'offre de missions attirantes pour les bénévoles et à valeur ajoutée pour les associations. Si le premier pilier nécessite surtout un travail de communication autour de la plate-forme, qui est réalisable même avec des ressources limitées, le deuxième pilier nécessite lui un travail qualitatif d'identification de nouvelles missions, qui est fort consommateur de temps.</p>
+                <p>Sans les Ambassadeurs, l'équipe fondatrice deviendrait rapidement un frein à la croissance du modèle Fovento. Merci donc à tous les Ambassadeurs :) !</p>
+
               </div>
               <div id="GroupASub1">
                 <h4>Rôle</h4>
+                <p>Le rôle primaire des Ambassadeurs est d'aller à la rencontre des associations pour identifier leurs besoins et les codifier dans des feuilles de routes de missions qui seront partagées sur la plate-forme. Pour cela, pas besoin d'engagement à long terme: chaque mission est bonne à prendre tant qu'elle peut intéresser un bénévole et soutenir une association.</p>
+                <p>Le rôle secondaire des Ambassadeurs est de représenter la plate-forme autour d'eux, que ce soit pour identifier des bénévoles à staffer sur leurs missions où pour répondre aux questions des associations lors des rencontres avec elles.</p>
               </div>
               <div id="GroupASub2">
-                <h4>Sélection</h4>
+                <h4>Devenir Ambassadeur</h4>
+                <p>Devenir Ambassadeur est très simple: il te suffit de te <%= link_to "porter candidat", mission_path(id: 31) %> pour discuter de cette opportunité. On ira boire un verre pour faire connaissance. Tu peux aussi proposer des idées de missions directement.</p>
+                <p>Afin de garantir la cohérence de l'image de Fovento, seuls les Ambassadeurs ayant préalablement rencontré la Team Fovento pourront se présenter comme affiliés à la plate-forme!</p>
               </div>
               <div id="GroupASub3">
                 <h4>Team</h4>
+                <p>Merci à tous les Ambassadeurs actuels ou passés: Edouard Jacquin, Vincent Matton, Thomas Vanderstraeten, Guillaume Vanderwinden.</p>
+              </div>
+            </section>
+
+            <section id="GroupD">
+              <div class="page-header"><h3>Créer une mission</h3></div>
+              <div id="GroupDSub1">
+                <h4>Introduction</h4>
+                <p>Comme dit plus haut, les missions sont le nerf de la guerre de Fovento, le seul "produit" qui est "vendu" sur la plate-forme. C'est donc tout naturellement qu'un grand soin est accordé à leur création, pour s'assurer de donner lieu à de belles aventures humaines qui apporteront un vrai soutien aux associations. En bref, il s'agit d'être très pro et de bien respecter les standards de qualité de la plate-forme, listés ci-dessous.</p>
+              </div>
+              <div id="GroupDSub2">
+                <h4>Principes & critères</h4>
+                <h5>Critères d'acceptation</h5>
+                <p>Pour pouvoir apporter impact, challenge et flexibilité aux utilisateurs de la plate-forme, certains critères spécifient d'emblée quel genre de missions peuvent être référencées. Ci-dessous, l'ensemble des critères avec exemples et contre-exemples.</p>
+                <p>Il est évident que les contre-exemples cités ici peuvent être de très bonnes initiatives dans l'absolu! Afin de garantir la tenue du cap de Fovento, elles n'ont cependant par leur place sur la plate-forme :) </p>
+
+                <div class="figureholder">
+                  <table class='table table-condensed dashboard-table' style="width: 700px; background-color: white;border: 1px solid grey; border-radius: 5px;">
+                    <thead>
+                      <th>Critère</th>
+                      <th>Exemples</th>
+                      <th>Contre-exemples</th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>La mission fait appel à des compétences professionnelles intellectuelles</td>
+                        <td class="success">Rédiger un contrat, Partager son expertise relative à son domaine d'activité professionnel</td>
+                        <td class="danger">Passer une après-midi à jouer à des jeux de société avec des enfants, Aider lors d'un déménagement, Participer à une manifestation</td>
+                      </tr>
+                      <tr>
+                        <td>La mission est limitée dans le temps</td>
+                        <td class="success">Accompagner une association pour résoudre un problème ponctuel</td>
+                        <td class="danger">Assurer le suivi des finances d'une association sur une durée de 6 mois</td>
+                      </tr>
+                      <tr>
+                        <td>La mission mène à des résultats concrets (nouveaux savoirs documentés, décisions prises)</td>
+                        <td class="success">Revoir la manière de communiquer d'une association et identifier, documenter et prioritiser 3 axes d'améliorations potentielles</td>
+                        <td class="danger">Discuter avec une association de sa manière de communiquer</td>
+                      </tr>
+                      <tr>
+                        <td>La portée stratégique de la mission est limitée et son échec ne risque pas de déstabiliser l'association</td>
+                        <td class="success">Améliorer les templates Excel standards d'une association</td>
+                        <td class="danger">Etablir une recommandation pour un investissement de plusieurs milliers d'euros</td>
+                      </tr>
+                      <tr>
+                        <td>La mission n'est pas chargée politiquement</td>
+                        <td class="success">Aider une association à réaliser son matériel de communication</td>
+                        <td class="danger">Soutenir une campagne de communication à charge d'un individu ou d'une entreprise</td>
+                      </tr>
+                      <tr>
+                        <td>La mission ne fait pas appel à des compétences presque impossibles à sourcer bénévolement</td>
+                        <td class="success">Réaliser un PowerPoint pour une association</td>
+                        <td class="danger">Réaliser une capsule vidéo, réaliser un site internet</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h5>Un peu de project management...</h5>
+                <p>Chaque mission doit être considérée comme un projet à part entière. L'établissement de sa feuille de route nécessite donc de faire appel aux outils classiques de project management. Parmi les nombreuses méthodos et acronymes existant, voici une petite sélection:</p>
+                <ul>
+                  <li><b>SMART:</b> les objectifs de la mission doivent être Spécifiques, Mesurables, Atteignables, Réalistes et spécifiés dans le temps</li>
+                  <li><b>OTOBOSOQ:</b> une bonne mission accomplie est une mission qui a été accomplie "On Time, On Budget, On Scope, On Quality". Pour rendre cela possible, il s'agit de spécifier la feuille de route de mission en gardant chacune de ces dimensions à l'esprit</li>
+                  <li><b>6W:</b> Why, What, Who, Which, When, Where - toutes ces questions devraient trouver une réponse dans la feuille de route</li>
+                </ul>
+
+
+              </div>
+              <div id="GroupDSub3">
+                <h4>Contacter une association</h4>
+
+                <h5>Contacts outbound et inbound</h5>
+                <p>Le contact avec les associations peut être établi de deux manières:</p>
+                <ul>
+                  <li><b>Outbound:</b> Contact établi directement par Fovento envers l'association, par exemple par un mail spécifique à l'association ou en approchant un de ses membres</li>
+                  <li><b>Inbound:</b> Contact sollicité par l'association elle-même, contactant Fovento suite à de la publicité destinée aux associations ou suite à la recommandation d'une autre association
+                  </li>
+                </ul>
+                <p>Les contacts inbound sont gérés et coordonnés naturellement via la boîte mail Fovento et la Team. Par contre, les contacts outbound nécessitent une bonne coordination des Ambassadeurs pour éviter de paralléliser la communication avec une association, ou de l'oppresser contre son gré avec des propositions.</p>
+                <p>Afin d'assurer une bonne coordination de tous les contacts, Fovento utilise un board Trello où chaque carte représente une association. Avant de s'engager dans la sollication d'une nouvelle association, tout Ambassadeur consultera impérativement le Trello pour connaître le statut de la communication la concernant.</p>
+
+                <h5>Quels types d'associations contacter?</h5>
+
+                <h5>Qui contacter dans l'association?</h5>
+
+                <p>En ce qui concerne la personne à rencontrer au sein de l'association, le mieux est de parler directement à la coordination. Les coordinateurs seront en effet les membres ayant la meilleure vue sur toutes les pistes d'améliorations possibles. Les responsables du bénévolat / volontariat seront aussi souvent mis dans la boucle; cependant leur position est moins pertinente pour le bénévolat apporté par Fovento.</p>
+
+                <h5>Les messages de contact</h5>
+
+                <p>Pour contacter l'association, le mieux est d'utiliser un message assez court, et incluant en tous les cas un lien vers la plate-forme:</p>
+
+                <div class="figureholder">
+                  <div class="mailexample">
+                    <p>Bonjour,</p>
+                    <p>Mon nom est Thomas, je suis membre de l'asbl Fovento. Fovento est une plate-forme de bénévolat de compétences à destination des associations: www.fovento.be .</p>
+
+                    <p>Plus d'une dizaine d'associations font déjà appel aux bénévoles de la plate-forme pour des missions ponctuelles; vous trouverez beaucoup d'exemples en allant visiter le site.</p>
+
+                    <p>Seriez-vous intéressé par une petit conversation téléphonique ou un rendez-vous rapide pour voir ensemble si nous pourrions identifier des missions pour vous soutenir? Tout cela est entièrement gratuit, bien sûr.</p>
+
+                    <p>Au plaisir d'avoir de vos nouvelles!</p>
+
+                    <p>Bien à vous,
+                      <br>
+                      Thomas
+                      <br>
+                      + 32 47X XX XX XX
+                    </p>
+                  </div>
+                </div>
+                <p>Il est à noter que les associations ne répondent en général qu'à partir du 2ème mail. Il ne faut donc pas hésiter à renvoyer après ~5 jours un mail du genre:</p>
+                <div class="figureholder">
+                  <div class="mailexample">
+                    <p>Bonjour,</p>
+                    <p>Je vous ai contacté récemment concernant Fovento, la plate-forme de bénévolat de compétences (www.fovento.be).</p>
+                    <p>J'aimerais juste vous relancer et vous faire savoir qu'une première discussion de 30 minutes pourrait déjà suffire à identifier des besoins!</p>
+
+                    <p>Je vous remets mon précédent mail ci-dessous pour de plus amples informations.</p>
+
+                    <p>Dans l'attente de vous lire,
+                      <br>
+                      Thomas
+                      <br>
+                      + 32 47X XX XX XX
+                    </p>
+                  </div>
+                </div>
+                <p>Sans réponse, le standard est de passer un coup de téléphone à l'association pour savoir ce qu'il en est. La plupart du temps, l'association a juste une boîte mail trop chargée, ce qui l'empêche de répondre à ce genre de sollicitations. Par téléphone, les membres des associations sont par contre en général beaucoup plus accueillants.</p>
+                <p>Il ne faut pas avoir peur de faire un peu d'oppression commerciale au début: toutes les associations avec lesquelles nous avons travaillé se sont montrées ravies de l'expérience. Avec Fovento, nous ne leur refourguons en effet pas un produit dont elles n'ont pas besoin: nous essayons véritablement et sincérement de les aider du mieux que nous le pouvons!</p>
+
+
+
+              </div>
+              <div id="GroupDSub4">
+                <h4>Gérer la rencontre</h4>
+
+                <h5>Checklist pour une bonne rencontre</h5>
+
+                <p>Une fois un rendez-vous fixé avec l'association, il s'agit de mener la rencontre au mieux! Une rencontre idéale satisfait aux critères suivants:</p>
+                <ul>
+                <li>L'association a bien compris ce qu'est Fovento, et ses différences par rapport aux autres organismes de bénévolat</li>
+                <li>L'association est enthousiasmée à l'idée de devenir association partenaire sur la plate-forme</li>
+                <li>La personne de contact pour Fovento au sein de l'association a été identifiée</li>
+                <li>Le ou la bénévole a bien cerné les activités de l'association</li>
+                <li>Ensemble, association et bénévole ont identifié une ou plusieurs missions correspondant aux critères de la plate-forme et véritablement à valeur ajoutée pour l'association</li>
+                <li>Des next steps très claires ont été identifiées</li>
+                </ul>
+
+                <p>Il est important que l'Ambassadeur gère le rythme de la réunion, car il représente Fovento dès les premiers instants de la rencontre. Sans professionalisme des Ambassadeurs, il est difficile pour les associations de s'imaginer que les bénévoles seront d'un meilleur niveau!</p>
+
+                <p>Inutile de dire qu'aller voir le site de l'association en préparation de la réunion est un must pour l'Ambassadeur :)</p>
+
+                <h5>Les questions des associations</h5>
+
+                <p>Outre les questions de la <%= link_to "FAQ", how_it_works_path %>, que l'Ambassadeur s'assurera de maîtriser, les associations posent souvent la question suivante: "En quoi Fovento se distingue-t-il des autres acteurs du bénévolat en Belgique?". Ci-dessous, un graphique pour supporter la réponse à cette question:</p>
+
+                <div class="figureholder">
+                <%= image_tag "http://s3-eu-west-1.amazonaws.com/fovento/images/Be%CC%81ne%CC%81volat+de+compe%CC%81tences+en+Belgique.png" %>
+                </div>
+
+                <h5>Page blanche?</h5>
+
+                <p>Parfois, il est difficile pour la personne de l'association d'identifier directement des missions, surtout si elle n'a pas eu l'occasion de consulter des exemples de missions sur la plate-forme auparavant. Dans ce cas, il ne faut pas hésiter à laisser cette personne revenir vers le reste de son équipe et laisser mûrir la possibilité de faire une mission. Laissons du temps au temps!</p>
+              </div>
+              <div id="GroupDSub5">
+                <h4>Rédiger la mission</h4>
+              </div>
+              <div id="GroupDSub5bis">
+                <h4>Formulaire de création</h4>
+              </div>
+              <div id="GroupDSub6">
+                <h4>Publier la mission</h4>
+              </div>
+              <div id="GroupDSub7">
+                <h4>Assurer le suivi</h4>
               </div>
             </section>
 
             <section id="GroupB">
               <div class="page-header"><h3>Fonctionnement de la plate-forme</h3></div>
               <div id="GroupBSub0">
-                <h4>Principes</h4>
+                <h4>Généralités</h4>
+                <p>La plate-forme permet de soutenir les activités de Fovento en offrant les fonctionnalités suivantes:</p>
+                <ul>
+                  <li>Pour les visiteurs:
+                    <ul>
+                      <li>Présentation du modèle Fovento, des valeurs</li>
+                      <li>Catalogue de missions</li>
+                      <li>Détails par mission</li>
+                      <li>Formulaire de contact</li>
+                    </ul>
+                  </li>
+                  <li>Pour les bénévoles connectés:
+                    <ul>
+                      <li>Dépôt de candidature pour une mission spécifique</li>
+                      <li>Suivi de l'état des candidatures</li>
+                      <li>Notification des décisions concernant les candidatures</li>
+                      <li>Confirmation du démarrage d'une mission</li>
+                      <li>Suivi des missions en cours</li>
+                      <li>Accomplissement et interruption des missions, avec feedback et témoignage</li>
+
+                    </ul>
+                  </li>
+                  <li>Pour les associations partenaires:
+                    <ul>
+                      <li>Aperçu des candidatures pour missions publiées</li>
+                      <li>Sélection d'un(e) bénévole spécifique et notification automatique de l'ensemble des bénévoles ayant postulé</li>
+                      <li>Notification de clôture de mission</li>
+                    </ul>
+                  </li>
+                  <li>Pour les Ambassadeurs:
+                    <ul>
+                      <li>Enregistrement de profils d'associations</li>
+                      <li>Publication de nouvelles missions</li>
+                      <li>Modération des candidatures avant envoi aux associations</li>
+                      <li>Suivi des candidatures en attente</li>
+                      <li>Suivi des missions en cours</li>
+                      <li>Fonctionnalités légères de marketing</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>La plate-forme fait donc interagir plusieurs utilisateurs (bénévoles, associations, Ambassadeurs) autour des missions. L'objet "mission" est central dans la construction technique de la plate-forme.</p>
+
               </div>
               <div id="GroupBSub1">
                 <h4>Inscription</h4>
@@ -186,6 +419,9 @@
               </div>
               <div id="GroupBSub3">
                 <h4>Suivi & closing</h4>
+              </div>
+              <div id="GroupBSub4">
+                <h4>Aspects techniques</h4>
               </div>
             </section>
 
@@ -214,21 +450,7 @@
               </div>
             </section>
 
-            <section id="GroupD">
-              <div class="page-header"><h3>Missions</h3></div>
-              <div id="GroupDSub1">
-                <h4>Principes</h4>
-              </div>
-              <div id="GroupDSub2">
-                <h4>Identification</h4>
-              </div>
-              <div id="GroupDSub3">
-                <h4>Rédaction</h4>
-              </div>
-              <div id="GroupDSub4">
-                <h4>Project management</h4>
-              </div>
-            </section>
+
 
           </div>
 

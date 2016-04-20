@@ -1,66 +1,107 @@
 .fixed {
-    position: fixed;
+  position: fixed;
+}
+
+.figureholder {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.mailexample {
+  width: 500px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  border: 1px solid $gray-dark;
+  border-radius: 5px;
+  background-color: white;
+  p {
+    font-family: "Arial";
+  }
 }
 
 .articles {
   padding: 40px;
   color: $gray;
+
   h3 {
     color: $primary-light !important;
+
+  }
+
+  h4 {
+    margin-top: 40px !important;
+  }
+  p {
+    font-size: 16px !important;
+  }
+
+  ul {
+    font-size: 16px !important;
+  }
+
+  li {
+    font-size: 16px !important;
+  }
+
+  h5 {
+    margin-top: 30px !important;
   }
 }
 
 /* sidebar */
 .bs-docs-sidebar {
-    padding-left: 20px;
-    margin-bottom: 20px;
-    padding-top: 30px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  padding-top: 30px;
 }
 
 /* all links */
 .bs-docs-sidebar .nav>li>a {
-    color: white;
-    border-left: 2px solid transparent;
-    padding: 4px 20px;
-    font-size: 18px;
-    font-weight: 400;
+  color: white;
+  border-left: 2px solid transparent;
+  padding: 4px 20px;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 /* nested links */
 .bs-docs-sidebar .nav .nav>li>a {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    padding-left: 30px;
-    font-size: 16px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 30px;
+  font-size: 16px;
 }
 
 /* active & hover links */
 .bs-docs-sidebar .nav>.active>a,
 .bs-docs-sidebar .nav>li>a:hover,
 .bs-docs-sidebar .nav>li>a:focus {
-    color: white;
-    text-decoration: none;
-    background-color: transparent;
-    border-left-color: white;
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  border-left-color: white;
 }
 /* all active links */
 .bs-docs-sidebar .nav>.active>a,
 .bs-docs-sidebar .nav>.active:hover>a,
 .bs-docs-sidebar .nav>.active:focus>a {
-    font-weight: 700;
+  font-weight: 700;
 }
 /* nested active links */
 .bs-docs-sidebar .nav .nav>.active>a,
 .bs-docs-sidebar .nav .nav>.active:hover>a,
 .bs-docs-sidebar .nav .nav>.active:focus>a {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 /* hide inactive nested list */
 .bs-docs-sidebar .nav ul.nav {
-    display: none;
+  display: none;
 }
 /* show active nested list */
 .bs-docs-sidebar .nav>.active>ul.nav {
-    display: block;
+  display: block;
 }
