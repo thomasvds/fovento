@@ -32,7 +32,8 @@ class PagesController < ApplicationController
     if @volunteer.ambassador
       @draft_missions = Mission.where(status: "0_draft")
       @pending_candidacies = Candidacy.where(:status => ["pending moderation", "pending confirmation"])
-      @browses = Candidacy.where(status: "browsing").where("browse_count > ?", 1)
+      # @browses = Candidacy.where(status: "browsing").where("browse_count > ?", 1).where.not()
+      @browses = Candidacy.joins(:volunteer).where("candidacies.status = 'browsing' AND candidacies.browse_count > 1 AND volunteers.ambassador = false")
       @staffed_missions = Mission.where(status: "20_staffed")
       @started_missions = Mission.where(status: "30_started")
       @nonprofit_profiles = NonprofitProfile.all

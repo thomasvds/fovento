@@ -1,24 +1,4 @@
-<!-- <body data-spy="scroll" data-target="#myScrollspy" data-offset="120">
 
-  <div class="container">
-    <div class="row">
-
-      <nav class="col-sm-3" id="myScrollspy">
-        <ul class="nav nav-pills nav-stacked">
-          <li class="topli active"><a href="#section1">Stratégie</a>
-            <ul class="nav nav-pills nav-stacked">
-              <li class="subli"><a href="#section11">Vision</a></li>
-              <li class="subli"><a href="#section12">Mission</a></li>
-              <li class="subli"><a href="#section13">Ambitions</a></li>
-            </ul>
-          </li>
-          <li class="topli"><a href="#section2">Ambassadeurs</a></li>
-          <li class="topli"><a href="#section3">Gouvernance</a></li>
-          <li class="topli"><a href="#section4">Communication</a></li>
-          <li class="topli"><a href="#section5">La plate-forme</a></li>
-          <li class="topli"><a href="#section6">Boring stuff</a></li>
-        </ul>
-      </nav>
 
       <div class="col-sm-9">
 
@@ -62,54 +42,10 @@
           <h2>Heartbeat</h2>
         </div>
 
-        <div id="section4">
-          <div class="page-header"><h1>Communication</h1></div>
-          <h2>Tone of voice</h2>
-          <h2>Watchouts</h2>
-          <h2>Pitch</h2>
-          <h2>Communication aux bénévoles inscrits</h2>
-          <h2>Communication aux nouveaux bénévoles potentiels</h2>
-          <h2>Communication aux associations partenaires</h2>
-          <h2>Communication aux nouvelles associations potentielles</h2>
-          <h2>Communication généraliste</h2>
-          <h2>Dossier de presse</h2>
-          <h2>Matériel de communication</h2>
-        </div>
 
-        <div id="section5">
-          <div class="page-header"><h1>Détails sur la plate-forme</h1></div>
-          <h2>Processes</h2>
-          <h2>Schéma des bases de données</h2>
-          <h2>Github</h2>
-        </div>
 
-        <div id="section6">
-          <div class="page-header"><h1>Boring stuff</h1></div>
-          <h2>Finance</h2>
-          <h2>Statuts</h2>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</body>
-
-<script type="text/javascript">
-  var offset = 80;
-
-  $('.nav-pills li a').click(function(event) {
-    event.preventDefault();
-    $($(this).attr('href'))[0].scrollIntoView();
-    scrollBy(0, -offset);
-  });
-
-  $('')
-</script>
--->
 
 <div class="row">
-  <!--Nav Bar -->
   <nav class="col-xs-2 bs-docs-sidebar">
     <ul id="sidebar" class="nav nav-stacked fixed">
       <li>
@@ -144,6 +80,15 @@
       </li>
 
       <li>
+        <a href="#GroupG">Missions</a>
+        <ul class="nav nav-stacked">
+          <li><a href="#GroupGSub1">Identification</a></li>
+          <li><a href="#GroupGSub2">Rédaction</a></li>
+          <li><a href="#GroupGSub3">Suivi</a></li>
+        </ul>
+      </li>
+
+      <li>
         <a href="#GroupD">Communication</a>
         <ul class="nav nav-stacked">
           <li><a href="#GroupDSub1">Tone of voice</a></li>
@@ -163,15 +108,6 @@
           <li><a href="#GroupBSub1">Rôles</a></li>
           <li><a href="#GroupBSub2">Sélection</a></li>
           <li><a href="#GroupBSub3">Liste</a></li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="#GroupG">Missions</a>
-        <ul class="nav nav-stacked">
-          <li><a href="#GroupGSub1">Identification</a></li>
-          <li><a href="#GroupGSub2">Rédaction</a></li>
-          <li><a href="#GroupGSub3">Suivi</a></li>
         </ul>
       </li>
 
@@ -214,7 +150,10 @@
       </div>
     </section>
   </div>
+
 </div>
+
+<% content_for :javascript do %>
 
 <script>
   $('body').scrollspy({
@@ -230,5 +169,7 @@
     scrollBy(0, -offset);
   });
 </script>
+
+<% end %>
 
 
