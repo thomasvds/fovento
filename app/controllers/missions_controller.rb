@@ -91,7 +91,7 @@ class MissionsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to mission_path, notice: "Mission publiée!" }
+      format.html { redirect_to mission_path, notice: "Mission publiée (#{@volunteers_to_notify.count} bénévoles informés)!" }
     end
   end
 
