@@ -76,6 +76,20 @@ class MissionsController < ApplicationController
   def publish
     @mission.update(status: "10_open")
 
+    # Inform all volunteers with the relevant skills
+    @volunteers_to_notify = []
+    @mission.skills.split(",").each do |s|
+      Volunteer.all.each do |v|
+        if v.skilled?(s)
+          @volunteers_to_notify << v
+        end
+      end
+    end
+    @volunteers_to_notify.uniq!
+    @volunteers_to_notify.each do |v|
+      VolunteerMailer.notify(v, @mission).deliver_later
+    end
+
     respond_to do |format|
       format.html { redirect_to mission_path, notice: "Mission publiée!" }
     end
@@ -183,6 +197,6 @@ class MissionsController < ApplicationController
         :values_and_terms_accepted,
         :volunteer_feedback
       ]
-    )
+      )
   end
 end

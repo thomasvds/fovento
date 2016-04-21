@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :nonprofit_profiles
 
+  resources :volunteers, only: [:update]
+
   resources :missions do
     resources :candidacies, except: [:create]
     put 'candidacies/:id/transfer', to: 'candidacies#transfer', as: 'candidacy_transfer'
