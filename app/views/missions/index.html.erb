@@ -15,7 +15,7 @@
         <%= simple_form_for :skills, url: missions_path, method: :get do |f| %>
         <%= f.input :list, :as => :hidden, input_html: {id: "skillsform"} %>
         <% @skills_available.each do |skill| %>
-        <div class="skillbutton <%= "skilltosearch" if (!@skills_to_search.nil? && @skills_to_search.include?(skill))%>">
+        <div class="skillbutton <%= "skilltosearch" if (!@filtered_skills.nil? && @filtered_skills.include?(skill))%>">
           <%= skill %>
         </div>
         <% end %>
