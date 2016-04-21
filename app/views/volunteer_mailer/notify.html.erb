@@ -1,0 +1,17 @@
+<h1>Une mission Fovento pour toi?</h1>
+
+<p>Hello <%= @volunteer.first_name %>,</p>
+
+<p>Une mission Fovento correspondant à tes compétences vient d'être publiée! Tu te lances?</p>
+
+<p> Cette mission, "<%= link_to @mission.title, mission_url(@mission) %>", est destinée à soutenir l'asbl <%= @mission.nonprofit_profile.name %>, active dans le secteur "<%= @mission.nonprofit_profile.sector %>".</p>
+
+<p>Cette mission requiert les compétences suivantes: <%= @mission.skills %>. C'est sans doute un challenge qui te correspond. Découvre-le sur la page de la <%= link_to "mission", mission_url(@mission) %> !
+
+<p>Cheers,<p>
+
+<p>La Team Fovento</p>
+
+
+<p><%= link_to "contact", contact_url %></p>
+<p>Note: pour ne plus recevoir ces mails, il te suffit de ne pas spécifier de compétences sur ton <%= link_to "dashboard", dashboard_url %></p>

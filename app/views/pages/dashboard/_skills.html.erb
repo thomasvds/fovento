@@ -1,0 +1,32 @@
+<h2>Mes compétences</h2>
+<p> Indique ici de quelles compétences tu disposes, parmi les compétences disponibles. Lorsqu'une nouvelle mission répondant à tes compétences sera publiée, tu en seras directement informé(e) par mail, pour ne rater aucune opportunité! Clique sur "Mettre à jour" pour enregistrer tes modifications.</p>
+
+<div class="searchbox">
+  <%= simple_form_for current_volunteer do |f| %>
+  <%= f.input :skills, :as => :hidden, input_html: {id: "skillsform"} %>
+  <% @skills_available.each do |skill| %>
+  <div class="skillbutton <%= "skilltosearch" if current_volunteer.skilled?(skill)%>">
+    <%= skill %>
+  </div>
+  <% end %>
+
+</div>
+<br>
+<%= f.button :submit, class: 'btn btn-xs btn-default', value: "Mettre à jour"%>
+  <% end %>
+
+
+<% content_for :javascript do %>
+
+<script>
+  $( ".skillbutton" ).click(function() {
+    $( this ).toggleClass("skilltosearch");
+    var skills = [];
+    $(".skilltosearch").each(function() {
+      skills.push($(this).text().trim());
+    });
+    $("#skillsform").val(skills);
+  });
+</script>
+
+<% end %>

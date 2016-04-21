@@ -6,10 +6,6 @@ class Volunteer < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable,
   :confirmable, :omniauthable, omniauth_providers: [:linkedin]
 
-  def candidate?(mission)
-    return candidacies.any? { |candidacy| candidacy.mission == mission && candidacy.status != "browsing" }
-  end
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |volunteer|
       volunteer.email = auth.info.email
@@ -21,4 +17,18 @@ class Volunteer < ActiveRecord::Base
       volunteer.linkedin_public_profile = auth.info.urls.public_profile
     end
   end
+
+  def candidate?(mission)
+    return candidacies.any? { |candidacy| candidacy.mission == mission && candidacy.status != "browsing" }
+  end
+
+  def skilled?(skill)
+    if skills.nil?
+      return false
+    else
+      skills_array = skills.split(",")
+      return skills_array.include?(skill)
+    end
+  end
+
 end

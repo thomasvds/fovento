@@ -1,5 +1,12 @@
 class VolunteerMailer < ApplicationMailer
 
+  def notify(volunteer, mission)
+    @volunteer = volunteer
+    @mission = mission
+
+    mail(to: @volunteer.email, subject: 'Une mission Fovento pour toi?')
+  end
+
   def motivate(candidacy)
     @candidacy = candidacy
     @volunteer = candidacy.volunteer

@@ -12,6 +12,10 @@
   <div class="container padded">
 
     <div class="dashboard-card">
+      <%= render 'pages/dashboard/skills', skills_available: @skills_available, skills_declared: @skills_declared %>
+    </div>
+
+    <div class="dashboard-card">
       <%= render 'pages/dashboard/candidacies', candidacies: @candidacies %>
     </div>
 

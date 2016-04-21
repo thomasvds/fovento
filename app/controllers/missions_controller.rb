@@ -4,30 +4,16 @@ class MissionsController < ApplicationController
 
   #====== READ METHODS ======
   def index
+    filter_applied = ( !params[:skills].nil? && params[:skills][:list].first != "" )
 
-    if params[:skills].nil? || params[:skills][:list].first == ""
-      @missions = Mission.where.not(status: "0_draft").order(:status)
+    if filter_applied
+      @filtered_skills = params[:skills][:list].split(",")
+      @missions = Mission.find_by_skills(@filtered_skills)
     else
-      @skills_to_search = params[:skills][:list].split(",")
-      @missions = []
-      @skills_to_search.each do |s|
-        results = Mission.where("skills ILIKE '%#{s}%'").where.not(status: "0_draft")
-        results.each do |r|
-          @missions << r
-        end
-      end
-      @missions = @missions.sort_by(&:status).uniq
+      @missions = Mission.all_publishable
     end
 
-    skills_available = []
-    Mission.all.each do |m|
-      skills = m.skills.split(",")
-      skills.each do |s|
-        s.strip!
-        skills_available << s
-      end
-    end
-    @skills_available = skills_available.sort.uniq!
+    @skills_available = Mission.all_skills
   end
 
   def show
@@ -89,6 +75,20 @@ class MissionsController < ApplicationController
   #====== LIFECYCLE METHODS ======
   def publish
     @mission.update(status: "10_open")
+
+    # Inform all volunteers with the relevant skills
+    @volunteers_to_notify = []
+    @mission.skills.split(",").each do |s|
+      Volunteer.all.each do |v|
+        if v.skilled?(s)
+          @volunteers_to_notify << v
+        end
+      end
+    end
+    @volunteers_to_notify.uniq!
+    @volunteers_to_notify.each do |v|
+      VolunteerMailer.notify(v, @mission).deliver_later
+    end
 
     respond_to do |format|
       format.html { redirect_to mission_path, notice: "Mission publiée!" }
@@ -197,6 +197,6 @@ class MissionsController < ApplicationController
         :values_and_terms_accepted,
         :volunteer_feedback
       ]
-    )
+      )
   end
 end
