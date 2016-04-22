@@ -5,7 +5,6 @@
   <thead>
     <th>Titre de la mission</th>
     <th>Statut</th>
-    <th>Dernière évolution</th>
     <th>Actions</th>
   </thead>
 
@@ -38,8 +37,6 @@
         <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Mission annulée ou interrompue. N'hésite pas à te lancer sur d'autres missions!"></i>
         <% end %>
       </td>
-      <!-- MISSION STAFFING DATE -->
-      <td><%= mission.updated_at.strftime("%d/%m/%Y") %></td>
       <!-- MISSION ACTIONS, INCLUDING LOGBOOK EDITING -->
       <td>
         <% case mission.status %>
