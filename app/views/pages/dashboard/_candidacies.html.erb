@@ -2,9 +2,9 @@
 <p> Retrouve ici toutes tes candidatures partagées aux associations, en attente de validation ou non retenues. Clique <%= link_to "ici", missions_path %> pour voir les missions disponibles.</p>
 <table class='table table-condensed table-hover table-striped dashboard-table'>
   <thead>
-    <th>Titre de la mission</th>
+    <th>Mission</th>
     <th>Statut</th>
-    <th>Date de dépôt</th>
+    <th>Date dépôt</th>
     <th>Actions</th>
   </thead>
   <tbody>
@@ -29,7 +29,7 @@
         <i class="fa fa-info custom-tooltip infoicon" data-toggle="tooltip" data-placement="bottom" title="Congrats! Tu peux maintenant suivre la mission dans 'Mes Missions'. Ta candidature reste enregistrée ici si tu veux y accéder plus tard."></i>
         <% end %>
       </td>
-      <td><%= candidacy.written_at.nil? ? "n.a." : candidacy.written_at.strftime("%d/%m/%Y") %></td>
+      <td><%= candidacy.written_at.nil? ? "n.a." : candidacy.written_at.strftime("%d/%m") %></td>
       <td>
         <%= link_to mission_candidacy_path(candidacy.mission, candidacy) do%>
         <i class="fa fa-eye actionicon"></i>
