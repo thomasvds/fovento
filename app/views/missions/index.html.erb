@@ -9,6 +9,7 @@
       <div class="searchboxheader">
       <h3>Découvre les missions Fovento. Quel sera ton impact?</h3>
         <p>Rechercher les missions par compétence &nbsp;  <i class="fa fa-search actionicon" id="boxopener"></i></p>
+        <p style="color: gray; font-size: 10px;"><small>Indique tes compétences dans ton <%= link_to "dashboard", dashboard_path %> pour être informé(e) des nouvelles missions!</small></p>
         <hr>
       </p>
       <div class="searchbox">
@@ -23,6 +24,7 @@
         <%= f.button :submit, class: 'hidden' %>
         <% end %>
       </div>
+
     </div>
   </div>
 

@@ -28,14 +28,15 @@ Rails.application.routes.draw do
   get 'pages/dashboard', as: 'dashboard'
   get 'pages/values', as: 'values'
   get 'pages/how_it_works', as: 'how_it_works'
-  get 'pages/contact', as: 'contact'
-  put 'pages/sendcontact', to: 'pages#sendcontact'
   get 'pages/community_and_impact', as: 'community_and_impact'
   get 'pages/home_volunteers', as: 'home_volunteers'
   get 'pages/home_nonprofits', as: 'home_nonprofits'
   get 'pages/missions_toolkit', as: 'missions_toolkit'
   get 'pages/terms_and_conditions', as: 'terms_and_conditions'
   get 'pages/ambassadors', as: 'ambassadors'
+
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
 
   root to: 'pages#home_volunteers'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -41,20 +41,6 @@ class PagesController < ApplicationController
     end
   end
 
-  def contact
-    @contact = Contact.new
-  end
-
-  def sendcontact
-    @contact = Contact.new(params[:contact])
-    @contact.request = request
-    if @contact.deliver
-      redirect_to contact_path, notice: 'Merci pour le message. La Team Fovento y répondra rapidement.'
-    else
-      redirect_to contact_path, alert: 'Echec d\'envoi du message.'
-    end
-  end
-
   def ambassadors
   end
 

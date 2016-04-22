@@ -1,5 +1,12 @@
 class VolunteerMailer < ApplicationMailer
 
+  def contact_from_site(name, mail, message)
+    @name = name
+    @mail = mail
+    @message = message
+    mail(to: "contact@fovento.be", subject: 'Nouveau message fovento.be!')
+  end
+
   def notify(volunteer, mission)
     @volunteer = volunteer
     @mission = mission
