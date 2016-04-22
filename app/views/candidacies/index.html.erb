@@ -6,7 +6,7 @@
       <div class='col-xs-12 col-md-6'>
         <%= render 'card', candidacy: candidacy %>
         <% if candidacy.status == "pending confirmation" %>
-        <p class="text-center">Pour accepter cette candidature, cliquer sur le bouton ci-dessous. Attention, cette action est irréversible et enverra un mail de confirmation au bénévole, ainsi qu'un mail de notification à tous les bénévoles non-retenus.</p>
+        <p class="text-center">Après avoir contacté le ou la bénévole, pour accepter cette candidature, cliquer sur le bouton ci-dessous. Attention, cette action est irréversible et enverra un mail de confirmation au bénévole, ainsi qu'un mail de notification à tous les bénévoles non-retenus.</p>
         <div class="buttons_box">
           <button class="btn btn-success btn-xs" id="confirm_<%= candidacy.id.to_s%>">Sélectionner ce bénévole</button>
           <%= link_to "Confirmer la sélection", mission_candidacy_confirm_path(candidacy.mission, candidacy), class: "btn btn-warning btn-xs hidden", type: "hidden", method: :put, id: "reallyconfirm_"+candidacy.id.to_s %>
