@@ -1,3 +1,7 @@
+require 'net/http'
+require 'uri'
+require 'json'
+
 class Volunteer < ActiveRecord::Base
   has_many :candidacies, dependent: :destroy
   has_many :missions
@@ -5,6 +9,8 @@ class Volunteer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable,
   :confirmable, :omniauthable, omniauth_providers: [:linkedin]
+
+  after_create :slack_notif_new_volunteer
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |volunteer|
@@ -31,4 +37,14 @@ class Volunteer < ActiveRecord::Base
     end
   end
 
+  private
+
+  def slack_notif_new_volunteer
+    payload = {
+      username:         "Nouvelle inscription!",
+      text:             self.first_name + " " + self.last_name
+    }
+    uri = URI.parse("https://hooks.slack.com/services/#{ENV['SLACK_EMAIL_SIGNUP_TOKEN']}")
+    Net::HTTP.post_form(uri, :payload => JSON.generate(payload))
+  end
 end

@@ -1,11 +1,5 @@
 class Volunteers::RegistrationsController < Devise::RegistrationsController
 
-  def create
-    super do |resource|
-      SlackSignupNotifierJob.perform_later(resource)
-    end
-  end
-
   private
 
   def sign_up_params
