@@ -1,6 +1,7 @@
 class Volunteers::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def linkedin
     @volunteer = Volunteer.from_omniauth(request.env["omniauth.auth"])
+    SlackSignupNotifierJob.perform_later(@volunteer)
 
     if @volunteer.persisted?
       @volunteer.skip_confirmation!
