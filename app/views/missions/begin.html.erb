@@ -12,7 +12,7 @@
         <!-- NESTED FORM FOR THE LOGBOOK -->
         <%= f.simple_fields_for :logbook do |l| %>
         <%= l.input :objectives_understood, as: :boolean,  inline_label: "J'ai bien compris les besoin de l'association par rapport à cette mission, et j'ai une vision claire des résultats attendus" %>
-        <%= l.input :ways_of_working_defined, as: :boolean, inline_label: "Les aspects pratiques de la mission on été discutés et confirmés avec l'association (points de contact, dates-clé...)" %>
+        <%= l.input :ways_of_working_defined, as: :boolean, inline_label: "Les aspects pratiques de la mission ont été discutés et confirmés avec l'association (points de contact, dates-clé...)" %>
         <%= l.input :planned_end_date, start_year: Date.today.year,end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Date de fin estimée de la mission:" %>
         <%= l.input :values_and_terms_accepted, as: :boolean, inline_label: content_for(:links) %>
         <% end %>
