@@ -9,7 +9,7 @@ class CandidaciesController < ApplicationController
     if volunteer_signed_in? && !current_volunteer.ambassador
       redirect_to root_path
     end
-    @candidacies = Candidacy.where(mission_id: params[:mission_id], status: "pending confirmation")
+    @candidacies = Candidacy.where(mission_id: params[:mission_id], status: ["pending confirmation","confirmed"] )
   end
 
   def show
