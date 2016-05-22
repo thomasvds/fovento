@@ -11,7 +11,7 @@
       <% end %>
     </h2>
     <ul class="fa-ul">
-      <li><i class="fa fa-li fa-calendar"></i>A postulé le <%= candidacy.created_at.strftime("%d/%m/%Y")%> à  <%= candidacy.created_at.strftime("%H:%M")%></li>
+      <li><i class="fa fa-li fa-calendar"></i>A postulé le <%= candidacy.written_at.strftime("%d/%m/%Y")%> à  <%= candidacy.created_at.strftime("%H:%M")%></li>
       <li><i class="fa fa-li fa-envelope"></i><%= candidacy.volunteer.email %></li>
       <li><i class="fa fa-li fa-phone"></i><%= candidacy.volunteer.phone_number %></li>
     </ul>
