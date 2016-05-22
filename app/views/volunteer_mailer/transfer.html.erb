@@ -4,12 +4,12 @@
 
 <p>Bonne nouvelle! <%= @volunteer.first_name + " " + @volunteer.last_name %> se propose comme bénévole pour la mission suivante: <%= @mission.title %>.<p>
 
-<%= link_to "Voir toutes les propositions de bénévoles", mission_candidacies_url(@mission) %>
+<%= link_to "Cliquez ici pour voir les motivations et les coordonnées du/de la bénévole", mission_candidacies_url(@mission) %>
 
 <p>ATTENTION: Merci de ne pas forwarder ce mail aux bénévoles, car le lien ci-dessus leur sera alors aussi accessible.</p>
 
 
-<p>Pour la suite, l'équipe Fovento vous recommande de contacter directement ce(tte) bénévole afin de décider si il/elle convient bien à la mission. Vous pourrez aussi discuter concrétement de la manière de démarrer celle-ci. En effet, ce(tte) bénévole attend en effet des instructions de votre part pour démarrer la mission si il/elle est sélectionné(e). Merci de l'informer endéans 5 jours!</p>
+<p>Pour la suite, l'équipe Fovento vous demande de contacter directement ce(tte) bénévole afin de décider si il/elle convient bien à la mission. Ses coordonnées mail, téléphone, et LinkedIn se trouvent via le lien plus haut dans ce mail. Vous pourrez aussi discuter concrétement de la manière de démarrer la mission. En effet, ce(tte) bénévole attend des instructions de votre part pour démarrer la mission si il/elle est sélectionné(e). Merci de l'informer endéans 5 jours!</p>
 
 <p>Vous n'avez pas le temps de démarrer la mission pour l'instant, mais le profil de ce(tte) bénévole vous convient? Dans ce cas, n'hésitez pas à le communiquer au/à la bénévole. Ainsi, vous pourrez garder sa candidature au chaud (en la confirmant déjà maintenant) et vous pourrez vous assurez que la personne sera encore disponible lorsque vous aurez du temps. Si vous attendez trop, la personne risque de perdre sa motivation à vous aider... :)</p>
 
@@ -20,4 +20,4 @@
 <p>La Team Fovento</p>
 
 
-<p>Note: candidature déposée le <%= @candidacy.created_at.strftime("%d/%m/%Y")%> à  <%= @candidacy.created_at.strftime("%H:%M")%>. Merci de donner suite rapidement aux candidatures des bénévoles :) !</p>
+<p>Note: candidature déposée le <%= @candidacy.created_at.strftime("%d/%m/%Y")%> à  <%= @candidacy.written_at.strftime("%H:%M")%>. Merci de donner suite rapidement aux candidatures des bénévoles :) !</p>
