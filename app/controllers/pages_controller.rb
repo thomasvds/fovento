@@ -26,6 +26,9 @@ class PagesController < ApplicationController
   def values
   end
 
+  def team
+  end
+
   def dashboard
     @candidacies = Candidacy.where(volunteer: @volunteer, :status => ["pending moderation", "pending confirmation", "rejected", "confirmed"])
     @missions = Mission.where(volunteer: @volunteer)

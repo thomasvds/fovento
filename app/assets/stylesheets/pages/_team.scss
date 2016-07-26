@@ -1,0 +1,68 @@
+
+.team-member-card {
+  background-color: $primary-light;
+  border-radius: 15px;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  background-image: linear-gradient(-230deg, $primary 30%, $primary-light 80%);
+  padding: 10px;
+  &:hover {
+    background-image: linear-gradient(-230deg, $gray-light 30%, $gray-lighter 80%);
+    .avatar-team {
+      filter: grayscale(0%);
+      transition: 0.2s ease;
+    }
+  }
+}
+
+.team-member-header {
+  text-align: center;
+}
+
+.team-member-name {
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.team-member-first-name {
+  margin-bottom: 0px;
+  margin-top: 3px;
+  font-size: 40px;
+}
+
+.team-member-description {
+  text-align: justify;
+  p {
+    font-size: 12px;
+    color: $gray-dark;
+  }
+}
+
+.team-header{
+  text-align: center;
+  h3 {
+    color: $gray;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 25px;
+    // text-align: left;
+    color: $gray;
+  }
+
+  hr {
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+
+.avatar-team {
+  transition: 0.2s ease;
+  width: 150px;
+  border-radius: 50%;
+  border: white 2px solid;
+  filter: grayscale(100%);
+
+}
