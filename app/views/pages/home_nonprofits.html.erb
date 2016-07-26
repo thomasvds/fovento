@@ -1,6 +1,75 @@
+
+
+<div class="wrapper">
+  <div class="container text-center padded" >
+    <div class="nonprofits-header">
+      <h3>Proposer une mission pour votre association</h3>
+      <hr>
+      <p>Votre association peut très simplement bénéficier d'une mission Fovento! Pour cela, il suffit de respecter les spécificités de la plate-forme, mentionnées ci-dessous. Lorsque vous en avez pris connaissance, contactez-nous pour détailler la mission ensemble. La Team se réjouit de vous rencontrer.</p>
+      <%= link_to contacts_path do %>
+      <button type="button" class="btn btn-primary btn-xs applybutton">
+        Contacter Fovento!
+      </button>
+      <% end %>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="nonprofit-feature">
+          <%= image_tag("impact.png") %>
+          <h2>IMPACT</h2>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-check-square"></i>La mission vous aide structurellement à améliorer vos activités</li>
+            <li><i class="fa-li fa fa-check-square"></i>La mission débouche sur des résultats concrets et mesurables</li>
+            <li><i class="fa-li fa fa-check-square"></i>Votre association est établie en tant qu'ASBL ou aspire à le devenir</li>
+            <li><i class="fa-li fa fa-check-square"></i>Votre association n'a pas pour objet principal un but politique ou confessionnel</li>
+            <li><i class="fa-li fa fa-check-square"></i>Votre association compte moins de 15 employés équivalents temps-plein</li>
+          </ul>
+
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="nonprofit-feature">
+          <%= image_tag("technology.png") %>
+          <h2>CHALLENGE</h2>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-check-square"></i>La mission fait appel à des compétences intellectuelles, comme affichées dans le listing des missions existantes</li>
+            <li><i class="fa-li fa fa-check-square"></i>La mission ne consiste pas en l'exécution d'un travail de développement informatique (création d'un site web, migration d'une base de données...)</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="nonprofit-feature">
+          <%= image_tag("arrows (1).png") %>
+          <h2>FLEXIBILITÉ</h2>
+          <ul class="fa-ul">
+            <li><i class="fa-li fa fa-check-square"></i>La mission peut idéalement être en partie accomplie à distance</li>
+            <li><i class="fa-li fa fa-check-square"></i>Vous vous engagez à respecter l'engagement du ou de la bénévole en assurant un suivi de qualité de ses efforts sur la mission</li>
+            <li><i class="fa-li fa fa-check-square"></i>La mission dure moins de 3 jours équivalents temps-plein, pouvant être répartis selon les disponibilités du ou de la bénévole</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <div class="wrapper">
   <div class="container padded text-center">
-    <h3>Elles font confiance aux bénévoles Fovento. Pour les rejoindre, <%= link_to "contactez-nous", contacts_path %>!</h3>
+
+
+    <div class="nonprofits-header">
+      <h3>Elles ont déjà contacté Fovento:</h3>
+      <hr>
+    </div>
+
     <div class= "row">
       <% @nonprofits[0..5].each do |n| %>
       <div class="col-xs-2">
