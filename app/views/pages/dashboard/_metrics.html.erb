@@ -1,0 +1,52 @@
+<h2>Métriques opérationnelles</h2>
+
+<div class="row">
+<div class="col-xs-4 col-md-2">
+    <div class="metric-box">
+      <div class="metric">   <%= @all_missions.where(status: "0_draft").count %></div>
+      <div class="description">
+        Missions draft
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-md-2">
+    <div class="metric-box">
+      <div class="metric">   <%= @all_missions.where(status: "10_open").count %></div>
+      <div class="description">
+        Missions à staffer
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-md-2">
+    <div class="metric-box">
+      <div class="metric">   <%= @pending_candidacies.count %></div>
+      <div class="description">
+        Candidatures à décider
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-md-2">
+    <div class="metric-box">
+      <div class="metric">   <%= @all_missions.where(status: "20_staffed").count %></div>
+      <div class="description">
+        Missions à démarrer
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-md-2">
+    <div class="metric-box">
+      <div class="metric">   <%= @all_missions.where(status: "30_started").count %></div>
+      <div class="description">
+        Missions en cours
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-md-2">
+    <div class="metric-box">
+      <div class="metric">   <%= @all_missions.where(status: "50_interrupted").count + @all_missions.where(status: "40_accomplished").count%></div>
+      <div class="description">
+        Missions accomplies / interrompues
+      </div>
+    </div>
+  </div>
+</div>

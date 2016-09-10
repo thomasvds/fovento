@@ -11,23 +11,17 @@
 <div class="wrapper-gray">
   <div class="container padded">
 
-    <div class="dashboard-card">
-      <%= render 'pages/dashboard/skills', skills_available: @skills_available, skills_declared: @skills_declared %>
-    </div>
 
-    <div class="dashboard-card">
-      <%= render 'pages/dashboard/candidacies', candidacies: @candidacies %>
-    </div>
-
-    <div class="dashboard-card">
-      <%= render 'pages/dashboard/missions', missions: @missions %>
-    </div>
 
     <!-- AMBASSADORS ONLY -->
     <% if current_volunteer.ambassador %>
 
     <div class="page-header">
       <h2><i class="fa fa-hand-peace-o"></i> Espace Ambassadeur (<%= link_to "Ambassadors' Book", ambassadors_path %>)</h2>
+    </div>
+
+    <div class="dashboard-card ambassador-card">
+      <%= render 'pages/dashboard/metrics', missions: @draft_missions %>
     </div>
 
     <div class="dashboard-card ambassador-card">
@@ -55,6 +49,18 @@
     </div>
 
     <% end %>
+
+    <div class="dashboard-card">
+      <%= render 'pages/dashboard/skills', skills_available: @skills_available, skills_declared: @skills_declared %>
+    </div>
+
+    <div class="dashboard-card">
+      <%= render 'pages/dashboard/candidacies', candidacies: @candidacies %>
+    </div>
+
+    <div class="dashboard-card">
+      <%= render 'pages/dashboard/missions', missions: @missions %>
+    </div>
   </div>
 </div>
 

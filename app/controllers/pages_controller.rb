@@ -41,6 +41,7 @@ class PagesController < ApplicationController
       @staffed_missions = Mission.where(status: "20_staffed")
       @started_missions = Mission.where(status: "30_started")
       @nonprofit_profiles = NonprofitProfile.all
+      @all_missions = Mission.all
     end
   end
 
