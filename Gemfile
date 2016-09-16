@@ -27,6 +27,9 @@ gem 'mail_form'
 
 gem 'sweet-alert'
 
+gem 'rspec'
+gem 'rspec-rails'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
