@@ -65,13 +65,13 @@ class CandidaciesController < ApplicationController
       @candidacy.mission.candidacies.each do |candidacy|
         #Don't forget to skip candidacies that are just browsing!
         if candidacy.status != "browsing"
-          candidacy.update(status: "rejected", decided_at: Time.now)
+          candidacy.update(status: "rejected", decided_at: Date.today)
         end
       end
       #Retrieve the current candidacy and confirm it, undoing rejection
       @candidacy.update(status: "confirmed")
       #Update the mission with chosen volunteer and staffed status
-      @candidacy.mission.update(status: "20_staffed", volunteer: @candidacy.volunteer, staffed_at: Time.now)
+      @candidacy.mission.update(status: "20_staffed", volunteer: @candidacy.volunteer, staffed_at: Date.today)
       #Mail all volunteers that had a written candidacy on the mission
       @mission.candidacies.each do |candidacy|
         case candidacy.status
