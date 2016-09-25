@@ -74,7 +74,7 @@ class MissionsController < ApplicationController
 
   #====== LIFECYCLE METHODS ======
   def publish
-    @mission.update(status: "10_open")
+    @mission.update(status: "10_open", published_at: Time.now)
 
     # Inform all volunteers with the relevant skills
     @volunteers_to_notify = []

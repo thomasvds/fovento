@@ -42,6 +42,20 @@ class PagesController < ApplicationController
       @started_missions = Mission.where(status: "30_started")
       @nonprofit_profiles = NonprofitProfile.all
       @all_missions = Mission.all
+      @months = (Date.parse("01/04/2016")..Date.today).map {|d| d.strftime '%b %Y' }.uniq
+      @published_history = []
+      @staffed_history = []
+      @months.each do |month|
+        start_date = Date.parse("1 #{month}")
+        end_date = Date.new(start_date.year, start_date.month, -1)
+        month_dates = (start_date..end_date).to_a
+        p "*************"
+        p month_dates
+        p "*************"
+        @published_history << Mission.where(published_at: month_dates).count
+        # User.where(["DAY(created_at) = ? AND MONTH(created_at) = ?", date.day, date.month])
+        @staffed_history << Mission.where(staffed_at: month_dates).count
+      end
     end
   end
 

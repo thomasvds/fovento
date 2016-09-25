@@ -1,0 +1,109 @@
+<h2>Publishing & staffing performance</h2>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container1" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+<div id="container2" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+
+$(function () {
+    $('#container1').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Missions publiées'
+        },
+        exporting: {
+           enabled: false
+         },
+         credits: {
+          enabled: false
+        },
+        xAxis: {
+            categories: [
+                <% @months.each do |month| %>
+                  '<%= "#{month}" %>',
+                <% end %>
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Nombre missions'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Publications',
+            data: <%= @published_history %>
+        }]
+    });
+});
+
+$(function () {
+    $('#container2').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Missions staffées'
+        },
+        exporting: {
+           enabled: false
+         },
+         credits: {
+          enabled: false
+        },
+        xAxis: {
+            categories: [
+                <% @months.each do |month| %>
+                  '<%= "#{month}" %>',
+                <% end %>
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Nombre missions'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Staffings',
+            data: <%= @staffed_history %>
+        }]
+    });
+});
+
+</script>
