@@ -48,12 +48,12 @@ class PagesController < ApplicationController
       @months.each do |month|
         start_date = Date.parse("1 #{month}")
         end_date = Date.new(start_date.year, start_date.month, -1)
-        month_dates = (start_date..end_date).to_a
-        p "*************"
-        p month_dates
-        p "*************"
+        month_dates = start_date..end_date
         @published_history << Mission.where(published_at: month_dates).count
         # User.where(["DAY(created_at) = ? AND MONTH(created_at) = ?", date.day, date.month])
+        p "********"
+        p Mission.where(staffed_at: month_dates).count
+        p "********"
         @staffed_history << Mission.where(staffed_at: month_dates).count
       end
     end
