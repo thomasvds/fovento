@@ -2,9 +2,8 @@
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-
+<br>
 <div id="container1" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
-<div id="container2" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
 
 <script type="text/javascript">
 
@@ -14,7 +13,7 @@
         type: 'column'
       },
       title: {
-        text: 'Missions publiées'
+        text: ''
       },
       exporting: {
        enabled: false
@@ -33,16 +32,27 @@
     yAxis: {
       min: 0,
       title: {
-        text: 'Nombre missions'
+        text: '# missions'
       },
       plotLines: [{
-        value: 3,
-        color: 'black',
+        value: 2,
+        color: '#5C5C61',
         dashStyle: 'shortdash',
         width: 2,
         zIndex: 10,
         label: {
-          text: 'Target: 3 / mois'
+          text: 'Staffing target: 2 / mois',
+          color: '#5C5C61'
+        }
+      },{
+        value: 3,
+        color: '#95CEFF',
+        dashStyle: 'shortdash',
+        width: 2,
+        zIndex: 10,
+        label: {
+          text: 'Publishing target: 3 / mois',
+          color: '#95CEFF'
         }
       }]
     },
@@ -63,60 +73,7 @@
     series: [{
       name: 'Publications',
       data: <%= @published_history %>
-    }]
-  });
-  });
-
-  $(function () {
-    $('#container2').highcharts({
-      chart: {
-        type: 'column'
-      },
-      title: {
-        text: 'Missions staffées'
-      },
-      exporting: {
-       enabled: false
-     },
-     credits: {
-      enabled: false
-    },
-    xAxis: {
-      categories: [
-      <% @months.each do |month| %>
-      '<%= "#{month}" %>',
-      <% end %>
-      ],
-      crosshair: true
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: 'Nombre missions'
-      },
-      plotLines: [{
-        value: 2,
-        zIndex: 10,
-        color: 'black',
-        dashStyle: 'shortdash',
-        width: 2,
-        label: {
-          text: 'Target: 2 / mois'
-        }
-      }]
-    },
-    tooltip: {
-      footerFormat: '</table>',
-      shared: true,
-      useHTML: true
-    },
-    plotOptions: {
-      column: {
-        pointPadding: 0.2,
-        borderWidth: 0
-      }
-    },
-    series: [{
+    },{
       name: 'Staffings',
       data: <%= @staffed_history %>
     }]
