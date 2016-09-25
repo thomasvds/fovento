@@ -42,7 +42,7 @@ class PagesController < ApplicationController
       @started_missions = Mission.where(status: "30_started")
       @nonprofit_profiles = NonprofitProfile.all
       @all_missions = Mission.all
-      @months = (Date.parse("01/04/2016")..Date.today).map {|d| d.strftime '%b %Y' }.uniq
+      @months = (Date.parse("01/05/2016")..Date.today).map {|d| d.strftime '%b %Y' }.uniq
       @published_history = []
       @staffed_history = []
       @months.each do |month|
