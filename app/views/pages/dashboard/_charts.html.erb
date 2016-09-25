@@ -1,4 +1,5 @@
-<h2>Publishing & staffing performance</h2>
+<h2>Evolution des publications et du staffing</h2>
+<p> Alors les gars, on a peur des fins de mois difficiles? Autant se bouger le cul à temps. Go changer le monde, stop improvisation!</p>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -41,8 +42,8 @@
         width: 2,
         zIndex: 10,
         label: {
-          text: 'Staffing target: 2 / mois',
-          color: '#5C5C61'
+          text: 'TARGET',
+          style: {color: '#5C5C61'}
         }
       },{
         value: 3,
@@ -51,15 +52,15 @@
         width: 2,
         zIndex: 10,
         label: {
-          text: 'Publishing target: 3 / mois',
-          color: '#95CEFF'
+          text: 'TARGET',
+          style: {color: '#95CEFF'}
         }
       }]
     },
     tooltip: {
       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
       pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-      '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+      '<td style="padding:0"><b>{point.y}</b></td></tr>',
       footerFormat: '</table>',
       shared: true,
       useHTML: true

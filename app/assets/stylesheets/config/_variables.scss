@@ -14,10 +14,13 @@ $base-height: 1.4;
  * Colors
  * ------------------------------------- */
 // Scheme
-
+$primary-darkest: darken(#3E92CC,50%);
+$primary-darker: darken(#3E92CC,30%);
 $primary-dark: darken(#3E92CC,10%);
 $primary: #3E92CC;
 $primary-light: lighten(#3E92CC, 10%);
+$primary-lighter: lighten(#3E92CC, 20%);
+$primary-lightest: lighten(#3E92CC, 20%);
 $yellow: #FFD166;
 $green: #23F0C7;
 $red: #F03A47;

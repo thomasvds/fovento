@@ -1,8 +1,10 @@
 .metric-box{
-  border-radius: 5px;
-  background-color: $gray-lighter;
+  border-radius: 10px;
+  // background-color: $gray-lighter;
   text-align: center;
   padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: white;
   .metric {
     font-size: 60px;
     margin-bottom: -15px;
