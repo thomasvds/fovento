@@ -124,7 +124,7 @@
       <div class= "row">
         <% @volunteers.each do |v| %>
         <div class="col-xs-4 col-sm-3 col-md-2 col-lg-1 volunteer text-center">
-          <div><%= image_tag v.picture, class: 'avatar-home' %></div>
+          <div><%= image_tag 'https://s3.eu-west-1.amazonaws.com/fovento/images/user.png', class: 'avatar-home' %></div>
           <div><p><%= v.first_name %></p></div>
         </div>
         <% end %>
@@ -161,9 +161,3 @@
 
 </script>
 <% end %>
-
-
-
-
-
-
