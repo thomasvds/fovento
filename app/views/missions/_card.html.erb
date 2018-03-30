@@ -19,16 +19,16 @@
       <% when '40_accomplished' %>
       <span style="font-size: 12px;" class="label label-info status gray">Accomplie &nbsp;&nbsp;</span>
       <% info_message = mission.volunteer.first_name + " a accompli cette mission"%>
-      <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
+      <%= image_tag 'https://s3.eu-west-1.amazonaws.com/fovento/images/user.png', class: 'avatar-card' %>
       <!-- If the mission is ongoing... -->
       <% when '30_started', '20_staffed' %>
       <span style="font-size: 12px;" class="label label-info status gray">En cours  &nbsp;</span>
       <% info_message = mission.volunteer.first_name + " est en train d'accomplir cette mission"%>
-      <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
+      <%= image_tag 'https://s3.eu-west-1.amazonaws.com/fovento/images/user.png', class: 'avatar-card' %>
       <% when '50_interrupted' %>
       <span style="font-size: 12px;" class="label label-info status gray">Interrompue  &nbsp;</span>
       <% info_message = "Cette mission a été interrompue"%>
-      <%= image_tag mission.volunteer.picture, class: 'avatar-card' %>
+      <%= image_tag 'https://s3.eu-west-1.amazonaws.com/fovento/images/user.png', class: 'avatar-card' %>
       <% when '99_cancelled' %>
       <span style="font-size: 12px;" class="label label-info status gray">Annulée  &nbsp;</span>
       <% end %>
